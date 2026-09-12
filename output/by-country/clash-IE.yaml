@@ -5,41 +5,29 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇮🇪 IE 01 - xiaohe
-  type: ss
-  server: 20.234.82.250
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: kYhF4RWqohTpbVau
+  type: vless
+  server: 198.71.189.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   udp: true
-- name: 🇮🇪 IE 02 - xiaohe
-  type: ss
-  server: 20.234.82.250
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: D1VXfiP9b9VeX9ZD
-  udp: true
-- name: 🇮🇪 IE 03 - xiaohe
-  type: ss
-  server: 20.234.82.250
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: R2QvJ9exeq61wfSV
-  udp: true
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime04.workers.dev
 proxy-groups:
 - name: PROXIES
   type: select
   proxies:
   - AUTO
   - 🇮🇪 IE 01 - xiaohe
-  - 🇮🇪 IE 02 - xiaohe
-  - 🇮🇪 IE 03 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
   interval: 300
   proxies:
   - 🇮🇪 IE 01 - xiaohe
-  - 🇮🇪 IE 02 - xiaohe
-  - 🇮🇪 IE 03 - xiaohe
 rules:
 - MATCH,PROXIES

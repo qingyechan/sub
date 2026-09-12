@@ -18,18 +18,40 @@ proxies:
     headers:
       Host: uae.unixzone.us
 - name: 🇦🇪 阿联酋 (UAE) 02 - xiaohe
-  type: vless
-  server: uae.unixzone.us
-  port: 22573
-  uuid: 39947382-3212-41c9-bc3a-589574ac8b23
+  type: ss
+  server: 188.208.110.58
+  port: 8444
+  cipher: chacha20-ietf-poly1305
+  password: tunnel-astrovpn_official
   udp: true
-  tls: false
+- name: 🇦🇪 阿联酋 (UAE) 03 - xiaohe
+  type: vless
+  server: 38.47.96.220
+  port: 11424
+  uuid: 1d16c6e0-1bbe-435b-b661-90043fee999c
+  udp: true
+  tls: true
   skip-cert-verify: true
+  servername: notls.lukongtou.eu.org
   network: ws
   ws-opts:
-    path: /
+    path: Telegram-WangCai2🇨🇳
     headers:
-      Host: uae.unixzone.us
+      Host: notls.lukongtou.eu.org
+- name: 🇦🇪 阿联酋 (UAE) 04 - xiaohe
+  type: vless
+  server: 116.204.164.60
+  port: 7443
+  uuid: c676be7d-b481-4bba-88d0-65855e09dc67
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: ke859ch2gse1iery3hiz.e3q4a5mjld11kpj0zj8dq.workers.dev
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: ke859ch2gse1iery3hiz.e3q4a5mjld11kpj0zj8dq.workers.dev
 proxy-groups:
 - name: PROXIES
   type: select
@@ -37,6 +59,8 @@ proxy-groups:
   - AUTO
   - 🇦🇪 阿联酋 (UAE) 01 - xiaohe
   - 🇦🇪 阿联酋 (UAE) 02 - xiaohe
+  - 🇦🇪 阿联酋 (UAE) 03 - xiaohe
+  - 🇦🇪 阿联酋 (UAE) 04 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -44,5 +68,7 @@ proxy-groups:
   proxies:
   - 🇦🇪 阿联酋 (UAE) 01 - xiaohe
   - 🇦🇪 阿联酋 (UAE) 02 - xiaohe
+  - 🇦🇪 阿联酋 (UAE) 03 - xiaohe
+  - 🇦🇪 阿联酋 (UAE) 04 - xiaohe
 rules:
 - MATCH,PROXIES
