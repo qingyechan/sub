@@ -6,18 +6,18 @@ log-level: info
 proxies:
 - name: 🇧🇬 BG 01 - xiaohe
   type: vless
-  server: 2.56.204.183
+  server: 172.67.209.139
   port: 443
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
+  uuid: cbfeff27-6e7a-4e99-b5ad-6b830e191741
   udp: true
   tls: true
   skip-cert-verify: true
-  servername: shuma.ccwu.cc
+  servername: srv-b890f5-eb36b6.omidiabolfazl155-c5f1.workers.dev
   network: ws
   ws-opts:
-    path: /
+    path: /vl/wk14rIXEvRltsm88Nsboi?ed=2560
     headers:
-      Host: shuma.ccwu.cc
+      Host: srv-b890f5-eb36b6.omidiabolfazl155-c5f1.workers.dev
 proxy-groups:
 - name: PROXIES
   type: select
