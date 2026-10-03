@@ -6,46 +6,25 @@ log-level: info
 proxies:
 - name: 🇷🇺 俄罗斯 (Russia) 01 - xiaohe
   type: vless
-  server: 172.66.44.124
-  port: 8443
-  uuid: b2f2f9f2-1864-48ea-839b-22815faff1f1
+  server: 217.19.122.200
+  port: 443
+  uuid: bc5ec86c-3e65-4272-994c-59a924c72a68
   udp: true
   tls: true
   skip-cert-verify: true
-  servername: stf839dvvyog9d2qa4-b8z6ahgn7b7qi.pages.dev
+  servername: fbsv6.guardora.pro
   network: ws
   ws-opts:
-    path: /
+    path: /ws
     headers:
-      Host: stf839dvvyog9d2qa4-b8z6ahgn7b7qi.pages.dev
+      Host: fbsv6.guardora.pro
 - name: 🇷🇺 俄罗斯 (Russia) 02 - xiaohe
-  type: vless
-  server: 176.108.242.55
-  port: 5002
-  uuid: 8e8ea5d2-6941-40fb-9efe-f9062b11b2b9
+  type: ss
+  server: 130.49.189.158
+  port: 43558
+  cipher: chacha20-ietf-poly1305
+  password: mhXYDvaSfHzHZXBswC/zo/o8VqdU3XSBpwWx050Y6MU=
   udp: true
-  tls: true
-  skip-cert-verify: true
-  servername: lm.centermass.net
-  network: ws
-  ws-opts:
-    path: media.playback.v1.SessionGateway
-    headers:
-      Host: 176.108.242.55
-- name: 🇷🇺 俄罗斯 (Russia) 03 - xiaohe
-  type: vless
-  server: 213.171.31.34
-  port: 5002
-  uuid: 8e8ea5d2-6941-40fb-9efe-f9062b11b2b9
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  servername: us.centermass.net
-  network: ws
-  ws-opts:
-    path: media.playback.v1.SessionGateway
-    headers:
-      Host: 213.171.31.34
 proxy-groups:
 - name: PROXIES
   type: select
@@ -53,7 +32,6 @@ proxy-groups:
   - AUTO
   - 🇷🇺 俄罗斯 (Russia) 01 - xiaohe
   - 🇷🇺 俄罗斯 (Russia) 02 - xiaohe
-  - 🇷🇺 俄罗斯 (Russia) 03 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -61,6 +39,5 @@ proxy-groups:
   proxies:
   - 🇷🇺 俄罗斯 (Russia) 01 - xiaohe
   - 🇷🇺 俄罗斯 (Russia) 02 - xiaohe
-  - 🇷🇺 俄罗斯 (Russia) 03 - xiaohe
 rules:
 - MATCH,PROXIES
