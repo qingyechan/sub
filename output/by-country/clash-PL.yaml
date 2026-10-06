@@ -56,6 +56,18 @@ proxies:
     path: /
     headers:
       Host: 70.34.252.154
+- name: 🇵🇱 PL 05 - xiaohe
+  type: vless
+  server: 78.17.109.97
+  port: 6443
+  uuid: dfe8ea9e-fd77-48e6-86ee-7bc1019de1e7
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  reality-opts:
+    public-key: NP5_ymQeqYr_EP7aAPIl3YBRghX60zLq6m74Ht4bFUI
+  servername: ok.ru
+  client-fingerprint: chrome
 proxy-groups:
 - name: PROXIES
   type: select
@@ -65,6 +77,7 @@ proxy-groups:
   - 🇵🇱 PL 02 - xiaohe
   - 🇵🇱 PL 03 - xiaohe
   - 🇵🇱 PL 04 - xiaohe
+  - 🇵🇱 PL 05 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -74,5 +87,6 @@ proxy-groups:
   - 🇵🇱 PL 02 - xiaohe
   - 🇵🇱 PL 03 - xiaohe
   - 🇵🇱 PL 04 - xiaohe
+  - 🇵🇱 PL 05 - xiaohe
 rules:
 - MATCH,PROXIES
