@@ -13,16 +13,14 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇯🇵 日本 (Japan) 01 - xiaohe",
-        "🇯🇵 日本 (Japan) 02 - xiaohe"
+        "🇯🇵 日本 (Japan) 01 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇯🇵 日本 (Japan) 01 - xiaohe",
-        "🇯🇵 日本 (Japan) 02 - xiaohe"
+        "🇯🇵 日本 (Japan) 01 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -31,42 +29,12 @@
       "tag": "direct"
     },
     {
-      "type": "vless",
+      "type": "shadowsocks",
       "tag": "🇯🇵 日本 (Japan) 01 - xiaohe",
-      "server": "188.114.97.6",
+      "server": "149.22.87.241",
       "server_port": 443,
-      "uuid": "e6df2095-a73c-4043-8693-8d5a03686870",
-      "tls": {
-        "enabled": true,
-        "server_name": "lucasjow.us.ci",
-        "insecure": true
-      },
-      "transport": {
-        "type": "ws",
-        "path": "3fp=chrome",
-        "headers": {
-          "Host": "lucasjow.us.ci"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇯🇵 日本 (Japan) 02 - xiaohe",
-      "server": "188.114.97.6",
-      "server_port": 443,
-      "uuid": "e6df2095-a73c-4043-8693-8d5a03686870",
-      "tls": {
-        "enabled": true,
-        "server_name": "lucasjow.us.ci",
-        "insecure": true
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/?Telegram---mehrosaboran?ed",
-        "headers": {
-          "Host": "lucasjow.us.ci"
-        }
-      }
+      "method": "aes-128-gcm",
+      "password": "shadowsocks"
     }
   ],
   "route": {
