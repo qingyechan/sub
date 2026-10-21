@@ -3,17 +3,17 @@
 安卓 FlClash 用户请先阅读 [导入方法及“未知网络错误”排查](docs/flclash.md)。代码更新不会自动解决订阅域名在本地网络中的访问问题。
 
 > 👤 **定制规范命名**: 所有订阅节点均重命名为 `国旗 地区 序号 (家宽) - xiaohe`  
-> ⚡ **真实可用保障**: 所有节点由 `Xray-core` 建立实际代理隧道并完成真实 HTTPS 双向传输握手，拒绝虚假通畅与死节点。无论是通过免翻 CDN 直链还是官方原生 Raw 直链拉取，节点命名格式完全一致。
+> ⚡ **测活说明**: 生成器已改为 Mihomo 双目标检查、发布前复测及最多 80 个精选节点；现有输出需等待新工作流成功后刷新。GitHub 测活不保证用户网络可用。无论是通过备用 CDN 直链还是官方原生 Raw 直链拉取，节点命名格式完全一致。
 
 ---
 
 ## 📌 全部节点总订阅链接
 
-| <div style="min-width:180px;">客户端 / 格式类型</div> | <div style="min-width:80px;">节点总数</div> | 免翻 CDN 订阅直链 (国内直连) | 官方原生 Raw 直链 (开启代理) |
+| <div style="min-width:180px;">客户端 / 格式类型</div> | <div style="min-width:80px;">节点总数</div> | 备用 CDN 订阅直链 (可达性依网络而定) | 官方原生 Raw 直链 (开启代理) |
 | :--- | :---: | :--- | :--- |
-| 🚀 **Clash (YAML 格式)** | `940` | [🚀 免翻 CDN 直链](https://cdn.jsdelivr.net/gh/qingyechan/sub@main/output/clash.yaml?v=1792582022) | [🌐 官方 Raw 直链](https://raw.githubusercontent.com/qingyechan/sub/main/output/clash.yaml) |
-| ⚡ **V2RayN (Base64 格式)** | `940` | [⚡ 免翻 CDN 直链](https://cdn.jsdelivr.net/gh/qingyechan/sub@main/output/v2ray.txt?v=1792582022) | [🌐 官方 Raw 直链](https://raw.githubusercontent.com/qingyechan/sub/main/output/v2ray.txt) |
-| 📦 **sing-box (JSON 格式)** | `940` | [📦 免翻 CDN 直链](https://cdn.jsdelivr.net/gh/qingyechan/sub@main/output/singbox.json?v=1792582022) | [🌐 官方 Raw 直链](https://raw.githubusercontent.com/qingyechan/sub/main/output/singbox.json) |
+| 🚀 **Clash (YAML 格式)** | `940` | [🚀 备用 CDN 直链](https://cdn.jsdelivr.net/gh/qingyechan/sub@main/output/clash.yaml?v=1792582022) | [🌐 官方 Raw 直链](https://raw.githubusercontent.com/qingyechan/sub/main/output/clash.yaml) |
+| ⚡ **V2RayN (Base64 格式)** | `940` | [⚡ 备用 CDN 直链](https://cdn.jsdelivr.net/gh/qingyechan/sub@main/output/v2ray.txt?v=1792582022) | [🌐 官方 Raw 直链](https://raw.githubusercontent.com/qingyechan/sub/main/output/v2ray.txt) |
+| 📦 **sing-box (JSON 格式)** | `940` | [📦 备用 CDN 直链](https://cdn.jsdelivr.net/gh/qingyechan/sub@main/output/singbox.json?v=1792582022) | [🌐 官方 Raw 直链](https://raw.githubusercontent.com/qingyechan/sub/main/output/singbox.json) |
 
 ---
 
@@ -123,7 +123,7 @@ export default {
 ---
 
 ## 🛠️ 项目使用说明
-1. **自动更新机制**：GitHub Actions 每 6 小时全自动运行并刷新上述全部订阅与数据。
+1. **自动更新机制**：GitHub Actions 每小时全自动运行并刷新上述全部订阅与数据。
 2. **多客户端兼容**：
    - **Clash / Clash Verge / Mihomo Party**：直接复制上方表格中的 **Clash 专属订阅** 链接。
    - **v2rayN / v2rayNG**：直接复制上方表格中的 **V2RayN 专属订阅** 链接。

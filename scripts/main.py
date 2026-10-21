@@ -5,7 +5,9 @@ import json
 import time
 import uuid
 import ipaddress
-import zipfile
+import gzip
+import hashlib
+import tempfile
 import base64
 import shutil
 import socket
@@ -34,6 +36,12 @@ SOURCE_URLS = [
 OUTPUT_DIR = "output"
 COUNTRY_DIR = os.path.join(OUTPUT_DIR, "by-country")
 RESIDENTIAL_COUNTRY_DIR = os.path.join(OUTPUT_DIR, "residential-by-country")
+MIHOMO_BIN = os.environ.get("MIHOMO_BIN", os.path.abspath("mihomo"))
+PROBE_URLS = ("https://www.gstatic.com/generate_204", "https://cp.cloudflare.com/generate_204")
+MAX_DELAY_MS = 3000
+MAX_NODES = 80
+MAX_PER_COUNTRY = 20
+MAX_PER_EXIT = 2
 
 def ensure_directories():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -168,20 +176,25 @@ def safe_download(url, dest_path):
         shutil.copyfileobj(response, out_file)
 
 def setup_environment():
-    print("[*] 正在准备离线数据库与 Xray-core 内核...")
+    print("[*] 正在准备离线数据库与 Mihomo 内核...")
     if not os.path.exists("Country.mmdb"):
         safe_download("https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-Country.mmdb", "Country.mmdb")
     if not os.path.exists("ASN.mmdb"):
         safe_download("https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-ASN.mmdb", "ASN.mmdb")
     
-    if not os.path.exists("xray"):
-        print("[*] 正在下载官方 Xray-core 测活内核...")
-        safe_download("https://github.com/XTLS/Xray-core/releases/download/v1.8.24/Xray-linux-64.zip", "xray.zip")
-        with zipfile.ZipFile("xray.zip", 'r') as zip_ref:
-            zip_ref.extract("xray", ".")
-        os.chmod("xray", 0o755)
-        if os.path.exists("xray.zip"):
-            os.remove("xray.zip")
+    if not os.path.exists(MIHOMO_BIN):
+        if sys.platform != "linux":
+            raise RuntimeError("Set MIHOMO_BIN to a local Mihomo executable, or run on GitHub Actions Ubuntu")
+        archive = "mihomo.gz"
+        safe_download("https://github.com/MetaCubeX/mihomo/releases/download/v1.19.32/mihomo-linux-amd64-compatible-v1.19.32.gz", archive)
+        with open(archive, "rb") as f:
+            digest = hashlib.sha256(f.read()).hexdigest()
+        if digest != "ba3ce607747a07f948fc35780e108a4a7c7f552a38b9bd4d115f313ebcb89c20":
+            raise RuntimeError("Mihomo download checksum mismatch")
+        with gzip.open(archive, "rb") as source, open(MIHOMO_BIN, "wb") as target:
+            shutil.copyfileobj(source, target)
+        os.chmod(MIHOMO_BIN, 0o755)
+        os.remove(archive)
 
 def extract_nodes_from_text(text):
     results = set()
@@ -396,6 +409,11 @@ def convert_to_clash_dict(node_str, name):
         outbound, server, port, proto = parse_node_to_xray_outbound(node_str)
         if not outbound:
             return None
+        # Do not silently turn unsupported gRPC/HTTP/2/plugin links into TCP nodes.
+        if outbound.get("streamSettings", {}).get("network", "tcp") not in {"tcp", "ws"}:
+            return None
+        if proto == "ss" and urllib.parse.parse_qs(urllib.parse.urlsplit(node_str).query).get("plugin"):
+            return None
         if proto == "vless":
             user = outbound["settings"]["vnext"][0]["users"][0]
             stream = outbound["streamSettings"]
@@ -486,110 +504,112 @@ def convert_to_clash_dict(node_str, name):
         pass
     return None
 
-def test_single_node_xray(node_tuple):
-    raw_node, server, port, proto = node_tuple
-    outbound, _, _, _ = parse_node_to_xray_outbound(raw_node)
-    if not outbound or proto == "hysteria2":
-        return None
-
-    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        s.bind(('127.0.0.1', 0))
-        socks_port = s.getsockname()[1]
-
-    task_id = uuid.uuid4().hex
-    cfg_path = f"xray_tmp_{task_id}.json"
-
-    config = {
-        "log": {"loglevel": "none"},
-        "inbounds": [{
-            "port": socks_port,
-            "listen": "127.0.0.1",
-            "protocol": "socks",
-            "settings": {"udp": False}
-        }],
-        "outbounds": [outbound]
-    }
-    
-    with open(cfg_path, "w") as f:
-        json.dump(config, f)
-
-    proc = None
-    success = False
-    delay_ms = 0
-    exit_ip = None
-    is_confirmed_exit = False
-    try:
-        proc = subprocess.Popen(["./xray", "-c", cfg_path], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        deadline = time.monotonic() + 3
-        while True:
-            if proc.poll() is not None:
+def probe_https(session):
+    """Require two independent HTTPS 204 responses; redirects/pages are failures."""
+    delays = []
+    for url in PROBE_URLS:
+        started = time.monotonic()
+        with session.get(url, timeout=(4, 4), allow_redirects=False, stream=True) as response:
+            if response.status_code != 204 or response.content:
                 return None
-            try:
-                with socket.create_connection(("127.0.0.1", socks_port), timeout=0.1):
-                    break
-            except OSError:
-                if time.monotonic() >= deadline:
-                    return None
-                time.sleep(0.05)
-        start_t = time.monotonic()
-        proxies = {
-            "http": f"socks5h://127.0.0.1:{socks_port}",
-            "https": f"socks5h://127.0.0.1:{socks_port}"
-        }
-        resp = requests.get("https://www.google.com/generate_204", proxies=proxies, timeout=6.5)
-        if resp.status_code in [200, 204]:
-            delay_ms = int((time.monotonic() - start_t) * 1000)
-            if 0 <= delay_ms < 6300:
-                # 严格通过代理穿透向公网 API 获取真实出网 IP
-                for check_url in ["https://api.ipify.org?format=json", "https://ip.seeip.org/json"]:
-                    try:
-                        ip_resp = requests.get(check_url, proxies=proxies, timeout=3.0)
-                        if ip_resp.status_code == 200:
-                            fetched = ip_resp.json().get("ip")
-                            if fetched and ipaddress.ip_address(fetched).is_global:
-                                exit_ip = str(ipaddress.ip_address(fetched))
-                                is_confirmed_exit = True
-                                break
-                    except Exception:
-                        pass
-                
-                # 若无法穿透拿到落地 IP，仅以普通可用出库，绝不打上真出口标签
-                if not exit_ip:
-                    try:
-                        exit_ip = socket.gethostbyname(server)
-                    except Exception:
-                        exit_ip = server
-                success = True
-    except Exception:
-        success = False
-    finally:
-        if proc is not None:
-            if proc.poll() is None:
-                proc.kill()
-            proc.wait()
+        delay = int((time.monotonic() - started) * 1000)
+        if delay > MAX_DELAY_MS:
+            return None
+        delays.append(delay)
+    return max(delays)
+
+
+def test_single_node_mihomo(node_tuple):
+    raw_node, server, port, proto = node_tuple
+    proxy = convert_to_clash_dict(raw_node, "probe")
+    if not proxy or proto == "hysteria2":
+        return None
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as listener:
+        listener.bind(("127.0.0.1", 0))
+        local_port = listener.getsockname()[1]
+    with tempfile.TemporaryDirectory(prefix="sub-probe-") as directory:
+        cfg_path = os.path.join(directory, "config.json")
+        # The very same converted proxy is measured and later exported to FlClash.
+        config = {"mixed-port": local_port, "bind-address": "127.0.0.1", "allow-lan": False,
+                  "log-level": "silent", "mode": "rule", "proxies": [proxy], "rules": ["MATCH,probe"]}
+        with open(cfg_path, "w", encoding="utf-8") as f:
+            json.dump(config, f, ensure_ascii=False)
+        proc = None
         try:
-            if os.path.exists(cfg_path):
-                os.remove(cfg_path)
-        except Exception:
-            pass
+            proc = subprocess.Popen([MIHOMO_BIN, "-d", directory, "-f", cfg_path],
+                                    stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            deadline = time.monotonic() + 5
+            while True:
+                if proc.poll() is not None:
+                    return None
+                try:
+                    with socket.create_connection(("127.0.0.1", local_port), timeout=0.1):
+                        break
+                except OSError:
+                    if time.monotonic() >= deadline:
+                        return None
+                    time.sleep(0.05)
+            with requests.Session() as session:
+                # Prevent CI/local environment proxy variables from bypassing the node.
+                session.trust_env = False
+                endpoint = f"http://127.0.0.1:{local_port}"
+                session.proxies = {"http": endpoint, "https": endpoint}
+                delay = probe_https(session)
+                if delay is None:
+                    return None
+                for url in ("https://api.ipify.org?format=json", "https://ip.seeip.org/json"):
+                    try:
+                        with session.get(url, timeout=(3, 3), allow_redirects=False) as response:
+                            response.raise_for_status()
+                            exit_ip = ipaddress.ip_address(response.json()["ip"])
+                            if exit_ip.is_global:
+                                return (raw_node, server, port, proto, str(exit_ip), delay, True)
+                    except (requests.RequestException, ValueError, KeyError, TypeError):
+                        continue
+                # Never guess the exit IP from the ingress server after a failed IP check.
+                return None
+        except (OSError, requests.RequestException, ValueError):
+            return None
+        finally:
+            if proc is not None:
+                if proc.poll() is None:
+                    proc.kill()
+                proc.wait()
 
-    if success and exit_ip:
-        return (raw_node, server, port, proto, exit_ip, delay_ms, is_confirmed_exit)
-    return None
 
-def run_real_delay_test_xray(candidates):
-    print(f"[*] 启动 Xray 真实双向网络通道测活，候选节点数: {len(candidates)}...")
+def run_real_delay_test_mihomo(candidates):
+    print(f"[*] Mihomo multi-target HTTPS probe: {len(candidates)} candidates")
     alive = []
-    with ThreadPoolExecutor(max_workers=25) as executor:
-        futures = {executor.submit(test_single_node_xray, item): item for item in candidates}
+    with ThreadPoolExecutor(max_workers=12) as executor:
+        futures = [executor.submit(test_single_node_mihomo, item) for item in candidates]
         for future in as_completed(futures):
-            res = future.result()
-            if res:
-                alive.append(res)
-                if len(alive) % 20 == 0:
-                    print(f"[+] 当前已确认真实通畅节点: {len(alive)} 个")
-    print(f"[+] 测活完成！真实可用落地节点总数: {len(alive)}")
+            result = future.result()
+            if result:
+                alive.append(result)
+    print(f"[+] Passed probe: {len(alive)}")
     return alive
+
+
+def select_quality_nodes(nodes):
+    """Keep latency-ranked, diverse exits instead of publishing thousands of aliases."""
+    selected, seen_configs, exit_counts, country_counts = [], set(), {}, {}
+    for item in sorted(nodes, key=lambda n: (n["delay"], n["link"])):
+        if item["delay"] > MAX_DELAY_MS:
+            continue
+        proxy = dict(item["clash_proxy"])
+        proxy.pop("name", None)
+        key = json.dumps(proxy, sort_keys=True, ensure_ascii=False)
+        ip, cc = item["exit_ip"], item["country"]
+        if key in seen_configs or exit_counts.get(ip, 0) >= MAX_PER_EXIT or country_counts.get(cc, 0) >= MAX_PER_COUNTRY:
+            continue
+        seen_configs.add(key)
+        exit_counts[ip] = exit_counts.get(ip, 0) + 1
+        country_counts[cc] = country_counts.get(cc, 0) + 1
+        selected.append(item)
+        if len(selected) >= MAX_NODES:
+            break
+    return selected
+
 
 def rename_node_link(raw_link, new_name):
     try:
@@ -716,10 +736,15 @@ def export_clash_yaml(clash_proxies, filepath):
         "log-level": "info",
         "proxies": clash_proxies,
         "proxy-groups": [
-            {"name": "PROXIES", "type": "select", "proxies": ["AUTO"] + names},
-            {"name": "AUTO", "type": "url-test", "url": "https://www.google.com/generate_204", "interval": 300, "proxies": names}
+            {"name": "PROXIES", "type": "select", "proxies": ["AUTO", "FALLBACK"] + names},
+            {"name": "AUTO", "type": "url-test", "url": PROBE_URLS[0], "expected-status": 204,
+             "interval": 120, "timeout": 4000, "tolerance": 100, "lazy": False, "proxies": names},
+            {"name": "FALLBACK", "type": "fallback", "url": PROBE_URLS[1], "expected-status": 204,
+             "interval": 120, "timeout": 4000, "lazy": False, "proxies": names}
         ],
-        "rules": ["MATCH,PROXIES"]
+        "rules": ["IP-CIDR,127.0.0.0/8,DIRECT,no-resolve", "IP-CIDR,10.0.0.0/8,DIRECT,no-resolve",
+                  "IP-CIDR,172.16.0.0/12,DIRECT,no-resolve", "IP-CIDR,192.168.0.0/16,DIRECT,no-resolve",
+                  "IP-CIDR6,::1/128,DIRECT,no-resolve", "IP-CIDR6,fc00::/7,DIRECT,no-resolve", "MATCH,PROXIES"]
     }
     with open(filepath, "w", encoding="utf-8") as f:
         yaml.dump(config, f, allow_unicode=True, sort_keys=False)
@@ -973,17 +998,19 @@ export default {
 安卓 FlClash 用户请先阅读 [导入方法及“未知网络错误”排查](docs/flclash.md)。代码更新不会自动解决订阅域名在本地网络中的访问问题。
 
 > 👤 **定制规范命名**: 所有订阅节点均重命名为 `国旗 地区 序号 (家宽) - xiaohe`  
-> ⚡ **真实可用保障**: 所有节点由 `Xray-core` 建立实际代理隧道并完成真实 HTTPS 双向传输握手，拒绝虚假通畅与死节点。无论是通过免翻 CDN 直链还是官方原生 Raw 直链拉取，节点命名格式完全一致。
+> ⚡ **测活说明**: 所有节点使用与 FlClash 相同格式的 `Mihomo` 配置建立代理隧道，要求两个 HTTPS 204 目标通过，并在发布前复测；测活地点为 GitHub Actions，不能保证所有用户网络可用。无论是通过备用 CDN 直链还是官方原生 Raw 直链拉取，节点命名格式完全一致。
 
 ---
 
+最近成功生成时间：{datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")}。默认仅保留双轮测活通过的精选节点（最多 {MAX_NODES} 个），不以节点数量作为质量保证。
+
 ## 📌 全部节点总订阅链接
 
-| <div style="min-width:180px;">客户端 / 格式类型</div> | <div style="min-width:80px;">节点总数</div> | 免翻 CDN 订阅直链 (国内直连) | 官方原生 Raw 直链 (开启代理) |
+| <div style="min-width:180px;">客户端 / 格式类型</div> | <div style="min-width:80px;">节点总数</div> | 备用 CDN 订阅直链 (可达性依网络而定) | 官方原生 Raw 直链 (开启代理) |
 | :--- | :---: | :--- | :--- |
-| 🚀 **Clash (YAML 格式)** | `{total_count}` | [🚀 免翻 CDN 直链]({clash_cdn_url}) | [🌐 官方 Raw 直链]({clash_raw_url}) |
-| ⚡ **V2RayN (Base64 格式)** | `{total_count}` | [⚡ 免翻 CDN 直链]({v2_cdn_url}) | [🌐 官方 Raw 直链]({v2_raw_url}) |
-| 📦 **sing-box (JSON 格式)** | `{total_count}` | [📦 免翻 CDN 直链]({sb_cdn_url}) | [🌐 官方 Raw 直链]({sb_raw_url}) |
+| 🚀 **Clash (YAML 格式)** | `{total_count}` | [🚀 备用 CDN 直链]({clash_cdn_url}) | [🌐 官方 Raw 直链]({clash_raw_url}) |
+| ⚡ **V2RayN (Base64 格式)** | `{total_count}` | [⚡ 备用 CDN 直链]({v2_cdn_url}) | [🌐 官方 Raw 直链]({v2_raw_url}) |
+| 📦 **sing-box (JSON 格式)** | `{total_count}` | [📦 备用 CDN 直链]({sb_cdn_url}) | [🌐 官方 Raw 直链]({sb_raw_url}) |
 
 ---
 
@@ -1036,7 +1063,7 @@ export default {
 ---
 
 ## 🛠️ 项目使用说明
-1. **自动更新机制**：GitHub Actions 每 6 小时全自动运行并刷新上述全部订阅与数据。
+1. **自动更新机制**：GitHub Actions 每小时全自动运行并刷新上述全部订阅与数据。
 2. **多客户端兼容**：
    - **Clash / Clash Verge / Mihomo Party**：直接复制上方表格中的 **Clash 专属订阅** 链接。
    - **v2rayN / v2rayNG**：直接复制上方表格中的 **V2RayN 专属订阅** 链接。
@@ -1051,13 +1078,28 @@ if __name__ == "__main__":
     raw_nodes = fetch_raw_nodes()
 
     candidates = []
+    seen_candidates = set()
     for raw in raw_nodes:
         outbound, server, port, proto = parse_node_to_xray_outbound(raw)
-        if outbound and server and port:
-            candidates.append((raw, server, port, proto))
+        proxy = convert_to_clash_dict(raw, "probe")
+        if outbound and server and port and proto != "hysteria2" and proxy:
+            key = json.dumps(proxy, sort_keys=True, ensure_ascii=False)
+            if key not in seen_candidates:
+                seen_candidates.add(key)
+                candidates.append((raw, server, port, proto))
 
     print(f"[*] 格式合规候选节点数: {len(candidates)}")
-    alive_nodes = run_real_delay_test_xray(candidates)
-    verified = classify_and_filter(alive_nodes)
+    alive_nodes = run_real_delay_test_mihomo(candidates)
+    verified = select_quality_nodes(classify_and_filter(alive_nodes))
+    print(f"[*] Rechecking {len(verified)} selected nodes before publishing")
+    recheck = [(n["link"], n["clash_proxy"]["server"], n["port"], n["proto"]) for n in verified]
+    verified = select_quality_nodes(classify_and_filter(run_real_delay_test_mihomo(recheck)))
     export_subscriptions(verified)
+    subprocess.run([MIHOMO_BIN, "-t", "-d", tempfile.gettempdir(), "-f", os.path.abspath(os.path.join(OUTPUT_DIR, "clash.yaml"))],
+                   check=True, timeout=30)
+    with open(os.path.join(OUTPUT_DIR, "status.json"), "w", encoding="utf-8") as f:
+        json.dump({"generated_at": datetime.now(timezone.utc).isoformat(), "probe_location": "GitHub Actions",
+                   "core": "Mihomo v1.19.32", "candidates": len(candidates), "first_pass": len(alive_nodes),
+                   "published": len(verified), "https_targets": list(PROBE_URLS), "max_delay_ms": MAX_DELAY_MS,
+                   "rechecked_before_publish": True, "local_network_availability_guaranteed": False}, f, indent=2)
     update_readme()

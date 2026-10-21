@@ -40,6 +40,14 @@ https://cdn.jsdelivr.net/gh/qingyechan/sub@main/output/clash.yaml
 
 合并代码修复后，在 GitHub Actions 手动运行 Update Subscriptions。只有运行成功且新输出提交后，FlClash 才能获取新配置；原来的订阅 URL 不变。
 
-当前生成规则为 MATCH,PROXIES，即所有匹配流量交给 PROXIES。它尚未包含国内外分流规则。
+默认在 PROXIES 中选择 AUTO：每 120 秒在手机网络上主动测速；FALLBACK 组可按顺序选择可用节点。单个节点超时仍会显示在列表里，但自动组会根据自己的测试结果选择可用节点。
+
+输出上限 80 个节点、每个出口 IP 最多 2 个、每个地区最多 20 个。服务端要求两个独立 HTTPS 204 目标通过、单次耗时不超过 3000ms、获得真实公网出口 IP，并在发布前复测。使用的 Mihomo 配置与最终导出一致，不能完整转换的传输不再默认为 TCP。
+
+工作流改为每小时运行，GitHub 可能延迟调度。output/status.json 提供最近一次成功发布的时间和测活数量；工作流失败会保留旧输出，不能把旧文件当作刚刚测活的结果。
+
+局域网流量直连，其余流量交给 PROXIES，尚未包含国内外分流规则。
+
+如果首次没有任何代理且两个订阅地址均无法直连，当前仓库无法凭空提供一个可达的下载域名。可在能访问 GitHub 的设备下载 clash.yaml 传到手机；成功的 Actions 运行也提供 subscriptions 文件包。这不是让另一个代理充当日常中转。
 
 FlClash 官方项目：https://github.com/chen08209/FlClash
