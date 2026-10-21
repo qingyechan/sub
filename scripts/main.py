@@ -40,8 +40,6 @@ def ensure_directories():
     os.makedirs(COUNTRY_DIR, exist_ok=True)
     os.makedirs(RESIDENTIAL_COUNTRY_DIR, exist_ok=True)
 
-ensure_directories()
-
 # Cloudflare 官方全部 Anycast 网段（严禁进入家宽专区）
 CLOUDFLARE_IP_NETWORKS = [
     ipaddress.ip_network("173.245.48.0/20"),
@@ -59,6 +57,13 @@ CLOUDFLARE_IP_NETWORKS = [
     ipaddress.ip_network("104.24.0.0/14"),
     ipaddress.ip_network("172.64.0.0/13"),
     ipaddress.ip_network("131.0.72.0/22"),
+    ipaddress.ip_network("2400:cb00::/32"),
+    ipaddress.ip_network("2606:4700::/32"),
+    ipaddress.ip_network("2803:f800::/32"),
+    ipaddress.ip_network("2405:b500::/32"),
+    ipaddress.ip_network("2405:8100::/32"),
+    ipaddress.ip_network("2a06:98c0::/29"),
+    ipaddress.ip_network("2c0f:f248::/32"),
 ]
 
 def is_cloudflare_cdn_ip(ip_str):
@@ -182,14 +187,15 @@ def extract_nodes_from_text(text):
     results = set()
     if not text:
         return results
+    current = text.strip()
     for _ in range(3):
         try:
-            padded = text.strip() + '=' * (-len(text.strip()) % 4)
-            decoded = base64.b64decode(padded).decode('utf-8', errors='ignore')
-            if any(p in decoded for p in ["vmess://", "vless://", "ss://", "trojan://", "hy2://", "hysteria2://"]):
-                text += "\n" + decoded
+            padded = current + '=' * (-len(current) % 4)
+            decoded = base64.b64decode(padded, altchars=b'-_', validate=True).decode('utf-8')
+            text += "\n" + decoded
+            current = decoded.strip()
         except Exception:
-            pass
+            break
 
     pattern = r'((?:vmess|vless|ss|trojan|hysteria2|hy2)://[^\s"\'<>]+)'
     for m in re.findall(pattern, text):
@@ -217,17 +223,16 @@ def fetch_raw_nodes():
         except Exception as e:
             print(f"[!] 拉取失败 {url}: {e}")
     print(f"[*] 初始抓取总量: {len(nodes)} 个")
-    return list(nodes)
+    return sorted(nodes)
 
 def parse_node_to_xray_outbound(node_str):
     try:
         if node_str.startswith("vless://"):
-            m = re.search(r"vless://([^@]+)@([^:]+):(\d+)\??(.*)", node_str)
-            if not m:
+            parsed = urllib.parse.urlsplit(node_str)
+            uuid_str, server, port = urllib.parse.unquote(parsed.username or ""), parsed.hostname, parsed.port
+            if not uuid_str or not server or not port or not 1 <= port <= 65535:
                 return None, None, None, "vless"
-            uuid_str, server, port_s, query = m.groups()
-            port = int(port_s)
-            params = dict(re.findall(r"([^=&#]+)=([^&#]*)", query))
+            params = dict(urllib.parse.parse_qsl(parsed.query, keep_blank_values=True))
 
             outbound = {
                 "protocol": "vless",
@@ -243,6 +248,8 @@ def parse_node_to_xray_outbound(node_str):
                     "security": params.get("security", "none")
                 }
             }
+            if params.get("flow"):
+                outbound["settings"]["vnext"][0]["users"][0]["flow"] = params["flow"]
             if params.get("security") == "reality":
                 pbk = params.get("pbk", "")
                 if not pbk:
@@ -260,7 +267,7 @@ def parse_node_to_xray_outbound(node_str):
                 }
             if params.get("type") == "ws":
                 outbound["streamSettings"]["wsSettings"] = {
-                    "path": urllib.parse.unquote(params.get("path", "/")),
+                    "path": params.get("path", "/"),
                     "headers": {"Host": params.get("host", server)}
                 }
             return outbound, server, port, "vless"
@@ -303,12 +310,11 @@ def parse_node_to_xray_outbound(node_str):
             return outbound, server, port, "vmess"
 
         elif node_str.startswith("trojan://"):
-            m = re.search(r"trojan://([^@]+)@([^:]+):(\d+)\??(.*)", node_str)
-            if not m:
+            parsed = urllib.parse.urlsplit(node_str)
+            password, server, port = urllib.parse.unquote(parsed.username or ""), parsed.hostname, parsed.port
+            if not password or not server or not port or not 1 <= port <= 65535:
                 return None, None, None, "trojan"
-            password, server, port_s, query = m.groups()
-            port = int(port_s)
-            params = dict(re.findall(r"([^=&#]+)=([^&#]*)", query))
+            params = dict(urllib.parse.parse_qsl(parsed.query, keep_blank_values=True))
             
             outbound = {
                 "protocol": "trojan",
@@ -321,6 +327,11 @@ def parse_node_to_xray_outbound(node_str):
                     "tlsSettings": {"serverName": params.get("sni", server), "allowInsecure": True}
                 }
             }
+            if params.get("type") == "ws":
+                outbound["streamSettings"]["wsSettings"] = {
+                    "path": params.get("path", "/"),
+                    "headers": {"Host": params.get("host", server)}
+                }
             return outbound, server, port, "trojan"
 
         elif node_str.startswith("ss://"):
@@ -400,11 +411,13 @@ def convert_to_clash_dict(node_str, name):
             }
             if stream.get("security") == "reality":
                 r_set = stream.get("realitySettings", {})
-                proxy["reality-opts"] = {"public-key": r_set.get("publicKey", "")}
+                proxy["reality-opts"] = {"public-key": r_set.get("publicKey", ""), "short-id": r_set.get("shortId", "")}
                 proxy["servername"] = r_set.get("serverName", server)
                 proxy["client-fingerprint"] = r_set.get("fingerprint", "chrome")
             elif stream.get("security") == "tls":
                 proxy["servername"] = stream.get("tlsSettings", {}).get("serverName", server)
+            if user.get("flow"):
+                proxy["flow"] = user["flow"]
             if stream.get("network") == "ws":
                 proxy["network"] = "ws"
                 proxy["ws-opts"] = stream.get("wsSettings", {})
@@ -432,7 +445,8 @@ def convert_to_clash_dict(node_str, name):
             return proxy
         elif proto == "trojan":
             srv = outbound["settings"]["servers"][0]
-            return {
+            stream = outbound["streamSettings"]
+            proxy = {
                 "name": name,
                 "type": "trojan",
                 "server": server,
@@ -442,6 +456,10 @@ def convert_to_clash_dict(node_str, name):
                 "sni": stream.get("tlsSettings", {}).get("serverName", server),
                 "skip-cert-verify": True
             }
+            if stream.get("network") == "ws":
+                proxy["network"] = "ws"
+                proxy["ws-opts"] = stream.get("wsSettings", {})
+            return proxy
         elif proto == "ss":
             srv = outbound["settings"]["servers"][0]
             return {
@@ -495,31 +513,41 @@ def test_single_node_xray(node_tuple):
     with open(cfg_path, "w") as f:
         json.dump(config, f)
 
-    proc = subprocess.Popen(["./xray", "-c", cfg_path], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    time.sleep(0.35)
-
+    proc = None
     success = False
     delay_ms = 0
     exit_ip = None
     is_confirmed_exit = False
-    start_t = time.time()
     try:
+        proc = subprocess.Popen(["./xray", "-c", cfg_path], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        deadline = time.monotonic() + 3
+        while True:
+            if proc.poll() is not None:
+                return None
+            try:
+                with socket.create_connection(("127.0.0.1", socks_port), timeout=0.1):
+                    break
+            except OSError:
+                if time.monotonic() >= deadline:
+                    return None
+                time.sleep(0.05)
+        start_t = time.monotonic()
         proxies = {
             "http": f"socks5h://127.0.0.1:{socks_port}",
             "https": f"socks5h://127.0.0.1:{socks_port}"
         }
         resp = requests.get("https://www.google.com/generate_204", proxies=proxies, timeout=6.5)
         if resp.status_code in [200, 204]:
-            delay_ms = int((time.time() - start_t) * 1000)
-            if 30 < delay_ms < 6300:
+            delay_ms = int((time.monotonic() - start_t) * 1000)
+            if 0 <= delay_ms < 6300:
                 # 严格通过代理穿透向公网 API 获取真实出网 IP
                 for check_url in ["https://api.ipify.org?format=json", "https://ip.seeip.org/json"]:
                     try:
                         ip_resp = requests.get(check_url, proxies=proxies, timeout=3.0)
                         if ip_resp.status_code == 200:
                             fetched = ip_resp.json().get("ip")
-                            if fetched:
-                                exit_ip = fetched
+                            if fetched and ipaddress.ip_address(fetched).is_global:
+                                exit_ip = str(ipaddress.ip_address(fetched))
                                 is_confirmed_exit = True
                                 break
                     except Exception:
@@ -535,8 +563,10 @@ def test_single_node_xray(node_tuple):
     except Exception:
         success = False
     finally:
-        proc.kill()
-        proc.wait()
+        if proc is not None:
+            if proc.poll() is None:
+                proc.kill()
+            proc.wait()
         try:
             if os.path.exists(cfg_path):
                 os.remove(cfg_path)
@@ -572,33 +602,28 @@ def rename_node_link(raw_link, new_name):
             return f"vmess://{new_b64}"
         elif any(raw_link.startswith(p) for p in ["vless://", "trojan://", "ss://", "hy2://", "hysteria2://"]):
             base_part = raw_link.split("#")[0].strip()
-            return f"{base_part}#{new_name}"
+            return f"{base_part}#{urllib.parse.quote(new_name, safe='')}"
     except Exception:
         pass
     return raw_link
 
 def get_rdns_host(ip):
     try:
-        socket.setdefaulttimeout(1.2)
         host, _, _ = socket.gethostbyaddr(ip)
         return host.lower()
     except Exception:
         return ""
 
 def is_verified_residential_offline(ip, org_str, asn):
-    if asn in TRUE_RESIDENTIAL_ASNS:
-        return True
-
-    info = f"{org_str} {get_rdns_host(ip)}".lower()
+    if asn in DATACENTER_ASNS or is_cloudflare_cdn_ip(ip):
+        return False
+    info = str(org_str).lower()
     for kw in IDC_KEYWORDS:
         if kw in info:
             return False
             
-    for r_kw in RESIDENTIAL_WHITELIST_KEYWORDS:
-        if r_kw in info:
-            return True
-
-    return False
+    # ASN only indicates the operator, not whether an individual address is residential.
+    return asn in TRUE_RESIDENTIAL_ASNS
 
 def classify_and_filter(alive_nodes):
     country_reader = maxminddb.open_database("Country.mmdb")
@@ -664,7 +689,7 @@ def classify_and_filter(alive_nodes):
     seen_all = set()
     seen_res_ips = set()
 
-    for item in verified:
+    for item in sorted(verified, key=lambda n: (n["delay"], n["link"])):
         link_core = item["link"].split("#")[0].strip()
         all_key = f"{item['proto']}://{item['exit_ip']}:{item['port']}_{hash(link_core)}"
         if all_key not in seen_all:
@@ -686,7 +711,7 @@ def export_clash_yaml(clash_proxies, filepath):
     config = {
         "port": 7890,
         "socks-port": 7891,
-        "allow-lan": True,
+        "allow-lan": False,
         "mode": "rule",
         "log-level": "info",
         "proxies": clash_proxies,
@@ -699,15 +724,54 @@ def export_clash_yaml(clash_proxies, filepath):
     with open(filepath, "w", encoding="utf-8") as f:
         yaml.dump(config, f, allow_unicode=True, sort_keys=False)
 
+def convert_clash_to_singbox(proxy):
+    protocol = proxy["type"]
+    if protocol not in {"ss", "vmess", "vless", "trojan"}:
+        raise ValueError(f"Unsupported sing-box protocol: {protocol}")
+    result = {
+        "type": "shadowsocks" if protocol == "ss" else protocol,
+        "tag": proxy["name"], "server": proxy["server"], "server_port": proxy["port"]
+    }
+    if protocol == "ss":
+        result.update(method=proxy["cipher"], password=proxy["password"])
+    elif protocol == "trojan":
+        result["password"] = proxy["password"]
+    else:
+        result["uuid"] = proxy["uuid"]
+        if protocol == "vmess":
+            result.update(security=proxy.get("cipher", "auto"), alter_id=proxy.get("alterId", 0))
+        elif proxy.get("flow"):
+            result["flow"] = proxy["flow"]
+    if proxy.get("tls") or protocol == "trojan":
+        tls = {
+            "enabled": True,
+            "server_name": proxy.get("servername", proxy.get("sni", proxy["server"])),
+            "insecure": proxy.get("skip-cert-verify", False)
+        }
+        if proxy.get("reality-opts"):
+            reality = proxy["reality-opts"]
+            tls["reality"] = {"enabled": True, "public_key": reality["public-key"], "short_id": reality.get("short-id", "")}
+            tls["utls"] = {"enabled": True, "fingerprint": proxy.get("client-fingerprint", "chrome")}
+        result["tls"] = tls
+    if proxy.get("network") == "ws":
+        ws = proxy.get("ws-opts", {})
+        result["transport"] = {"type": "ws", "path": ws.get("path", "/"), "headers": ws.get("headers", {})}
+    return result
+
+
 def export_singbox_json(clash_proxies, filepath):
+    node_outbounds = [convert_clash_to_singbox(p) for p in clash_proxies]
     names = [p["name"] for p in clash_proxies]
     outbounds = [
         {"type": "selector", "tag": "select", "outbounds": ["auto"] + names},
         {"type": "urltest", "tag": "auto", "outbounds": names, "url": "https://www.google.com/generate_204"},
-        {"type": "direct", "tag": "direct"},
-        {"type": "block", "tag": "block"}
-    ]
-    config = {"version": 1, "outbounds": outbounds}
+        {"type": "direct", "tag": "direct"}
+    ] + node_outbounds
+    config = {
+        "inbounds": [{"type": "mixed", "tag": "mixed-in", "listen": "127.0.0.1", "listen_port": 7890}],
+        "outbounds": outbounds,
+        "route": {"final": "select"}
+    }
     with open(filepath, "w", encoding="utf-8") as f:
         json.dump(config, f, indent=2, ensure_ascii=False)
 
@@ -734,6 +798,8 @@ def format_node_group(nodes_list, res_tag_force=False):
     return formatted_links, formatted_proxies
 
 def export_subscriptions(verified_nodes):
+    if not verified_nodes:
+        raise RuntimeError("No verified nodes; preserving existing subscriptions and README")
     ensure_directories()
     residential_nodes = [n for n in verified_nodes if n["is_residential"]]
     non_residential_nodes = [n for n in verified_nodes if not n["is_residential"]]
@@ -789,7 +855,7 @@ def export_subscriptions(verified_nodes):
     return len(all_links), len(res_links)
 
 def update_readme():
-    repo_name = os.environ.get("GITHUB_REPOSITORY", "hezhanleiok/freesub").strip()
+    repo_name = os.environ.get("GITHUB_REPOSITORY", "qingyechan/sub").strip()
     cache_bust = int(time.time())
     
     def count_file(path):
@@ -904,6 +970,8 @@ export default {
 
     readme_content = f"""# 🚀 免费节点自动测活订阅池 (含真实家宽/住宅IP甄选)
 
+安卓 FlClash 用户请先阅读 [导入方法及“未知网络错误”排查](docs/flclash.md)。代码更新不会自动解决订阅域名在本地网络中的访问问题。
+
 > 👤 **定制规范命名**: 所有订阅节点均重命名为 `国旗 地区 序号 (家宽) - xiaohe`  
 > ⚡ **真实可用保障**: 所有节点由 `Xray-core` 建立实际代理隧道并完成真实 HTTPS 双向传输握手，拒绝虚假通畅与死节点。无论是通过免翻 CDN 直链还是官方原生 Raw 直链拉取，节点命名格式完全一致。
 
@@ -920,7 +988,7 @@ export default {
 ---
 
 ## 🏠 按照家宽分类节点订阅 (住宅 IP 专区)
-> 经 MaxMind ASN 数据库与核心运营商白名单严格探测，排除所有云主机/数据中心及 CDN 任播，保留真实民用宽带。
+> 根据代理出口 IP、MaxMind ASN 与运营商白名单推断住宅属性，并排除已知机房与 Cloudflare 网段。该分类是启发式结果，无法证明 IP 一定为住宅宽带，也不代表信誉或解锁能力。
 
 | 家宽地区 | 节点数 | V2RayN 专属订阅 | Clash 专属订阅 | sing-box 专属订阅 |
 | :--- | :---: | :---: | :---: | :---: |
