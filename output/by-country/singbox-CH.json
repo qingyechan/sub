@@ -1,21 +1,26 @@
 {
-  "version": 1,
+  "inbounds": [
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 7890
+    }
+  ],
   "outbounds": [
     {
       "type": "selector",
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇨🇭 CH 01 - xiaohe",
-        "🇨🇭 CH 02 - xiaohe"
+        "🇨🇭 CH 01 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇨🇭 CH 01 - xiaohe",
-        "🇨🇭 CH 02 - xiaohe"
+        "🇨🇭 CH 01 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -24,8 +29,15 @@
       "tag": "direct"
     },
     {
-      "type": "block",
-      "tag": "block"
+      "type": "shadowsocks",
+      "tag": "🇨🇭 CH 01 - xiaohe",
+      "server": "132.243.175.144",
+      "server_port": 8388,
+      "method": "chacha20-ietf-poly1305",
+      "password": "e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3"
     }
-  ]
+  ],
+  "route": {
+    "final": "select"
+  }
 }

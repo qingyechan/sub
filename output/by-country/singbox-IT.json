@@ -1,5 +1,12 @@
 {
-  "version": 1,
+  "inbounds": [
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 7890
+    }
+  ],
   "outbounds": [
     {
       "type": "selector",
@@ -7,22 +14,7 @@
       "outbounds": [
         "auto",
         "🇮🇹 意大利 (Italy) 01 - xiaohe",
-        "🇮🇹 意大利 (Italy) 02 - xiaohe",
-        "🇮🇹 意大利 (Italy) 03 - xiaohe",
-        "🇮🇹 意大利 (Italy) 04 - xiaohe",
-        "🇮🇹 意大利 (Italy) 05 - xiaohe",
-        "🇮🇹 意大利 (Italy) 06 - xiaohe",
-        "🇮🇹 意大利 (Italy) 07 - xiaohe",
-        "🇮🇹 意大利 (Italy) 08 - xiaohe",
-        "🇮🇹 意大利 (Italy) 09 - xiaohe",
-        "🇮🇹 意大利 (Italy) 10 - xiaohe",
-        "🇮🇹 意大利 (Italy) 11 - xiaohe",
-        "🇮🇹 意大利 (Italy) 12 - xiaohe",
-        "🇮🇹 意大利 (Italy) 13 - xiaohe",
-        "🇮🇹 意大利 (Italy) 14 - xiaohe",
-        "🇮🇹 意大利 (Italy) 15 - xiaohe",
-        "🇮🇹 意大利 (Italy) 16 - xiaohe",
-        "🇮🇹 意大利 (Italy) 17 - xiaohe"
+        "🇮🇹 意大利 (Italy) 02 - xiaohe"
       ]
     },
     {
@@ -30,22 +22,7 @@
       "tag": "auto",
       "outbounds": [
         "🇮🇹 意大利 (Italy) 01 - xiaohe",
-        "🇮🇹 意大利 (Italy) 02 - xiaohe",
-        "🇮🇹 意大利 (Italy) 03 - xiaohe",
-        "🇮🇹 意大利 (Italy) 04 - xiaohe",
-        "🇮🇹 意大利 (Italy) 05 - xiaohe",
-        "🇮🇹 意大利 (Italy) 06 - xiaohe",
-        "🇮🇹 意大利 (Italy) 07 - xiaohe",
-        "🇮🇹 意大利 (Italy) 08 - xiaohe",
-        "🇮🇹 意大利 (Italy) 09 - xiaohe",
-        "🇮🇹 意大利 (Italy) 10 - xiaohe",
-        "🇮🇹 意大利 (Italy) 11 - xiaohe",
-        "🇮🇹 意大利 (Italy) 12 - xiaohe",
-        "🇮🇹 意大利 (Italy) 13 - xiaohe",
-        "🇮🇹 意大利 (Italy) 14 - xiaohe",
-        "🇮🇹 意大利 (Italy) 15 - xiaohe",
-        "🇮🇹 意大利 (Italy) 16 - xiaohe",
-        "🇮🇹 意大利 (Italy) 17 - xiaohe"
+        "🇮🇹 意大利 (Italy) 02 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -54,8 +31,36 @@
       "tag": "direct"
     },
     {
-      "type": "block",
-      "tag": "block"
+      "type": "shadowsocks",
+      "tag": "🇮🇹 意大利 (Italy) 01 - xiaohe",
+      "server": "57.131.48.45",
+      "server_port": 8388,
+      "method": "aes-256-gcm",
+      "password": "itzvpn@321"
+    },
+    {
+      "type": "vless",
+      "tag": "🇮🇹 意大利 (Italy) 02 - xiaohe",
+      "server": "57.131.38.163",
+      "server_port": 2053,
+      "uuid": "d4b08cd6-0903-411a-9dac-45dbdf5c9712",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.apple.com",
+        "insecure": true,
+        "reality": {
+          "enabled": true,
+          "public_key": "Ej2H5ucT7qKegYcT8wODdlxa-cLHr7F4hDVUHzAhcnc",
+          "short_id": "5b8a942318178e7b"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
     }
-  ]
+  ],
+  "route": {
+    "final": "select"
+  }
 }

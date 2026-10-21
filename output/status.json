@@ -1,0 +1,15 @@
+{
+  "generated_at": "2026-10-21T12:41:35.790312+00:00",
+  "probe_location": "GitHub Actions",
+  "core": "Mihomo v1.19.32",
+  "candidates": 3363,
+  "first_pass": 669,
+  "published": 73,
+  "https_targets": [
+    "https://www.gstatic.com/generate_204",
+    "https://cp.cloudflare.com/generate_204"
+  ],
+  "max_delay_ms": 3000,
+  "rechecked_before_publish": true,
+  "local_network_availability_guaranteed": false
+}

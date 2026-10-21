@@ -1,5 +1,12 @@
 {
-  "version": 1,
+  "inbounds": [
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 7890
+    }
+  ],
   "outbounds": [
     {
       "type": "selector",
@@ -8,22 +15,7 @@
         "auto",
         "🇬🇧 英国 (United Kingdom) 01 - xiaohe",
         "🇬🇧 英国 (United Kingdom) 02 - xiaohe",
-        "🇬🇧 英国 (United Kingdom) 03 - xiaohe",
-        "🇬🇧 英国 (United Kingdom) 04 - xiaohe",
-        "🇬🇧 英国 (United Kingdom) 05 - xiaohe",
-        "🇬🇧 英国 (United Kingdom) 06 - xiaohe",
-        "🇬🇧 英国 (United Kingdom) 07 - xiaohe",
-        "🇬🇧 英国 (United Kingdom) 08 - xiaohe",
-        "🇬🇧 英国 (United Kingdom) 09 - xiaohe",
-        "🇬🇧 英国 (United Kingdom) 10 - xiaohe",
-        "🇬🇧 英国 (United Kingdom) 11 - xiaohe",
-        "🇬🇧 英国 (United Kingdom) 12 - xiaohe",
-        "🇬🇧 英国 (United Kingdom) 13 - xiaohe",
-        "🇬🇧 英国 (United Kingdom) 14 - xiaohe",
-        "🇬🇧 英国 (United Kingdom) 15 - xiaohe",
-        "🇬🇧 英国 (United Kingdom) 16 - xiaohe",
-        "🇬🇧 英国 (United Kingdom) 17 - xiaohe",
-        "🇬🇧 英国 (United Kingdom) 18 - xiaohe"
+        "🇬🇧 英国 (United Kingdom) 03 - xiaohe"
       ]
     },
     {
@@ -32,22 +24,7 @@
       "outbounds": [
         "🇬🇧 英国 (United Kingdom) 01 - xiaohe",
         "🇬🇧 英国 (United Kingdom) 02 - xiaohe",
-        "🇬🇧 英国 (United Kingdom) 03 - xiaohe",
-        "🇬🇧 英国 (United Kingdom) 04 - xiaohe",
-        "🇬🇧 英国 (United Kingdom) 05 - xiaohe",
-        "🇬🇧 英国 (United Kingdom) 06 - xiaohe",
-        "🇬🇧 英国 (United Kingdom) 07 - xiaohe",
-        "🇬🇧 英国 (United Kingdom) 08 - xiaohe",
-        "🇬🇧 英国 (United Kingdom) 09 - xiaohe",
-        "🇬🇧 英国 (United Kingdom) 10 - xiaohe",
-        "🇬🇧 英国 (United Kingdom) 11 - xiaohe",
-        "🇬🇧 英国 (United Kingdom) 12 - xiaohe",
-        "🇬🇧 英国 (United Kingdom) 13 - xiaohe",
-        "🇬🇧 英国 (United Kingdom) 14 - xiaohe",
-        "🇬🇧 英国 (United Kingdom) 15 - xiaohe",
-        "🇬🇧 英国 (United Kingdom) 16 - xiaohe",
-        "🇬🇧 英国 (United Kingdom) 17 - xiaohe",
-        "🇬🇧 英国 (United Kingdom) 18 - xiaohe"
+        "🇬🇧 英国 (United Kingdom) 03 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -56,8 +33,31 @@
       "tag": "direct"
     },
     {
-      "type": "block",
-      "tag": "block"
+      "type": "shadowsocks",
+      "tag": "🇬🇧 英国 (United Kingdom) 01 - xiaohe",
+      "server": "146.70.61.18",
+      "server_port": 8080,
+      "method": "rc4-md5",
+      "password": "14fFPrbezE3HDZzsMOr6"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇬🇧 英国 (United Kingdom) 02 - xiaohe",
+      "server": "146.70.46.214",
+      "server_port": 8080,
+      "method": "rc4-md5",
+      "password": "14fFPrbezE3HDZzsMOr6"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇬🇧 英国 (United Kingdom) 03 - xiaohe",
+      "server": "146.70.46.199",
+      "server_port": 8080,
+      "method": "rc4-md5",
+      "password": "14fFPrbezE3HDZzsMOr6"
     }
-  ]
+  ],
+  "route": {
+    "final": "select"
+  }
 }
