@@ -6,7 +6,7 @@ on:
     - cron: '17 * * * *'
   push:
     branches: [main]
-    paths: ['scripts/**', '.github/workflows/update.yml']
+    paths: ['scripts/main.py', 'scripts/requirements.txt']
   workflow_dispatch: # 支持手动点击运行
 
 concurrency:
@@ -60,3 +60,11 @@ jobs:
             git commit -m "Auto Update: $(date -u '+%Y-%m-%d %H:%M:%S') UTC"
             git push
           fi
+
+      - name: Refresh Primary CDN Subscriptions
+        continue-on-error: true
+        timeout-minutes: 2
+        run: |
+          for file in clash.yaml singbox.json v2ray.txt status.json; do
+            curl --fail --show-error --max-time 15 "https://purge.jsdelivr.net/gh/${GITHUB_REPOSITORY}@main/output/${file}"
+          done

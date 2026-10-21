@@ -20,7 +20,7 @@ CDN 备用订阅：
 https://cdn.jsdelivr.net/gh/qingyechan/sub@main/output/clash.yaml
 ```
 
-两种地址均受所在网络影响，不能保证直连。CDN 可能有缓存，更新可能晚于 GitHub。
+两种地址均受所在网络影响，不能保证直连。发布后工作流会请求刷新主要订阅的 CDN 缓存；CDN 刷新失败或尚未传播时，内容仍可能晚于 GitHub。如果仍看到旧节点数量，可以临时用 Raw 链接或下载最新 YAML 文件导入。
 如果 Fork 到自己的仓库，请将地址中的 qingyechan/sub 换成自己的仓库名。
 
 ## 添加配置时出现“未知网络错误”
