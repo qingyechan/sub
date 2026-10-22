@@ -3,17 +3,19 @@
 安卓 FlClash 用户请先阅读 [导入方法及“未知网络错误”排查](docs/flclash.md)。代码更新不会自动解决订阅域名在本地网络中的访问问题。
 
 > 👤 **定制规范命名**: 所有订阅节点均重命名为 `国旗 地区 序号 (家宽) - xiaohe`  
-> ⚡ **测活说明**: 所有节点使用与 FlClash 相同格式的 `Mihomo` 配置建立代理隧道，要求两个 HTTPS 204 目标通过，并在发布前复测；测活地点为 GitHub Actions，不能保证所有用户网络可用。无论是通过备用 CDN 直链还是官方原生 Raw 直链拉取，节点命名格式完全一致。
+> ⚡ **可用性说明**：默认 Clash 完整池已恢复历史备用节点，历史节点未重新测活，需要在手机网络测试；GitHub 上的延迟不代表移动网络表现。
 
 ---
 
-最近成功生成时间：2026-10-22 00:54:14 UTC。默认仅保留双轮测活通过的精选节点（最多 80 个），不以节点数量作为质量保证。
+最近成功生成时间：2026-10-22 00:54:14 UTC。完整池恢复更多候选，精选池仅作为可选配置。
+
+FlClash：[完整池](output/clash.yaml) · [当前 CI 测活池](output/clash-tested.yaml) · [历史备用](output/clash-history.yaml) · [可选精选池](output/clash-fast.yaml)。历史备用未重新测活。
 
 ## 📌 全部节点总订阅链接
 
 | <div style="min-width:180px;">客户端 / 格式类型</div> | <div style="min-width:80px;">节点总数</div> | 备用 CDN 订阅直链 (可达性依网络而定) | 官方原生 Raw 直链 (开启代理) |
 | :--- | :---: | :--- | :--- |
-| 🚀 **Clash (YAML 格式)** | `75` | [🚀 备用 CDN 直链](https://cdn.jsdelivr.net/gh/qingyechan/sub@main/output/clash.yaml?v=1792630454) | [🌐 官方 Raw 直链](https://raw.githubusercontent.com/qingyechan/sub/main/output/clash.yaml) |
+| 🚀 **Clash (YAML 格式)** | `942` | [🚀 备用 CDN 直链](https://cdn.jsdelivr.net/gh/qingyechan/sub@main/output/clash.yaml?v=1792630454) | [🌐 官方 Raw 直链](https://raw.githubusercontent.com/qingyechan/sub/main/output/clash.yaml) |
 | ⚡ **V2RayN (Base64 格式)** | `75` | [⚡ 备用 CDN 直链](https://cdn.jsdelivr.net/gh/qingyechan/sub@main/output/v2ray.txt?v=1792630454) | [🌐 官方 Raw 直链](https://raw.githubusercontent.com/qingyechan/sub/main/output/v2ray.txt) |
 | 📦 **sing-box (JSON 格式)** | `75` | [📦 备用 CDN 直链](https://cdn.jsdelivr.net/gh/qingyechan/sub@main/output/singbox.json?v=1792630454) | [🌐 官方 Raw 直链](https://raw.githubusercontent.com/qingyechan/sub/main/output/singbox.json) |
 
@@ -115,3 +117,4 @@ export default {
    - **Clash / Clash Verge / Mihomo Party**：直接复制上方表格中的 **Clash 专属订阅** 链接。
    - **v2rayN / v2rayNG**：直接复制上方表格中的 **V2RayN 专属订阅** 链接。
    - **sing-box**：直接使用上方 **sing-box 专属订阅** 链接。
+

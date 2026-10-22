@@ -4,12 +4,19 @@
   "core": "Mihomo v1.19.32",
   "candidates": 3374,
   "first_pass": 1044,
-  "published": 75,
+  "published": 942,
   "https_targets": [
     "https://www.gstatic.com/generate_204",
     "https://cp.cloudflare.com/generate_204"
   ],
   "max_delay_ms": 3000,
-  "rechecked_before_publish": true,
-  "local_network_availability_guaranteed": false
+  "rechecked_before_publish": false,
+  "local_network_availability_guaranteed": false,
+  "ci_tested": 75,
+  "optional_shortlist": 75,
+  "historical_alternatives": 867,
+  "shortlist_rechecked": true,
+  "recovery_updated_at": "2026-10-22T02:40:09.721455+00:00",
+  "historical_connectivity_verified": false,
+  "next_probe_max_delay_ms": 6500
 }

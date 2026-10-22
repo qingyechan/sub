@@ -65,6 +65,6 @@ jobs:
         continue-on-error: true
         timeout-minutes: 2
         run: |
-          for file in clash.yaml singbox.json v2ray.txt status.json; do
+          for file in clash.yaml clash-tested.yaml clash-history.yaml clash-fast.yaml singbox.json v2ray.txt status.json; do
             curl --fail --show-error --max-time 15 "https://purge.jsdelivr.net/gh/${GITHUB_REPOSITORY}@main/output/${file}"
           done

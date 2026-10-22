@@ -78,8 +78,41 @@ class SubscriptionTests(unittest.TestCase):
             config = app.yaml.safe_load(path.read_text(encoding="utf-8"))
         groups = {g["name"]: g for g in config["proxy-groups"]}
         self.assertIn("FALLBACK", groups["PROXIES"]["proxies"])
-        self.assertFalse(groups["AUTO"]["lazy"])
+        self.assertTrue(groups["AUTO"]["lazy"])
         self.assertEqual(groups["AUTO"]["expected-status"], 204)
+        self.assertEqual(groups["AUTO"]["timeout"], 8000)
+
+    def test_history_merge_preserves_alternatives_and_unique_names(self):
+        current = [{"name": "current", "type": "ss", "server": "a"}]
+        history = [{"name": "old alias", "type": "ss", "server": "a"},
+                   {"name": "same", "type": "ss", "server": "b"},
+                   {"name": "same", "type": "ss", "server": "c"}]
+        result = app.merge_clash_proxies(current, history)
+        self.assertEqual(len(result), 3)
+        self.assertEqual(len({p["name"] for p in result}), 3)
+        self.assertTrue(result[1]["name"].startswith("历史备用 "))
+        self.assertEqual(history[1]["name"], "same")
+
+    def test_default_export_preserves_full_pool_and_history(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            old = {"name": "old", "type": "ss", "server": "old.example", "port": 443,
+                   "cipher": "aes-128-gcm", "password": "pass"}
+            history_path = root / "clash-history.yaml"
+            history_path.write_text(app.yaml.safe_dump({"proxies": [old]}), encoding="utf-8")
+            original_history = history_path.read_bytes()
+            nodes = []
+            for i in range(100):
+                nodes.append({"link": f"ss://example-{i}", "country": "US", "is_residential": False,
+                              "clash_proxy": dict(old, name=str(i), server=f"node-{i}.example")})
+            with patch.object(app, "OUTPUT_DIR", str(root)), patch.object(app, "COUNTRY_DIR", str(root / "by-country")), patch.object(app, "RESIDENTIAL_COUNTRY_DIR", str(root / "residential-by-country")):
+                app.export_subscriptions(nodes)
+            full = app.yaml.safe_load((root / "clash.yaml").read_text(encoding="utf-8"))
+            tested = app.yaml.safe_load((root / "clash-tested.yaml").read_text(encoding="utf-8"))
+            self.assertEqual(len(full["proxies"]), 101)
+            self.assertEqual(len(tested["proxies"]), 100)
+            self.assertEqual(history_path.read_bytes(), original_history)
+            self.assertIn("HISTORY", {g["name"] for g in full["proxy-groups"]})
 
     def test_trojan_password_sni_and_websocket(self):
         proxy = app.convert_to_clash_dict("trojan://a%40b@example.com:443?type=ws&path=%2Ftest%3Fed%3D2048&sni=edge.example#node", "test")

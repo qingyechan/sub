@@ -38,7 +38,7 @@ COUNTRY_DIR = os.path.join(OUTPUT_DIR, "by-country")
 RESIDENTIAL_COUNTRY_DIR = os.path.join(OUTPUT_DIR, "residential-by-country")
 MIHOMO_BIN = os.environ.get("MIHOMO_BIN", os.path.abspath("mihomo"))
 PROBE_URLS = ("https://www.gstatic.com/generate_204", "https://cp.cloudflare.com/generate_204")
-MAX_DELAY_MS = 3000
+MAX_DELAY_MS = 6500
 MAX_NODES = 80
 MAX_PER_COUNTRY = 20
 MAX_PER_EXIT = 2
@@ -509,7 +509,7 @@ def probe_https(session):
     delays = []
     for url in PROBE_URLS:
         started = time.monotonic()
-        with session.get(url, timeout=(4, 4), allow_redirects=False, stream=True) as response:
+        with session.get(url, timeout=(6, 6), allow_redirects=False, stream=True) as response:
             if response.status_code != 204 or response.content:
                 return None
         delay = int((time.monotonic() - started) * 1000)
@@ -726,8 +726,41 @@ def classify_and_filter(alive_nodes):
     print(f"[*] 智能去重与家宽防刷完成，出库总节点: {len(unique_all)} 个，纯净独立家宽: {len(seen_res_ips)} 个")
     return unique_all
 
+def merge_clash_proxies(current, historical):
+    """Preserve historical alternatives without asserting they work on the user's network."""
+    merged, seen, used_names = [], set(), set()
+    for is_history, proxies in ((False, current), (True, historical)):
+        for source in proxies:
+            proxy = dict(source)
+            identity = json.dumps({k: v for k, v in proxy.items() if k != "name"}, sort_keys=True)
+            if identity in seen:
+                continue
+            seen.add(identity)
+            name = str(proxy["name"])
+            if is_history and not name.startswith("历史备用 "):
+                name = f"历史备用 {len(merged) + 1:04d} | {name}"
+            candidate = name
+            suffix = 2
+            while candidate in used_names:
+                candidate = f"{name} ({suffix})"
+                suffix += 1
+            proxy["name"] = candidate
+            used_names.add(candidate)
+            merged.append(proxy)
+    return merged
+
+
+def load_historical_proxies():
+    path = os.path.join(OUTPUT_DIR, "clash-history.yaml")
+    if not os.path.exists(path):
+        return []
+    with open(path, encoding="utf-8") as f:
+        return yaml.safe_load(f)["proxies"]
+
+
 def export_clash_yaml(clash_proxies, filepath):
     names = [p["name"] for p in clash_proxies]
+    history_names = [name for name in names if name.startswith("历史备用 ")]
     config = {
         "port": 7890,
         "socks-port": 7891,
@@ -736,12 +769,12 @@ def export_clash_yaml(clash_proxies, filepath):
         "log-level": "info",
         "proxies": clash_proxies,
         "proxy-groups": [
-            {"name": "PROXIES", "type": "select", "proxies": ["AUTO", "FALLBACK"] + names},
-            {"name": "AUTO", "type": "url-test", "url": PROBE_URLS[0], "expected-status": 204,
-             "interval": 120, "timeout": 4000, "tolerance": 100, "lazy": False, "proxies": names},
+            {"name": "PROXIES", "type": "select", "proxies": ["AUTO", "FALLBACK"] + (["HISTORY"] if history_names else []) + names},
+            {"name": "AUTO", "type": "url-test", "url": "https://www.google.com/generate_204", "expected-status": 204,
+             "interval": 600, "timeout": 8000, "tolerance": 100, "lazy": True, "proxies": names},
             {"name": "FALLBACK", "type": "fallback", "url": PROBE_URLS[1], "expected-status": 204,
-             "interval": 120, "timeout": 4000, "lazy": False, "proxies": names}
-        ],
+             "interval": 600, "timeout": 8000, "lazy": True, "proxies": names}
+        ] + ([{"name": "HISTORY", "type": "select", "proxies": history_names}] if history_names else []),
         "rules": ["IP-CIDR,127.0.0.0/8,DIRECT,no-resolve", "IP-CIDR,10.0.0.0/8,DIRECT,no-resolve",
                   "IP-CIDR,172.16.0.0/12,DIRECT,no-resolve", "IP-CIDR,192.168.0.0/16,DIRECT,no-resolve",
                   "IP-CIDR6,::1/128,DIRECT,no-resolve", "IP-CIDR6,fc00::/7,DIRECT,no-resolve", "MATCH,PROXIES"]
@@ -833,7 +866,8 @@ def export_subscriptions(verified_nodes):
     all_links, all_proxies = format_node_group(verified_nodes)
     with open(os.path.join(OUTPUT_DIR, "v2ray.txt"), "w", encoding="utf-8") as f:
         f.write(base64.b64encode("\n".join(all_links).encode()).decode())
-    export_clash_yaml(all_proxies, os.path.join(OUTPUT_DIR, "clash.yaml"))
+    export_clash_yaml(all_proxies, os.path.join(OUTPUT_DIR, "clash-tested.yaml"))
+    export_clash_yaml(merge_clash_proxies(all_proxies, load_historical_proxies()), os.path.join(OUTPUT_DIR, "clash.yaml"))
     export_singbox_json(all_proxies, os.path.join(OUTPUT_DIR, "singbox.json"))
 
     # 2. 导出家宽总订阅
@@ -898,6 +932,11 @@ def update_readme():
 
     total_count = count_file(os.path.join(OUTPUT_DIR, "v2ray.txt"))
     res_count = count_file(os.path.join(OUTPUT_DIR, "residential.txt"))
+    clash_count = 0
+    full_path = os.path.join(OUTPUT_DIR, "clash.yaml")
+    if os.path.exists(full_path):
+        with open(full_path, encoding="utf-8") as f:
+            clash_count = len(yaml.safe_load(f)["proxies"])
 
     res_counts = {}
     if os.path.exists(RESIDENTIAL_COUNTRY_DIR):
@@ -998,17 +1037,19 @@ export default {
 安卓 FlClash 用户请先阅读 [导入方法及“未知网络错误”排查](docs/flclash.md)。代码更新不会自动解决订阅域名在本地网络中的访问问题。
 
 > 👤 **定制规范命名**: 所有订阅节点均重命名为 `国旗 地区 序号 (家宽) - xiaohe`  
-> ⚡ **测活说明**: 所有节点使用与 FlClash 相同格式的 `Mihomo` 配置建立代理隧道，要求两个 HTTPS 204 目标通过，并在发布前复测；测活地点为 GitHub Actions，不能保证所有用户网络可用。无论是通过备用 CDN 直链还是官方原生 Raw 直链拉取，节点命名格式完全一致。
+> ⚡ **可用性说明**：默认 Clash 完整池包含当前 GitHub 测活配置和历史备用配置；历史节点未重新测活，全部需要在手机网络测试。GitHub 延迟排序不能代表移动网络表现。
 
 ---
 
-最近成功生成时间：{datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")}。默认仅保留双轮测活通过的精选节点（最多 {MAX_NODES} 个），不以节点数量作为质量保证。
+最近成功生成时间：{datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")}。默认完整池保留更多候选；最多 {MAX_NODES} 个的精选结果仅作可选配置，不再覆盖完整池。
+
+FlClash：[完整池](https://raw.githubusercontent.com/{repo_name}/main/output/clash.yaml) · [当前 CI 测活池](https://raw.githubusercontent.com/{repo_name}/main/output/clash-tested.yaml) · [历史备用](https://raw.githubusercontent.com/{repo_name}/main/output/clash-history.yaml) · [可选精选池](https://raw.githubusercontent.com/{repo_name}/main/output/clash-fast.yaml)。历史备用不代表目前可用，精选文件可能在无复测结果时缺失。
 
 ## 📌 全部节点总订阅链接
 
 | <div style="min-width:180px;">客户端 / 格式类型</div> | <div style="min-width:80px;">节点总数</div> | 备用 CDN 订阅直链 (可达性依网络而定) | 官方原生 Raw 直链 (开启代理) |
 | :--- | :---: | :--- | :--- |
-| 🚀 **Clash (YAML 格式)** | `{total_count}` | [🚀 备用 CDN 直链]({clash_cdn_url}) | [🌐 官方 Raw 直链]({clash_raw_url}) |
+| 🚀 **Clash 完整池 (含历史备用)** | `{clash_count}` | [🚀 备用 CDN 直链]({clash_cdn_url}) | [🌐 官方 Raw 直链]({clash_raw_url}) |
 | ⚡ **V2RayN (Base64 格式)** | `{total_count}` | [⚡ 备用 CDN 直链]({v2_cdn_url}) | [🌐 官方 Raw 直链]({v2_raw_url}) |
 | 📦 **sing-box (JSON 格式)** | `{total_count}` | [📦 备用 CDN 直链]({sb_cdn_url}) | [🌐 官方 Raw 直链]({sb_raw_url}) |
 
@@ -1090,16 +1131,27 @@ if __name__ == "__main__":
 
     print(f"[*] 格式合规候选节点数: {len(candidates)}")
     alive_nodes = run_real_delay_test_mihomo(candidates)
-    verified = select_quality_nodes(classify_and_filter(alive_nodes))
-    print(f"[*] Rechecking {len(verified)} selected nodes before publishing")
-    recheck = [(n["link"], n["clash_proxy"]["server"], n["port"], n["proto"]) for n in verified]
-    verified = select_quality_nodes(classify_and_filter(run_real_delay_test_mihomo(recheck)))
+    verified = classify_and_filter(alive_nodes)
+    shortlisted = select_quality_nodes(verified)
+    print(f"[*] Rechecking {len(shortlisted)} optional shortlist nodes; preserving the full pool")
+    recheck = [(n["link"], n["clash_proxy"]["server"], n["port"], n["proto"]) for n in shortlisted]
+    shortlist = select_quality_nodes(classify_and_filter(run_real_delay_test_mihomo(recheck)))
     export_subscriptions(verified)
+    shortlist_path = os.path.join(OUTPUT_DIR, "clash-fast.yaml")
+    if shortlist:
+        export_clash_yaml(format_node_group(shortlist)[1], shortlist_path)
+    elif os.path.exists(shortlist_path):
+        os.remove(shortlist_path)
     subprocess.run([MIHOMO_BIN, "-t", "-d", tempfile.gettempdir(), "-f", os.path.abspath(os.path.join(OUTPUT_DIR, "clash.yaml"))],
                    check=True, timeout=30)
     with open(os.path.join(OUTPUT_DIR, "status.json"), "w", encoding="utf-8") as f:
+        with open(os.path.join(OUTPUT_DIR, "clash.yaml"), encoding="utf-8") as clash_file:
+            full_proxies = yaml.safe_load(clash_file)["proxies"]
         json.dump({"generated_at": datetime.now(timezone.utc).isoformat(), "probe_location": "GitHub Actions",
                    "core": "Mihomo v1.19.32", "candidates": len(candidates), "first_pass": len(alive_nodes),
-                   "published": len(verified), "https_targets": list(PROBE_URLS), "max_delay_ms": MAX_DELAY_MS,
-                   "rechecked_before_publish": True, "local_network_availability_guaranteed": False}, f, indent=2)
+                   "published": len(full_proxies), "ci_tested": len(verified), "optional_shortlist": len(shortlist),
+                   "historical_alternatives": sum(p["name"].startswith("历史备用 ") for p in full_proxies),
+                   "https_targets": list(PROBE_URLS), "max_delay_ms": MAX_DELAY_MS,
+                   "rechecked_before_publish": False, "shortlist_rechecked": True,
+                   "local_network_availability_guaranteed": False}, f, indent=2)
     update_readme()

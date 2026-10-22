@@ -1,53 +1,32 @@
-# FlClash 使用与导入排查
+# FlClash 完整池与历史备用
 
-本项目给 FlClash 提供完整的 Clash/Mihomo YAML 配置。源码 ZIP、v2ray.txt 和 singbox.json 不用于此导入步骤。
+GitHub 运行器与用户手机的网络不同，不能把运行器上低延迟的少量节点当作移动网络的最佳集合。
 
-## 安卓导入
+## 订阅
 
-1. 在 FlClash 的配置页面点击添加，通过 URL 导入以下一个地址。
-2. 选中配置，在代理页面运行延迟测试，选择 PROXIES 中的 AUTO 或一个可用节点。
-3. 启动连接，并按安卓提示允许 VPN。
+- 默认完整池：`https://raw.githubusercontent.com/qingyechan/sub/main/output/clash.yaml`
+- 备用 CDN：`https://cdn.jsdelivr.net/gh/qingyechan/sub@main/output/clash.yaml`
+- 历史备用：将上述地址的文件名改为 `clash-history.yaml`。
+- 当前 CI 测活池：文件名 `clash-tested.yaml`。
+- 可选精选池：文件名 `clash-fast.yaml`；没有通过复测的节点时，该文件可能缺失。
 
-GitHub 原始订阅：
+默认完整池合并当前 CI 测活节点和历史备用，只去掉完全重复的代理配置，不按运行器延迟或地区压缩到 80 个。每出口 2 个、每地区 20 个、总数 80 的限制只用于可选精选池。
+历史备用由 2026-10-20 至 2026-10-21 修改前的四个快照恢复，带“历史备用”名称，未重新测活，不代表目前可用。来源及去重数量见 output/history-sources.json。
+历史文件会在后续更新时保留，CI 失败不再成为删除这些备选项的依据。
 
-```text
-https://raw.githubusercontent.com/qingyechan/sub/main/output/clash.yaml
-```
+## 安卓操作
 
-CDN 备用订阅：
+1. 配置页面添加 URL，或者将下载的 YAML 保存到手机后通过文件导入。
+2. 选中完整池配置，在 PROXIES 中进入 HISTORY，即可找到恢复的历史节点；可以搜索“美国”。
+3. 测试时选择一个节点实际访问网页，记录名称、测速结果及日志。测速 URL 超时与所有网页都不能访问需要分开判断。
+4. AUTO 使用 Google 的 204 目标，FALLBACK 使用 Cloudflare 的 204 目标，便于区分目标站差异。完整池扩大后改为按需测速，间隔 600 秒、超时 8000ms，避免每 120 秒主动测试上千节点。
 
-```text
-https://cdn.jsdelivr.net/gh/qingyechan/sub@main/output/clash.yaml
-```
+CDN 可能保留旧缓存或未完成刷新。先确认配置节点数量与仓库 status.json 的 published 字段一致；历史恢复首次为 942 个，后续会变化。静态文件和固定提交链接不会自动更新。
 
-两种地址均受所在网络影响，不能保证直连。发布后工作流会请求刷新主要订阅的 CDN 缓存；CDN 刷新失败或尚未传播时，内容仍可能晚于 GitHub。如果仍看到旧节点数量，可以临时用 Raw 链接或下载最新 YAML 文件导入。
-如果 Fork 到自己的仓库，请将地址中的 qingyechan/sub 换成自己的仓库名。
+## 下载失败
 
-## 添加配置时出现“未知网络错误”
-
-该提示本身不能确定原因，也不能据此认定节点全部失效。按下面步骤区分下载和解析问题：
-
-1. 在同一台手机的浏览器里打开订阅地址。应显示或下载 YAML 文本，不能使用 GitHub 的 blob 网页地址。
-2. 如果打不开，切换 Wi-Fi / 移动数据，或尝试上面的另一个订阅入口。
-3. 如果能下载，将文件保存为 clash.yaml，在 FlClash 选择本地文件导入。
-4. 本地导入成功而 URL 失败时，优先检查应用的下载路径、网络设置及日志。浏览器和应用可能采用不同的网络设置。
-5. 本地导入也失败时，记录 FlClash 版本和具体日志，检查内核兼容或 YAML 内容。
-
-本地文件导入不会自动拉取仓库更新。网络恢复后应换回 URL 订阅。
-延迟测试只代表测试目标的连接情况；GitHub Actions 测活成功也不保证手机所在网络能够连接节点。
-
-## 项目更新
-
-合并代码修复后，在 GitHub Actions 手动运行 Update Subscriptions。只有运行成功且新输出提交后，FlClash 才能获取新配置；原来的订阅 URL 不变。
-
-默认在 PROXIES 中选择 AUTO：每 120 秒在手机网络上主动测速；FALLBACK 组可按顺序选择可用节点。单个节点超时仍会显示在列表里，但自动组会根据自己的测试结果选择可用节点。
-
-输出上限 80 个节点、每个出口 IP 最多 2 个、每个地区最多 20 个。服务端要求两个独立 HTTPS 204 目标通过、单次耗时不超过 3000ms、获得真实公网出口 IP，并在发布前复测。使用的 Mihomo 配置与最终导出一致，不能完整转换的传输不再默认为 TCP。
-
-工作流改为每小时运行，GitHub 可能延迟调度。output/status.json 提供最近一次成功发布的时间和测活数量；工作流失败会保留旧输出，不能把旧文件当作刚刚测活的结果。
-
-局域网流量直连，其余流量交给 PROXIES，尚未包含国内外分流规则。
-
-如果首次没有任何代理且两个订阅地址均无法直连，当前仓库无法凭空提供一个可达的下载域名。可在能访问 GitHub 的设备下载 clash.yaml 传到手机；成功的 Actions 运行也提供 subscriptions 文件包。这不是让另一个代理充当日常中转。
+“未知网络错误”本身不能确定原因。在同一手机浏览器打开 URL，确认下载的是 YAML 文本，而不是 GitHub blob 网页。浏览器和应用可能有不同网络路径。
+如果手机不能访问订阅域名，可从能访问 GitHub 的设备下载文件传到手机。代码修改不能保证移动网络直接访问 Raw 或 CDN。
+本地文件导入后需要手动更新；域名恢复可用后再改为 URL 订阅。
 
 FlClash 官方项目：https://github.com/chen08209/FlClash

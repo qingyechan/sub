@@ -1,0 +1,22 @@
+{
+  "sources": [
+    {
+      "commit": "ffb0204e1c8c864a96d7f94ac2cced5655595483",
+      "entries": 940
+    },
+    {
+      "commit": "5f7966636fe12ebe2641096609fbd460e54a8410",
+      "entries": 1073
+    },
+    {
+      "commit": "1ca084cf34fb91e260359c7196accc1c5f390850",
+      "entries": 836
+    },
+    {
+      "commit": "f064e014efbd23e3a3e279f3300466f6641808a2",
+      "entries": 749
+    }
+  ],
+  "unique_history_configs": 917,
+  "revalidated_for_connectivity": false
+}
