@@ -1,0 +1,84 @@
+port: 7890
+socks-port: 7891
+allow-lan: false
+mode: rule
+log-level: info
+proxies:
+- name: 🇸🇪 SE 01 - xiaohe
+  type: vless
+  server: 5.178.109.174
+  port: 14430
+  uuid: 80de563a-cac8-40ea-8cb0-4cb082dd92f9
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /vless
+    headers:
+      Host: 5.178.109.174
+- name: 🇸🇪 SE 02 - xiaohe
+  type: vless
+  server: 94.143.231.146
+  port: 443
+  uuid: 6e05822a-e9da-4135-a9db-71aa07a944af
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: sub.merky.top
+  network: ws
+  ws-opts:
+    path: /merky-connect/de6/
+    headers:
+      Host: 94.143.231.146
+- name: 🇸🇪 SE 03 - xiaohe
+  type: vless
+  server: 94.143.231.146
+  port: 443
+  uuid: 6e05822a-e9da-4135-a9db-71aa07a944af
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: sub.merky.top
+  network: ws
+  ws-opts:
+    path: /merky-connect/de6/
+    headers:
+      Host: sub.merky.top
+proxy-groups:
+- name: PROXIES
+  type: select
+  proxies:
+  - AUTO
+  - FALLBACK
+  - 🇸🇪 SE 01 - xiaohe
+  - 🇸🇪 SE 02 - xiaohe
+  - 🇸🇪 SE 03 - xiaohe
+- name: AUTO
+  type: url-test
+  url: https://www.google.com/generate_204
+  expected-status: 204
+  interval: 600
+  timeout: 8000
+  tolerance: 100
+  lazy: true
+  proxies: &id001
+  - 🇸🇪 SE 01 - xiaohe
+  - 🇸🇪 SE 02 - xiaohe
+  - 🇸🇪 SE 03 - xiaohe
+- name: FALLBACK
+  type: fallback
+  url: https://cp.cloudflare.com/generate_204
+  expected-status: 204
+  interval: 600
+  timeout: 8000
+  lazy: true
+  proxies: *id001
+rules:
+- IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+- IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+- IP-CIDR6,::1/128,DIRECT,no-resolve
+- IP-CIDR6,fc00::/7,DIRECT,no-resolve
+- MATCH,PROXIES

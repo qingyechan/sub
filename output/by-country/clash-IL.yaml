@@ -16,7 +16,7 @@ proxies:
     public-key: 8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To
     short-id: a3a578ab
   servername: www.apple.com
-  client-fingerprint: random
+  client-fingerprint: chrome
   flow: xtls-rprx-vision
 - name: 🇮🇱 IL 02 - xiaohe
   type: vless
@@ -32,6 +32,20 @@ proxies:
   servername: www.apple.com
   client-fingerprint: firefox
   flow: xtls-rprx-vision
+- name: 🇮🇱 IL 03 - xiaohe
+  type: vless
+  server: 185.95.231.156
+  port: 443
+  uuid: 1f8cf47a-b66a-4916-979f-26edfcf44eea
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  reality-opts:
+    public-key: 8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To
+    short-id: a3a578ab
+  servername: www.apple.com
+  client-fingerprint: random
+  flow: xtls-rprx-vision
 proxy-groups:
 - name: PROXIES
   type: select
@@ -40,24 +54,26 @@ proxy-groups:
   - FALLBACK
   - 🇮🇱 IL 01 - xiaohe
   - 🇮🇱 IL 02 - xiaohe
+  - 🇮🇱 IL 03 - xiaohe
 - name: AUTO
   type: url-test
-  url: https://www.gstatic.com/generate_204
+  url: https://www.google.com/generate_204
   expected-status: 204
-  interval: 120
-  timeout: 4000
+  interval: 600
+  timeout: 8000
   tolerance: 100
-  lazy: false
+  lazy: true
   proxies: &id001
   - 🇮🇱 IL 01 - xiaohe
   - 🇮🇱 IL 02 - xiaohe
+  - 🇮🇱 IL 03 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204
   expected-status: 204
-  interval: 120
-  timeout: 4000
-  lazy: false
+  interval: 600
+  timeout: 8000
+  lazy: true
   proxies: *id001
 rules:
 - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve

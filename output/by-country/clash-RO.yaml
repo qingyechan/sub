@@ -1,0 +1,73 @@
+port: 7890
+socks-port: 7891
+allow-lan: false
+mode: rule
+log-level: info
+proxies:
+- name: 🇷🇴 RO 01 - xiaohe
+  type: trojan
+  server: de1.dedushka.top
+  port: 443
+  password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
+  udp: true
+  sni: de1.dedushka.top
+  skip-cert-verify: true
+- name: 🇷🇴 RO 02 - xiaohe
+  type: vless
+  server: 46.28.67.55
+  port: 443
+  uuid: d1a6a033-fdbd-46a6-a177-3370ba042b9f
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  reality-opts:
+    public-key: i2dJ1_XGDpp50qpEclh6SWSWkxt4B0t2hi2qOVQbeSU
+    short-id: d06d78e974491b6e
+  servername: www.cloudflare.com
+  client-fingerprint: firefox
+  flow: xtls-rprx-vision
+- name: 🇷🇴 RO 03 - xiaohe
+  type: trojan
+  server: it1.dedushka.top
+  port: 443
+  password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
+  udp: true
+  sni: it1.dedushka.top
+  skip-cert-verify: true
+proxy-groups:
+- name: PROXIES
+  type: select
+  proxies:
+  - AUTO
+  - FALLBACK
+  - 🇷🇴 RO 01 - xiaohe
+  - 🇷🇴 RO 02 - xiaohe
+  - 🇷🇴 RO 03 - xiaohe
+- name: AUTO
+  type: url-test
+  url: https://www.google.com/generate_204
+  expected-status: 204
+  interval: 600
+  timeout: 8000
+  tolerance: 100
+  lazy: true
+  proxies: &id001
+  - 🇷🇴 RO 01 - xiaohe
+  - 🇷🇴 RO 02 - xiaohe
+  - 🇷🇴 RO 03 - xiaohe
+- name: FALLBACK
+  type: fallback
+  url: https://cp.cloudflare.com/generate_204
+  expected-status: 204
+  interval: 600
+  timeout: 8000
+  lazy: true
+  proxies: *id001
+rules:
+- IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+- IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+- IP-CIDR6,::1/128,DIRECT,no-resolve
+- IP-CIDR6,fc00::/7,DIRECT,no-resolve
+- MATCH,PROXIES

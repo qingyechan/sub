@@ -1,22 +1,19 @@
 {
-  "generated_at": "2026-10-22T00:54:14.007826+00:00",
+  "generated_at": "2026-10-22T02:59:41.460398+00:00",
   "probe_location": "GitHub Actions",
   "core": "Mihomo v1.19.32",
-  "candidates": 3374,
-  "first_pass": 1044,
-  "published": 942,
+  "candidates": 3394,
+  "first_pass": 1050,
+  "published": 1436,
+  "ci_tested": 1050,
+  "optional_shortlist": 65,
+  "historical_alternatives": 386,
   "https_targets": [
     "https://www.gstatic.com/generate_204",
     "https://cp.cloudflare.com/generate_204"
   ],
-  "max_delay_ms": 3000,
+  "max_delay_ms": 6500,
   "rechecked_before_publish": false,
-  "local_network_availability_guaranteed": false,
-  "ci_tested": 75,
-  "optional_shortlist": 75,
-  "historical_alternatives": 867,
   "shortlist_rechecked": true,
-  "recovery_updated_at": "2026-10-22T02:40:09.721455+00:00",
-  "historical_connectivity_verified": false,
-  "next_probe_max_delay_ms": 6500
+  "local_network_availability_guaranteed": false
 }
