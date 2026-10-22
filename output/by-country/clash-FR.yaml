@@ -5,53 +5,20 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇫🇷 法国 (France) 01 - xiaohe
-  type: vless
-  server: 51.44.38.228
-  port: 22222
-  uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
+  type: vmess
+  server: 57.128.164.21
+  port: 80
+  uuid: bda82bcd-f6e2-46ae-9552-673f0b87ac30
+  alterId: 0
+  cipher: auto
   udp: true
   tls: false
   skip-cert-verify: true
-- name: 🇫🇷 法国 (France) 02 - xiaohe
-  type: vless
-  server: 137.74.16.237
-  port: 443
-  uuid: aaec4e42-a095-44b6-a239-f16d234a0798
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  reality-opts:
-    public-key: 7LSzvilTVKGMtBDuKGeMrLtlhY7tQf5YcG566dEgO0I
-    short-id: b390e0a721d242b0
-  servername: www.icloud.com
-  client-fingerprint: firefox
-  flow: xtls-rprx-vision
-- name: 🇫🇷 法国 (France) 03 - xiaohe
-  type: trojan
-  server: 172.64.152.23
-  port: 443
-  password: humanity
-  udp: true
-  sni: www.calmlunch.com
-  skip-cert-verify: true
   network: ws
   ws-opts:
-    path: /assignment
+    path: /d3d3LmlyYW5ob3N0LmNvbQ==?ed=2560
     headers:
-      Host: www.calmlunch.com
-- name: 🇫🇷 法国 (France) 04 - xiaohe
-  type: trojan
-  server: 104.16.71.213
-  port: 443
-  password: humanity
-  udp: true
-  sni: www.calmlunch.com
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
+      Host: https.http.www.net.com.ramseyv2.ir.
 proxy-groups:
 - name: PROXIES
   type: select
@@ -59,9 +26,6 @@ proxy-groups:
   - AUTO
   - FALLBACK
   - 🇫🇷 法国 (France) 01 - xiaohe
-  - 🇫🇷 法国 (France) 02 - xiaohe
-  - 🇫🇷 法国 (France) 03 - xiaohe
-  - 🇫🇷 法国 (France) 04 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.gstatic.com/generate_204
@@ -72,9 +36,6 @@ proxy-groups:
   lazy: false
   proxies: &id001
   - 🇫🇷 法国 (France) 01 - xiaohe
-  - 🇫🇷 法国 (France) 02 - xiaohe
-  - 🇫🇷 法国 (France) 03 - xiaohe
-  - 🇫🇷 法国 (France) 04 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204
