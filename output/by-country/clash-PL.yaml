@@ -6,7 +6,7 @@ log-level: info
 proxies:
 - name: 🇵🇱 PL 01 - xiaohe
   type: trojan
-  server: pl2.dedushka.top
+  server: 31.133.0.186
   port: 443
   password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
   udp: true
@@ -14,13 +14,22 @@ proxies:
   skip-cert-verify: true
 - name: 🇵🇱 PL 02 - xiaohe
   type: trojan
-  server: 31.133.0.182
+  server: pl2.dedushka.top
   port: 443
   password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
   udp: true
-  sni: pl1.dedushka.top
+  sni: pl2.dedushka.top
   skip-cert-verify: true
 - name: 🇵🇱 PL 03 - xiaohe
+  type: vless
+  server: 2.26.225.89
+  port: 8443
+  uuid: 51a1fd52-fd88-4905-a976-35e44be28e4b
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: pl.flen-vpn.xyz
+- name: 🇵🇱 PL 04 - xiaohe
   type: vless
   server: site.teslamotor.site
   port: 20001
@@ -28,22 +37,23 @@ proxies:
   udp: true
   tls: false
   skip-cert-verify: true
-- name: 🇵🇱 PL 04 - xiaohe
-  type: trojan
-  server: 31.133.0.186
-  port: 443
-  password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
-  udp: true
-  sni: pl2.dedushka.top
-  skip-cert-verify: true
 - name: 🇵🇱 PL 05 - xiaohe
   type: trojan
-  server: pl1.dedushka.top
+  server: 31.133.0.182
   port: 443
   password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
   udp: true
   sni: pl1.dedushka.top
   skip-cert-verify: true
+- name: 🇵🇱 PL 06 - xiaohe
+  type: vless
+  server: 2.26.225.89
+  port: 8443
+  uuid: 51a1fd52-fd88-4905-a976-35e44be28e4b
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: 2.26.225.89
 proxy-groups:
 - name: PROXIES
   type: select
@@ -55,6 +65,7 @@ proxy-groups:
   - 🇵🇱 PL 03 - xiaohe
   - 🇵🇱 PL 04 - xiaohe
   - 🇵🇱 PL 05 - xiaohe
+  - 🇵🇱 PL 06 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -69,6 +80,7 @@ proxy-groups:
   - 🇵🇱 PL 03 - xiaohe
   - 🇵🇱 PL 04 - xiaohe
   - 🇵🇱 PL 05 - xiaohe
+  - 🇵🇱 PL 06 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

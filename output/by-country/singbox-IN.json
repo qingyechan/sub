@@ -21,8 +21,7 @@
         "🇮🇳 印度 (India) 06 - xiaohe",
         "🇮🇳 印度 (India) 07 - xiaohe",
         "🇮🇳 印度 (India) 08 - xiaohe",
-        "🇮🇳 印度 (India) 09 - xiaohe",
-        "🇮🇳 印度 (India) 10 - xiaohe"
+        "🇮🇳 印度 (India) 09 - xiaohe"
       ]
     },
     {
@@ -37,8 +36,7 @@
         "🇮🇳 印度 (India) 06 - xiaohe",
         "🇮🇳 印度 (India) 07 - xiaohe",
         "🇮🇳 印度 (India) 08 - xiaohe",
-        "🇮🇳 印度 (India) 09 - xiaohe",
-        "🇮🇳 印度 (India) 10 - xiaohe"
+        "🇮🇳 印度 (India) 09 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -47,18 +45,12 @@
       "tag": "direct"
     },
     {
-      "type": "vless",
+      "type": "shadowsocks",
       "tag": "🇮🇳 印度 (India) 01 - xiaohe",
-      "server": "13.140.56.100",
-      "server_port": 14430,
-      "uuid": "68512eac-cd53-4de3-8d1e-08f6e04af1a9",
-      "transport": {
-        "type": "ws",
-        "path": "/vless",
-        "headers": {
-          "Host": "13.140.56.100"
-        }
-      }
+      "server": "139.84.166.47",
+      "server_port": 8388,
+      "method": "aes-256-gcm",
+      "password": "GEdoeeqLZtkJRgSa"
     },
     {
       "type": "vless",
@@ -84,21 +76,14 @@
     {
       "type": "vless",
       "tag": "🇮🇳 印度 (India) 03 - xiaohe",
-      "server": "194.61.31.126",
-      "server_port": 2053,
-      "uuid": "1d4e18bd-1f26-4915-b35a-7ace4826e76a",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.apple.com",
-        "insecure": true,
-        "reality": {
-          "enabled": true,
-          "public_key": "PuAGLfJy6cu1TNoHuKIKSxPetCbZI41fc8hQDjWPIAU",
-          "short_id": "9980e0609b0d3891"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
+      "server": "13.140.56.100",
+      "server_port": 14430,
+      "uuid": "68512eac-cd53-4de3-8d1e-08f6e04af1a9",
+      "transport": {
+        "type": "ws",
+        "path": "/vless",
+        "headers": {
+          "Host": "13.140.56.100"
         }
       }
     },
@@ -126,27 +111,6 @@
     {
       "type": "vless",
       "tag": "🇮🇳 印度 (India) 05 - xiaohe",
-      "server": "194.61.31.126",
-      "server_port": 2053,
-      "uuid": "1d4e18bd-1f26-4915-b35a-7ace4826e76a",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.apple.com",
-        "insecure": true,
-        "reality": {
-          "enabled": true,
-          "public_key": "PuAGLfJy6cu1TNoHuKIKSxPetCbZI41fc8hQDjWPIAU",
-          "short_id": "9980e0609b0d3891"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇮🇳 印度 (India) 06 - xiaohe",
       "server": "165.99.222.161",
       "server_port": 443,
       "uuid": "30572b57-f5ab-4eb8-82d4-a24d399b99f6",
@@ -163,6 +127,27 @@
         "utls": {
           "enabled": true,
           "fingerprint": "safari"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇮🇳 印度 (India) 06 - xiaohe",
+      "server": "194.61.31.126",
+      "server_port": 2053,
+      "uuid": "1d4e18bd-1f26-4915-b35a-7ace4826e76a",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.apple.com",
+        "insecure": true,
+        "reality": {
+          "enabled": true,
+          "public_key": "PuAGLfJy6cu1TNoHuKIKSxPetCbZI41fc8hQDjWPIAU",
+          "short_id": "9980e0609b0d3891"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -206,7 +191,7 @@
         },
         "utls": {
           "enabled": true,
-          "fingerprint": "chrome"
+          "fingerprint": "ios"
         }
       }
     },
@@ -229,28 +214,6 @@
         "utls": {
           "enabled": true,
           "fingerprint": "firefox"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇮🇳 印度 (India) 10 - xiaohe",
-      "server": "165.99.222.161",
-      "server_port": 443,
-      "uuid": "30572b57-f5ab-4eb8-82d4-a24d399b99f6",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "in1.vkusnews.com",
-        "insecure": true,
-        "reality": {
-          "enabled": true,
-          "public_key": "SC6AnZ_BlvDruiGFpDRno9b1V3wMmq9gjB-KEHHUlE4",
-          "short_id": ""
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "ios"
         }
       }
     }
