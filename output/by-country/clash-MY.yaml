@@ -4,27 +4,27 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: 🇮🇶 IQ 01 - xiaohe
+- name: 🇲🇾 MY 01 - xiaohe
   type: vless
-  server: courses.mftplus.qzz.io
-  port: 2096
-  uuid: b9ede7a5-5b4b-4aee-ac37-2c307e587e47
+  server: my2.frnhk.xyz
+  port: 443
+  uuid: 6006c9a2-c0a2-4cda-80f2-405b0d790fc8
   udp: true
   tls: true
   skip-cert-verify: true
-  servername: courses.mftplus.qzz.io
-  network: ws
-  ws-opts:
-    path: /eyJqdW5rIjoidVkzQm1ROUg4dyIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0
-    headers:
-      Host: courses.mftplus.qzz.io
+  reality-opts:
+    public-key: SPtkbd9O6y-rdGoR2CLzW1IFr6WMlqt2lM9wU-VURig
+    short-id: 6b7a8c9d
+  servername: www.waseda.jp
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision
 proxy-groups:
 - name: PROXIES
   type: select
   proxies:
   - AUTO
   - FALLBACK
-  - 🇮🇶 IQ 01 - xiaohe
+  - 🇲🇾 MY 01 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -34,7 +34,7 @@ proxy-groups:
   tolerance: 100
   lazy: true
   proxies: &id001
-  - 🇮🇶 IQ 01 - xiaohe
+  - 🇲🇾 MY 01 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

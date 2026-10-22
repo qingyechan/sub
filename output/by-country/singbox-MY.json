@@ -13,14 +13,14 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇪🇸 西班牙 (Spain) 01 - xiaohe"
+        "🇲🇾 MY 01 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇪🇸 西班牙 (Spain) 01 - xiaohe"
+        "🇲🇾 MY 01 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -30,22 +30,23 @@
     },
     {
       "type": "vless",
-      "tag": "🇪🇸 西班牙 (Spain) 01 - xiaohe",
-      "server": "45.198.54.249",
+      "tag": "🇲🇾 MY 01 - xiaohe",
+      "server": "my2.frnhk.xyz",
       "server_port": 443,
-      "uuid": "8d4c35bd-d04a-43fe-8390-47133ab90dbf",
+      "uuid": "6006c9a2-c0a2-4cda-80f2-405b0d790fc8",
+      "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
-        "server_name": "6a4a06t.es3.h1clayd.click",
+        "server_name": "www.waseda.jp",
         "insecure": true,
         "reality": {
           "enabled": true,
-          "public_key": "rHCPMrwRVCwxdwv4YOCso7zlYTPoX8w7x1f5Yqv2bGM",
-          "short_id": "b73ab21227d33c1e"
+          "public_key": "SPtkbd9O6y-rdGoR2CLzW1IFr6WMlqt2lM9wU-VURig",
+          "short_id": "6b7a8c9d"
         },
         "utls": {
           "enabled": true,
-          "fingerprint": "firefox"
+          "fingerprint": "chrome"
         }
       }
     }
