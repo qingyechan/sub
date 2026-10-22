@@ -2,6 +2,14 @@
 
 GitHub 运行器与用户手机的网络不同，不能把运行器上低延迟的少量节点当作移动网络的最佳集合。
 
+## 移动网络实测池
+
+2026-10-22 用户反馈的 39 个可连通节点已按来源提交和国家/编号精确保存到 config/mobile-approved.yaml，生成独立文件 output/clash-mobile.yaml。记录包括美国 18、意大利 9、日本 4、俄罗斯 1、香港 2、英国 1、新加坡 2、澳大利亚 1、德国 1。
+
+日常使用可在 FlClash 添加 `https://raw.githubusercontent.com/qingyechan/sub/main/output/clash-mobile.yaml`，或备用 CDN `https://cdn.jsdelivr.net/gh/qingyechan/sub@main/output/clash-mobile.yaml`。选中此配置后在 PROXIES 选择 AUTO，或直接选择原节点名。下载受阻时可用本地文件导入。
+
+这份实测池固定保存原始代理参数及名称，不根据完整池序号再次匹配，不受境外 CI 测速淘汰，不自动加入未经用户反馈的新节点。状态见 output/mobile-status.json。用户反馈仅证明报告时的连通性，不代表下载速度、长期稳定或将来一定可用；失效后需依据新的手机实测结果更新审批文件。完整池和历史备用仍独立保留。
+
 ## 订阅
 
 - 默认完整池：`https://raw.githubusercontent.com/qingyechan/sub/main/output/clash.yaml`

@@ -12,6 +12,33 @@ SPEC.loader.exec_module(app)
 
 
 class SubscriptionTests(unittest.TestCase):
+    def test_mobile_pool_preserves_user_parameters_without_ci_filtering(self):
+        proxies = [{"name": "US 193", "type": "vless", "server": "example.com", "port": 443,
+                    "uuid": "fixed-id", "flow": "xtls-rprx-vision", "tls": True,
+                    "reality-opts": {"public-key": "fixed-key", "short-id": "abcd"}}]
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source = root / "approved.yaml"
+            source.write_text(app.yaml.safe_dump({"source_commit": "snapshot", "reported_on": "2026-10-22", "proxies": proxies}), encoding="utf-8")
+            with patch.object(app, "MOBILE_APPROVED_PATH", str(source)), patch.object(app, "OUTPUT_DIR", str(root / "out")), patch.object(app, "select_quality_nodes", side_effect=AssertionError("must not rank user pins")), patch.object(app, "run_real_delay_test_mihomo", side_effect=AssertionError("must not filter user pins")):
+                self.assertEqual(app.export_mobile_subscription(), 1)
+            config = app.yaml.safe_load((root / "out/clash-mobile.yaml").read_text(encoding="utf-8"))
+            self.assertEqual(config["proxies"], proxies)
+            metadata = json.loads((root / "out/mobile-status.json").read_text(encoding="utf-8"))
+            self.assertEqual(metadata["reported_on"], "2026-10-22")
+            self.assertFalse(metadata["automatic_ci_filtering"])
+            self.assertFalse(metadata["bandwidth_tested"])
+
+    def test_mobile_pool_rejects_duplicate_names_before_writing(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source = root / "approved.yaml"
+            source.write_text(app.yaml.safe_dump({"proxies": [{"name": "same"}, {"name": "same"}]}), encoding="utf-8")
+            with patch.object(app, "MOBILE_APPROVED_PATH", str(source)), patch.object(app, "OUTPUT_DIR", str(root / "out")):
+                with self.assertRaises(ValueError):
+                    app.export_mobile_subscription()
+            self.assertFalse((root / "out").exists())
+
     def test_nested_base64_subscription(self):
         link = "trojan://pass@example.com:443#node"
         encoded = link.encode()

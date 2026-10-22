@@ -42,6 +42,7 @@ MAX_DELAY_MS = 6500
 MAX_NODES = 80
 MAX_PER_COUNTRY = 20
 MAX_PER_EXIT = 2
+MOBILE_APPROVED_PATH = os.path.join("config", "mobile-approved.yaml")
 
 def ensure_directories():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -758,6 +759,25 @@ def load_historical_proxies():
         return yaml.safe_load(f)["proxies"]
 
 
+def export_mobile_subscription():
+    """Export user-reported working configurations without CI ranking or renumbering."""
+    if not os.path.exists(MOBILE_APPROVED_PATH):
+        return 0
+    with open(MOBILE_APPROVED_PATH, encoding="utf-8") as f:
+        approved = yaml.safe_load(f)
+    proxies = approved.get("proxies", [])
+    if not proxies or len({p["name"] for p in proxies}) != len(proxies):
+        raise ValueError("Mobile approval file must contain proxies with unique names")
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    export_clash_yaml(proxies, os.path.join(OUTPUT_DIR, "clash-mobile.yaml"))
+    with open(os.path.join(OUTPUT_DIR, "mobile-status.json"), "w", encoding="utf-8") as f:
+        json.dump({"source_commit": approved["source_commit"], "reported_on": approved["reported_on"],
+                   "nodes": len(proxies), "verification": "user-reported-connectivity",
+                   "automatic_ci_filtering": False, "bandwidth_tested": False,
+                   "local_network_availability_guaranteed": False}, f, indent=2, ensure_ascii=False)
+    return len(proxies)
+
+
 def export_clash_yaml(clash_proxies, filepath):
     names = [p["name"] for p in clash_proxies]
     history_names = [name for name in names if name.startswith("历史备用 ")]
@@ -859,6 +879,7 @@ def export_subscriptions(verified_nodes):
     if not verified_nodes:
         raise RuntimeError("No verified nodes; preserving existing subscriptions and README")
     ensure_directories()
+    export_mobile_subscription()
     residential_nodes = [n for n in verified_nodes if n["is_residential"]]
     non_residential_nodes = [n for n in verified_nodes if not n["is_residential"]]
 
@@ -937,6 +958,11 @@ def update_readme():
     if os.path.exists(full_path):
         with open(full_path, encoding="utf-8") as f:
             clash_count = len(yaml.safe_load(f)["proxies"])
+    mobile_count = 0
+    mobile_path = os.path.join(OUTPUT_DIR, "clash-mobile.yaml")
+    if os.path.exists(mobile_path):
+        with open(mobile_path, encoding="utf-8") as f:
+            mobile_count = len(yaml.safe_load(f)["proxies"])
 
     res_counts = {}
     if os.path.exists(RESIDENTIAL_COUNTRY_DIR):
@@ -1035,6 +1061,8 @@ export default {
     readme_content = f"""# 🚀 免费节点自动测活订阅池 (含真实家宽/住宅IP甄选)
 
 安卓 FlClash 用户请先阅读 [导入方法及“未知网络错误”排查](docs/flclash.md)。代码更新不会自动解决订阅域名在本地网络中的访问问题。
+
+移动网络实测池（用户反馈可连通，共 {mobile_count} 个，非长期可用或带宽保证）：[Raw 订阅](https://raw.githubusercontent.com/{repo_name}/main/output/clash-mobile.yaml) · [备用 CDN](https://cdn.jsdelivr.net/gh/{repo_name}@main/output/clash-mobile.yaml)。原始连接参数及名称固定保留，不受 GitHub 测速排序或完整池编号变化影响。
 
 > 👤 **定制规范命名**: 所有订阅节点均重命名为 `国旗 地区 序号 (家宽) - xiaohe`  
 > ⚡ **可用性说明**：默认 Clash 完整池包含当前 GitHub 测活配置和历史备用配置；历史节点未重新测活，全部需要在手机网络测试。GitHub 延迟排序不能代表移动网络表现。
@@ -1144,6 +1172,10 @@ if __name__ == "__main__":
         os.remove(shortlist_path)
     subprocess.run([MIHOMO_BIN, "-t", "-d", tempfile.gettempdir(), "-f", os.path.abspath(os.path.join(OUTPUT_DIR, "clash.yaml"))],
                    check=True, timeout=30)
+    mobile_path = os.path.join(OUTPUT_DIR, "clash-mobile.yaml")
+    if os.path.exists(mobile_path):
+        subprocess.run([MIHOMO_BIN, "-t", "-d", tempfile.gettempdir(), "-f", os.path.abspath(mobile_path)],
+                       check=True, timeout=30)
     with open(os.path.join(OUTPUT_DIR, "status.json"), "w", encoding="utf-8") as f:
         with open(os.path.join(OUTPUT_DIR, "clash.yaml"), encoding="utf-8") as clash_file:
             full_proxies = yaml.safe_load(clash_file)["proxies"]

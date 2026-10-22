@@ -2,6 +2,8 @@
 
 安卓 FlClash 用户请先阅读 [导入方法及“未知网络错误”排查](docs/flclash.md)。代码更新不会自动解决订阅域名在本地网络中的访问问题。
 
+移动网络实测池（用户反馈可连通，共 39 个，非长期可用或带宽保证）：[Raw 订阅](https://raw.githubusercontent.com/qingyechan/sub/main/output/clash-mobile.yaml) · [备用 CDN](https://cdn.jsdelivr.net/gh/qingyechan/sub@main/output/clash-mobile.yaml)。原始连接参数及名称固定保留，不受 GitHub 测速排序或完整池编号变化影响。
+
 > 👤 **定制规范命名**: 所有订阅节点均重命名为 `国旗 地区 序号 (家宽) - xiaohe`  
 > ⚡ **可用性说明**：默认 Clash 完整池包含当前 GitHub 测活配置和历史备用配置；历史节点未重新测活，全部需要在手机网络测试。GitHub 延迟排序不能代表移动网络表现。
 
@@ -138,3 +140,4 @@ export default {
    - **Clash / Clash Verge / Mihomo Party**：直接复制上方表格中的 **Clash 专属订阅** 链接。
    - **v2rayN / v2rayNG**：直接复制上方表格中的 **V2RayN 专属订阅** 链接。
    - **sing-box**：直接使用上方 **sing-box 专属订阅** 链接。
+

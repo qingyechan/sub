@@ -1,0 +1,9 @@
+{
+  "source_commit": "f9bcbeb2be6aa346253d154f4b0f292f83229112",
+  "reported_on": "2026-10-22",
+  "nodes": 39,
+  "verification": "user-reported-connectivity",
+  "automatic_ci_filtering": false,
+  "bandwidth_tested": false,
+  "local_network_availability_guaranteed": false
+}
