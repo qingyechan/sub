@@ -14,7 +14,8 @@
       "outbounds": [
         "auto",
         "🇨🇿 CZ 01 - xiaohe",
-        "🇨🇿 CZ 02 - xiaohe"
+        "🇨🇿 CZ 02 - xiaohe",
+        "🇨🇿 CZ 03 - xiaohe"
       ]
     },
     {
@@ -22,7 +23,8 @@
       "tag": "auto",
       "outbounds": [
         "🇨🇿 CZ 01 - xiaohe",
-        "🇨🇿 CZ 02 - xiaohe"
+        "🇨🇿 CZ 02 - xiaohe",
+        "🇨🇿 CZ 03 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -39,8 +41,27 @@
       "password": "I6o9NnialYLMEjVt28RF4dpjmr9wMvNL"
     },
     {
-      "type": "vless",
+      "type": "trojan",
       "tag": "🇨🇿 CZ 02 - xiaohe",
+      "server": "188.114.98.0",
+      "server_port": 443,
+      "password": "mitivpn",
+      "tls": {
+        "enabled": true,
+        "server_name": "de.mitivpn.in.net",
+        "insecure": true
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/---@VPNine1---@VPNine1/---@VPNine1---@VPNine1/---@VPNine1---@VPNine1/--@VPNine1---@VPNine1/---@VPNine1---@VPNine1/---@VPNine1---@VPNine1",
+        "headers": {
+          "Host": "de.mitivpn.in.net"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇨🇿 CZ 03 - xiaohe",
       "server": "server.slavkiti.monster",
       "server_port": 443,
       "uuid": "4d017db2-7655-4276-9557-e2ec25b04ee7",

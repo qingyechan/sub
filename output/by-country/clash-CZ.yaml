@@ -12,6 +12,19 @@ proxies:
   password: I6o9NnialYLMEjVt28RF4dpjmr9wMvNL
   udp: true
 - name: 🇨🇿 CZ 02 - xiaohe
+  type: trojan
+  server: 188.114.98.0
+  port: 443
+  password: mitivpn
+  udp: true
+  sni: de.mitivpn.in.net
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /---@VPNine1---@VPNine1/---@VPNine1---@VPNine1/---@VPNine1---@VPNine1/--@VPNine1---@VPNine1/---@VPNine1---@VPNine1/---@VPNine1---@VPNine1
+    headers:
+      Host: de.mitivpn.in.net
+- name: 🇨🇿 CZ 03 - xiaohe
   type: vless
   server: server.slavkiti.monster
   port: 443
@@ -33,6 +46,7 @@ proxy-groups:
   - FALLBACK
   - 🇨🇿 CZ 01 - xiaohe
   - 🇨🇿 CZ 02 - xiaohe
+  - 🇨🇿 CZ 03 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -44,6 +58,7 @@ proxy-groups:
   proxies: &id001
   - 🇨🇿 CZ 01 - xiaohe
   - 🇨🇿 CZ 02 - xiaohe
+  - 🇨🇿 CZ 03 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204
