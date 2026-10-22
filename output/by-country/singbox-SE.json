@@ -61,7 +61,7 @@
         "type": "ws",
         "path": "/merky-connect/de6/",
         "headers": {
-          "Host": "94.143.231.146"
+          "Host": "sub.merky.top"
         }
       }
     },
@@ -80,7 +80,7 @@
         "type": "ws",
         "path": "/merky-connect/de6/",
         "headers": {
-          "Host": "sub.merky.top"
+          "Host": "94.143.231.146"
         }
       }
     }

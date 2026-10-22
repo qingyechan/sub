@@ -15,7 +15,8 @@
         "auto",
         "🇷🇴 RO 01 - xiaohe",
         "🇷🇴 RO 02 - xiaohe",
-        "🇷🇴 RO 03 - xiaohe"
+        "🇷🇴 RO 03 - xiaohe",
+        "🇷🇴 RO 04 - xiaohe"
       ]
     },
     {
@@ -24,7 +25,8 @@
       "outbounds": [
         "🇷🇴 RO 01 - xiaohe",
         "🇷🇴 RO 02 - xiaohe",
-        "🇷🇴 RO 03 - xiaohe"
+        "🇷🇴 RO 03 - xiaohe",
+        "🇷🇴 RO 04 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -63,6 +65,14 @@
       "server_port": 64546,
       "method": "chacha20-ietf-poly1305",
       "password": "U83u9OGpvSatIUW7LsWffr"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇷🇴 RO 04 - xiaohe",
+      "server": "154.46.31.106",
+      "server_port": 443,
+      "method": "chacha20-ietf-poly1305",
+      "password": "QFWzCw2uX9B9i6qAYeFBIE"
     }
   ],
   "route": {

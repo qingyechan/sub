@@ -29,7 +29,7 @@ proxies:
     public-key: SC6AnZ_BlvDruiGFpDRno9b1V3wMmq9gjB-KEHHUlE4
     short-id: ''
   servername: in1.vkusnews.com
-  client-fingerprint: chrome
+  client-fingerprint: firefox
   flow: xtls-rprx-vision
 - name: 🇮🇳 印度 (India) 03 - xiaohe
   type: vless
@@ -57,7 +57,7 @@ proxies:
     public-key: SC6AnZ_BlvDruiGFpDRno9b1V3wMmq9gjB-KEHHUlE4
     short-id: ''
   servername: in1.vkusnews.com
-  client-fingerprint: safari
+  client-fingerprint: ios
   flow: xtls-rprx-vision
 - name: 🇮🇳 印度 (India) 05 - xiaohe
   type: vless
@@ -71,7 +71,7 @@ proxies:
     public-key: SC6AnZ_BlvDruiGFpDRno9b1V3wMmq9gjB-KEHHUlE4
     short-id: ''
   servername: in1.vkusnews.com
-  client-fingerprint: ios
+  client-fingerprint: chrome
   flow: xtls-rprx-vision
 - name: 🇮🇳 印度 (India) 06 - xiaohe
   type: vless
@@ -85,7 +85,7 @@ proxies:
     public-key: SC6AnZ_BlvDruiGFpDRno9b1V3wMmq9gjB-KEHHUlE4
     short-id: ''
   servername: in1.vkusnews.com
-  client-fingerprint: firefox
+  client-fingerprint: safari
   flow: xtls-rprx-vision
 - name: 🇮🇳 印度 (India) 07 - xiaohe
   type: vless
@@ -99,7 +99,7 @@ proxies:
     public-key: PuAGLfJy6cu1TNoHuKIKSxPetCbZI41fc8hQDjWPIAU
     short-id: 9980e0609b0d3891
   servername: www.apple.com
-  client-fingerprint: random
+  client-fingerprint: chrome
 - name: 🇮🇳 印度 (India) 08 - xiaohe
   type: vless
   server: 194.61.31.126
@@ -112,7 +112,7 @@ proxies:
     public-key: PuAGLfJy6cu1TNoHuKIKSxPetCbZI41fc8hQDjWPIAU
     short-id: 9980e0609b0d3891
   servername: www.apple.com
-  client-fingerprint: chrome
+  client-fingerprint: random
 proxy-groups:
 - name: PROXIES
   type: select

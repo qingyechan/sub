@@ -17,9 +17,7 @@
         "🇵🇱 PL 02 - xiaohe",
         "🇵🇱 PL 03 - xiaohe",
         "🇵🇱 PL 04 - xiaohe",
-        "🇵🇱 PL 05 - xiaohe",
-        "🇵🇱 PL 06 - xiaohe",
-        "🇵🇱 PL 07 - xiaohe"
+        "🇵🇱 PL 05 - xiaohe"
       ]
     },
     {
@@ -30,9 +28,7 @@
         "🇵🇱 PL 02 - xiaohe",
         "🇵🇱 PL 03 - xiaohe",
         "🇵🇱 PL 04 - xiaohe",
-        "🇵🇱 PL 05 - xiaohe",
-        "🇵🇱 PL 06 - xiaohe",
-        "🇵🇱 PL 07 - xiaohe"
+        "🇵🇱 PL 05 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -43,6 +39,18 @@
     {
       "type": "trojan",
       "tag": "🇵🇱 PL 01 - xiaohe",
+      "server": "31.133.0.182",
+      "server_port": 443,
+      "password": "4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA",
+      "tls": {
+        "enabled": true,
+        "server_name": "pl1.dedushka.top",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇵🇱 PL 02 - xiaohe",
       "server": "31.133.0.186",
       "server_port": 443,
       "password": "4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA",
@@ -54,25 +62,13 @@
     },
     {
       "type": "trojan",
-      "tag": "🇵🇱 PL 02 - xiaohe",
+      "tag": "🇵🇱 PL 03 - xiaohe",
       "server": "pl2.dedushka.top",
       "server_port": 443,
       "password": "4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA",
       "tls": {
         "enabled": true,
         "server_name": "pl2.dedushka.top",
-        "insecure": true
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "🇵🇱 PL 03 - xiaohe",
-      "server": "31.133.0.182",
-      "server_port": 443,
-      "password": "4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA",
-      "tls": {
-        "enabled": true,
-        "server_name": "pl1.dedushka.top",
         "insecure": true
       }
     },
@@ -89,58 +85,14 @@
       }
     },
     {
-      "type": "vless",
+      "type": "trojan",
       "tag": "🇵🇱 PL 05 - xiaohe",
-      "server": "144.31.0.140",
+      "server": "92.118.150.146",
       "server_port": 443,
-      "uuid": "9c794bb7-54fe-4acd-844a-a26209af36c3",
-      "flow": "xtls-rprx-vision",
+      "password": "Trojan@82164024",
       "tls": {
         "enabled": true,
-        "server_name": "api.sakhalin.fyi",
-        "insecure": true,
-        "reality": {
-          "enabled": true,
-          "public_key": "13nLTYkdBEFR-A4CfK2beOx-5LKEsXh1QHPq8Kt52BQ",
-          "short_id": "7271129440ade8fa"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇵🇱 PL 06 - xiaohe",
-      "server": "144.31.0.140",
-      "server_port": 443,
-      "uuid": "9c794bb7-54fe-4acd-844a-a26209af36c3",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "api.sakhalin.fyi",
-        "insecure": true,
-        "reality": {
-          "enabled": true,
-          "public_key": "13nLTYkdBEFR-A4CfK2beOx-5LKEsXh1QHPq8Kt52BQ",
-          "short_id": "7271129440ade8fa"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇵🇱 PL 07 - xiaohe",
-      "server": "2.26.225.89",
-      "server_port": 8443,
-      "uuid": "51a1fd52-fd88-4905-a976-35e44be28e4b",
-      "tls": {
-        "enabled": true,
-        "server_name": "pl.flen-vpn.xyz",
+        "server_name": "pl.tronsg.com",
         "insecure": true
       }
     }

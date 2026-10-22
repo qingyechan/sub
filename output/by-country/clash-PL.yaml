@@ -6,15 +6,15 @@ log-level: info
 proxies:
 - name: 🇵🇱 PL 01 - xiaohe
   type: trojan
-  server: 31.133.0.186
+  server: 31.133.0.182
   port: 443
   password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
   udp: true
-  sni: pl2.dedushka.top
+  sni: pl1.dedushka.top
   skip-cert-verify: true
 - name: 🇵🇱 PL 02 - xiaohe
   type: trojan
-  server: pl2.dedushka.top
+  server: 31.133.0.186
   port: 443
   password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
   udp: true
@@ -22,11 +22,11 @@ proxies:
   skip-cert-verify: true
 - name: 🇵🇱 PL 03 - xiaohe
   type: trojan
-  server: 31.133.0.182
+  server: pl2.dedushka.top
   port: 443
   password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
   udp: true
-  sni: pl1.dedushka.top
+  sni: pl2.dedushka.top
   skip-cert-verify: true
 - name: 🇵🇱 PL 04 - xiaohe
   type: trojan
@@ -37,42 +37,13 @@ proxies:
   sni: pl1.dedushka.top
   skip-cert-verify: true
 - name: 🇵🇱 PL 05 - xiaohe
-  type: vless
-  server: 144.31.0.140
+  type: trojan
+  server: 92.118.150.146
   port: 443
-  uuid: 9c794bb7-54fe-4acd-844a-a26209af36c3
+  password: Trojan@82164024
   udp: true
-  tls: true
+  sni: pl.tronsg.com
   skip-cert-verify: true
-  reality-opts:
-    public-key: 13nLTYkdBEFR-A4CfK2beOx-5LKEsXh1QHPq8Kt52BQ
-    short-id: 7271129440ade8fa
-  servername: api.sakhalin.fyi
-  client-fingerprint: chrome
-  flow: xtls-rprx-vision
-- name: 🇵🇱 PL 06 - xiaohe
-  type: vless
-  server: 144.31.0.140
-  port: 443
-  uuid: 9c794bb7-54fe-4acd-844a-a26209af36c3
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  reality-opts:
-    public-key: 13nLTYkdBEFR-A4CfK2beOx-5LKEsXh1QHPq8Kt52BQ
-    short-id: 7271129440ade8fa
-  servername: api.sakhalin.fyi
-  client-fingerprint: firefox
-  flow: xtls-rprx-vision
-- name: 🇵🇱 PL 07 - xiaohe
-  type: vless
-  server: 2.26.225.89
-  port: 8443
-  uuid: 51a1fd52-fd88-4905-a976-35e44be28e4b
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  servername: pl.flen-vpn.xyz
 proxy-groups:
 - name: PROXIES
   type: select
@@ -84,8 +55,6 @@ proxy-groups:
   - 🇵🇱 PL 03 - xiaohe
   - 🇵🇱 PL 04 - xiaohe
   - 🇵🇱 PL 05 - xiaohe
-  - 🇵🇱 PL 06 - xiaohe
-  - 🇵🇱 PL 07 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -100,8 +69,6 @@ proxy-groups:
   - 🇵🇱 PL 03 - xiaohe
   - 🇵🇱 PL 04 - xiaohe
   - 🇵🇱 PL 05 - xiaohe
-  - 🇵🇱 PL 06 - xiaohe
-  - 🇵🇱 PL 07 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204
