@@ -13,26 +13,11 @@ proxies:
   sni: it1.dedushka.top
   skip-cert-verify: true
 - name: 🇷🇴 RO 02 - xiaohe
-  type: trojan
-  server: de1.dedushka.top
-  port: 443
-  password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
-  udp: true
-  sni: de1.dedushka.top
-  skip-cert-verify: true
-- name: 🇷🇴 RO 03 - xiaohe
   type: ss
   server: 194.68.44.42
   port: 64546
   cipher: chacha20-ietf-poly1305
   password: U83u9OGpvSatIUW7LsWffr
-  udp: true
-- name: 🇷🇴 RO 04 - xiaohe
-  type: ss
-  server: 154.46.31.106
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: QFWzCw2uX9B9i6qAYeFBIE
   udp: true
 proxy-groups:
 - name: PROXIES
@@ -42,8 +27,6 @@ proxy-groups:
   - FALLBACK
   - 🇷🇴 RO 01 - xiaohe
   - 🇷🇴 RO 02 - xiaohe
-  - 🇷🇴 RO 03 - xiaohe
-  - 🇷🇴 RO 04 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -55,8 +38,6 @@ proxy-groups:
   proxies: &id001
   - 🇷🇴 RO 01 - xiaohe
   - 🇷🇴 RO 02 - xiaohe
-  - 🇷🇴 RO 03 - xiaohe
-  - 🇷🇴 RO 04 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

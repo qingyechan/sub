@@ -4,27 +4,40 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: 🇪🇪 EE 01 - xiaohe
+- name: 🇧🇾 BY 01 - xiaohe
   type: vless
-  server: 138.124.4.224
-  port: 443
-  uuid: 9c794bb7-54fe-4acd-844a-a26209af36c3
+  server: 178.172.227.124
+  port: 14430
+  uuid: 1af36694-b548-4b18-89a0-bc076eab4ed7
   udp: true
-  tls: true
+  tls: false
   skip-cert-verify: true
-  reality-opts:
-    public-key: 13nLTYkdBEFR-A4CfK2beOx-5LKEsXh1QHPq8Kt52BQ
-    short-id: 7271129440ade8fa
-  servername: login.sakhweb.fyi
-  client-fingerprint: firefox
-  flow: xtls-rprx-vision
+  network: ws
+  ws-opts:
+    path: /vless
+    headers:
+      Host: 178.172.227.124
+- name: 🇧🇾 BY 02 - xiaohe
+  type: vless
+  server: 95.128.71.79
+  port: 14430
+  uuid: 8cef7621-c6f0-486e-b51d-59c30c5b0b25
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /vless
+    headers:
+      Host: 95.128.71.79
 proxy-groups:
 - name: PROXIES
   type: select
   proxies:
   - AUTO
   - FALLBACK
-  - 🇪🇪 EE 01 - xiaohe
+  - 🇧🇾 BY 01 - xiaohe
+  - 🇧🇾 BY 02 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -34,7 +47,8 @@ proxy-groups:
   tolerance: 100
   lazy: true
   proxies: &id001
-  - 🇪🇪 EE 01 - xiaohe
+  - 🇧🇾 BY 01 - xiaohe
+  - 🇧🇾 BY 02 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

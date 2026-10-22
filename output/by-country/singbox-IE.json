@@ -29,16 +29,12 @@
       "tag": "direct"
     },
     {
-      "type": "trojan",
+      "type": "shadowsocks",
       "tag": "🇮🇪 IE 01 - xiaohe",
-      "server": "ie1.dedushka.top",
+      "server": "20.166.51.228",
       "server_port": 443,
-      "password": "4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA",
-      "tls": {
-        "enabled": true,
-        "server_name": "ie1.dedushka.top",
-        "insecure": true
-      }
+      "method": "chacha20-ietf-poly1305",
+      "password": "LVMlhvK82To1FGsy"
     }
   ],
   "route": {

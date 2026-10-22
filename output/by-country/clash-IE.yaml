@@ -5,13 +5,12 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇮🇪 IE 01 - xiaohe
-  type: trojan
-  server: ie1.dedushka.top
+  type: ss
+  server: 20.166.51.228
   port: 443
-  password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
+  cipher: chacha20-ietf-poly1305
+  password: LVMlhvK82To1FGsy
   udp: true
-  sni: ie1.dedushka.top
-  skip-cert-verify: true
 proxy-groups:
 - name: PROXIES
   type: select

@@ -1,0 +1,79 @@
+{
+  "inbounds": [
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 7890
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "select",
+      "outbounds": [
+        "auto",
+        "🇹🇷 土耳其 (Turkey) 01 - xiaohe",
+        "🇹🇷 土耳其 (Turkey) 02 - xiaohe"
+      ]
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "🇹🇷 土耳其 (Turkey) 01 - xiaohe",
+        "🇹🇷 土耳其 (Turkey) 02 - xiaohe"
+      ],
+      "url": "https://www.google.com/generate_204"
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "vless",
+      "tag": "🇹🇷 土耳其 (Turkey) 01 - xiaohe",
+      "server": "45.144.214.144",
+      "server_port": 8446,
+      "uuid": "633c1bb0-60d5-41fb-a9c4-11f408b264ec",
+      "tls": {
+        "enabled": true,
+        "server_name": "storage-p2.googleapis.com",
+        "insecure": true,
+        "reality": {
+          "enabled": true,
+          "public_key": "7OwcalQiQ5RaMsYRjvtwTxZWS3sCpjOefcr3WYKFh04",
+          "short_id": "73da8baa63f8d537"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "edge"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇹🇷 土耳其 (Turkey) 02 - xiaohe",
+      "server": "sable56.fars-remen.ir",
+      "server_port": 8446,
+      "uuid": "633c1bb0-60d5-41fb-a9c4-11f408b264ec",
+      "tls": {
+        "enabled": true,
+        "server_name": "storage-p2.googleapis.com",
+        "insecure": true,
+        "reality": {
+          "enabled": true,
+          "public_key": "7OwcalQiQ5RaMsYRjvtwTxZWS3sCpjOefcr3WYKFh04",
+          "short_id": "73da8baa63f8d537"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "edge"
+        }
+      }
+    }
+  ],
+  "route": {
+    "final": "select"
+  }
+}

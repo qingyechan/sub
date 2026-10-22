@@ -20,7 +20,7 @@ proxies:
   flow: xtls-rprx-vision
 - name: 🇭🇰 中国香港 (Hong Kong) 02 - xiaohe
   type: vless
-  server: 141.11.149.174
+  server: 45.207.157.8
   port: 9443
   uuid: 82eb8419-59f4-4d3e-9106-d05d22af615c
   udp: true
@@ -34,7 +34,7 @@ proxies:
   flow: xtls-rprx-vision
 - name: 🇭🇰 中国香港 (Hong Kong) 03 - xiaohe
   type: vless
-  server: 45.202.248.173
+  server: 154.83.86.85
   port: 9443
   uuid: 82eb8419-59f4-4d3e-9106-d05d22af615c
   udp: true
@@ -48,30 +48,30 @@ proxies:
   flow: xtls-rprx-vision
 - name: 🇭🇰 中国香港 (Hong Kong) 04 - xiaohe
   type: vless
-  server: 154.83.86.85
-  port: 9443
-  uuid: 82eb8419-59f4-4d3e-9106-d05d22af615c
+  server: 165.154.63.139
+  port: 443
+  uuid: 91ad30e9-ab06-4b4c-9fb9-1c2aa97d8b3a
   udp: true
   tls: true
   skip-cert-verify: true
   reality-opts:
-    public-key: 0hIFPaEn4RdFib8_eP8HYxMywR5izEwM3JA2W1Zo8U4
-    short-id: b390142456517acc
+    public-key: AE81BrwMc8-kwGEIA1LhzaL03er0Qwt2V-fFy76F5jQ
+    short-id: ca4aedd4
   servername: www.amazon.com
   client-fingerprint: chrome
   flow: xtls-rprx-vision
 - name: 🇭🇰 中国香港 (Hong Kong) 05 - xiaohe
   type: vless
-  server: 50.7.44.28
-  port: 2091
-  uuid: 76b6a658-ce80-4500-b24d-404c94639ac6
+  server: 82.29.36.250
+  port: 443
+  uuid: 41a7af38-0bb1-4493-aa8d-634af0c2548b
   udp: true
   tls: true
   skip-cert-verify: true
   reality-opts:
-    public-key: 1N6AW5YuEwBoYcZK5KuugDzBHsa0NKZMT8QI-EmyL0k
-    short-id: 08a4b1f473932632
-  servername: www.apple.com
+    public-key: 09XPceP705hC-5sEDXDSLeL2eMOrF-mFISK8JaJ7q2g
+    short-id: ac3342a709db
+  servername: aws.amazon.com
   client-fingerprint: chrome
   flow: xtls-rprx-vision
 - name: 🇭🇰 中国香港 (Hong Kong) 06 - xiaohe
@@ -100,7 +100,7 @@ proxies:
     public-key: gUu1n11Ef_GEoatNQzJJucvIjGTt4qxOWdxMzjoHwDM
     short-id: 9b6fa4047c24629f
   servername: addons.mozilla.org
-  client-fingerprint: qq
+  client-fingerprint: chrome
   flow: xtls-rprx-vision
 - name: 🇭🇰 中国香港 (Hong Kong) 08 - xiaohe
   type: vless
@@ -128,23 +128,9 @@ proxies:
     public-key: gUu1n11Ef_GEoatNQzJJucvIjGTt4qxOWdxMzjoHwDM
     short-id: 9b6fa4047c24629f
   servername: addons.mozilla.org
-  client-fingerprint: chrome
-  flow: xtls-rprx-vision
-- name: 🇭🇰 中国香港 (Hong Kong) 10 - xiaohe
-  type: vless
-  server: 151.242.85.236
-  port: 443
-  uuid: 7aec627e-a258-4ded-9fd9-fbd7c024f950
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  reality-opts:
-    public-key: gUu1n11Ef_GEoatNQzJJucvIjGTt4qxOWdxMzjoHwDM
-    short-id: 9b6fa4047c24629f
-  servername: addons.mozilla.org
   client-fingerprint: firefox
   flow: xtls-rprx-vision
-- name: 🇭🇰 中国香港 (Hong Kong) 11 - xiaohe
+- name: 🇭🇰 中国香港 (Hong Kong) 10 - xiaohe
   type: vless
   server: 103.148.73.173
   port: 8443
@@ -158,38 +144,9 @@ proxies:
     path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
     headers:
       Host: ty986gfazs.cainiaohub.xyz
-- name: 🇭🇰 中国香港 (Hong Kong) 12 - xiaohe
+- name: 🇭🇰 中国香港 (Hong Kong) 11 - xiaohe
   type: vless
-  server: 45.207.157.8
-  port: 9443
-  uuid: 82eb8419-59f4-4d3e-9106-d05d22af615c
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  reality-opts:
-    public-key: 0hIFPaEn4RdFib8_eP8HYxMywR5izEwM3JA2W1Zo8U4
-    short-id: b390142456517acc
-  servername: www.amazon.com
-  client-fingerprint: chrome
-  flow: xtls-rprx-vision
-- name: 🇭🇰 中国香港 (Hong Kong) 13 - xiaohe
-  type: vmess
-  server: 47.244.120.197
-  port: 44867
-  uuid: 845e6b08-2919-4290-ade0-5dc7dcea59ca
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: false
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /arki
-    headers:
-      Host: 47.244.120.197
-- name: 🇭🇰 中国香港 (Hong Kong) 14 - xiaohe
-  type: vless
-  server: 103.180.20.108
+  server: 103.148.73.173
   port: 8443
   uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
   udp: true
@@ -200,38 +157,36 @@ proxies:
   ws-opts:
     path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
     headers:
-      Host: 103.180.20.108
-- name: 🇭🇰 中国香港 (Hong Kong) 15 - xiaohe
+      Host: 103.148.73.173
+- name: 🇭🇰 中国香港 (Hong Kong) 12 - xiaohe
   type: vless
-  server: 82.29.36.250
-  port: 443
-  uuid: 41a7af38-0bb1-4493-aa8d-634af0c2548b
+  server: 50.7.44.28
+  port: 2091
+  uuid: 76b6a658-ce80-4500-b24d-404c94639ac6
   udp: true
   tls: true
   skip-cert-verify: true
   reality-opts:
-    public-key: 09XPceP705hC-5sEDXDSLeL2eMOrF-mFISK8JaJ7q2g
-    short-id: 09353d6dc5b789
-  servername: aws.amazon.com
-  client-fingerprint: firefox
+    public-key: 1N6AW5YuEwBoYcZK5KuugDzBHsa0NKZMT8QI-EmyL0k
+    short-id: 08a4b1f473932632
+  servername: www.apple.com
+  client-fingerprint: chrome
   flow: xtls-rprx-vision
-- name: 🇭🇰 中国香港 (Hong Kong) 16 - xiaohe
-  type: vmess
-  server: 8.218.195.61
+- name: 🇭🇰 中国香港 (Hong Kong) 13 - xiaohe
+  type: vless
+  server: 151.242.85.236
   port: 443
-  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
-  alterId: 0
-  cipher: auto
+  uuid: 7aec627e-a258-4ded-9fd9-fbd7c024f950
   udp: true
   tls: true
   skip-cert-verify: true
-  servername: EX1oGt73NzPQKAc2.v.3dns.vip
-  network: ws
-  ws-opts:
-    path: /ws-vmess
-    headers:
-      Host: EX1oGt73NzPQKAc2.v.3dns.vip
-- name: 🇭🇰 中国香港 (Hong Kong) 17 - xiaohe
+  reality-opts:
+    public-key: gUu1n11Ef_GEoatNQzJJucvIjGTt4qxOWdxMzjoHwDM
+    short-id: 9b6fa4047c24629f
+  servername: addons.mozilla.org
+  client-fingerprint: qq
+  flow: xtls-rprx-vision
+- name: 🇭🇰 中国香港 (Hong Kong) 14 - xiaohe
   type: trojan
   server: 2.27.109.179
   port: 45464
@@ -239,7 +194,7 @@ proxies:
   udp: true
   sni: 2.27.109.179.sslip.io
   skip-cert-verify: true
-- name: 🇭🇰 中国香港 (Hong Kong) 18 - xiaohe
+- name: 🇭🇰 中国香港 (Hong Kong) 15 - xiaohe
   type: trojan
   server: 2.27.109.179
   port: 45464
@@ -247,21 +202,6 @@ proxies:
   udp: true
   sni: 2.27.109.179
   skip-cert-verify: true
-- name: 🇭🇰 中国香港 (Hong Kong) 19 - xiaohe
-  type: vmess
-  server: 156.245.232.239
-  port: 35043
-  uuid: b15e481d-17e4-41a8-84c2-23d4f0514d9a
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: false
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
 proxy-groups:
 - name: PROXIES
   type: select
@@ -283,10 +223,6 @@ proxy-groups:
   - 🇭🇰 中国香港 (Hong Kong) 13 - xiaohe
   - 🇭🇰 中国香港 (Hong Kong) 14 - xiaohe
   - 🇭🇰 中国香港 (Hong Kong) 15 - xiaohe
-  - 🇭🇰 中国香港 (Hong Kong) 16 - xiaohe
-  - 🇭🇰 中国香港 (Hong Kong) 17 - xiaohe
-  - 🇭🇰 中国香港 (Hong Kong) 18 - xiaohe
-  - 🇭🇰 中国香港 (Hong Kong) 19 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -311,10 +247,6 @@ proxy-groups:
   - 🇭🇰 中国香港 (Hong Kong) 13 - xiaohe
   - 🇭🇰 中国香港 (Hong Kong) 14 - xiaohe
   - 🇭🇰 中国香港 (Hong Kong) 15 - xiaohe
-  - 🇭🇰 中国香港 (Hong Kong) 16 - xiaohe
-  - 🇭🇰 中国香港 (Hong Kong) 17 - xiaohe
-  - 🇭🇰 中国香港 (Hong Kong) 18 - xiaohe
-  - 🇭🇰 中国香港 (Hong Kong) 19 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

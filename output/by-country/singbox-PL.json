@@ -39,30 +39,6 @@
     {
       "type": "trojan",
       "tag": "🇵🇱 PL 01 - xiaohe",
-      "server": "31.133.0.182",
-      "server_port": 443,
-      "password": "4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA",
-      "tls": {
-        "enabled": true,
-        "server_name": "pl1.dedushka.top",
-        "insecure": true
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "🇵🇱 PL 02 - xiaohe",
-      "server": "31.133.0.186",
-      "server_port": 443,
-      "password": "4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA",
-      "tls": {
-        "enabled": true,
-        "server_name": "pl2.dedushka.top",
-        "insecure": true
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "🇵🇱 PL 03 - xiaohe",
       "server": "pl2.dedushka.top",
       "server_port": 443,
       "password": "4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA",
@@ -74,8 +50,8 @@
     },
     {
       "type": "trojan",
-      "tag": "🇵🇱 PL 04 - xiaohe",
-      "server": "pl1.dedushka.top",
+      "tag": "🇵🇱 PL 02 - xiaohe",
+      "server": "31.133.0.182",
       "server_port": 443,
       "password": "4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA",
       "tls": {
@@ -85,14 +61,33 @@
       }
     },
     {
+      "type": "vless",
+      "tag": "🇵🇱 PL 03 - xiaohe",
+      "server": "site.teslamotor.site",
+      "server_port": 20001,
+      "uuid": "8e8210b7-71a4-4799-8b9b-2e69698b1eaf"
+    },
+    {
       "type": "trojan",
-      "tag": "🇵🇱 PL 05 - xiaohe",
-      "server": "92.118.150.146",
+      "tag": "🇵🇱 PL 04 - xiaohe",
+      "server": "31.133.0.186",
       "server_port": 443,
-      "password": "Trojan@82164024",
+      "password": "4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA",
       "tls": {
         "enabled": true,
-        "server_name": "pl.tronsg.com",
+        "server_name": "pl2.dedushka.top",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇵🇱 PL 05 - xiaohe",
+      "server": "pl1.dedushka.top",
+      "server_port": 443,
+      "password": "4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA",
+      "tls": {
+        "enabled": true,
+        "server_name": "pl1.dedushka.top",
         "insecure": true
       }
     }
