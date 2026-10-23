@@ -27,12 +27,12 @@ proxies:
   tls: false
   skip-cert-verify: true
 - name: 🇵🇱 PL 03 - xiaohe
-  type: vless
-  server: edge10.cyrionflare.com
-  port: 2052
-  uuid: 1a8ecc41-6e62-431b-8eca-87c2fa4dc286
+  type: trojan
+  server: 92.118.150.146
+  port: 443
+  password: Trojan@82164024
   udp: true
-  tls: false
+  sni: pl.tronsg.com
   skip-cert-verify: true
 proxy-groups:
 - name: PROXIES

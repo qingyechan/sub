@@ -13,14 +13,14 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇧🇬 BG 01 - xiaohe"
+        "🇪🇪 EE 01 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇧🇬 BG 01 - xiaohe"
+        "🇪🇪 EE 01 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -30,22 +30,23 @@
     },
     {
       "type": "vless",
-      "tag": "🇧🇬 BG 01 - xiaohe",
-      "server": "p2real4.greewebservices.ir",
-      "server_port": 1340,
-      "uuid": "2582857a-632b-4c4e-9b67-96213cbaf58c",
+      "tag": "🇪🇪 EE 01 - xiaohe",
+      "server": "l415ng0o.himoy.space",
+      "server_port": 443,
+      "uuid": "5131b5e9-2c3c-44a0-8f18-0641f3f21cac",
+      "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
-        "server_name": "play.googleapis.com",
+        "server_name": "l415ng0o.himoy.space",
         "insecure": true,
         "reality": {
           "enabled": true,
-          "public_key": "xQnXh5EfPDhcEBB7rRiLca33GYrMEeUa35domLL_yA8",
-          "short_id": "9b60d3"
+          "public_key": "JOoD5ze_pwrMnQoAIRVieQM8SPJjiLJEw1fwx57iYgk",
+          "short_id": "bbd20b213341644c"
         },
         "utls": {
           "enabled": true,
-          "fingerprint": "ios"
+          "fingerprint": "firefox"
         }
       }
     }
