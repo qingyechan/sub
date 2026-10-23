@@ -15,8 +15,7 @@
         "auto",
         "🇷🇴 RO 01 - xiaohe",
         "🇷🇴 RO 02 - xiaohe",
-        "🇷🇴 RO 03 - xiaohe",
-        "🇷🇴 RO 04 - xiaohe"
+        "🇷🇴 RO 03 - xiaohe"
       ]
     },
     {
@@ -25,8 +24,7 @@
       "outbounds": [
         "🇷🇴 RO 01 - xiaohe",
         "🇷🇴 RO 02 - xiaohe",
-        "🇷🇴 RO 03 - xiaohe",
-        "🇷🇴 RO 04 - xiaohe"
+        "🇷🇴 RO 03 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -37,26 +35,6 @@
     {
       "type": "trojan",
       "tag": "🇷🇴 RO 01 - xiaohe",
-      "server": "de1.dedushka.top",
-      "server_port": 443,
-      "password": "4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA",
-      "tls": {
-        "enabled": true,
-        "server_name": "de1.dedushka.top",
-        "insecure": true
-      }
-    },
-    {
-      "type": "shadowsocks",
-      "tag": "🇷🇴 RO 02 - xiaohe",
-      "server": "bogging-eyeteeth-fly.freesocks.work",
-      "server_port": 443,
-      "method": "chacha20-ietf-poly1305",
-      "password": "QFWzCw2uX9B9i6qAYeFBIE"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇷🇴 RO 03 - xiaohe",
       "server": "it1.dedushka.top",
       "server_port": 443,
       "password": "4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA",
@@ -67,11 +45,28 @@
       }
     },
     {
-      "type": "vless",
-      "tag": "🇷🇴 RO 04 - xiaohe",
-      "server": "edge10.cyrionflare.com",
-      "server_port": 2052,
-      "uuid": "1a8ecc41-6e62-431b-8eca-87c2fa4dc286"
+      "type": "trojan",
+      "tag": "🇷🇴 RO 02 - xiaohe",
+      "server": "92.42.100.132",
+      "server_port": 443,
+      "password": "4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA",
+      "tls": {
+        "enabled": true,
+        "server_name": "it1.dedushka.top",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇷🇴 RO 03 - xiaohe",
+      "server": "de1.dedushka.top",
+      "server_port": 443,
+      "password": "4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA",
+      "tls": {
+        "enabled": true,
+        "server_name": "de1.dedushka.top",
+        "insecure": true
+      }
     }
   ],
   "route": {
