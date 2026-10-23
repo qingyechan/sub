@@ -16,7 +16,7 @@ proxies:
     public-key: 8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To
     short-id: a3a578ab
   servername: www.apple.com
-  client-fingerprint: chrome
+  client-fingerprint: firefox
   flow: xtls-rprx-vision
 - name: 🇮🇱 IL 02 - xiaohe
   type: vless
@@ -30,7 +30,7 @@ proxies:
     public-key: 8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To
     short-id: a3a578ab
   servername: www.apple.com
-  client-fingerprint: random
+  client-fingerprint: chrome
   flow: xtls-rprx-vision
 - name: 🇮🇱 IL 03 - xiaohe
   type: vless
@@ -44,6 +44,20 @@ proxies:
     public-key: 8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To
     short-id: a3a578ab
   servername: www.apple.com
+  client-fingerprint: random
+  flow: xtls-rprx-vision
+- name: 🇮🇱 IL 04 - xiaohe
+  type: vless
+  server: es.srv.dvzh.net
+  port: 443
+  uuid: 9ab3a362-1518-496d-b08d-eced45cec936
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  reality-opts:
+    public-key: 9GEc6lOjnGQyyE1951OZSBMWt4uCXsOjKyj9fysxHH0
+    short-id: e0ccc8c2f487d913
+  servername: es.srv.dvzh.net
   client-fingerprint: firefox
   flow: xtls-rprx-vision
 proxy-groups:
@@ -55,6 +69,7 @@ proxy-groups:
   - 🇮🇱 IL 01 - xiaohe
   - 🇮🇱 IL 02 - xiaohe
   - 🇮🇱 IL 03 - xiaohe
+  - 🇮🇱 IL 04 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -67,6 +82,7 @@ proxy-groups:
   - 🇮🇱 IL 01 - xiaohe
   - 🇮🇱 IL 02 - xiaohe
   - 🇮🇱 IL 03 - xiaohe
+  - 🇮🇱 IL 04 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

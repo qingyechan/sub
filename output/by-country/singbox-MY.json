@@ -13,14 +13,14 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇰🇿 KZ 01 - xiaohe"
+        "🇲🇾 MY 01 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇰🇿 KZ 01 - xiaohe"
+        "🇲🇾 MY 01 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -29,19 +29,15 @@
       "tag": "direct"
     },
     {
-      "type": "vmess",
-      "tag": "🇰🇿 KZ 01 - xiaohe",
-      "server": "38.107.234.57",
-      "server_port": 80,
-      "uuid": "567f4be5-12ab-42e1-b8d9-db6fd1fdd31c",
-      "security": "auto",
-      "alter_id": 0,
-      "transport": {
-        "type": "ws",
-        "path": "/vmess/",
-        "headers": {
-          "Host": "38.107.234.57"
-        }
+      "type": "trojan",
+      "tag": "🇲🇾 MY 01 - xiaohe",
+      "server": "47.250.84.25",
+      "server_port": 443,
+      "password": "5931134d1cde66bf83a54acdfebe7ab2",
+      "tls": {
+        "enabled": true,
+        "server_name": "47.250.84.25",
+        "insecure": true
       }
     }
   ],
