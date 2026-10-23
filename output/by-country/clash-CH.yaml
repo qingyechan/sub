@@ -24,6 +24,34 @@ proxies:
     short-id: ad86e2d52ff40ebd
   servername: www.apple.com
   client-fingerprint: chrome
+- name: 🇨🇭 CH 03 - xiaohe
+  type: vless
+  server: lv4.himoy.space
+  port: 443
+  uuid: 5131b5e9-2c3c-44a0-8f18-0641f3f21cac
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  reality-opts:
+    public-key: EqhP9_DUChTnqqWCZ1b7i6WXxNtn1K7Yd-6lFVEPlUQ
+    short-id: 65ffcb37dda77fc5
+  servername: lv4.himoy.space
+  client-fingerprint: firefox
+  flow: xtls-rprx-vision
+- name: 🇨🇭 CH 04 - xiaohe
+  type: vless
+  server: lv1.himoy.space
+  port: 443
+  uuid: 5131b5e9-2c3c-44a0-8f18-0641f3f21cac
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  reality-opts:
+    public-key: aow1gjMhnsFXqOuIulX3HBWiGI7m488euLPH6G5fcFA
+    short-id: 3446a8095e1788b4
+  servername: lv1.himoy.space
+  client-fingerprint: firefox
+  flow: xtls-rprx-vision
 proxy-groups:
 - name: PROXIES
   type: select
@@ -32,6 +60,8 @@ proxy-groups:
   - FALLBACK
   - 🇨🇭 CH 01 - xiaohe
   - 🇨🇭 CH 02 - xiaohe
+  - 🇨🇭 CH 03 - xiaohe
+  - 🇨🇭 CH 04 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -43,6 +73,8 @@ proxy-groups:
   proxies: &id001
   - 🇨🇭 CH 01 - xiaohe
   - 🇨🇭 CH 02 - xiaohe
+  - 🇨🇭 CH 03 - xiaohe
+  - 🇨🇭 CH 04 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

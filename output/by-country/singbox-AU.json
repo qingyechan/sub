@@ -16,8 +16,7 @@
         "🇦🇺 澳大利亚 (Australia) 01 - xiaohe",
         "🇦🇺 澳大利亚 (Australia) 02 - xiaohe",
         "🇦🇺 澳大利亚 (Australia) 03 - xiaohe",
-        "🇦🇺 澳大利亚 (Australia) 04 - xiaohe",
-        "🇦🇺 澳大利亚 (Australia) 05 - xiaohe"
+        "🇦🇺 澳大利亚 (Australia) 04 - xiaohe"
       ]
     },
     {
@@ -27,8 +26,7 @@
         "🇦🇺 澳大利亚 (Australia) 01 - xiaohe",
         "🇦🇺 澳大利亚 (Australia) 02 - xiaohe",
         "🇦🇺 澳大利亚 (Australia) 03 - xiaohe",
-        "🇦🇺 澳大利亚 (Australia) 04 - xiaohe",
-        "🇦🇺 澳大利亚 (Australia) 05 - xiaohe"
+        "🇦🇺 澳大利亚 (Australia) 04 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -54,7 +52,7 @@
         },
         "utls": {
           "enabled": true,
-          "fingerprint": "random"
+          "fingerprint": "chrome"
         }
       }
     },
@@ -76,35 +74,13 @@
         },
         "utls": {
           "enabled": true,
-          "fingerprint": "chrome"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇦🇺 澳大利亚 (Australia) 03 - xiaohe",
-      "server": "51.161.204.244",
-      "server_port": 443,
-      "uuid": "36e89875-9c53-482b-bc41-d3890e9da176",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.cloudflare.com",
-        "insecure": true,
-        "reality": {
-          "enabled": true,
-          "public_key": "gCAazs5uxNuMZIxfDdw8wPE0nwKY4QfBfBkQveKAkEk",
-          "short_id": "0ad08b47f498efd2"
-        },
-        "utls": {
-          "enabled": true,
           "fingerprint": "firefox"
         }
       }
     },
     {
       "type": "vless",
-      "tag": "🇦🇺 澳大利亚 (Australia) 04 - xiaohe",
+      "tag": "🇦🇺 澳大利亚 (Australia) 03 - xiaohe",
       "server": "funagfrdfs.alixxplay.com",
       "server_port": 54528,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -126,15 +102,23 @@
     },
     {
       "type": "vless",
-      "tag": "🇦🇺 澳大利亚 (Australia) 05 - xiaohe",
-      "server": "forwarded.frnhk.xyz",
-      "server_port": 46004,
-      "uuid": "3c5f522d-6695-474f-abcf-2b1a65d503fa",
-      "transport": {
-        "type": "ws",
-        "path": "/aus1023",
-        "headers": {
-          "Host": "forwarded.frnhk.xyz"
+      "tag": "🇦🇺 澳大利亚 (Australia) 04 - xiaohe",
+      "server": "51.161.204.244",
+      "server_port": 443,
+      "uuid": "36e89875-9c53-482b-bc41-d3890e9da176",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.cloudflare.com",
+        "insecure": true,
+        "reality": {
+          "enabled": true,
+          "public_key": "gCAazs5uxNuMZIxfDdw8wPE0nwKY4QfBfBkQveKAkEk",
+          "short_id": "0ad08b47f498efd2"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
         }
       }
     }

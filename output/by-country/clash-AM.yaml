@@ -4,21 +4,26 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: 🇱🇻 LV 01 - xiaohe
-  type: trojan
-  server: lv1.dedushka.top
-  port: 443
-  password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
+- name: 🇦🇲 AM 01 - xiaohe
+  type: vless
+  server: 194.36.37.59
+  port: 10004
+  uuid: f7376394-cd54-11f1-bb6a-bff6d0326f6a
   udp: true
-  sni: lv1.dedushka.top
+  tls: false
   skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /vpnjantit
+    headers:
+      Host: 194.36.37.59
 proxy-groups:
 - name: PROXIES
   type: select
   proxies:
   - AUTO
   - FALLBACK
-  - 🇱🇻 LV 01 - xiaohe
+  - 🇦🇲 AM 01 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -28,7 +33,7 @@ proxy-groups:
   tolerance: 100
   lazy: true
   proxies: &id001
-  - 🇱🇻 LV 01 - xiaohe
+  - 🇦🇲 AM 01 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

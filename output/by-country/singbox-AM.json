@@ -13,14 +13,14 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇳🇴 NO 01 - xiaohe"
+        "🇦🇲 AM 01 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇳🇴 NO 01 - xiaohe"
+        "🇦🇲 AM 01 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -29,12 +29,18 @@
       "tag": "direct"
     },
     {
-      "type": "shadowsocks",
-      "tag": "🇳🇴 NO 01 - xiaohe",
-      "server": "185.213.23.63",
-      "server_port": 990,
-      "method": "chacha20-ietf-poly1305",
-      "password": "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
+      "type": "vless",
+      "tag": "🇦🇲 AM 01 - xiaohe",
+      "server": "194.36.37.59",
+      "server_port": 10004,
+      "uuid": "f7376394-cd54-11f1-bb6a-bff6d0326f6a",
+      "transport": {
+        "type": "ws",
+        "path": "/vpnjantit",
+        "headers": {
+          "Host": "194.36.37.59"
+        }
+      }
     }
   ],
   "route": {

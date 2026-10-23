@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-10-23T10:19:59.064416+00:00",
+  "generated_at": "2026-10-23T15:20:00.839351+00:00",
   "probe_location": "GitHub Actions",
   "core": "Mihomo v1.19.32",
-  "candidates": 3650,
-  "first_pass": 557,
-  "published": 1304,
-  "ci_tested": 557,
-  "optional_shortlist": 73,
-  "historical_alternatives": 747,
+  "candidates": 3550,
+  "first_pass": 534,
+  "published": 1288,
+  "ci_tested": 534,
+  "optional_shortlist": 54,
+  "historical_alternatives": 754,
   "https_targets": [
     "https://www.gstatic.com/generate_204",
     "https://cp.cloudflare.com/generate_204"
