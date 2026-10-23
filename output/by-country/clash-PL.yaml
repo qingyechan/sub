@@ -10,15 +10,15 @@ proxies:
   port: 443
   password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
   udp: true
-  sni: pl2.dedushka.top
+  sni: 31.133.0.186
   skip-cert-verify: true
 - name: 🇵🇱 PL 02 - xiaohe
   type: trojan
-  server: pl1.dedushka.top
+  server: 31.133.0.186
   port: 443
   password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
   udp: true
-  sni: pl1.dedushka.top
+  sni: pl2.dedushka.top
   skip-cert-verify: true
 - name: 🇵🇱 PL 03 - xiaohe
   type: trojan
@@ -30,13 +30,37 @@ proxies:
   skip-cert-verify: true
 - name: 🇵🇱 PL 04 - xiaohe
   type: trojan
+  server: pl1.dedushka.top
+  port: 443
+  password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
+  udp: true
+  sni: pl1.dedushka.top
+  skip-cert-verify: true
+- name: 🇵🇱 PL 05 - xiaohe
+  type: trojan
+  server: 92.118.150.146
+  port: 443
+  password: Trojan@82164024
+  udp: true
+  sni: pl.tronsg.com
+  skip-cert-verify: true
+- name: 🇵🇱 PL 06 - xiaohe
+  type: trojan
   server: pl2.dedushka.top
   port: 443
   password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
   udp: true
   sni: pl2.dedushka.top
   skip-cert-verify: true
-- name: 🇵🇱 PL 05 - xiaohe
+- name: 🇵🇱 PL 07 - xiaohe
+  type: vless
+  server: site.teslamotor.site
+  port: 20001
+  uuid: 8e8210b7-71a4-4799-8b9b-2e69698b1eaf
+  udp: true
+  tls: false
+  skip-cert-verify: true
+- name: 🇵🇱 PL 08 - xiaohe
   type: vless
   server: 2.26.225.89
   port: 8443
@@ -45,15 +69,7 @@ proxies:
   tls: true
   skip-cert-verify: true
   servername: 2.26.225.89
-- name: 🇵🇱 PL 06 - xiaohe
-  type: vless
-  server: site.teslamotor.site
-  port: 20001
-  uuid: 8e8210b7-71a4-4799-8b9b-2e69698b1eaf
-  udp: true
-  tls: false
-  skip-cert-verify: true
-- name: 🇵🇱 PL 07 - xiaohe
+- name: 🇵🇱 PL 09 - xiaohe
   type: vless
   server: 2.26.225.89
   port: 8443
@@ -62,14 +78,6 @@ proxies:
   tls: true
   skip-cert-verify: true
   servername: pl.flen-vpn.xyz
-- name: 🇵🇱 PL 08 - xiaohe
-  type: trojan
-  server: 92.118.150.146
-  port: 443
-  password: Trojan@82164024
-  udp: true
-  sni: pl.tronsg.com
-  skip-cert-verify: true
 proxy-groups:
 - name: PROXIES
   type: select
@@ -84,6 +92,7 @@ proxy-groups:
   - 🇵🇱 PL 06 - xiaohe
   - 🇵🇱 PL 07 - xiaohe
   - 🇵🇱 PL 08 - xiaohe
+  - 🇵🇱 PL 09 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -101,6 +110,7 @@ proxy-groups:
   - 🇵🇱 PL 06 - xiaohe
   - 🇵🇱 PL 07 - xiaohe
   - 🇵🇱 PL 08 - xiaohe
+  - 🇵🇱 PL 09 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

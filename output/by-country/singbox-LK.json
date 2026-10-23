@@ -13,14 +13,14 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇰🇿 KZ 01 - xiaohe"
+        "🇱🇰 LK 01 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇰🇿 KZ 01 - xiaohe"
+        "🇱🇰 LK 01 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -29,18 +29,16 @@
       "tag": "direct"
     },
     {
-      "type": "vmess",
-      "tag": "🇰🇿 KZ 01 - xiaohe",
-      "server": "38.107.234.57",
+      "type": "vless",
+      "tag": "🇱🇰 LK 01 - xiaohe",
+      "server": "free.sahanwickramasinghe.me",
       "server_port": 80,
-      "uuid": "567f4be5-12ab-42e1-b8d9-db6fd1fdd31c",
-      "security": "auto",
-      "alter_id": 0,
+      "uuid": "fcdb24e3-5e66-4c45-b89e-ac9441f4dcda",
       "transport": {
         "type": "ws",
-        "path": "/vmess/",
+        "path": "/",
         "headers": {
-          "Host": "38.107.234.57"
+          "Host": "free.sahanwickramasinghe.me"
         }
       }
     }

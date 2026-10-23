@@ -20,20 +20,6 @@ proxies:
   flow: xtls-rprx-vision
 - name: 🇦🇺 澳大利亚 (Australia) 02 - xiaohe
   type: vless
-  server: 104.18.155.229
-  port: 443
-  uuid: 42026ed0-7d74-4585-8e46-0fe6aa4d665a
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  servername: www.genflix.co.id.r3xxe.eu.cc
-  network: ws
-  ws-opts:
-    path: /au-do
-    headers:
-      Host: www.genflix.co.id.r3xxe.eu.cc
-- name: 🇦🇺 澳大利亚 (Australia) 03 - xiaohe
-  type: vless
   server: 51.161.204.244
   port: 443
   uuid: 36e89875-9c53-482b-bc41-d3890e9da176
@@ -46,6 +32,19 @@ proxies:
   servername: www.cloudflare.com
   client-fingerprint: chrome
   flow: xtls-rprx-vision
+- name: 🇦🇺 澳大利亚 (Australia) 03 - xiaohe
+  type: vless
+  server: forwarded.frnhk.xyz
+  port: 46004
+  uuid: 3c5f522d-6695-474f-abcf-2b1a65d503fa
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /aus1023
+    headers:
+      Host: forwarded.frnhk.xyz
 proxy-groups:
 - name: PROXIES
   type: select

@@ -5,13 +5,6 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇮🇪 IE 01 - xiaohe
-  type: ss
-  server: 20.166.51.228
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: LVMlhvK82To1FGsy
-  udp: true
-- name: 🇮🇪 IE 02 - xiaohe
   type: trojan
   server: ie1.dedushka.top
   port: 443
@@ -26,7 +19,6 @@ proxy-groups:
   - AUTO
   - FALLBACK
   - 🇮🇪 IE 01 - xiaohe
-  - 🇮🇪 IE 02 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -37,7 +29,6 @@ proxy-groups:
   lazy: true
   proxies: &id001
   - 🇮🇪 IE 01 - xiaohe
-  - 🇮🇪 IE 02 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

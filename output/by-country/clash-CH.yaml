@@ -25,6 +25,20 @@ proxies:
   servername: www.cloudflare.com
   client-fingerprint: firefox
   flow: xtls-rprx-vision
+- name: 🇨🇭 CH 03 - xiaohe
+  type: vless
+  server: 79.137.199.52
+  port: 21
+  uuid: 763e2ddd-c830-4f4f-801c-f6f2c3418d4f
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: bapj1qapjk4.0sds0li1bwcz0i76it0gjxv1.workers.dev
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: bapj1qapjk4.0sds0li1bwcz0i76it0gjxv1.workers.dev
 proxy-groups:
 - name: PROXIES
   type: select
@@ -33,6 +47,7 @@ proxy-groups:
   - FALLBACK
   - 🇨🇭 CH 01 - xiaohe
   - 🇨🇭 CH 02 - xiaohe
+  - 🇨🇭 CH 03 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -44,6 +59,7 @@ proxy-groups:
   proxies: &id001
   - 🇨🇭 CH 01 - xiaohe
   - 🇨🇭 CH 02 - xiaohe
+  - 🇨🇭 CH 03 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204
