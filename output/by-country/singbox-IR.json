@@ -13,14 +13,14 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇰🇷 韩国 (South Korea) 01 (家宽) - xiaohe"
+        "🇮🇷 IR 01 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇰🇷 韩国 (South Korea) 01 (家宽) - xiaohe"
+        "🇮🇷 IR 01 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -29,12 +29,11 @@
       "tag": "direct"
     },
     {
-      "type": "shadowsocks",
-      "tag": "🇰🇷 韩国 (South Korea) 01 (家宽) - xiaohe",
-      "server": "211.178.105.134",
-      "server_port": 6123,
-      "method": "aes-256-cfb",
-      "password": "qwerREWQ@@"
+      "type": "vless",
+      "tag": "🇮🇷 IR 01 - xiaohe",
+      "server": "s10.redmbred.ir",
+      "server_port": 37857,
+      "uuid": "43d5b705-f33e-4d43-8540-b2de5f309117"
     }
   ],
   "route": {

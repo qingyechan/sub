@@ -13,13 +13,36 @@ proxies:
   tls: false
   skip-cert-verify: true
 - name: 🇵🇱 PL 02 - xiaohe
-  type: ss
-  server: 49.12.249.167
-  port: 147
-  cipher: chacha20-ietf-poly1305
-  password: 5uDrCF_iLoxCiRkKku6f7A
+  type: vless
+  server: edge10.cyrionflare.com
+  port: 2052
+  uuid: 1a8ecc41-6e62-431b-8eca-87c2fa4dc286
   udp: true
+  tls: false
+  skip-cert-verify: true
 - name: 🇵🇱 PL 03 - xiaohe
+  type: vless
+  server: site.teslamotor.site
+  port: 20001
+  uuid: 8e8210b7-71a4-4799-8b9b-2e69698b1eaf
+  udp: true
+  tls: false
+  skip-cert-verify: true
+- name: 🇵🇱 PL 04 - xiaohe
+  type: vless
+  server: 92.53.119.212
+  port: 40849
+  uuid: 1ef7d97f-3aa5-0001-8521-84cf4794bf7a
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  reality-opts:
+    public-key: jkVcZ_b3iWs2FcSjC8Mb1NoRuwPgCH9HpeOOYAXBSU0
+    short-id: ''
+  servername: ru-hub10.lovely.my
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision
+- name: 🇵🇱 PL 05 - xiaohe
   type: vless
   server: pl2.himoy.space
   port: 443
@@ -33,22 +56,6 @@ proxies:
   servername: pl2.himoy.space
   client-fingerprint: firefox
   flow: xtls-rprx-vision
-- name: 🇵🇱 PL 04 - xiaohe
-  type: vless
-  server: edge10.cyrionflare.com
-  port: 2052
-  uuid: 1a8ecc41-6e62-431b-8eca-87c2fa4dc286
-  udp: true
-  tls: false
-  skip-cert-verify: true
-- name: 🇵🇱 PL 05 - xiaohe
-  type: vless
-  server: site.teslamotor.site
-  port: 20001
-  uuid: 8e8210b7-71a4-4799-8b9b-2e69698b1eaf
-  udp: true
-  tls: false
-  skip-cert-verify: true
 - name: 🇵🇱 PL 06 - xiaohe
   type: vless
   server: 151.241.138.22

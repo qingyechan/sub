@@ -46,16 +46,44 @@
       "uuid": "44dfa3a7-f648-4587-819b-e653c0823f28"
     },
     {
-      "type": "shadowsocks",
+      "type": "vless",
       "tag": "🇵🇱 PL 02 - xiaohe",
-      "server": "49.12.249.167",
-      "server_port": 147,
-      "method": "chacha20-ietf-poly1305",
-      "password": "5uDrCF_iLoxCiRkKku6f7A"
+      "server": "edge10.cyrionflare.com",
+      "server_port": 2052,
+      "uuid": "1a8ecc41-6e62-431b-8eca-87c2fa4dc286"
     },
     {
       "type": "vless",
       "tag": "🇵🇱 PL 03 - xiaohe",
+      "server": "site.teslamotor.site",
+      "server_port": 20001,
+      "uuid": "8e8210b7-71a4-4799-8b9b-2e69698b1eaf"
+    },
+    {
+      "type": "vless",
+      "tag": "🇵🇱 PL 04 - xiaohe",
+      "server": "92.53.119.212",
+      "server_port": 40849,
+      "uuid": "1ef7d97f-3aa5-0001-8521-84cf4794bf7a",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "ru-hub10.lovely.my",
+        "insecure": true,
+        "reality": {
+          "enabled": true,
+          "public_key": "jkVcZ_b3iWs2FcSjC8Mb1NoRuwPgCH9HpeOOYAXBSU0",
+          "short_id": ""
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇵🇱 PL 05 - xiaohe",
       "server": "pl2.himoy.space",
       "server_port": 443,
       "uuid": "5131b5e9-2c3c-44a0-8f18-0641f3f21cac",
@@ -74,20 +102,6 @@
           "fingerprint": "firefox"
         }
       }
-    },
-    {
-      "type": "vless",
-      "tag": "🇵🇱 PL 04 - xiaohe",
-      "server": "edge10.cyrionflare.com",
-      "server_port": 2052,
-      "uuid": "1a8ecc41-6e62-431b-8eca-87c2fa4dc286"
-    },
-    {
-      "type": "vless",
-      "tag": "🇵🇱 PL 05 - xiaohe",
-      "server": "site.teslamotor.site",
-      "server_port": 20001,
-      "uuid": "8e8210b7-71a4-4799-8b9b-2e69698b1eaf"
     },
     {
       "type": "vless",

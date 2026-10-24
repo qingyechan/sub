@@ -6,20 +6,6 @@ log-level: info
 proxies:
 - name: 🇷🇺 俄罗斯 (Russia) 01 - xiaohe
   type: vless
-  server: 194.113.235.121
-  port: 443
-  uuid: c5cf36f5-50e9-405b-adb4-b40fdf0d4619
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  reality-opts:
-    public-key: f2a5R8ubMtjmFDxUt1VtikDOmgPgVWBPzcZjOOJpYlc
-    short-id: 12f319370b60ec2f
-  servername: fr1-4v.zvcorp24.com
-  client-fingerprint: firefox
-  flow: xtls-rprx-vision
-- name: 🇷🇺 俄罗斯 (Russia) 02 - xiaohe
-  type: vless
   server: 45.9.118.177
   port: 8443
   uuid: 88c4ce99-31f1-4329-912d-2a3564b3d58b
@@ -32,7 +18,7 @@ proxies:
   servername: apple.com
   client-fingerprint: firefox
   flow: xtls-rprx-vision
-- name: 🇷🇺 俄罗斯 (Russia) 03 - xiaohe
+- name: 🇷🇺 俄罗斯 (Russia) 02 - xiaohe
   type: vmess
   server: 158.160.180.165
   port: 24212
@@ -43,6 +29,20 @@ proxies:
   tls: true
   skip-cert-verify: true
   servername: 158.160.180.165
+- name: 🇷🇺 俄罗斯 (Russia) 03 - xiaohe
+  type: vless
+  server: 194.113.235.121
+  port: 443
+  uuid: c5cf36f5-50e9-405b-adb4-b40fdf0d4619
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  reality-opts:
+    public-key: f2a5R8ubMtjmFDxUt1VtikDOmgPgVWBPzcZjOOJpYlc
+    short-id: 12f319370b60ec2f
+  servername: fr1-4v.zvcorp24.com
+  client-fingerprint: firefox
+  flow: xtls-rprx-vision
 proxy-groups:
 - name: PROXIES
   type: select
