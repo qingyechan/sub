@@ -15,8 +15,7 @@
         "auto",
         "🇮🇱 IL 01 - xiaohe",
         "🇮🇱 IL 02 - xiaohe",
-        "🇮🇱 IL 03 - xiaohe",
-        "🇮🇱 IL 04 - xiaohe"
+        "🇮🇱 IL 03 - xiaohe"
       ]
     },
     {
@@ -25,8 +24,7 @@
       "outbounds": [
         "🇮🇱 IL 01 - xiaohe",
         "🇮🇱 IL 02 - xiaohe",
-        "🇮🇱 IL 03 - xiaohe",
-        "🇮🇱 IL 04 - xiaohe"
+        "🇮🇱 IL 03 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -52,7 +50,7 @@
         },
         "utls": {
           "enabled": true,
-          "fingerprint": "firefox"
+          "fingerprint": "chrome"
         }
       }
     },
@@ -74,7 +72,7 @@
         },
         "utls": {
           "enabled": true,
-          "fingerprint": "chrome"
+          "fingerprint": "firefox"
         }
       }
     },
@@ -97,28 +95,6 @@
         "utls": {
           "enabled": true,
           "fingerprint": "random"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇮🇱 IL 04 - xiaohe",
-      "server": "es.srv.dvzh.net",
-      "server_port": 443,
-      "uuid": "9ab3a362-1518-496d-b08d-eced45cec936",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "es.srv.dvzh.net",
-        "insecure": true,
-        "reality": {
-          "enabled": true,
-          "public_key": "9GEc6lOjnGQyyE1951OZSBMWt4uCXsOjKyj9fysxHH0",
-          "short_id": "e0ccc8c2f487d913"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
         }
       }
     }
