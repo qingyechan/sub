@@ -16,7 +16,9 @@
         "🇵🇱 PL 01 - xiaohe",
         "🇵🇱 PL 02 - xiaohe",
         "🇵🇱 PL 03 - xiaohe",
-        "🇵🇱 PL 04 - xiaohe"
+        "🇵🇱 PL 04 - xiaohe",
+        "🇵🇱 PL 05 - xiaohe",
+        "🇵🇱 PL 06 - xiaohe"
       ]
     },
     {
@@ -26,7 +28,9 @@
         "🇵🇱 PL 01 - xiaohe",
         "🇵🇱 PL 02 - xiaohe",
         "🇵🇱 PL 03 - xiaohe",
-        "🇵🇱 PL 04 - xiaohe"
+        "🇵🇱 PL 04 - xiaohe",
+        "🇵🇱 PL 05 - xiaohe",
+        "🇵🇱 PL 06 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -37,13 +41,21 @@
     {
       "type": "vless",
       "tag": "🇵🇱 PL 01 - xiaohe",
-      "server": "site.teslamotor.site",
-      "server_port": 20001,
-      "uuid": "8e8210b7-71a4-4799-8b9b-2e69698b1eaf"
+      "server": "5.22.221.127",
+      "server_port": 443,
+      "uuid": "44dfa3a7-f648-4587-819b-e653c0823f28"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇵🇱 PL 02 - xiaohe",
+      "server": "49.12.249.167",
+      "server_port": 147,
+      "method": "chacha20-ietf-poly1305",
+      "password": "5uDrCF_iLoxCiRkKku6f7A"
     },
     {
       "type": "vless",
-      "tag": "🇵🇱 PL 02 - xiaohe",
+      "tag": "🇵🇱 PL 03 - xiaohe",
       "server": "pl2.himoy.space",
       "server_port": 443,
       "uuid": "5131b5e9-2c3c-44a0-8f18-0641f3f21cac",
@@ -64,20 +76,22 @@
       }
     },
     {
-      "type": "trojan",
-      "tag": "🇵🇱 PL 03 - xiaohe",
-      "server": "92.118.150.146",
-      "server_port": 443,
-      "password": "Trojan@82164024",
-      "tls": {
-        "enabled": true,
-        "server_name": "pl.tronsg.com",
-        "insecure": true
-      }
+      "type": "vless",
+      "tag": "🇵🇱 PL 04 - xiaohe",
+      "server": "edge10.cyrionflare.com",
+      "server_port": 2052,
+      "uuid": "1a8ecc41-6e62-431b-8eca-87c2fa4dc286"
     },
     {
       "type": "vless",
-      "tag": "🇵🇱 PL 04 - xiaohe",
+      "tag": "🇵🇱 PL 05 - xiaohe",
+      "server": "site.teslamotor.site",
+      "server_port": 20001,
+      "uuid": "8e8210b7-71a4-4799-8b9b-2e69698b1eaf"
+    },
+    {
+      "type": "vless",
+      "tag": "🇵🇱 PL 06 - xiaohe",
       "server": "151.241.138.22",
       "server_port": 443,
       "uuid": "5131b5e9-2c3c-44a0-8f18-0641f3f21cac",

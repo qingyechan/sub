@@ -16,7 +16,8 @@
         "🇮🇱 IL 01 - xiaohe",
         "🇮🇱 IL 02 - xiaohe",
         "🇮🇱 IL 03 - xiaohe",
-        "🇮🇱 IL 04 - xiaohe"
+        "🇮🇱 IL 04 - xiaohe",
+        "🇮🇱 IL 05 - xiaohe"
       ]
     },
     {
@@ -26,7 +27,8 @@
         "🇮🇱 IL 01 - xiaohe",
         "🇮🇱 IL 02 - xiaohe",
         "🇮🇱 IL 03 - xiaohe",
-        "🇮🇱 IL 04 - xiaohe"
+        "🇮🇱 IL 04 - xiaohe",
+        "🇮🇱 IL 05 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -52,7 +54,7 @@
         },
         "utls": {
           "enabled": true,
-          "fingerprint": "firefox"
+          "fingerprint": "chrome"
         }
       }
     },
@@ -74,7 +76,7 @@
         },
         "utls": {
           "enabled": true,
-          "fingerprint": "random"
+          "fingerprint": "firefox"
         }
       }
     },
@@ -96,7 +98,7 @@
         },
         "utls": {
           "enabled": true,
-          "fingerprint": "chrome"
+          "fingerprint": "random"
         }
       }
     },
@@ -119,6 +121,25 @@
         "utls": {
           "enabled": true,
           "fingerprint": "firefox"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇮🇱 IL 05 - xiaohe",
+      "server": "177.3.208.65",
+      "server_port": 443,
+      "uuid": "4f34bc04-479c-49ba-91a8-6bb9ed15031c",
+      "tls": {
+        "enabled": true,
+        "server_name": "tgmansion.site",
+        "insecure": true
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/vless-il",
+        "headers": {
+          "Host": "tgmansion.site"
         }
       }
     }

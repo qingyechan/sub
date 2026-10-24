@@ -4,26 +4,27 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: 🇨🇾 CY 01 - xiaohe
+- name: 🇸🇨 SC 01 - xiaohe
   type: vless
-  server: 5.253.29.254
-  port: 14430
-  uuid: c7c27192-60a5-4ce1-b613-95270d82309d
+  server: 45.95.96.198
+  port: 443
+  uuid: 2f5cfa10-43e5-4912-800d-557308a26a29
   udp: true
-  tls: false
+  tls: true
   skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /vless
-    headers:
-      Host: 5.253.29.254
+  reality-opts:
+    public-key: 8RfEuI1RxxW1dqq2nbt6ssKwx7UdmgKW1nKL9OuilGs
+    short-id: 0492eabdb9
+  servername: yw0ein72.cloudydigital.net
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision
 proxy-groups:
 - name: PROXIES
   type: select
   proxies:
   - AUTO
   - FALLBACK
-  - 🇨🇾 CY 01 - xiaohe
+  - 🇸🇨 SC 01 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -33,7 +34,7 @@ proxy-groups:
   tolerance: 100
   lazy: true
   proxies: &id001
-  - 🇨🇾 CY 01 - xiaohe
+  - 🇸🇨 SC 01 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

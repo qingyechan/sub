@@ -6,10 +6,10 @@ log-level: info
 proxies:
 - name: 🇿🇦 ZA 01 - xiaohe
   type: ss
-  server: 139.84.247.164
-  port: 8388
+  server: 102.133.165.160
+  port: 16233
   cipher: chacha20-ietf-poly1305
-  password: tfAcRikawhNoZAhu
+  password: Xsy8Ox4yOV3xLlpxtjzs3X
   udp: true
 - name: 🇿🇦 ZA 02 - xiaohe
   type: ss
@@ -17,13 +17,6 @@ proxies:
   port: 443
   cipher: chacha20-ietf-poly1305
   password: aduB9HGxQHjA2SBMRjkHX6
-  udp: true
-- name: 🇿🇦 ZA 03 - xiaohe
-  type: ss
-  server: 102.133.165.160
-  port: 16233
-  cipher: chacha20-ietf-poly1305
-  password: Xsy8Ox4yOV3xLlpxtjzs3X
   udp: true
 proxy-groups:
 - name: PROXIES
@@ -33,7 +26,6 @@ proxy-groups:
   - FALLBACK
   - 🇿🇦 ZA 01 - xiaohe
   - 🇿🇦 ZA 02 - xiaohe
-  - 🇿🇦 ZA 03 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -45,7 +37,6 @@ proxy-groups:
   proxies: &id001
   - 🇿🇦 ZA 01 - xiaohe
   - 🇿🇦 ZA 02 - xiaohe
-  - 🇿🇦 ZA 03 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204
