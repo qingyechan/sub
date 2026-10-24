@@ -13,14 +13,16 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇪🇪 EE 01 - xiaohe"
+        "🇪🇪 EE 01 - xiaohe",
+        "🇪🇪 EE 02 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇪🇪 EE 01 - xiaohe"
+        "🇪🇪 EE 01 - xiaohe",
+        "🇪🇪 EE 02 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -43,6 +45,28 @@
           "enabled": true,
           "public_key": "Pb37t99NiJqm-lsTi4tucPFqRXIsek-5G5dqjIqVfxE",
           "short_id": "15c87d0b99c0d132"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇪🇪 EE 02 - xiaohe",
+      "server": "ee1.mycloud1.org",
+      "server_port": 443,
+      "uuid": "605dea9b-b485-45c9-af9b-cc2b0195023c",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "ee1.mycloud1.org",
+        "insecure": true,
+        "reality": {
+          "enabled": true,
+          "public_key": "Su5ULcRQKF-0DJIHZeTNEnXHBpyQtizmUrcNIYhZI0E",
+          "short_id": "afee962d"
         },
         "utls": {
           "enabled": true,

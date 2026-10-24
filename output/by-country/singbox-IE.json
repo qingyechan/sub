@@ -1,0 +1,43 @@
+{
+  "inbounds": [
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 7890
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "select",
+      "outbounds": [
+        "auto",
+        "🇮🇪 IE 01 - xiaohe"
+      ]
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "🇮🇪 IE 01 - xiaohe"
+      ],
+      "url": "https://www.google.com/generate_204"
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇮🇪 IE 01 - xiaohe",
+      "server": "20.123.12.228",
+      "server_port": 443,
+      "method": "chacha20-ietf-poly1305",
+      "password": "lmG45rfbkt8DAPfP"
+    }
+  ],
+  "route": {
+    "final": "select"
+  }
+}
