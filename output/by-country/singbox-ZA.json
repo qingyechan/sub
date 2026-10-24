@@ -14,7 +14,8 @@
       "outbounds": [
         "auto",
         "🇿🇦 ZA 01 - xiaohe",
-        "🇿🇦 ZA 02 - xiaohe"
+        "🇿🇦 ZA 02 - xiaohe",
+        "🇿🇦 ZA 03 - xiaohe"
       ]
     },
     {
@@ -22,7 +23,8 @@
       "tag": "auto",
       "outbounds": [
         "🇿🇦 ZA 01 - xiaohe",
-        "🇿🇦 ZA 02 - xiaohe"
+        "🇿🇦 ZA 02 - xiaohe",
+        "🇿🇦 ZA 03 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -33,10 +35,10 @@
     {
       "type": "shadowsocks",
       "tag": "🇿🇦 ZA 01 - xiaohe",
-      "server": "102.133.165.160",
-      "server_port": 16233,
+      "server": "139.84.247.164",
+      "server_port": 8388,
       "method": "chacha20-ietf-poly1305",
-      "password": "Xsy8Ox4yOV3xLlpxtjzs3X"
+      "password": "tfAcRikawhNoZAhu"
     },
     {
       "type": "shadowsocks",
@@ -45,6 +47,14 @@
       "server_port": 443,
       "method": "chacha20-ietf-poly1305",
       "password": "aduB9HGxQHjA2SBMRjkHX6"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇿🇦 ZA 03 - xiaohe",
+      "server": "102.133.165.160",
+      "server_port": 16233,
+      "method": "chacha20-ietf-poly1305",
+      "password": "Xsy8Ox4yOV3xLlpxtjzs3X"
     }
   ],
   "route": {

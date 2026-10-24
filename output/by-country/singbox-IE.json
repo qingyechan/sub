@@ -31,10 +31,10 @@
     {
       "type": "shadowsocks",
       "tag": "🇮🇪 IE 01 - xiaohe",
-      "server": "20.223.233.241",
+      "server": "20.123.12.228",
       "server_port": 443,
       "method": "chacha20-ietf-poly1305",
-      "password": "Ds3hlPero5ov6gae"
+      "password": "lmG45rfbkt8DAPfP"
     }
   ],
   "route": {
