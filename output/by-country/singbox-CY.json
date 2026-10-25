@@ -13,14 +13,14 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇮🇪 IE 01 - xiaohe"
+        "🇨🇾 CY 01 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇮🇪 IE 01 - xiaohe"
+        "🇨🇾 CY 01 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -29,12 +29,11 @@
       "tag": "direct"
     },
     {
-      "type": "shadowsocks",
-      "tag": "🇮🇪 IE 01 - xiaohe",
-      "server": "20.123.12.228",
-      "server_port": 443,
-      "method": "chacha20-ietf-poly1305",
-      "password": "lmG45rfbkt8DAPfP"
+      "type": "vless",
+      "tag": "🇨🇾 CY 01 - xiaohe",
+      "server": "5.253.29.254",
+      "server_port": 10443,
+      "uuid": "c7c27192-60a5-4ce1-b613-95270d82309d"
     }
   ],
   "route": {

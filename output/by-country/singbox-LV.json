@@ -15,7 +15,8 @@
         "auto",
         "🇱🇻 LV 01 - xiaohe",
         "🇱🇻 LV 02 - xiaohe",
-        "🇱🇻 LV 03 - xiaohe"
+        "🇱🇻 LV 03 - xiaohe",
+        "🇱🇻 LV 04 - xiaohe"
       ]
     },
     {
@@ -24,7 +25,8 @@
       "outbounds": [
         "🇱🇻 LV 01 - xiaohe",
         "🇱🇻 LV 02 - xiaohe",
-        "🇱🇻 LV 03 - xiaohe"
+        "🇱🇻 LV 03 - xiaohe",
+        "🇱🇻 LV 04 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -33,8 +35,16 @@
       "tag": "direct"
     },
     {
-      "type": "vless",
+      "type": "shadowsocks",
       "tag": "🇱🇻 LV 01 - xiaohe",
+      "server": "185.135.86.175",
+      "server_port": 9094,
+      "method": "aes-256-cfb",
+      "password": "rpgbNnU9rDDU4aWZ"
+    },
+    {
+      "type": "vless",
+      "tag": "🇱🇻 LV 02 - xiaohe",
       "server": "138.124.180.137",
       "server_port": 443,
       "uuid": "5234b2b7-5e07-422c-8159-d62a676c00c6",
@@ -56,7 +66,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇱🇻 LV 02 - xiaohe",
+      "tag": "🇱🇻 LV 03 - xiaohe",
       "server": "138.124.180.137",
       "server_port": 443,
       "uuid": "5234b2b7-5e07-422c-8159-d62a676c00c6",
@@ -78,7 +88,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇱🇻 LV 03 - xiaohe",
+      "tag": "🇱🇻 LV 04 - xiaohe",
       "server": "138.124.180.137",
       "server_port": 443,
       "uuid": "5234b2b7-5e07-422c-8159-d62a676c00c6",

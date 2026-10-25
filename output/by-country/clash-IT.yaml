@@ -19,13 +19,6 @@ proxies:
   password: itzvpn@321
   udp: true
 - name: 🇮🇹 意大利 (Italy) 03 - xiaohe
-  type: ss
-  server: 202.50.253.63
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  udp: true
-- name: 🇮🇹 意大利 (Italy) 04 - xiaohe
   type: vless
   server: 57.131.38.163
   port: 2053
@@ -38,7 +31,7 @@ proxies:
     short-id: 5b8a942318178e7b
   servername: www.apple.com
   client-fingerprint: random
-- name: 🇮🇹 意大利 (Italy) 05 - xiaohe
+- name: 🇮🇹 意大利 (Italy) 04 - xiaohe
   type: vless
   server: 57.131.38.163
   port: 2053
@@ -51,7 +44,7 @@ proxies:
     short-id: 5b8a942318178e7b
   servername: www.apple.com
   client-fingerprint: chrome
-- name: 🇮🇹 意大利 (Italy) 06 - xiaohe
+- name: 🇮🇹 意大利 (Italy) 05 - xiaohe
   type: vless
   server: 57.131.38.163
   port: 2053
@@ -64,9 +57,16 @@ proxies:
     short-id: 5b8a942318178e7b
   servername: www.apple.com
   client-fingerprint: firefox
+- name: 🇮🇹 意大利 (Italy) 06 - xiaohe
+  type: ss
+  server: 202.50.253.90
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
 - name: 🇮🇹 意大利 (Italy) 07 - xiaohe
   type: ss
-  server: 202.50.253.27
+  server: 202.50.253.54
   port: 19999
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
@@ -80,28 +80,21 @@ proxies:
   udp: true
 - name: 🇮🇹 意大利 (Italy) 09 - xiaohe
   type: ss
-  server: 202.50.253.54
+  server: 202.50.253.81
   port: 19999
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   udp: true
 - name: 🇮🇹 意大利 (Italy) 10 - xiaohe
   type: ss
-  server: 202.50.253.90
+  server: 202.50.253.72
   port: 19999
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   udp: true
 - name: 🇮🇹 意大利 (Italy) 11 - xiaohe
   type: ss
-  server: 202.50.253.81
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  udp: true
-- name: 🇮🇹 意大利 (Italy) 12 - xiaohe
-  type: ss
-  server: 202.50.253.45
+  server: 202.50.253.27
   port: 19999
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
@@ -123,7 +116,6 @@ proxy-groups:
   - 🇮🇹 意大利 (Italy) 09 - xiaohe
   - 🇮🇹 意大利 (Italy) 10 - xiaohe
   - 🇮🇹 意大利 (Italy) 11 - xiaohe
-  - 🇮🇹 意大利 (Italy) 12 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -144,7 +136,6 @@ proxy-groups:
   - 🇮🇹 意大利 (Italy) 09 - xiaohe
   - 🇮🇹 意大利 (Italy) 10 - xiaohe
   - 🇮🇹 意大利 (Italy) 11 - xiaohe
-  - 🇮🇹 意大利 (Italy) 12 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204
