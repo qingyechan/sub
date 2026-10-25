@@ -6,34 +6,6 @@ log-level: info
 proxies:
 - name: 🇪🇪 EE 01 - xiaohe
   type: vless
-  server: tlokexcm.himoy.space
-  port: 443
-  uuid: 5131b5e9-2c3c-44a0-8f18-0641f3f21cac
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  reality-opts:
-    public-key: Pb37t99NiJqm-lsTi4tucPFqRXIsek-5G5dqjIqVfxE
-    short-id: 15c87d0b99c0d132
-  servername: tlokexcm.himoy.space
-  client-fingerprint: firefox
-  flow: xtls-rprx-vision
-- name: 🇪🇪 EE 02 - xiaohe
-  type: vless
-  server: ee1.mycloud1.org
-  port: 443
-  uuid: 605dea9b-b485-45c9-af9b-cc2b0195023c
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  reality-opts:
-    public-key: Su5ULcRQKF-0DJIHZeTNEnXHBpyQtizmUrcNIYhZI0E
-    short-id: afee962d
-  servername: ee1.mycloud1.org
-  client-fingerprint: firefox
-  flow: xtls-rprx-vision
-- name: 🇪🇪 EE 03 - xiaohe
-  type: vless
   server: 13.143.239.119
   port: 443
   uuid: f36c82e2-e33e-4054-960a-34619d9fdd5b
@@ -53,8 +25,6 @@ proxy-groups:
   - AUTO
   - FALLBACK
   - 🇪🇪 EE 01 - xiaohe
-  - 🇪🇪 EE 02 - xiaohe
-  - 🇪🇪 EE 03 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -65,8 +35,6 @@ proxy-groups:
   lazy: true
   proxies: &id001
   - 🇪🇪 EE 01 - xiaohe
-  - 🇪🇪 EE 02 - xiaohe
-  - 🇪🇪 EE 03 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

@@ -14,6 +14,36 @@ proxies:
   skip-cert-verify: true
 - name: 🇵🇱 PL 02 - xiaohe
   type: vless
+  server: pl2.himoy.space
+  port: 443
+  uuid: 5131b5e9-2c3c-44a0-8f18-0641f3f21cac
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  reality-opts:
+    public-key: eq1GsjxpRmENTkUfjk_QPWUUqGNHwESqoJ7yFs-WpF0
+    short-id: 7f9831bb156cc9e2
+  servername: pl2.himoy.space
+  client-fingerprint: firefox
+  flow: xtls-rprx-vision
+- name: 🇵🇱 PL 03 - xiaohe
+  type: vless
+  server: site.teslamotor.site
+  port: 20001
+  uuid: 8e8210b7-71a4-4799-8b9b-2e69698b1eaf
+  udp: true
+  tls: false
+  skip-cert-verify: true
+- name: 🇵🇱 PL 04 - xiaohe
+  type: vless
+  server: edge10.cyrionflare.com
+  port: 2052
+  uuid: 1a8ecc41-6e62-431b-8eca-87c2fa4dc286
+  udp: true
+  tls: false
+  skip-cert-verify: true
+- name: 🇵🇱 PL 05 - xiaohe
+  type: vless
   server: 151.241.138.22
   port: 443
   uuid: 5131b5e9-2c3c-44a0-8f18-0641f3f21cac
@@ -26,7 +56,20 @@ proxies:
   servername: pl1.himoy.space
   client-fingerprint: firefox
   flow: xtls-rprx-vision
-- name: 🇵🇱 PL 03 - xiaohe
+- name: 🇵🇱 PL 06 - xiaohe
+  type: vless
+  server: pl1.h1cloud.net
+  port: 27591
+  uuid: 056405e8-de9f-4d0d-8145-956f13cc34da
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  reality-opts:
+    public-key: LY0H47MWx87_L_JBzxFAuTzKZB53U7MrZQK8-dNnMxM
+    short-id: 6c5c7900406a1ae7
+  servername: www.samsung.com
+  client-fingerprint: chrome
+- name: 🇵🇱 PL 07 - xiaohe
   type: vless
   server: pl1.himoy.space
   port: 443
@@ -40,71 +83,6 @@ proxies:
   servername: pl1.himoy.space
   client-fingerprint: firefox
   flow: xtls-rprx-vision
-- name: 🇵🇱 PL 04 - xiaohe
-  type: vless
-  server: pl2.himoy.space
-  port: 443
-  uuid: 5131b5e9-2c3c-44a0-8f18-0641f3f21cac
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  reality-opts:
-    public-key: eq1GsjxpRmENTkUfjk_QPWUUqGNHwESqoJ7yFs-WpF0
-    short-id: 7f9831bb156cc9e2
-  servername: pl2.himoy.space
-  client-fingerprint: firefox
-  flow: xtls-rprx-vision
-- name: 🇵🇱 PL 05 - xiaohe
-  type: trojan
-  server: 92.118.150.146
-  port: 443
-  password: Trojan@82164024
-  udp: true
-  sni: pl.tronsg.com
-  skip-cert-verify: true
-- name: 🇵🇱 PL 06 - xiaohe
-  type: vless
-  server: edge10.cyrionflare.com
-  port: 2052
-  uuid: 1a8ecc41-6e62-431b-8eca-87c2fa4dc286
-  udp: true
-  tls: false
-  skip-cert-verify: true
-- name: 🇵🇱 PL 07 - xiaohe
-  type: vless
-  server: 92.53.119.212
-  port: 40849
-  uuid: 1ef7d97f-3aa5-0001-8521-84cf4794bf7a
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  reality-opts:
-    public-key: jkVcZ_b3iWs2FcSjC8Mb1NoRuwPgCH9HpeOOYAXBSU0
-    short-id: ''
-  servername: ru-hub10.lovely.my
-  client-fingerprint: chrome
-  flow: xtls-rprx-vision
-- name: 🇵🇱 PL 08 - xiaohe
-  type: vless
-  server: site.teslamotor.site
-  port: 20001
-  uuid: 8e8210b7-71a4-4799-8b9b-2e69698b1eaf
-  udp: true
-  tls: false
-  skip-cert-verify: true
-- name: 🇵🇱 PL 09 - xiaohe
-  type: vless
-  server: pl1.h1cloud.net
-  port: 27591
-  uuid: 056405e8-de9f-4d0d-8145-956f13cc34da
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  reality-opts:
-    public-key: LY0H47MWx87_L_JBzxFAuTzKZB53U7MrZQK8-dNnMxM
-    short-id: 6c5c7900406a1ae7
-  servername: www.samsung.com
-  client-fingerprint: chrome
 proxy-groups:
 - name: PROXIES
   type: select
@@ -118,8 +96,6 @@ proxy-groups:
   - 🇵🇱 PL 05 - xiaohe
   - 🇵🇱 PL 06 - xiaohe
   - 🇵🇱 PL 07 - xiaohe
-  - 🇵🇱 PL 08 - xiaohe
-  - 🇵🇱 PL 09 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -136,8 +112,6 @@ proxy-groups:
   - 🇵🇱 PL 05 - xiaohe
   - 🇵🇱 PL 06 - xiaohe
   - 🇵🇱 PL 07 - xiaohe
-  - 🇵🇱 PL 08 - xiaohe
-  - 🇵🇱 PL 09 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204
