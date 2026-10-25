@@ -13,14 +13,16 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇰🇿 KZ 01 - xiaohe"
+        "🇸🇪 SE 01 - xiaohe",
+        "🇸🇪 SE 02 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇰🇿 KZ 01 - xiaohe"
+        "🇸🇪 SE 01 - xiaohe",
+        "🇸🇪 SE 02 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -30,22 +32,37 @@
     },
     {
       "type": "vless",
-      "tag": "🇰🇿 KZ 01 - xiaohe",
-      "server": "46.8.43.125",
+      "tag": "🇸🇪 SE 01 - xiaohe",
+      "server": "91.242.228.29",
       "server_port": 443,
-      "uuid": "846cedee-2a52-4a62-a0b9-11850ead6a8b",
+      "uuid": "605dea9b-b485-45c9-af9b-cc2b0195023c",
+      "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
-        "server_name": "kz-central.v8x2b.lol",
+        "server_name": "se1.mycloud1.org",
         "insecure": true,
         "reality": {
           "enabled": true,
-          "public_key": "ER-T5En54-sn6IXy7jU8vQVcBbOiWvznnezf3qZ273w",
-          "short_id": ""
+          "public_key": "Su5ULcRQKF-0DJIHZeTNEnXHBpyQtizmUrcNIYhZI0E",
+          "short_id": "afee962d"
         },
         "utls": {
           "enabled": true,
           "fingerprint": "firefox"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇸🇪 SE 02 - xiaohe",
+      "server": "5.178.109.174",
+      "server_port": 14430,
+      "uuid": "80de563a-cac8-40ea-8cb0-4cb082dd92f9",
+      "transport": {
+        "type": "ws",
+        "path": "/vless",
+        "headers": {
+          "Host": "5.178.109.174"
         }
       }
     }

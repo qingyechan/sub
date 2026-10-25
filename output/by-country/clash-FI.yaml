@@ -6,31 +6,19 @@ log-level: info
 proxies:
 - name: 🇫🇮 FI 01 - xiaohe
   type: vless
-  server: 95.216.27.15
-  port: 2053
-  uuid: 1c81f6d3-5771-4c5d-9fdd-1655eff50634
+  server: 177.3.220.124
+  port: 443
+  uuid: 5131b5e9-2c3c-44a0-8f18-0641f3f21cac
   udp: true
   tls: true
   skip-cert-verify: true
   reality-opts:
-    public-key: 4nfogj5mHqNowtSn_2sXS3xTX8vcH75rFEU2BWvyekM
-    short-id: d368b94e275ab080
-  servername: www.google.com
-  client-fingerprint: chrome
+    public-key: 4tMWqgTFL_uavocMXmgIWvB0rZvFQCOYQQIDZlJmaVQ
+    short-id: fe5a2e4bb97c5331
+  servername: gcach6lm.himoy.space
+  client-fingerprint: firefox
+  flow: xtls-rprx-vision
 - name: 🇫🇮 FI 02 - xiaohe
-  type: vless
-  server: 95.216.27.15
-  port: 2053
-  uuid: 1c81f6d3-5771-4c5d-9fdd-1655eff50634
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  reality-opts:
-    public-key: 4nfogj5mHqNowtSn_2sXS3xTX8vcH75rFEU2BWvyekM
-    short-id: d368b94e275ab080
-  servername: www.google.com
-  client-fingerprint: random
-- name: 🇫🇮 FI 03 - xiaohe
   type: vless
   server: 45.144.234.157
   port: 14430
@@ -43,6 +31,19 @@ proxies:
     path: /vless
     headers:
       Host: 45.144.234.157
+- name: 🇫🇮 FI 03 - xiaohe
+  type: vless
+  server: 95.216.27.15
+  port: 2053
+  uuid: 1c81f6d3-5771-4c5d-9fdd-1655eff50634
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  reality-opts:
+    public-key: 4nfogj5mHqNowtSn_2sXS3xTX8vcH75rFEU2BWvyekM
+    short-id: d368b94e275ab080
+  servername: www.google.com
+  client-fingerprint: chrome
 - name: 🇫🇮 FI 04 - xiaohe
   type: vless
   server: 95.216.27.15
@@ -55,21 +56,21 @@ proxies:
     public-key: 4nfogj5mHqNowtSn_2sXS3xTX8vcH75rFEU2BWvyekM
     short-id: d368b94e275ab080
   servername: www.google.com
-  client-fingerprint: firefox
+  client-fingerprint: random
 - name: 🇫🇮 FI 05 - xiaohe
   type: vless
-  server: 177.3.214.156
+  server: 199.232.239.239
   port: 443
-  uuid: 50a87e21-f0e2-4b53-a787-91adfe748f63
+  uuid: 8e6efaba-ba3d-49ec-98aa-c8f9baaf1d17
   udp: true
   tls: true
   skip-cert-verify: true
-  reality-opts:
-    public-key: 6lZ5dkQN2sH9tYca374W4N1n9eCanD_F2FfghcksKSo
-    short-id: ''
-  servername: finlandlanzarotte.live
-  client-fingerprint: firefox
-  flow: xtls-rprx-vision
+  servername: firefox.com
+  network: ws
+  ws-opts:
+    path: /@CloudVPNchannel/@CloudVPNchannel/@CloudVPNchannel/@CloudVPNchannel/@CloudVPNchannel/@CloudVPNchannel?ed=2056fp=chrome
+    headers:
+      Host: mpkoe7ypcibr80p102020123.global.ssl.fastly.net
 - name: 🇫🇮 FI 06 - xiaohe
   type: vless
   server: hw3.divarkhaghazi.com

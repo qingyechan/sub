@@ -4,26 +4,41 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: 🇰🇿 KZ 01 - xiaohe
+- name: 🇸🇪 SE 01 - xiaohe
   type: vless
-  server: 46.8.43.125
+  server: 91.242.228.29
   port: 443
-  uuid: 846cedee-2a52-4a62-a0b9-11850ead6a8b
+  uuid: 605dea9b-b485-45c9-af9b-cc2b0195023c
   udp: true
   tls: true
   skip-cert-verify: true
   reality-opts:
-    public-key: ER-T5En54-sn6IXy7jU8vQVcBbOiWvznnezf3qZ273w
-    short-id: ''
-  servername: kz-central.v8x2b.lol
+    public-key: Su5ULcRQKF-0DJIHZeTNEnXHBpyQtizmUrcNIYhZI0E
+    short-id: afee962d
+  servername: se1.mycloud1.org
   client-fingerprint: firefox
+  flow: xtls-rprx-vision
+- name: 🇸🇪 SE 02 - xiaohe
+  type: vless
+  server: 5.178.109.174
+  port: 14430
+  uuid: 80de563a-cac8-40ea-8cb0-4cb082dd92f9
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /vless
+    headers:
+      Host: 5.178.109.174
 proxy-groups:
 - name: PROXIES
   type: select
   proxies:
   - AUTO
   - FALLBACK
-  - 🇰🇿 KZ 01 - xiaohe
+  - 🇸🇪 SE 01 - xiaohe
+  - 🇸🇪 SE 02 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -33,7 +48,8 @@ proxy-groups:
   tolerance: 100
   lazy: true
   proxies: &id001
-  - 🇰🇿 KZ 01 - xiaohe
+  - 🇸🇪 SE 01 - xiaohe
+  - 🇸🇪 SE 02 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

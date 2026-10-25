@@ -43,6 +43,42 @@
     {
       "type": "vless",
       "tag": "🇫🇮 FI 01 - xiaohe",
+      "server": "177.3.220.124",
+      "server_port": 443,
+      "uuid": "5131b5e9-2c3c-44a0-8f18-0641f3f21cac",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "gcach6lm.himoy.space",
+        "insecure": true,
+        "reality": {
+          "enabled": true,
+          "public_key": "4tMWqgTFL_uavocMXmgIWvB0rZvFQCOYQQIDZlJmaVQ",
+          "short_id": "fe5a2e4bb97c5331"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇫🇮 FI 02 - xiaohe",
+      "server": "45.144.234.157",
+      "server_port": 14430,
+      "uuid": "59b0d30e-9b29-4fda-a35c-b2901ec32db7",
+      "transport": {
+        "type": "ws",
+        "path": "/vless",
+        "headers": {
+          "Host": "45.144.234.157"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇫🇮 FI 03 - xiaohe",
       "server": "95.216.27.15",
       "server_port": 2053,
       "uuid": "1c81f6d3-5771-4c5d-9fdd-1655eff50634",
@@ -63,7 +99,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇫🇮 FI 02 - xiaohe",
+      "tag": "🇫🇮 FI 04 - xiaohe",
       "server": "95.216.27.15",
       "server_port": 2053,
       "uuid": "1c81f6d3-5771-4c5d-9fdd-1655eff50634",
@@ -84,58 +120,20 @@
     },
     {
       "type": "vless",
-      "tag": "🇫🇮 FI 03 - xiaohe",
-      "server": "45.144.234.157",
-      "server_port": 14430,
-      "uuid": "59b0d30e-9b29-4fda-a35c-b2901ec32db7",
+      "tag": "🇫🇮 FI 05 - xiaohe",
+      "server": "199.232.239.239",
+      "server_port": 443,
+      "uuid": "8e6efaba-ba3d-49ec-98aa-c8f9baaf1d17",
+      "tls": {
+        "enabled": true,
+        "server_name": "firefox.com",
+        "insecure": true
+      },
       "transport": {
         "type": "ws",
-        "path": "/vless",
+        "path": "/@CloudVPNchannel/@CloudVPNchannel/@CloudVPNchannel/@CloudVPNchannel/@CloudVPNchannel/@CloudVPNchannel?ed=2056fp=chrome",
         "headers": {
-          "Host": "45.144.234.157"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇫🇮 FI 04 - xiaohe",
-      "server": "95.216.27.15",
-      "server_port": 2053,
-      "uuid": "1c81f6d3-5771-4c5d-9fdd-1655eff50634",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.google.com",
-        "insecure": true,
-        "reality": {
-          "enabled": true,
-          "public_key": "4nfogj5mHqNowtSn_2sXS3xTX8vcH75rFEU2BWvyekM",
-          "short_id": "d368b94e275ab080"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇫🇮 FI 05 - xiaohe",
-      "server": "177.3.214.156",
-      "server_port": 443,
-      "uuid": "50a87e21-f0e2-4b53-a787-91adfe748f63",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "finlandlanzarotte.live",
-        "insecure": true,
-        "reality": {
-          "enabled": true,
-          "public_key": "6lZ5dkQN2sH9tYca374W4N1n9eCanD_F2FfghcksKSo",
-          "short_id": ""
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
+          "Host": "mpkoe7ypcibr80p102020123.global.ssl.fastly.net"
         }
       }
     },

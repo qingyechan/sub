@@ -16,7 +16,7 @@ proxies:
     public-key: 8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To
     short-id: a3a578ab
   servername: www.apple.com
-  client-fingerprint: firefox
+  client-fingerprint: chrome
   flow: xtls-rprx-vision
 - name: 🇮🇱 IL 02 - xiaohe
   type: vless
@@ -30,7 +30,7 @@ proxies:
     public-key: 8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To
     short-id: a3a578ab
   servername: www.apple.com
-  client-fingerprint: chrome
+  client-fingerprint: firefox
   flow: xtls-rprx-vision
 - name: 🇮🇱 IL 03 - xiaohe
   type: vless
@@ -60,6 +60,20 @@ proxies:
   servername: yahoo.com
   client-fingerprint: firefox
   flow: xtls-rprx-vision
+- name: 🇮🇱 IL 05 - xiaohe
+  type: vless
+  server: 177.3.208.65
+  port: 443
+  uuid: 4f34bc04-479c-49ba-91a8-6bb9ed15031c
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: tgmansion.site
+  network: ws
+  ws-opts:
+    path: /vless-il
+    headers:
+      Host: tgmansion.site
 proxy-groups:
 - name: PROXIES
   type: select
@@ -70,6 +84,7 @@ proxy-groups:
   - 🇮🇱 IL 02 - xiaohe
   - 🇮🇱 IL 03 - xiaohe
   - 🇮🇱 IL 04 - xiaohe
+  - 🇮🇱 IL 05 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -83,6 +98,7 @@ proxy-groups:
   - 🇮🇱 IL 02 - xiaohe
   - 🇮🇱 IL 03 - xiaohe
   - 🇮🇱 IL 04 - xiaohe
+  - 🇮🇱 IL 05 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

@@ -14,7 +14,8 @@
       "outbounds": [
         "auto",
         "🇪🇪 EE 01 - xiaohe",
-        "🇪🇪 EE 02 - xiaohe"
+        "🇪🇪 EE 02 - xiaohe",
+        "🇪🇪 EE 03 - xiaohe"
       ]
     },
     {
@@ -22,7 +23,8 @@
       "tag": "auto",
       "outbounds": [
         "🇪🇪 EE 01 - xiaohe",
-        "🇪🇪 EE 02 - xiaohe"
+        "🇪🇪 EE 02 - xiaohe",
+        "🇪🇪 EE 03 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -33,7 +35,7 @@
     {
       "type": "vless",
       "tag": "🇪🇪 EE 01 - xiaohe",
-      "server": "31.59.218.43",
+      "server": "tlokexcm.himoy.space",
       "server_port": 443,
       "uuid": "5131b5e9-2c3c-44a0-8f18-0641f3f21cac",
       "flow": "xtls-rprx-vision",
@@ -67,6 +69,28 @@
           "enabled": true,
           "public_key": "Su5ULcRQKF-0DJIHZeTNEnXHBpyQtizmUrcNIYhZI0E",
           "short_id": "afee962d"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇪🇪 EE 03 - xiaohe",
+      "server": "13.143.239.119",
+      "server_port": 443,
+      "uuid": "f36c82e2-e33e-4054-960a-34619d9fdd5b",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.transip.nl",
+        "insecure": true,
+        "reality": {
+          "enabled": true,
+          "public_key": "kYbLeoF13TKNPtlYwRsAqFQR3l7v6NMe6ydARMIfEC0",
+          "short_id": "7230e3b3f137543c"
         },
         "utls": {
           "enabled": true,
