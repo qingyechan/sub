@@ -7,7 +7,7 @@ proxies:
 - name: 🇰🇷 韩国 (South Korea) 01 - xiaohe
   type: vless
   server: 3.39.4.109
-  port: 13672
+  port: 18967
   uuid: 814bd064-544d-4255-a070-5705c03f6da9
   udp: true
   tls: true
@@ -16,7 +16,7 @@ proxies:
     public-key: k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0
     short-id: 48050fab
   servername: www.apple.com
-  client-fingerprint: firefox
+  client-fingerprint: chrome
   flow: xtls-rprx-vision
 - name: 🇰🇷 韩国 (South Korea) 02 - xiaohe
   type: vless
@@ -30,7 +30,7 @@ proxies:
     public-key: k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0
     short-id: 48050fab
   servername: www.apple.com
-  client-fingerprint: chrome
+  client-fingerprint: firefox
   flow: xtls-rprx-vision
 - name: 🇰🇷 韩国 (South Korea) 03 - xiaohe
   type: vless
@@ -44,12 +44,12 @@ proxies:
     public-key: k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0
     short-id: 48050fab
   servername: www.apple.com
-  client-fingerprint: firefox
+  client-fingerprint: safari
   flow: xtls-rprx-vision
 - name: 🇰🇷 韩国 (South Korea) 04 - xiaohe
   type: vless
   server: 3.39.4.109
-  port: 13672
+  port: 18967
   uuid: 814bd064-544d-4255-a070-5705c03f6da9
   udp: true
   tls: true
@@ -58,12 +58,12 @@ proxies:
     public-key: k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0
     short-id: 48050fab
   servername: www.apple.com
-  client-fingerprint: random
+  client-fingerprint: qq
   flow: xtls-rprx-vision
 - name: 🇰🇷 韩国 (South Korea) 05 - xiaohe
   type: vless
   server: 3.39.4.109
-  port: 18967
+  port: 13672
   uuid: 814bd064-544d-4255-a070-5705c03f6da9
   udp: true
   tls: true
@@ -77,7 +77,7 @@ proxies:
 - name: 🇰🇷 韩国 (South Korea) 06 - xiaohe
   type: vless
   server: 3.39.4.109
-  port: 13672
+  port: 18967
   uuid: 814bd064-544d-4255-a070-5705c03f6da9
   udp: true
   tls: true
@@ -86,7 +86,7 @@ proxies:
     public-key: k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0
     short-id: 48050fab
   servername: www.apple.com
-  client-fingerprint: qq
+  client-fingerprint: edge
   flow: xtls-rprx-vision
 - name: 🇰🇷 韩国 (South Korea) 07 - xiaohe
   type: vless
@@ -100,12 +100,12 @@ proxies:
     public-key: k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0
     short-id: 48050fab
   servername: www.apple.com
-  client-fingerprint: safari
+  client-fingerprint: random
   flow: xtls-rprx-vision
 - name: 🇰🇷 韩国 (South Korea) 08 - xiaohe
   type: vless
   server: 3.39.4.109
-  port: 18967
+  port: 13672
   uuid: 814bd064-544d-4255-a070-5705c03f6da9
   udp: true
   tls: true
@@ -114,7 +114,7 @@ proxies:
     public-key: k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0
     short-id: 48050fab
   servername: www.apple.com
-  client-fingerprint: edge
+  client-fingerprint: random
   flow: xtls-rprx-vision
 - name: 🇰🇷 韩国 (South Korea) 09 - xiaohe
   type: vless
@@ -147,7 +147,7 @@ proxies:
 - name: 🇰🇷 韩国 (South Korea) 11 - xiaohe
   type: vless
   server: 3.39.4.109
-  port: 18967
+  port: 13672
   uuid: 814bd064-544d-4255-a070-5705c03f6da9
   udp: true
   tls: true
@@ -170,7 +170,7 @@ proxies:
     public-key: k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0
     short-id: 48050fab
   servername: www.apple.com
-  client-fingerprint: random
+  client-fingerprint: firefox
   flow: xtls-rprx-vision
 - name: 🇰🇷 韩国 (South Korea) 13 - xiaohe
   type: vless
@@ -220,6 +220,14 @@ proxies:
   sni: 154.90.62.70
   skip-cert-verify: true
 - name: 🇰🇷 韩国 (South Korea) 17 - xiaohe
+  type: trojan
+  server: tjhg.m2k699.com
+  port: 24999
+  password: 29086912-33e4-4e06-ba2b-60f1a195864f
+  udp: true
+  sni: www.itunes.com
+  skip-cert-verify: true
+- name: 🇰🇷 韩国 (South Korea) 18 - xiaohe
   type: vless
   server: 13.125.13.26
   port: 443
@@ -232,28 +240,6 @@ proxies:
     short-id: e04a526b0b09c765
   servername: telemetry.tesla-dev2.ev-infra.com
   client-fingerprint: chrome
-  flow: xtls-rprx-vision
-- name: 🇰🇷 韩国 (South Korea) 18 - xiaohe
-  type: trojan
-  server: tjhg.m2k699.com
-  port: 24999
-  password: 29086912-33e4-4e06-ba2b-60f1a195864f
-  udp: true
-  sni: www.itunes.com
-  skip-cert-verify: true
-- name: 🇰🇷 韩国 (South Korea) 19 - xiaohe
-  type: vless
-  server: 13.125.13.26
-  port: 443
-  uuid: 7e68e32f-8015-4f37-9082-70e8b0b58043
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  reality-opts:
-    public-key: DHOrfoin7TeRpnIoU3d6qT5Yrq3QPVFp49kApATA4iE
-    short-id: e04a526b0b09c765
-  servername: telemetry.tesla-dev2.ev-infra.com
-  client-fingerprint: firefox
   flow: xtls-rprx-vision
 proxy-groups:
 - name: PROXIES
@@ -279,7 +265,6 @@ proxy-groups:
   - 🇰🇷 韩国 (South Korea) 16 - xiaohe
   - 🇰🇷 韩国 (South Korea) 17 - xiaohe
   - 🇰🇷 韩国 (South Korea) 18 - xiaohe
-  - 🇰🇷 韩国 (South Korea) 19 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -307,7 +292,6 @@ proxy-groups:
   - 🇰🇷 韩国 (South Korea) 16 - xiaohe
   - 🇰🇷 韩国 (South Korea) 17 - xiaohe
   - 🇰🇷 韩国 (South Korea) 18 - xiaohe
-  - 🇰🇷 韩国 (South Korea) 19 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

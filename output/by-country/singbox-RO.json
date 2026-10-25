@@ -15,7 +15,8 @@
         "auto",
         "🇷🇴 RO 01 - xiaohe",
         "🇷🇴 RO 02 - xiaohe",
-        "🇷🇴 RO 03 - xiaohe"
+        "🇷🇴 RO 03 - xiaohe",
+        "🇷🇴 RO 04 - xiaohe"
       ]
     },
     {
@@ -24,7 +25,8 @@
       "outbounds": [
         "🇷🇴 RO 01 - xiaohe",
         "🇷🇴 RO 02 - xiaohe",
-        "🇷🇴 RO 03 - xiaohe"
+        "🇷🇴 RO 03 - xiaohe",
+        "🇷🇴 RO 04 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -50,7 +52,7 @@
         },
         "utls": {
           "enabled": true,
-          "fingerprint": "chrome"
+          "fingerprint": "firefox"
         }
       }
     },
@@ -72,7 +74,7 @@
         },
         "utls": {
           "enabled": true,
-          "fingerprint": "firefox"
+          "fingerprint": "chrome"
         }
       }
     },
@@ -82,6 +84,14 @@
       "server": "edge10.cyrionflare.com",
       "server_port": 2052,
       "uuid": "1a8ecc41-6e62-431b-8eca-87c2fa4dc286"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇷🇴 RO 04 - xiaohe",
+      "server": "194.68.44.42",
+      "server_port": 64546,
+      "method": "chacha20-ietf-poly1305",
+      "password": "U83u9OGpvSatIUW7LsWffr"
     }
   ],
   "route": {
