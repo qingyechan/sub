@@ -48,20 +48,6 @@ proxies:
   flow: xtls-rprx-vision
 - name: 🇮🇱 IL 04 - xiaohe
   type: vless
-  server: 77.91.69.169
-  port: 19226
-  uuid: f0b144bd-4c44-440d-b630-d79ec82cad3a
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  reality-opts:
-    public-key: PQjgf7GxBd2tDXf0zl9Z5rTZo7LdsWj0hGZLH-lJ-Uk
-    short-id: 7c
-  servername: yahoo.com
-  client-fingerprint: chrome
-  flow: xtls-rprx-vision
-- name: 🇮🇱 IL 05 - xiaohe
-  type: vless
   server: 177.3.208.65
   port: 443
   uuid: 4f34bc04-479c-49ba-91a8-6bb9ed15031c
@@ -84,7 +70,6 @@ proxy-groups:
   - 🇮🇱 IL 02 - xiaohe
   - 🇮🇱 IL 03 - xiaohe
   - 🇮🇱 IL 04 - xiaohe
-  - 🇮🇱 IL 05 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -98,7 +83,6 @@ proxy-groups:
   - 🇮🇱 IL 02 - xiaohe
   - 🇮🇱 IL 03 - xiaohe
   - 🇮🇱 IL 04 - xiaohe
-  - 🇮🇱 IL 05 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

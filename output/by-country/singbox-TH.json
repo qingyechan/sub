@@ -41,20 +41,31 @@
       "tag": "direct"
     },
     {
-      "type": "shadowsocks",
+      "type": "vless",
       "tag": "🇹🇭 TH 01 - xiaohe",
-      "server": "pphfree1.mvpnpvpn.de5.net",
-      "server_port": 52351,
-      "method": "aes-256-gcm",
-      "password": "prDjNd1ILAuMYRhgRL+xcBWXcfH9d89ogZTxayqomLA="
+      "server": "104.16.10.9",
+      "server_port": 443,
+      "uuid": "3c52e091-6714-4915-949f-2149fe69951b",
+      "tls": {
+        "enabled": true,
+        "server_name": "v2ray.simspeedup.com",
+        "insecure": true
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/ws",
+        "headers": {
+          "Host": "v2ray.simspeedup.com"
+        }
+      }
     },
     {
       "type": "shadowsocks",
       "tag": "🇹🇭 TH 02 - xiaohe",
-      "server": "pphfree2.mvpnpvpn.de5.net",
+      "server": "pphfree1.mvpnpvpn.de5.net",
       "server_port": 52351,
       "method": "aes-256-gcm",
-      "password": "sxajCTwrlK0zl+zmHpX0p0jXIfatnzlLzWlSQ950L1c="
+      "password": "prDjNd1ILAuMYRhgRL+xcBWXcfH9d89ogZTxayqomLA="
     },
     {
       "type": "vless",
@@ -66,7 +77,7 @@
         "type": "ws",
         "path": "/ws",
         "headers": {
-          "Host": "v2ray.simspeedup.com"
+          "Host": "ais.speedtest.net"
         }
       }
     },
@@ -92,25 +103,6 @@
     {
       "type": "vless",
       "tag": "🇹🇭 TH 05 - xiaohe",
-      "server": "104.18.26.90",
-      "server_port": 443,
-      "uuid": "3c52e091-6714-4915-949f-2149fe69951b",
-      "tls": {
-        "enabled": true,
-        "server_name": "v2ray.simspeedup.com",
-        "insecure": true
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/ws",
-        "headers": {
-          "Host": "v2ray.simspeedup.com"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇹🇭 TH 06 - xiaohe",
       "server": "104.16.10.2",
       "server_port": 443,
       "uuid": "3c52e091-6714-4915-949f-2149fe69951b",
@@ -129,8 +121,8 @@
     },
     {
       "type": "vless",
-      "tag": "🇹🇭 TH 07 - xiaohe",
-      "server": "104.16.10.9",
+      "tag": "🇹🇭 TH 06 - xiaohe",
+      "server": "104.18.26.90",
       "server_port": 443,
       "uuid": "3c52e091-6714-4915-949f-2149fe69951b",
       "tls": {
@@ -145,6 +137,14 @@
           "Host": "v2ray.simspeedup.com"
         }
       }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇹🇭 TH 07 - xiaohe",
+      "server": "103.107.52.106",
+      "server_port": 52351,
+      "method": "aes-256-gcm",
+      "password": "sxajCTwrlK0zl+zmHpX0p0jXIfatnzlLzWlSQ950L1c="
     }
   ],
   "route": {

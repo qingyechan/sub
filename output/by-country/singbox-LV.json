@@ -14,7 +14,9 @@
       "outbounds": [
         "auto",
         "🇱🇻 LV 01 - xiaohe",
-        "🇱🇻 LV 02 - xiaohe"
+        "🇱🇻 LV 02 - xiaohe",
+        "🇱🇻 LV 03 - xiaohe",
+        "🇱🇻 LV 04 - xiaohe"
       ]
     },
     {
@@ -22,7 +24,9 @@
       "tag": "auto",
       "outbounds": [
         "🇱🇻 LV 01 - xiaohe",
-        "🇱🇻 LV 02 - xiaohe"
+        "🇱🇻 LV 02 - xiaohe",
+        "🇱🇻 LV 03 - xiaohe",
+        "🇱🇻 LV 04 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -48,7 +52,7 @@
         },
         "utls": {
           "enabled": true,
-          "fingerprint": "firefox"
+          "fingerprint": "chrome"
         }
       }
     },
@@ -70,9 +74,25 @@
         },
         "utls": {
           "enabled": true,
-          "fingerprint": "chrome"
+          "fingerprint": "firefox"
         }
       }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇱🇻 LV 03 - xiaohe",
+      "server": "185.135.86.175",
+      "server_port": 9094,
+      "method": "aes-256-cfb",
+      "password": "rpgbNnU9rDDU4aWZ"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇱🇻 LV 04 - xiaohe",
+      "server": "185.135.86.175",
+      "server_port": 9033,
+      "method": "aes-256-cfb",
+      "password": "UTJA57ypk2XKQpnm"
     }
   ],
   "route": {
