@@ -31,7 +31,7 @@
     {
       "type": "vless",
       "tag": "🇲🇽 MX 01 - xiaohe",
-      "server": "mx001.zestapp778.com",
+      "server": "149.104.90.21",
       "server_port": 19167,
       "uuid": "e9a8144e-5237-488a-afb1-9ca3d8d54c80",
       "tls": {

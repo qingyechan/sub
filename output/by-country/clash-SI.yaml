@@ -4,19 +4,19 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: 🇸🇨 SC 01 - xiaohe
+- name: 🇸🇮 SI 01 - xiaohe
   type: vless
-  server: hk1.frnhk.xyz
+  server: 92.42.201.107
   port: 443
-  uuid: f5f0babe-aea2-4f07-a1fc-3c9820253f49
+  uuid: d0c8aa8d-a535-432a-b521-21f0e561f643
   udp: true
   tls: true
   skip-cert-verify: true
   reality-opts:
-    public-key: gXOQOlynAB6Znbp902LRyX7eYSxTWrj7D2nRCB1gNmE
-    short-id: 6b7a8c9d
-  servername: www.uni-frankfurt.de
-  client-fingerprint: chrome
+    public-key: 8C7evg_SSrJbxMTaUqJoylqB9HSNsmBvmUlgs_c5EiU
+    short-id: 88d9dc52ef39c8bd
+  servername: node-slo02.rkitman.ru
+  client-fingerprint: firefox
   flow: xtls-rprx-vision
 proxy-groups:
 - name: PROXIES
@@ -24,7 +24,7 @@ proxy-groups:
   proxies:
   - AUTO
   - FALLBACK
-  - 🇸🇨 SC 01 - xiaohe
+  - 🇸🇮 SI 01 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -34,7 +34,7 @@ proxy-groups:
   tolerance: 100
   lazy: true
   proxies: &id001
-  - 🇸🇨 SC 01 - xiaohe
+  - 🇸🇮 SI 01 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

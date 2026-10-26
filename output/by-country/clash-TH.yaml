@@ -4,23 +4,32 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: 🇧🇬 BG 01 - xiaohe
-  type: vmess
-  server: 45.144.48.32
-  port: 56080
-  uuid: f4daaec7-0e1e-4c8e-97e8-cff5347c2dae
-  alterId: 0
-  cipher: auto
+- name: 🇹🇭 TH 01 - xiaohe
+  type: vless
+  server: 38.60.254.50
+  port: 22222
+  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
   udp: true
-  tls: false
+  tls: true
   skip-cert-verify: true
+  servername: th001.zestapp778.com
+- name: 🇹🇭 TH 02 - xiaohe
+  type: vless
+  server: th001.zestapp778.com
+  port: 22222
+  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: th001.zestapp778.com
 proxy-groups:
 - name: PROXIES
   type: select
   proxies:
   - AUTO
   - FALLBACK
-  - 🇧🇬 BG 01 - xiaohe
+  - 🇹🇭 TH 01 - xiaohe
+  - 🇹🇭 TH 02 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -30,7 +39,8 @@ proxy-groups:
   tolerance: 100
   lazy: true
   proxies: &id001
-  - 🇧🇬 BG 01 - xiaohe
+  - 🇹🇭 TH 01 - xiaohe
+  - 🇹🇭 TH 02 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

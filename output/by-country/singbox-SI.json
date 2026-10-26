@@ -13,14 +13,14 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇸🇨 SC 01 - xiaohe"
+        "🇸🇮 SI 01 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇸🇨 SC 01 - xiaohe"
+        "🇸🇮 SI 01 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -30,23 +30,23 @@
     },
     {
       "type": "vless",
-      "tag": "🇸🇨 SC 01 - xiaohe",
-      "server": "hk1.frnhk.xyz",
+      "tag": "🇸🇮 SI 01 - xiaohe",
+      "server": "92.42.201.107",
       "server_port": 443,
-      "uuid": "f5f0babe-aea2-4f07-a1fc-3c9820253f49",
+      "uuid": "d0c8aa8d-a535-432a-b521-21f0e561f643",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
-        "server_name": "www.uni-frankfurt.de",
+        "server_name": "node-slo02.rkitman.ru",
         "insecure": true,
         "reality": {
           "enabled": true,
-          "public_key": "gXOQOlynAB6Znbp902LRyX7eYSxTWrj7D2nRCB1gNmE",
-          "short_id": "6b7a8c9d"
+          "public_key": "8C7evg_SSrJbxMTaUqJoylqB9HSNsmBvmUlgs_c5EiU",
+          "short_id": "88d9dc52ef39c8bd"
         },
         "utls": {
           "enabled": true,
-          "fingerprint": "chrome"
+          "fingerprint": "firefox"
         }
       }
     }

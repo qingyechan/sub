@@ -1,0 +1,85 @@
+port: 7890
+socks-port: 7891
+allow-lan: false
+mode: rule
+log-level: info
+proxies:
+- name: 🇨🇳 CN 01 - xiaohe
+  type: vless
+  server: 8.35.211.242
+  port: 443
+  uuid: fc7d2cfe-f5ef-40c8-a848-a0bdc11f6349
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: vpn.cintaku.qzz.io
+  network: ws
+  ws-opts:
+    path: /vlessws
+    headers:
+      Host: vpn.cintaku.qzz.io
+- name: 🇨🇳 CN 02 - xiaohe
+  type: vless
+  server: 172.67.166.188
+  port: 443
+  uuid: fc7d2cfe-f5ef-40c8-a848-a0bdc11f6349
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: vpn.cintaku.qzz.io
+  network: ws
+  ws-opts:
+    path: /vlessws
+    headers:
+      Host: vpn.cintaku.qzz.io
+- name: 🇨🇳 CN 03 - xiaohe
+  type: vless
+  server: 104.21.91.49
+  port: 443
+  uuid: fc7d2cfe-f5ef-40c8-a848-a0bdc11f6349
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: vpn.cintaku.qzz.io
+  network: ws
+  ws-opts:
+    path: /vlessws
+    headers:
+      Host: vpn.cintaku.qzz.io
+proxy-groups:
+- name: PROXIES
+  type: select
+  proxies:
+  - AUTO
+  - FALLBACK
+  - 🇨🇳 CN 01 - xiaohe
+  - 🇨🇳 CN 02 - xiaohe
+  - 🇨🇳 CN 03 - xiaohe
+- name: AUTO
+  type: url-test
+  url: https://www.google.com/generate_204
+  expected-status: 204
+  interval: 600
+  timeout: 8000
+  tolerance: 100
+  lazy: true
+  proxies: &id001
+  - 🇨🇳 CN 01 - xiaohe
+  - 🇨🇳 CN 02 - xiaohe
+  - 🇨🇳 CN 03 - xiaohe
+- name: FALLBACK
+  type: fallback
+  url: https://cp.cloudflare.com/generate_204
+  expected-status: 204
+  interval: 600
+  timeout: 8000
+  lazy: true
+  proxies: *id001
+rules:
+- IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+- IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+- IP-CIDR6,::1/128,DIRECT,no-resolve
+- IP-CIDR6,fc00::/7,DIRECT,no-resolve
+- MATCH,PROXIES
