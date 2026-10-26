@@ -14,7 +14,8 @@
       "outbounds": [
         "auto",
         "🇲🇽 MX 01 - xiaohe",
-        "🇲🇽 MX 02 - xiaohe"
+        "🇲🇽 MX 02 - xiaohe",
+        "🇲🇽 MX 03 - xiaohe"
       ]
     },
     {
@@ -22,7 +23,8 @@
       "tag": "auto",
       "outbounds": [
         "🇲🇽 MX 01 - xiaohe",
-        "🇲🇽 MX 02 - xiaohe"
+        "🇲🇽 MX 02 - xiaohe",
+        "🇲🇽 MX 03 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -51,6 +53,18 @@
       "tls": {
         "enabled": true,
         "server_name": "mx001.zestapp778.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇲🇽 MX 03 - xiaohe",
+      "server": "149.104.90.21",
+      "server_port": 19167,
+      "uuid": "e9a8144e-5237-488a-afb1-9ca3d8d54c80",
+      "tls": {
+        "enabled": true,
+        "server_name": "149.104.90.21",
         "insecure": true
       }
     }

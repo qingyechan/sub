@@ -6,18 +6,32 @@ log-level: info
 proxies:
 - name: 🇨🇾 CY 01 - xiaohe
   type: vless
-  server: 216.24.57.225
-  port: 2087
-  uuid: 825a76ef-053f-41eb-ba81-411e29494251
+  server: 5.253.42.164
+  port: 40443
+  uuid: e99ba96d-dec8-42eb-be53-19e71eef7cab
   udp: true
   tls: true
   skip-cert-verify: true
-  servername: busstop.zandix.ir
-  network: ws
-  ws-opts:
-    path: /wss
-    headers:
-      Host: busstop.zandix.ir
+  reality-opts:
+    public-key: g77ZJbm18JEotapmVRjaXi133MzkbhkU2lxhVeXx8zw
+    short-id: 68a8
+  servername: deepl.com
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision
+- name: 🇨🇾 CY 02 - xiaohe
+  type: vless
+  server: 5.253.30.99
+  port: 40443
+  uuid: 511c1563-2cb6-4064-abc6-a59ee49818a8
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  reality-opts:
+    public-key: cwmcqsfS7klQlkcoUNuATEk0NiPY-NnRb9z8rCJDQw0
+    short-id: 88b6
+  servername: deepl.com
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision
 proxy-groups:
 - name: PROXIES
   type: select
@@ -25,6 +39,7 @@ proxy-groups:
   - AUTO
   - FALLBACK
   - 🇨🇾 CY 01 - xiaohe
+  - 🇨🇾 CY 02 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -35,6 +50,7 @@ proxy-groups:
   lazy: true
   proxies: &id001
   - 🇨🇾 CY 01 - xiaohe
+  - 🇨🇾 CY 02 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

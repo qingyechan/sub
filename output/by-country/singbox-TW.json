@@ -48,26 +48,26 @@
       "password": "29086912-33e4-4e06-ba2b-60f1a195864f",
       "tls": {
         "enabled": true,
-        "server_name": "www.itunes.com",
-        "insecure": true
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "🇹🇼 中国台湾 (Taiwan) 02 - xiaohe",
-      "server": "188.253.7.44",
-      "server_port": 24999,
-      "password": "29086912-33e4-4e06-ba2b-60f1a195864f",
-      "tls": {
-        "enabled": true,
         "server_name": "tjtw.m2k699.com",
         "insecure": true
       }
     },
     {
       "type": "trojan",
-      "tag": "🇹🇼 中国台湾 (Taiwan) 03 - xiaohe",
+      "tag": "🇹🇼 中国台湾 (Taiwan) 02 - xiaohe",
       "server": "tjtw.m2k699.com",
+      "server_port": 24999,
+      "password": "29086912-33e4-4e06-ba2b-60f1a195864f",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.itunes.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇹🇼 中国台湾 (Taiwan) 03 - xiaohe",
+      "server": "188.253.7.44",
       "server_port": 24999,
       "password": "29086912-33e4-4e06-ba2b-60f1a195864f",
       "tls": {
@@ -91,19 +91,19 @@
     {
       "type": "vless",
       "tag": "🇹🇼 中国台湾 (Taiwan) 05 - xiaohe",
-      "server": "60.248.219.78",
+      "server": "59.125.69.22",
       "server_port": 443,
       "uuid": "c1c04450-bf71-4049-ad0c-9cf6d94d9f1f",
       "tls": {
         "enabled": true,
-        "server_name": "ty986gfazs.cainiaohub.xyz",
+        "server_name": "tse1.mm.bing.net",
         "insecure": true
       },
       "transport": {
         "type": "ws",
         "path": "/81574b6b-c9d7-44a0-b83d-dad56e8cb530",
         "headers": {
-          "Host": "ty986gfazs.cainiaohub.xyz"
+          "Host": "59.125.69.22"
         }
       }
     },
@@ -129,19 +129,19 @@
     {
       "type": "vless",
       "tag": "🇹🇼 中国台湾 (Taiwan) 07 - xiaohe",
-      "server": "59.125.69.22",
+      "server": "60.248.219.54",
       "server_port": 443,
-      "uuid": "c1c04450-bf71-4049-ad0c-9cf6d94d9f1f",
+      "uuid": "06e177f7-240d-4687-bd85-235505801a5e",
       "tls": {
         "enabled": true,
-        "server_name": "tse1.mm.bing.net",
+        "server_name": "ty986gfazs.cainiaohub.xyz",
         "insecure": true
       },
       "transport": {
         "type": "ws",
         "path": "/81574b6b-c9d7-44a0-b83d-dad56e8cb530",
         "headers": {
-          "Host": "59.125.69.22"
+          "Host": "60.248.219.54"
         }
       }
     }
