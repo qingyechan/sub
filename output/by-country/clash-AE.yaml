@@ -19,7 +19,7 @@ proxies:
       Host: 185.253.116.33
 - name: 🇦🇪 阿联酋 (UAE) 02 - xiaohe
   type: vless
-  server: 84.235.244.108
+  server: uae.unixzone.us
   port: 22573
   uuid: 39947382-3212-41c9-bc3a-589574ac8b23
   udp: true
@@ -45,7 +45,7 @@ proxies:
       Host: 95.174.68.188
 - name: 🇦🇪 阿联酋 (UAE) 04 - xiaohe
   type: vless
-  server: uae.unixzone.us
+  server: 84.235.244.108
   port: 22573
   uuid: 39947382-3212-41c9-bc3a-589574ac8b23
   udp: true
@@ -58,18 +58,18 @@ proxies:
       Host: uae.unixzone.us
 - name: 🇦🇪 阿联酋 (UAE) 05 - xiaohe
   type: vless
-  server: 5.9.117.252
+  server: 83.147.216.223
   port: 4433
-  uuid: ef286b0e-21ed-4e2b-9110-e2ddc7627892
+  uuid: 660174a2-d32d-4521-840d-d1853bfc80b8
   udp: true
   tls: true
   skip-cert-verify: true
-  servername: 9-7u3b6e.wzkija0v0du4yhk6jfyfafml3nh22kne.workers.dev
+  servername: 3t1yvbyla-rj740g.28m7r63dttya6gazmhoo.workers.dev
   network: ws
   ws-opts:
     path: /@Marisa_kristi
     headers:
-      Host: 9-7u3b6e.wzkija0v0du4yhk6jfyfafml3nh22kne.workers.dev
+      Host: 3t1yvbyla-rj740g.28m7r63dttya6gazmhoo.workers.dev
 proxy-groups:
 - name: PROXIES
   type: select

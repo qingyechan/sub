@@ -16,7 +16,7 @@ proxies:
     public-key: 8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To
     short-id: a3a578ab
   servername: www.apple.com
-  client-fingerprint: chrome
+  client-fingerprint: random
   flow: xtls-rprx-vision
 - name: 🇮🇱 IL 02 - xiaohe
   type: vless
@@ -44,7 +44,7 @@ proxies:
     public-key: 8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To
     short-id: a3a578ab
   servername: www.apple.com
-  client-fingerprint: random
+  client-fingerprint: chrome
   flow: xtls-rprx-vision
 - name: 🇮🇱 IL 04 - xiaohe
   type: vless

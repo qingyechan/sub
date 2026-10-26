@@ -14,12 +14,27 @@ proxies:
   skip-cert-verify: true
 - name: 🇵🇱 PL 02 - xiaohe
   type: vless
-  server: site.teslamotor.site
-  port: 20001
-  uuid: 8e8210b7-71a4-4799-8b9b-2e69698b1eaf
+  server: 2.26.6.1
+  port: 2087
+  uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
   udp: true
-  tls: false
+  tls: true
   skip-cert-verify: true
+  servername: 2.26.6.1
+- name: 🇵🇱 PL 03 - xiaohe
+  type: vless
+  server: tr2.soft10.ir
+  port: 2053
+  uuid: 480b4042-f713-43d7-b24b-b4064c97f841
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: tr2.soft10.ir
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: tr2.soft10.ir
 proxy-groups:
 - name: PROXIES
   type: select
@@ -28,6 +43,7 @@ proxy-groups:
   - FALLBACK
   - 🇵🇱 PL 01 - xiaohe
   - 🇵🇱 PL 02 - xiaohe
+  - 🇵🇱 PL 03 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -39,6 +55,7 @@ proxy-groups:
   proxies: &id001
   - 🇵🇱 PL 01 - xiaohe
   - 🇵🇱 PL 02 - xiaohe
+  - 🇵🇱 PL 03 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

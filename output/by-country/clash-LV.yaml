@@ -18,34 +18,6 @@ proxies:
   servername: www.apple.com
   client-fingerprint: chrome
   flow: xtls-rprx-vision
-- name: 🇱🇻 LV 02 - xiaohe
-  type: vless
-  server: 138.124.180.137
-  port: 443
-  uuid: 5234b2b7-5e07-422c-8159-d62a676c00c6
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  reality-opts:
-    public-key: GBdkyDLfr0LIZo_94Xv8ycAKOmkjArYzwJAEMhuXX2c
-    short-id: 33acba1b
-  servername: www.apple.com
-  client-fingerprint: firefox
-  flow: xtls-rprx-vision
-- name: 🇱🇻 LV 03 - xiaohe
-  type: ss
-  server: 185.135.86.175
-  port: 9094
-  cipher: aes-256-cfb
-  password: rpgbNnU9rDDU4aWZ
-  udp: true
-- name: 🇱🇻 LV 04 - xiaohe
-  type: ss
-  server: 185.135.86.175
-  port: 9033
-  cipher: aes-256-cfb
-  password: UTJA57ypk2XKQpnm
-  udp: true
 proxy-groups:
 - name: PROXIES
   type: select
@@ -53,9 +25,6 @@ proxy-groups:
   - AUTO
   - FALLBACK
   - 🇱🇻 LV 01 - xiaohe
-  - 🇱🇻 LV 02 - xiaohe
-  - 🇱🇻 LV 03 - xiaohe
-  - 🇱🇻 LV 04 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -66,9 +35,6 @@ proxy-groups:
   lazy: true
   proxies: &id001
   - 🇱🇻 LV 01 - xiaohe
-  - 🇱🇻 LV 02 - xiaohe
-  - 🇱🇻 LV 03 - xiaohe
-  - 🇱🇻 LV 04 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

@@ -4,42 +4,28 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: 🇨🇳 CN 01 - xiaohe
-  type: vless
-  server: 8.35.211.242
+- name: 🇿🇦 ZA 01 - xiaohe
+  type: ss
+  server: 102.37.156.224
   port: 443
-  uuid: fc7d2cfe-f5ef-40c8-a848-a0bdc11f6349
+  cipher: chacha20-ietf-poly1305
+  password: aduB9HGxQHjA2SBMRjkHX6
   udp: true
-  tls: true
-  skip-cert-verify: true
-  servername: vpn.cintaku.qzz.io
-  network: ws
-  ws-opts:
-    path: /vlessws
-    headers:
-      Host: vpn.cintaku.qzz.io
-- name: 🇨🇳 CN 02 - xiaohe
-  type: vless
-  server: 188.114.98.0
-  port: 443
-  uuid: fc7d2cfe-f5ef-40c8-a848-a0bdc11f6349
+- name: 🇿🇦 ZA 02 - xiaohe
+  type: ss
+  server: 102.133.165.160
+  port: 16233
+  cipher: chacha20-ietf-poly1305
+  password: Xsy8Ox4yOV3xLlpxtjzs3X
   udp: true
-  tls: true
-  skip-cert-verify: true
-  servername: vpn.cintaku.qzz.io
-  network: ws
-  ws-opts:
-    path: /vlessws
-    headers:
-      Host: vpn.cintaku.qzz.io
 proxy-groups:
 - name: PROXIES
   type: select
   proxies:
   - AUTO
   - FALLBACK
-  - 🇨🇳 CN 01 - xiaohe
-  - 🇨🇳 CN 02 - xiaohe
+  - 🇿🇦 ZA 01 - xiaohe
+  - 🇿🇦 ZA 02 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -49,8 +35,8 @@ proxy-groups:
   tolerance: 100
   lazy: true
   proxies: &id001
-  - 🇨🇳 CN 01 - xiaohe
-  - 🇨🇳 CN 02 - xiaohe
+  - 🇿🇦 ZA 01 - xiaohe
+  - 🇿🇦 ZA 02 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

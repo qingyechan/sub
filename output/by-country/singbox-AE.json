@@ -53,7 +53,7 @@
     {
       "type": "vless",
       "tag": "🇦🇪 阿联酋 (UAE) 02 - xiaohe",
-      "server": "84.235.244.108",
+      "server": "uae.unixzone.us",
       "server_port": 22573,
       "uuid": "39947382-3212-41c9-bc3a-589574ac8b23",
       "transport": {
@@ -81,7 +81,7 @@
     {
       "type": "vless",
       "tag": "🇦🇪 阿联酋 (UAE) 04 - xiaohe",
-      "server": "uae.unixzone.us",
+      "server": "84.235.244.108",
       "server_port": 22573,
       "uuid": "39947382-3212-41c9-bc3a-589574ac8b23",
       "transport": {
@@ -95,19 +95,19 @@
     {
       "type": "vless",
       "tag": "🇦🇪 阿联酋 (UAE) 05 - xiaohe",
-      "server": "5.9.117.252",
+      "server": "83.147.216.223",
       "server_port": 4433,
-      "uuid": "ef286b0e-21ed-4e2b-9110-e2ddc7627892",
+      "uuid": "660174a2-d32d-4521-840d-d1853bfc80b8",
       "tls": {
         "enabled": true,
-        "server_name": "9-7u3b6e.wzkija0v0du4yhk6jfyfafml3nh22kne.workers.dev",
+        "server_name": "3t1yvbyla-rj740g.28m7r63dttya6gazmhoo.workers.dev",
         "insecure": true
       },
       "transport": {
         "type": "ws",
         "path": "/@Marisa_kristi",
         "headers": {
-          "Host": "9-7u3b6e.wzkija0v0du4yhk6jfyfafml3nh22kne.workers.dev"
+          "Host": "3t1yvbyla-rj740g.28m7r63dttya6gazmhoo.workers.dev"
         }
       }
     }

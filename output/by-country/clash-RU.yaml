@@ -6,9 +6,9 @@ log-level: info
 proxies:
 - name: 🇷🇺 俄罗斯 (Russia) 01 - xiaohe
   type: vless
-  server: 147.45.47.83
+  server: 193.160.140.119
   port: 443
-  uuid: 8a1f8853-9a71-4ef2-a64c-4f0a94c2e14b
+  uuid: 680e92ac-1688-49e0-af96-7327fbc30ce8
   udp: true
   tls: true
   skip-cert-verify: true
@@ -16,51 +16,9 @@ proxies:
     public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
     short-id: ''
   servername: ozon.ru
-  client-fingerprint: chrome
+  client-fingerprint: ios
   flow: xtls-rprx-vision
 - name: 🇷🇺 俄罗斯 (Russia) 02 - xiaohe
-  type: vless
-  server: 45.9.118.177
-  port: 8443
-  uuid: 88c4ce99-31f1-4329-912d-2a3564b3d58b
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: ''
-  servername: apple.com
-  client-fingerprint: firefox
-  flow: xtls-rprx-vision
-- name: 🇷🇺 俄罗斯 (Russia) 03 - xiaohe
-  type: vless
-  server: 147.45.47.89
-  port: 443
-  uuid: fd0a5c32-afc0-4d57-b95a-ca6ec8f93e87
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: ''
-  servername: ozon.ru
-  client-fingerprint: firefox
-  flow: xtls-rprx-vision
-- name: 🇷🇺 俄罗斯 (Russia) 04 - xiaohe
-  type: vless
-  server: 193.160.140.117
-  port: 8443
-  uuid: 57c87188-1056-4bd5-92f8-c7ca1fd19147
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: ''
-  servername: apple.com
-  client-fingerprint: chrome
-  flow: xtls-rprx-vision
-- name: 🇷🇺 俄罗斯 (Russia) 05 - xiaohe
   type: vless
   server: 193.160.141.2
   port: 8443
@@ -74,11 +32,39 @@ proxies:
   servername: apple.com
   client-fingerprint: chrome
   flow: xtls-rprx-vision
-- name: 🇷🇺 俄罗斯 (Russia) 06 - xiaohe
+- name: 🇷🇺 俄罗斯 (Russia) 03 - xiaohe
   type: vless
-  server: 113.30.154.207
+  server: 193.160.140.118
+  port: 443
+  uuid: 680e92ac-1688-49e0-af96-7327fbc30ce8
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: ''
+  servername: ozon.ru
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision
+- name: 🇷🇺 俄罗斯 (Russia) 04 - xiaohe
+  type: vless
+  server: 147.45.47.83
+  port: 443
+  uuid: 8a1f8853-9a71-4ef2-a64c-4f0a94c2e14b
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: ''
+  servername: ozon.ru
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision
+- name: 🇷🇺 俄罗斯 (Russia) 05 - xiaohe
+  type: vless
+  server: 45.9.118.177
   port: 8443
-  uuid: ca926603-c678-4639-b726-a5b82d7e110c
+  uuid: 88c4ce99-31f1-4329-912d-2a3564b3d58b
   udp: true
   tls: true
   skip-cert-verify: true
@@ -86,16 +72,23 @@ proxies:
     public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
     short-id: ''
   servername: apple.com
-  client-fingerprint: ios
+  client-fingerprint: firefox
+  flow: xtls-rprx-vision
+- name: 🇷🇺 俄罗斯 (Russia) 06 - xiaohe
+  type: vless
+  server: 193.160.141.27
+  port: 443
+  uuid: fd0a5c32-afc0-4d57-b95a-ca6ec8f93e87
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: ''
+  servername: abuse.ozon.ru
+  client-fingerprint: chrome
   flow: xtls-rprx-vision
 - name: 🇷🇺 俄罗斯 (Russia) 07 - xiaohe
-  type: ss
-  server: 195.133.23.50
-  port: 18443
-  cipher: aes-256-gcm
-  password: Lpq5UPVHtQYiuB9jEUNc2WkeIYCUH9DE
-  udp: true
-- name: 🇷🇺 俄罗斯 (Russia) 08 - xiaohe
   type: ss
   server: 46.17.43.227
   port: 18443
@@ -115,7 +108,6 @@ proxy-groups:
   - 🇷🇺 俄罗斯 (Russia) 05 - xiaohe
   - 🇷🇺 俄罗斯 (Russia) 06 - xiaohe
   - 🇷🇺 俄罗斯 (Russia) 07 - xiaohe
-  - 🇷🇺 俄罗斯 (Russia) 08 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -132,7 +124,6 @@ proxy-groups:
   - 🇷🇺 俄罗斯 (Russia) 05 - xiaohe
   - 🇷🇺 俄罗斯 (Russia) 06 - xiaohe
   - 🇷🇺 俄罗斯 (Russia) 07 - xiaohe
-  - 🇷🇺 俄罗斯 (Russia) 08 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

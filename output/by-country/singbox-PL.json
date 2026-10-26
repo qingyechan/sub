@@ -14,7 +14,8 @@
       "outbounds": [
         "auto",
         "🇵🇱 PL 01 - xiaohe",
-        "🇵🇱 PL 02 - xiaohe"
+        "🇵🇱 PL 02 - xiaohe",
+        "🇵🇱 PL 03 - xiaohe"
       ]
     },
     {
@@ -22,7 +23,8 @@
       "tag": "auto",
       "outbounds": [
         "🇵🇱 PL 01 - xiaohe",
-        "🇵🇱 PL 02 - xiaohe"
+        "🇵🇱 PL 02 - xiaohe",
+        "🇵🇱 PL 03 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -40,9 +42,33 @@
     {
       "type": "vless",
       "tag": "🇵🇱 PL 02 - xiaohe",
-      "server": "site.teslamotor.site",
-      "server_port": 20001,
-      "uuid": "8e8210b7-71a4-4799-8b9b-2e69698b1eaf"
+      "server": "2.26.6.1",
+      "server_port": 2087,
+      "uuid": "b9fdc03f-389b-4cda-9be4-155b623bee15",
+      "tls": {
+        "enabled": true,
+        "server_name": "2.26.6.1",
+        "insecure": true
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇵🇱 PL 03 - xiaohe",
+      "server": "tr2.soft10.ir",
+      "server_port": 2053,
+      "uuid": "480b4042-f713-43d7-b24b-b4064c97f841",
+      "tls": {
+        "enabled": true,
+        "server_name": "tr2.soft10.ir",
+        "insecure": true
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "tr2.soft10.ir"
+        }
+      }
     }
   ],
   "route": {

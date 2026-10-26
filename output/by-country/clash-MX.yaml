@@ -4,27 +4,22 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: 🇰🇿 KZ 01 - xiaohe
+- name: 🇲🇽 MX 01 - xiaohe
   type: vless
-  server: 109.73.192.248
-  port: 443
-  uuid: 30572b57-f5ab-4eb8-82d4-a24d399b99f6
+  server: mx001.zestapp778.com
+  port: 19167
+  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
   udp: true
   tls: true
   skip-cert-verify: true
-  reality-opts:
-    public-key: Buy9pirx5Ih_LHwc6R3BCmvRL4g4Ljx6B3MEsZfIZhU
-    short-id: ''
-  servername: almata.vkusnews.com
-  client-fingerprint: qq
-  flow: xtls-rprx-vision
+  servername: mx001.zestapp778.com
 proxy-groups:
 - name: PROXIES
   type: select
   proxies:
   - AUTO
   - FALLBACK
-  - 🇰🇿 KZ 01 - xiaohe
+  - 🇲🇽 MX 01 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -34,7 +29,7 @@ proxy-groups:
   tolerance: 100
   lazy: true
   proxies: &id001
-  - 🇰🇿 KZ 01 - xiaohe
+  - 🇲🇽 MX 01 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

@@ -13,14 +13,14 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇦🇲 AM 01 - xiaohe"
+        "🇰🇷 韩国 (South Korea) 01 (家宽) - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇦🇲 AM 01 - xiaohe"
+        "🇰🇷 韩国 (South Korea) 01 (家宽) - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -29,18 +29,12 @@
       "tag": "direct"
     },
     {
-      "type": "vless",
-      "tag": "🇦🇲 AM 01 - xiaohe",
-      "server": "194.36.37.59",
-      "server_port": 10004,
-      "uuid": "f7376394-cd54-11f1-bb6a-bff6d0326f6a",
-      "transport": {
-        "type": "ws",
-        "path": "/vpnjantit",
-        "headers": {
-          "Host": "194.36.37.59"
-        }
-      }
+      "type": "shadowsocks",
+      "tag": "🇰🇷 韩国 (South Korea) 01 (家宽) - xiaohe",
+      "server": "211.178.105.134",
+      "server_port": 6123,
+      "method": "aes-256-cfb",
+      "password": "qwerREWQ@@"
     }
   ],
   "route": {

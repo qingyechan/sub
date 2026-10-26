@@ -17,9 +17,7 @@
         "🇦🇺 澳大利亚 (Australia) 02 - xiaohe",
         "🇦🇺 澳大利亚 (Australia) 03 - xiaohe",
         "🇦🇺 澳大利亚 (Australia) 04 - xiaohe",
-        "🇦🇺 澳大利亚 (Australia) 05 - xiaohe",
-        "🇦🇺 澳大利亚 (Australia) 06 - xiaohe",
-        "🇦🇺 澳大利亚 (Australia) 07 - xiaohe"
+        "🇦🇺 澳大利亚 (Australia) 05 - xiaohe"
       ]
     },
     {
@@ -30,9 +28,7 @@
         "🇦🇺 澳大利亚 (Australia) 02 - xiaohe",
         "🇦🇺 澳大利亚 (Australia) 03 - xiaohe",
         "🇦🇺 澳大利亚 (Australia) 04 - xiaohe",
-        "🇦🇺 澳大利亚 (Australia) 05 - xiaohe",
-        "🇦🇺 澳大利亚 (Australia) 06 - xiaohe",
-        "🇦🇺 澳大利亚 (Australia) 07 - xiaohe"
+        "🇦🇺 澳大利亚 (Australia) 05 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -43,9 +39,9 @@
     {
       "type": "vless",
       "tag": "🇦🇺 澳大利亚 (Australia) 01 - xiaohe",
-      "server": "51.161.204.242",
+      "server": "51.161.204.244",
       "server_port": 443,
-      "uuid": "a14b736b-a92a-48d6-a596-5d31f7378ded",
+      "uuid": "36e89875-9c53-482b-bc41-d3890e9da176",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
@@ -53,37 +49,18 @@
         "insecure": true,
         "reality": {
           "enabled": true,
-          "public_key": "a2qGjvUPq6Nz5FTbn_MSHp-055q2h8YXqIL5VIJ5zwE",
-          "short_id": "d15c17cef9b2e456"
+          "public_key": "gCAazs5uxNuMZIxfDdw8wPE0nwKY4QfBfBkQveKAkEk",
+          "short_id": "0ad08b47f498efd2"
         },
         "utls": {
           "enabled": true,
-          "fingerprint": "chrome"
+          "fingerprint": "firefox"
         }
       }
     },
     {
       "type": "vless",
       "tag": "🇦🇺 澳大利亚 (Australia) 02 - xiaohe",
-      "server": "104.18.155.229",
-      "server_port": 443,
-      "uuid": "42026ed0-7d74-4585-8e46-0fe6aa4d665a",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.genflix.co.id.r3xxe.eu.cc",
-        "insecure": true
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/au-do",
-        "headers": {
-          "Host": "www.genflix.co.id.r3xxe.eu.cc"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇦🇺 澳大利亚 (Australia) 03 - xiaohe",
       "server": "funagfrdfs.alixxplay.com",
       "server_port": 54528,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -105,29 +82,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇦🇺 澳大利亚 (Australia) 04 - xiaohe",
-      "server": "funagfrdfs.alixxplay.com",
-      "server_port": 54528,
-      "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.apple.com",
-        "insecure": true,
-        "reality": {
-          "enabled": true,
-          "public_key": "7GvJVbR6BRhtrc8-rcZvB8qTFUF1LPeM_MmoZ04mBxo",
-          "short_id": "54cca3c1c1c7"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇦🇺 澳大利亚 (Australia) 05 - xiaohe",
+      "tag": "🇦🇺 澳大利亚 (Australia) 03 - xiaohe",
       "server": "funagfrdfs.alixxplay.com",
       "server_port": 54528,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -149,7 +104,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇦🇺 澳大利亚 (Australia) 06 - xiaohe",
+      "tag": "🇦🇺 澳大利亚 (Australia) 04 - xiaohe",
       "server": "funagfrdfs.alixxplay.com",
       "server_port": 54528,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -171,23 +126,23 @@
     },
     {
       "type": "vless",
-      "tag": "🇦🇺 澳大利亚 (Australia) 07 - xiaohe",
-      "server": "51.161.204.244",
-      "server_port": 443,
-      "uuid": "36e89875-9c53-482b-bc41-d3890e9da176",
+      "tag": "🇦🇺 澳大利亚 (Australia) 05 - xiaohe",
+      "server": "funagfrdfs.alixxplay.com",
+      "server_port": 54528,
+      "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
-        "server_name": "www.cloudflare.com",
+        "server_name": "www.apple.com",
         "insecure": true,
         "reality": {
           "enabled": true,
-          "public_key": "gCAazs5uxNuMZIxfDdw8wPE0nwKY4QfBfBkQveKAkEk",
-          "short_id": "0ad08b47f498efd2"
+          "public_key": "7GvJVbR6BRhtrc8-rcZvB8qTFUF1LPeM_MmoZ04mBxo",
+          "short_id": "54cca3c1c1c7"
         },
         "utls": {
           "enabled": true,
-          "fingerprint": "firefox"
+          "fingerprint": "chrome"
         }
       }
     }

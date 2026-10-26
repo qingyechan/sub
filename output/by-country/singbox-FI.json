@@ -16,8 +16,7 @@
         "🇫🇮 FI 01 - xiaohe",
         "🇫🇮 FI 02 - xiaohe",
         "🇫🇮 FI 03 - xiaohe",
-        "🇫🇮 FI 04 - xiaohe",
-        "🇫🇮 FI 05 - xiaohe"
+        "🇫🇮 FI 04 - xiaohe"
       ]
     },
     {
@@ -27,8 +26,7 @@
         "🇫🇮 FI 01 - xiaohe",
         "🇫🇮 FI 02 - xiaohe",
         "🇫🇮 FI 03 - xiaohe",
-        "🇫🇮 FI 04 - xiaohe",
-        "🇫🇮 FI 05 - xiaohe"
+        "🇫🇮 FI 04 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -53,34 +51,13 @@
         },
         "utls": {
           "enabled": true,
-          "fingerprint": "chrome"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇫🇮 FI 02 - xiaohe",
-      "server": "95.216.27.15",
-      "server_port": 2053,
-      "uuid": "1c81f6d3-5771-4c5d-9fdd-1655eff50634",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.google.com",
-        "insecure": true,
-        "reality": {
-          "enabled": true,
-          "public_key": "4nfogj5mHqNowtSn_2sXS3xTX8vcH75rFEU2BWvyekM",
-          "short_id": "d368b94e275ab080"
-        },
-        "utls": {
-          "enabled": true,
           "fingerprint": "firefox"
         }
       }
     },
     {
       "type": "vless",
-      "tag": "🇫🇮 FI 03 - xiaohe",
+      "tag": "🇫🇮 FI 02 - xiaohe",
       "server": "177.3.214.156",
       "server_port": 443,
       "uuid": "50a87e21-f0e2-4b53-a787-91adfe748f63",
@@ -97,6 +74,20 @@
         "utls": {
           "enabled": true,
           "fingerprint": "firefox"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇫🇮 FI 03 - xiaohe",
+      "server": "45.144.234.157",
+      "server_port": 14430,
+      "uuid": "59b0d30e-9b29-4fda-a35c-b2901ec32db7",
+      "transport": {
+        "type": "ws",
+        "path": "/vless",
+        "headers": {
+          "Host": "45.144.234.157"
         }
       }
     },
@@ -119,20 +110,6 @@
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇫🇮 FI 05 - xiaohe",
-      "server": "45.144.234.157",
-      "server_port": 14430,
-      "uuid": "59b0d30e-9b29-4fda-a35c-b2901ec32db7",
-      "transport": {
-        "type": "ws",
-        "path": "/vless",
-        "headers": {
-          "Host": "45.144.234.157"
         }
       }
     }

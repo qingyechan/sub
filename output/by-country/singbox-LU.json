@@ -13,14 +13,14 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇰🇿 KZ 01 - xiaohe"
+        "🇱🇺 LU 01 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇰🇿 KZ 01 - xiaohe"
+        "🇱🇺 LU 01 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -30,23 +30,22 @@
     },
     {
       "type": "vless",
-      "tag": "🇰🇿 KZ 01 - xiaohe",
-      "server": "109.73.192.248",
-      "server_port": 443,
-      "uuid": "30572b57-f5ab-4eb8-82d4-a24d399b99f6",
-      "flow": "xtls-rprx-vision",
+      "tag": "🇱🇺 LU 01 - xiaohe",
+      "server": "107.189.7.176",
+      "server_port": 32752,
+      "uuid": "4970c1cd-13e1-498a-920a-61d07be2fa65",
       "tls": {
         "enabled": true,
-        "server_name": "almata.vkusnews.com",
+        "server_name": "www.apple.com",
         "insecure": true,
         "reality": {
           "enabled": true,
-          "public_key": "Buy9pirx5Ih_LHwc6R3BCmvRL4g4Ljx6B3MEsZfIZhU",
-          "short_id": ""
+          "public_key": "pfFcQxKv4EPhCDUoZMCmTjj4FK7HHQg_me-In3bOejA",
+          "short_id": "d758a643034ad90e"
         },
         "utls": {
           "enabled": true,
-          "fingerprint": "qq"
+          "fingerprint": "chrome"
         }
       }
     }

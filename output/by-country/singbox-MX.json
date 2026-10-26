@@ -1,0 +1,47 @@
+{
+  "inbounds": [
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 7890
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "select",
+      "outbounds": [
+        "auto",
+        "🇲🇽 MX 01 - xiaohe"
+      ]
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "🇲🇽 MX 01 - xiaohe"
+      ],
+      "url": "https://www.google.com/generate_204"
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "vless",
+      "tag": "🇲🇽 MX 01 - xiaohe",
+      "server": "mx001.zestapp778.com",
+      "server_port": 19167,
+      "uuid": "e9a8144e-5237-488a-afb1-9ca3d8d54c80",
+      "tls": {
+        "enabled": true,
+        "server_name": "mx001.zestapp778.com",
+        "insecure": true
+      }
+    }
+  ],
+  "route": {
+    "final": "select"
+  }
+}
