@@ -16,7 +16,7 @@ proxies:
     public-key: 8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To
     short-id: a3a578ab
   servername: www.apple.com
-  client-fingerprint: firefox
+  client-fingerprint: chrome
   flow: xtls-rprx-vision
 - name: 🇮🇱 IL 02 - xiaohe
   type: vless
@@ -30,7 +30,7 @@ proxies:
     public-key: 8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To
     short-id: a3a578ab
   servername: www.apple.com
-  client-fingerprint: random
+  client-fingerprint: firefox
   flow: xtls-rprx-vision
 - name: 🇮🇱 IL 03 - xiaohe
   type: vless
@@ -44,22 +44,16 @@ proxies:
     public-key: 8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To
     short-id: a3a578ab
   servername: www.apple.com
-  client-fingerprint: chrome
+  client-fingerprint: random
   flow: xtls-rprx-vision
 - name: 🇮🇱 IL 04 - xiaohe
-  type: vless
-  server: 177.3.208.65
+  type: trojan
+  server: 64.176.163.182
   port: 443
-  uuid: 4f34bc04-479c-49ba-91a8-6bb9ed15031c
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
   udp: true
-  tls: true
+  sni: exploreeducationsectoropportunitiestodayandadvancecareers.com
   skip-cert-verify: true
-  servername: tgmansion.site
-  network: ws
-  ws-opts:
-    path: /vless-il
-    headers:
-      Host: tgmansion.site
 proxy-groups:
 - name: PROXIES
   type: select

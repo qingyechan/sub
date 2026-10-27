@@ -13,14 +13,14 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇧🇬 BG 01 - xiaohe"
+        "🇨🇱 CL 01 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇧🇬 BG 01 - xiaohe"
+        "🇨🇱 CL 01 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -29,12 +29,16 @@
       "tag": "direct"
     },
     {
-      "type": "shadowsocks",
-      "tag": "🇧🇬 BG 01 - xiaohe",
-      "server": "213.183.63.60",
-      "server_port": 9085,
-      "method": "aes-256-cfb",
-      "password": "9ej82EKe2gq7gLAM"
+      "type": "trojan",
+      "tag": "🇨🇱 CL 01 - xiaohe",
+      "server": "64.176.7.205",
+      "server_port": 443,
+      "password": "0ab6c98dae3b48e8b9c4a776b6c9c19a",
+      "tls": {
+        "enabled": true,
+        "server_name": "advanceyouremploymentskillsandcareerdevelopmenthub.com",
+        "insecure": true
+      }
     }
   ],
   "route": {

@@ -5,16 +5,28 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇵🇱 PL 01 - xiaohe
-  type: vmess
-  server: 45.144.48.32
-  port: 57072
-  uuid: d8f45bbb-e84d-4ad5-aa63-970f1345b164
-  alterId: 0
-  cipher: auto
+  type: vless
+  server: 168.222.43.53
+  port: 2052
+  uuid: 1a8ecc41-6e62-431b-8eca-87c2fa4dc286
   udp: true
   tls: false
   skip-cert-verify: true
 - name: 🇵🇱 PL 02 - xiaohe
+  type: vless
+  server: 45.148.119.127
+  port: 443
+  uuid: 329e13e4-ee7c-4802-ac72-5fcab79c2402
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  reality-opts:
+    public-key: pOHbbyo_PlUwH4DjC6bKvC3jB8RPnCdu-nL8trAP8CI
+    short-id: '50'
+  servername: cloudflare.com
+  client-fingerprint: firefox
+  flow: xtls-rprx-vision
+- name: 🇵🇱 PL 03 - xiaohe
   type: vless
   server: site.teslamotor.site
   port: 20001
@@ -22,7 +34,7 @@ proxies:
   udp: true
   tls: false
   skip-cert-verify: true
-- name: 🇵🇱 PL 03 - xiaohe
+- name: 🇵🇱 PL 04 - xiaohe
   type: vless
   server: 2.26.6.1
   port: 2087
@@ -31,7 +43,7 @@ proxies:
   tls: true
   skip-cert-verify: true
   servername: 2.26.6.1
-- name: 🇵🇱 PL 04 - xiaohe
+- name: 🇵🇱 PL 05 - xiaohe
   type: trojan
   server: 92.118.150.146
   port: 443
@@ -49,6 +61,7 @@ proxy-groups:
   - 🇵🇱 PL 02 - xiaohe
   - 🇵🇱 PL 03 - xiaohe
   - 🇵🇱 PL 04 - xiaohe
+  - 🇵🇱 PL 05 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -62,6 +75,7 @@ proxy-groups:
   - 🇵🇱 PL 02 - xiaohe
   - 🇵🇱 PL 03 - xiaohe
   - 🇵🇱 PL 04 - xiaohe
+  - 🇵🇱 PL 05 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

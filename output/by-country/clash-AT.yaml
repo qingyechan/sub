@@ -13,7 +13,7 @@ proxies:
   udp: true
 - name: 🇦🇹 AT 02 - xiaohe
   type: vless
-  server: softice.net
+  server: 188.137.158.189
   port: 443
   uuid: ef328563-cda1-4530-9b0a-988cc5a74d78
   udp: true
@@ -23,7 +23,97 @@ proxies:
   flow: xtls-rprx-vision-udp443
 - name: 🇦🇹 AT 03 - xiaohe
   type: vless
+  server: 188.137.158.169
+  port: 443
+  uuid: ef328563-cda1-4530-9b0a-988cc5a74d78
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: softice.net
+  flow: xtls-rprx-vision
+- name: 🇦🇹 AT 04 - xiaohe
+  type: vless
+  server: 188.137.158.199
+  port: 443
+  uuid: ef328563-cda1-4530-9b0a-988cc5a74d78
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: softice.net
+  flow: xtls-rprx-vision
+- name: 🇦🇹 AT 05 - xiaohe
+  type: vless
+  server: 188.137.158.179
+  port: 443
+  uuid: ef328563-cda1-4530-9b0a-988cc5a74d78
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: softice.net
+  flow: xtls-rprx-vision-udp443
+- name: 🇦🇹 AT 06 - xiaohe
+  type: vless
+  server: 188.137.158.199
+  port: 443
+  uuid: ef328563-cda1-4530-9b0a-988cc5a74d78
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: softice.net
+  flow: xtls-rprx-vision-udp443
+- name: 🇦🇹 AT 07 - xiaohe
+  type: vless
+  server: 188.137.158.159
+  port: 443
+  uuid: ef328563-cda1-4530-9b0a-988cc5a74d78
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: softice.net
+  flow: xtls-rprx-vision-udp443
+- name: 🇦🇹 AT 08 - xiaohe
+  type: vless
+  server: 188.137.158.189
+  port: 443
+  uuid: ef328563-cda1-4530-9b0a-988cc5a74d78
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: softice.net
+  flow: xtls-rprx-vision
+- name: 🇦🇹 AT 09 - xiaohe
+  type: vless
   server: softice.net
+  port: 443
+  uuid: ef328563-cda1-4530-9b0a-988cc5a74d78
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: softice.net
+  flow: xtls-rprx-vision
+- name: 🇦🇹 AT 10 - xiaohe
+  type: vless
+  server: 188.137.158.179
+  port: 443
+  uuid: ef328563-cda1-4530-9b0a-988cc5a74d78
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: softice.net
+  flow: xtls-rprx-vision
+- name: 🇦🇹 AT 11 - xiaohe
+  type: vless
+  server: 188.137.158.169
+  port: 443
+  uuid: ef328563-cda1-4530-9b0a-988cc5a74d78
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: softice.net
+  flow: xtls-rprx-vision-udp443
+- name: 🇦🇹 AT 12 - xiaohe
+  type: vless
+  server: 188.137.158.159
   port: 443
   uuid: ef328563-cda1-4530-9b0a-988cc5a74d78
   udp: true
@@ -40,6 +130,15 @@ proxy-groups:
   - 🇦🇹 AT 01 - xiaohe
   - 🇦🇹 AT 02 - xiaohe
   - 🇦🇹 AT 03 - xiaohe
+  - 🇦🇹 AT 04 - xiaohe
+  - 🇦🇹 AT 05 - xiaohe
+  - 🇦🇹 AT 06 - xiaohe
+  - 🇦🇹 AT 07 - xiaohe
+  - 🇦🇹 AT 08 - xiaohe
+  - 🇦🇹 AT 09 - xiaohe
+  - 🇦🇹 AT 10 - xiaohe
+  - 🇦🇹 AT 11 - xiaohe
+  - 🇦🇹 AT 12 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -52,6 +151,15 @@ proxy-groups:
   - 🇦🇹 AT 01 - xiaohe
   - 🇦🇹 AT 02 - xiaohe
   - 🇦🇹 AT 03 - xiaohe
+  - 🇦🇹 AT 04 - xiaohe
+  - 🇦🇹 AT 05 - xiaohe
+  - 🇦🇹 AT 06 - xiaohe
+  - 🇦🇹 AT 07 - xiaohe
+  - 🇦🇹 AT 08 - xiaohe
+  - 🇦🇹 AT 09 - xiaohe
+  - 🇦🇹 AT 10 - xiaohe
+  - 🇦🇹 AT 11 - xiaohe
+  - 🇦🇹 AT 12 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

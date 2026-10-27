@@ -13,14 +13,14 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇧🇷 BR 01 - xiaohe"
+        "🇦🇿 AZ 01 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇧🇷 BR 01 - xiaohe"
+        "🇦🇿 AZ 01 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -30,19 +30,18 @@
     },
     {
       "type": "vless",
-      "tag": "🇧🇷 BR 01 - xiaohe",
-      "server": "177.7.51.29",
-      "server_port": 8443,
-      "uuid": "c6b1b2d0-ed5e-48ce-99e6-112ff330030d",
-      "flow": "xtls-rprx-vision",
+      "tag": "🇦🇿 AZ 01 - xiaohe",
+      "server": "94.20.141.53",
+      "server_port": 443,
+      "uuid": "f439e4fe-139b-4882-ad8b-a16176d09c88",
       "tls": {
         "enabled": true,
-        "server_name": "www.apple.com",
+        "server_name": "eu63.cdn77.icu",
         "insecure": true,
         "reality": {
           "enabled": true,
-          "public_key": "laG5BxoSbdRozpauATNFBPPTwhuDuu0JFl_SCP2ZQlU",
-          "short_id": "14fbf992"
+          "public_key": "EltWI8AOqkN8lMjRycweRRoFRah5hu6xiKtgBmQOdE8",
+          "short_id": "1ed136481e0ede74"
         },
         "utls": {
           "enabled": true,
