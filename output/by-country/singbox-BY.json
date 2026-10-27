@@ -16,8 +16,7 @@
         "🇧🇾 BY 01 - xiaohe",
         "🇧🇾 BY 02 - xiaohe",
         "🇧🇾 BY 03 - xiaohe",
-        "🇧🇾 BY 04 - xiaohe",
-        "🇧🇾 BY 05 - xiaohe"
+        "🇧🇾 BY 04 - xiaohe"
       ]
     },
     {
@@ -27,8 +26,7 @@
         "🇧🇾 BY 01 - xiaohe",
         "🇧🇾 BY 02 - xiaohe",
         "🇧🇾 BY 03 - xiaohe",
-        "🇧🇾 BY 04 - xiaohe",
-        "🇧🇾 BY 05 - xiaohe"
+        "🇧🇾 BY 04 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -40,8 +38,15 @@
       "type": "vless",
       "tag": "🇧🇾 BY 01 - xiaohe",
       "server": "178.172.227.124",
-      "server_port": 10443,
-      "uuid": "1af36694-b548-4b18-89a0-bc076eab4ed7"
+      "server_port": 14430,
+      "uuid": "1af36694-b548-4b18-89a0-bc076eab4ed7",
+      "transport": {
+        "type": "ws",
+        "path": "/vless",
+        "headers": {
+          "Host": "178.172.227.124"
+        }
+      }
     },
     {
       "type": "vless",
@@ -60,34 +65,6 @@
     {
       "type": "vless",
       "tag": "🇧🇾 BY 03 - xiaohe",
-      "server": "178.172.227.124",
-      "server_port": 14430,
-      "uuid": "1af36694-b548-4b18-89a0-bc076eab4ed7",
-      "transport": {
-        "type": "ws",
-        "path": "%2Fvless",
-        "headers": {
-          "Host": "178.172.227.124"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇧🇾 BY 04 - xiaohe",
-      "server": "178.172.227.124",
-      "server_port": 14430,
-      "uuid": "1af36694-b548-4b18-89a0-bc076eab4ed7",
-      "transport": {
-        "type": "ws",
-        "path": "/vless",
-        "headers": {
-          "Host": "178.172.227.124"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇧🇾 BY 05 - xiaohe",
       "server": "95.128.71.79",
       "server_port": 14430,
       "uuid": "8cef7621-c6f0-486e-b51d-59c30c5b0b25",
@@ -98,6 +75,13 @@
           "Host": "95.128.71.79"
         }
       }
+    },
+    {
+      "type": "vless",
+      "tag": "🇧🇾 BY 04 - xiaohe",
+      "server": "178.172.227.124",
+      "server_port": 10443,
+      "uuid": "1af36694-b548-4b18-89a0-bc076eab4ed7"
     }
   ],
   "route": {

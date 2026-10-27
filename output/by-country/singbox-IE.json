@@ -37,19 +37,6 @@
     {
       "type": "vless",
       "tag": "🇮🇪 IE 01 - xiaohe",
-      "server": "50.7.5.166",
-      "server_port": 443,
-      "uuid": "cd3bb7d9-7df3-4644-ac05-c260990ac277",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "ekb.eg",
-        "insecure": true
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇮🇪 IE 02 - xiaohe",
       "server": "50.7.5.165",
       "server_port": 443,
       "uuid": "cd3bb7d9-7df3-4644-ac05-c260990ac277",
@@ -62,20 +49,20 @@
     },
     {
       "type": "vless",
-      "tag": "🇮🇪 IE 03 - xiaohe",
-      "server": "ir-new-ded.failspace.top",
+      "tag": "🇮🇪 IE 02 - xiaohe",
+      "server": "50.7.5.166",
       "server_port": 443,
       "uuid": "cd3bb7d9-7df3-4644-ac05-c260990ac277",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
-        "server_name": "ir-new-ded.failspace.top",
+        "server_name": "ekb.eg",
         "insecure": true
       }
     },
     {
       "type": "vless",
-      "tag": "🇮🇪 IE 04 - xiaohe",
+      "tag": "🇮🇪 IE 03 - xiaohe",
       "server": "ir-new.failspace.top",
       "server_port": 443,
       "uuid": "cd3bb7d9-7df3-4644-ac05-c260990ac277",
@@ -83,6 +70,19 @@
       "tls": {
         "enabled": true,
         "server_name": "ir-new.failspace.top",
+        "insecure": true
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇮🇪 IE 04 - xiaohe",
+      "server": "ir-new-ded.failspace.top",
+      "server_port": 443,
+      "uuid": "cd3bb7d9-7df3-4644-ac05-c260990ac277",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "ir-new-ded.failspace.top",
         "insecure": true
       }
     }

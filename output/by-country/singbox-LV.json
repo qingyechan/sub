@@ -14,9 +14,7 @@
       "outbounds": [
         "auto",
         "🇱🇻 LV 01 - xiaohe",
-        "🇱🇻 LV 02 - xiaohe",
-        "🇱🇻 LV 03 - xiaohe",
-        "🇱🇻 LV 04 - xiaohe"
+        "🇱🇻 LV 02 - xiaohe"
       ]
     },
     {
@@ -24,9 +22,7 @@
       "tag": "auto",
       "outbounds": [
         "🇱🇻 LV 01 - xiaohe",
-        "🇱🇻 LV 02 - xiaohe",
-        "🇱🇻 LV 03 - xiaohe",
-        "🇱🇻 LV 04 - xiaohe"
+        "🇱🇻 LV 02 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -52,7 +48,7 @@
         },
         "utls": {
           "enabled": true,
-          "fingerprint": "firefox"
+          "fingerprint": "random"
         }
       }
     },
@@ -74,50 +70,7 @@
         },
         "utls": {
           "enabled": true,
-          "fingerprint": "random"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇱🇻 LV 03 - xiaohe",
-      "server": "45.38.143.210",
-      "server_port": 30584,
-      "uuid": "cebc5f19-18d9-48e6-9029-fb4b04caf393",
-      "tls": {
-        "enabled": true,
-        "server_name": "m.vk.com",
-        "insecure": true,
-        "reality": {
-          "enabled": true,
-          "public_key": "2hV4TY2ygvQ7ISa5o4u_FUKXzlIhLgbsScE8M1h0m3Y",
-          "short_id": "67ece882d65d0f1a"
-        },
-        "utls": {
-          "enabled": true,
           "fingerprint": "chrome"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇱🇻 LV 04 - xiaohe",
-      "server": "45.43.79.92",
-      "server_port": 443,
-      "uuid": "042b12d8-bac4-4b3a-b661-79e333f08e4e",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "vikt659.isgood.host",
-        "insecure": true,
-        "reality": {
-          "enabled": true,
-          "public_key": "M4Y9h339sntl5wEpiCa7f4IKhJ_8JLzPnAz2IzKlngM",
-          "short_id": "af4ca5d16438c938"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
         }
       }
     }

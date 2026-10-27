@@ -13,14 +13,14 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇳🇴 NO 01 - xiaohe"
+        "🇧🇷 BR 01 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇳🇴 NO 01 - xiaohe"
+        "🇧🇷 BR 01 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -29,12 +29,16 @@
       "tag": "direct"
     },
     {
-      "type": "shadowsocks",
-      "tag": "🇳🇴 NO 01 - xiaohe",
-      "server": "185.213.23.63",
-      "server_port": 990,
-      "method": "chacha20-ietf-poly1305",
-      "password": "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
+      "type": "trojan",
+      "tag": "🇧🇷 BR 01 - xiaohe",
+      "server": "216.238.104.154",
+      "server_port": 443,
+      "password": "0ab6c98dae3b48e8b9c4a776b6c9c19a",
+      "tls": {
+        "enabled": true,
+        "server_name": "findtemporaryworkandfreelancerprojectsonlineplatform.com",
+        "insecure": true
+      }
     }
   ],
   "route": {
