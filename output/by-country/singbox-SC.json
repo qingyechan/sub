@@ -13,14 +13,16 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇸🇨 SC 01 - xiaohe"
+        "🇸🇨 SC 01 - xiaohe",
+        "🇸🇨 SC 02 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇸🇨 SC 01 - xiaohe"
+        "🇸🇨 SC 01 - xiaohe",
+        "🇸🇨 SC 02 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -39,6 +41,22 @@
       "transport": {
         "type": "ws",
         "path": "",
+        "headers": {
+          "Host": ""
+        }
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "🇸🇨 SC 02 - xiaohe",
+      "server": "156.239.224.107",
+      "server_port": 57278,
+      "uuid": "1270bed5-f908-4ecc-f1c8-de246033b186",
+      "security": "auto",
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "path": "/",
         "headers": {
           "Host": ""
         }

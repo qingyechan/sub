@@ -20,7 +20,7 @@ proxies:
   tls: true
   skip-cert-verify: true
   servername: softice.net
-  flow: xtls-rprx-vision
+  flow: xtls-rprx-vision-udp443
 - name: 🇦🇹 AT 03 - xiaohe
   type: vless
   server: softice.net
@@ -30,7 +30,7 @@ proxies:
   tls: true
   skip-cert-verify: true
   servername: softice.net
-  flow: xtls-rprx-vision-udp443
+  flow: xtls-rprx-vision
 proxy-groups:
 - name: PROXIES
   type: select
