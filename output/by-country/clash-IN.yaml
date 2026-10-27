@@ -5,18 +5,12 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇮🇳 印度 (India) 01 - xiaohe
-  type: vless
-  server: 194.61.31.126
-  port: 2053
-  uuid: 1d4e18bd-1f26-4915-b35a-7ace4826e76a
+  type: ss
+  server: 172.105.39.124
+  port: 7002
+  cipher: aes-256-gcm
+  password: RexnBgU7EV5ADxG
   udp: true
-  tls: true
-  skip-cert-verify: true
-  reality-opts:
-    public-key: PuAGLfJy6cu1TNoHuKIKSxPetCbZI41fc8hQDjWPIAU
-    short-id: 9980e0609b0d3891
-  servername: www.apple.com
-  client-fingerprint: chrome
 - name: 🇮🇳 印度 (India) 02 - xiaohe
   type: vless
   server: 194.61.31.126
@@ -43,6 +37,20 @@ proxies:
     path: /vless
     headers:
       Host: 13.140.56.100
+- name: 🇮🇳 印度 (India) 04 - xiaohe
+  type: vless
+  server: 122.176.216.52
+  port: 443
+  uuid: 16ae3ea5-cf3e-6973-7bf3-2b4b28d0ea88
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: app-6ada5023.deploy.meerasolution.com
+  network: ws
+  ws-opts:
+    path: /ws/16ae3ea5-cf3e-6973-7bf3-2b4b28d0ea88
+    headers:
+      Host: app-6ada5023.deploy.meerasolution.com
 proxy-groups:
 - name: PROXIES
   type: select
@@ -52,6 +60,7 @@ proxy-groups:
   - 🇮🇳 印度 (India) 01 - xiaohe
   - 🇮🇳 印度 (India) 02 - xiaohe
   - 🇮🇳 印度 (India) 03 - xiaohe
+  - 🇮🇳 印度 (India) 04 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -64,6 +73,7 @@ proxy-groups:
   - 🇮🇳 印度 (India) 01 - xiaohe
   - 🇮🇳 印度 (India) 02 - xiaohe
   - 🇮🇳 印度 (India) 03 - xiaohe
+  - 🇮🇳 印度 (India) 04 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

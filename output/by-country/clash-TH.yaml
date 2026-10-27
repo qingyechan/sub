@@ -29,21 +29,8 @@ proxies:
   ws-opts:
     path: /ws
     headers:
-      Host: aIs.SpEeDtEsT.nEt
-- name: 🇹🇭 TH 03 - xiaohe
-  type: vless
-  server: 103.86.49.57
-  port: 80
-  uuid: 3c52e091-6714-4915-949f-2149fe69951b
-  udp: true
-  tls: false
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
       Host: ais.speedtest.net
-- name: 🇹🇭 TH 04 - xiaohe
+- name: 🇹🇭 TH 03 - xiaohe
   type: vless
   server: 38.60.254.50
   port: 22222
@@ -52,35 +39,7 @@ proxies:
   tls: true
   skip-cert-verify: true
   servername: th001.zestapp778.com
-- name: 🇹🇭 TH 05 - xiaohe
-  type: vless
-  server: 104.16.10.185
-  port: 443
-  uuid: 3c52e091-6714-4915-949f-2149fe69951b
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  servername: v2ray.simspeedup.com
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: v2ray.simspeedup.com
-- name: 🇹🇭 TH 06 - xiaohe
-  type: vless
-  server: 104.16.10.9
-  port: 443
-  uuid: 3c52e091-6714-4915-949f-2149fe69951b
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  servername: v2ray.simspeedup.com
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: v2ray.simspeedup.com
-- name: 🇹🇭 TH 07 - xiaohe
+- name: 🇹🇭 TH 04 - xiaohe
   type: vless
   server: th001.zestapp778.com
   port: 22222
@@ -89,6 +48,20 @@ proxies:
   tls: true
   skip-cert-verify: true
   servername: th001.zestapp778.com
+- name: 🇹🇭 TH 05 - xiaohe
+  type: vless
+  server: 45.154.26.63
+  port: 443
+  uuid: ff85e702-b605-4109-884d-2c1f065d0954
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  reality-opts:
+    public-key: MiQ5B4j6In71lWvCi0vO_DkVSDb7sii34bh5efBMswk
+    short-id: 3c032a7e
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision
 proxy-groups:
 - name: PROXIES
   type: select
@@ -100,8 +73,6 @@ proxy-groups:
   - 🇹🇭 TH 03 - xiaohe
   - 🇹🇭 TH 04 - xiaohe
   - 🇹🇭 TH 05 - xiaohe
-  - 🇹🇭 TH 06 - xiaohe
-  - 🇹🇭 TH 07 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -116,8 +87,6 @@ proxy-groups:
   - 🇹🇭 TH 03 - xiaohe
   - 🇹🇭 TH 04 - xiaohe
   - 🇹🇭 TH 05 - xiaohe
-  - 🇹🇭 TH 06 - xiaohe
-  - 🇹🇭 TH 07 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

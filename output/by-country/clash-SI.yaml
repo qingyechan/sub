@@ -20,6 +20,20 @@ proxies:
   flow: xtls-rprx-vision
 - name: 🇸🇮 SI 02 - xiaohe
   type: vless
+  server: 92.42.201.102
+  port: 443
+  uuid: d0c8aa8d-a535-432a-b521-21f0e561f643
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  reality-opts:
+    public-key: 8C7evg_SSrJbxMTaUqJoylqB9HSNsmBvmUlgs_c5EiU
+    short-id: 88d9dc52ef39c8bd
+  servername: node-slo01.rkitman.ru
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision
+- name: 🇸🇮 SI 03 - xiaohe
+  type: vless
   server: 92.42.201.107
   port: 443
   uuid: d0c8aa8d-a535-432a-b521-21f0e561f643
@@ -40,6 +54,7 @@ proxy-groups:
   - FALLBACK
   - 🇸🇮 SI 01 - xiaohe
   - 🇸🇮 SI 02 - xiaohe
+  - 🇸🇮 SI 03 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -51,6 +66,7 @@ proxy-groups:
   proxies: &id001
   - 🇸🇮 SI 01 - xiaohe
   - 🇸🇮 SI 02 - xiaohe
+  - 🇸🇮 SI 03 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

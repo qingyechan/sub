@@ -5,47 +5,13 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇫🇷 法国 (France) 01 - xiaohe
-  type: vmess
-  server: 57.128.164.21
-  port: 80
-  uuid: bda82bcd-f6e2-46ae-9552-673f0b87ac30
-  alterId: 0
-  cipher: auto
+  type: ss
+  server: pl140.vpnbook.com
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: 6heexyz
   udp: true
-  tls: false
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /d3d3LmlyYW5ob3N0LmNvbQ==?ed=2560
-    headers:
-      Host: https.http.www.net.com.ramseyv2.ir.
 - name: 🇫🇷 法国 (France) 02 - xiaohe
-  type: vless
-  server: 138.124.70.41
-  port: 14430
-  uuid: 6cc745e3-4eb9-46c8-a4a1-85dee7b87edc
-  udp: true
-  tls: false
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /vless
-    headers:
-      Host: 138.124.70.41
-- name: 🇫🇷 法国 (France) 03 - xiaohe
-  type: vless
-  server: 51.77.217.70
-  port: 2053
-  uuid: bf16ee0c-8b3c-41e4-ab3a-8b48033c404e
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  reality-opts:
-    public-key: g63cT3uI0Y5iUtj3m__RYz7nmR1eIK4AYikdnZCl63w
-    short-id: bfe58beb41f1d09f
-  servername: www.apple.com
-  client-fingerprint: firefox
-- name: 🇫🇷 法国 (France) 04 - xiaohe
   type: vless
   server: 51.77.217.70
   port: 2053
@@ -58,57 +24,20 @@ proxies:
     short-id: bfe58beb41f1d09f
   servername: www.apple.com
   client-fingerprint: chrome
-- name: 🇫🇷 法国 (France) 05 - xiaohe
-  type: trojan
-  server: 188.114.97.6
-  port: 443
-  password: humanity
-  udp: true
-  sni: www.calmlunch.com
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /assignment?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
-    headers:
-      Host: www.calmlunch.com
-- name: 🇫🇷 法国 (France) 06 - xiaohe
-  type: vmess
-  server: 141.95.65.9
-  port: 1234
-  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  servername: ''
-- name: 🇫🇷 法国 (France) 07 - xiaohe
+- name: 🇫🇷 法国 (France) 03 - xiaohe
   type: vless
-  server: 51.77.217.70
-  port: 2053
-  uuid: bf16ee0c-8b3c-41e4-ab3a-8b48033c404e
+  server: 138.124.70.41
+  port: 14430
+  uuid: 6cc745e3-4eb9-46c8-a4a1-85dee7b87edc
   udp: true
-  tls: true
-  skip-cert-verify: true
-  reality-opts:
-    public-key: g63cT3uI0Y5iUtj3m__RYz7nmR1eIK4AYikdnZCl63w
-    short-id: bfe58beb41f1d09f
-  servername: www.apple.com
-  client-fingerprint: random
-- name: 🇫🇷 法国 (France) 08 - xiaohe
-  type: trojan
-  server: 104.18.9.83
-  port: 443
-  password: humanity
-  udp: true
-  sni: www.calmlunch.com
+  tls: false
   skip-cert-verify: true
   network: ws
   ws-opts:
-    path: /assignment
+    path: /vless
     headers:
-      Host: www.calmlunch.com
-- name: 🇫🇷 法国 (France) 09 - xiaohe
+      Host: 138.124.70.41
+- name: 🇫🇷 法国 (France) 04 - xiaohe
   type: vless
   server: 137.74.16.237
   port: 443
@@ -122,7 +51,7 @@ proxies:
   servername: www.icloud.com
   client-fingerprint: chrome
   flow: xtls-rprx-vision
-- name: 🇫🇷 法国 (France) 10 - xiaohe
+- name: 🇫🇷 法国 (France) 05 - xiaohe
   type: vless
   server: 62.210.91.10
   port: 23576
@@ -136,73 +65,33 @@ proxies:
   servername: fuck.rkn
   client-fingerprint: chrome
   flow: xtls-rprx-vision
-- name: 🇫🇷 法国 (France) 11 - xiaohe
-  type: trojan
-  server: 45.130.125.160
-  port: 443
-  password: humanity
-  udp: true
-  sni: www.calmlunch.com
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
-- name: 🇫🇷 法国 (France) 12 - xiaohe
-  type: trojan
-  server: 104.17.148.22
-  port: 443
-  password: humanity
-  udp: true
-  sni: www.calmlunch.com
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
-- name: 🇫🇷 法国 (France) 13 - xiaohe
-  type: trojan
-  server: 109.234.211.232
-  port: 443
-  password: humanity
-  udp: true
-  sni: www.calmlunch.com
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
-- name: 🇫🇷 法国 (France) 14 - xiaohe
-  type: trojan
-  server: 165.215.250.14
-  port: 443
-  password: humanity
-  udp: true
-  sni: www.calmlunch.com
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
-- name: 🇫🇷 法国 (France) 15 - xiaohe
+- name: 🇫🇷 法国 (France) 06 - xiaohe
   type: vless
-  server: 137.74.16.237
-  port: 443
-  uuid: aaec4e42-a095-44b6-a239-f16d234a0798
+  server: 51.77.217.70
+  port: 2053
+  uuid: bf16ee0c-8b3c-41e4-ab3a-8b48033c404e
   udp: true
   tls: true
   skip-cert-verify: true
   reality-opts:
-    public-key: 7LSzvilTVKGMtBDuKGeMrLtlhY7tQf5YcG566dEgO0I
-    short-id: b390e0a721d242b0
-  servername: www.icloud.com
+    public-key: g63cT3uI0Y5iUtj3m__RYz7nmR1eIK4AYikdnZCl63w
+    short-id: bfe58beb41f1d09f
+  servername: www.apple.com
   client-fingerprint: random
-  flow: xtls-rprx-vision
-- name: 🇫🇷 法国 (France) 16 - xiaohe
+- name: 🇫🇷 法国 (France) 07 - xiaohe
+  type: trojan
+  server: 104.19.229.21
+  port: 443
+  password: humanity
+  udp: true
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+- name: 🇫🇷 法国 (France) 08 - xiaohe
   type: vless
   server: 62.210.91.2
   port: 23576
@@ -216,20 +105,37 @@ proxies:
   servername: fuck.rkn
   client-fingerprint: chrome
   flow: xtls-rprx-vision
-- name: 🇫🇷 法国 (France) 17 - xiaohe
-  type: vmess
-  server: 162.19.204.71
-  port: 1234
-  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
-  alterId: 0
-  cipher: auto
+- name: 🇫🇷 法国 (France) 09 - xiaohe
+  type: vless
+  server: 137.74.16.237
+  port: 443
+  uuid: aaec4e42-a095-44b6-a239-f16d234a0798
   udp: true
   tls: true
   skip-cert-verify: true
-  servername: ''
-- name: 🇫🇷 法国 (France) 18 - xiaohe
+  reality-opts:
+    public-key: 7LSzvilTVKGMtBDuKGeMrLtlhY7tQf5YcG566dEgO0I
+    short-id: b390e0a721d242b0
+  servername: www.icloud.com
+  client-fingerprint: random
+  flow: xtls-rprx-vision
+- name: 🇫🇷 法国 (France) 10 - xiaohe
+  type: vless
+  server: 199.232.78.170
+  port: 443
+  uuid: XpnTeam-54
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: ssl.fastly.com
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: Appxdn.global.ssl.fastly.net
+- name: 🇫🇷 法国 (France) 11 - xiaohe
   type: trojan
-  server: 212.183.88.136
+  server: 109.234.211.232
   port: 443
   password: humanity
   udp: true
@@ -240,20 +146,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.calmlunch.com
-- name: 🇫🇷 法国 (France) 19 - xiaohe
-  type: trojan
-  server: www.calmlunch.com
-  port: 443
-  password: humanity
-  udp: true
-  sni: www.calmlunch.com
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
-- name: 🇫🇷 法国 (France) 20 - xiaohe
+- name: 🇫🇷 法国 (France) 12 - xiaohe
   type: trojan
   server: 104.16.71.213
   port: 443
@@ -266,9 +159,20 @@ proxies:
     path: /assignment
     headers:
       Host: www.calmlunch.com
-- name: 🇫🇷 法国 (France) 21 - xiaohe
+- name: 🇫🇷 法国 (France) 13 - xiaohe
+  type: vmess
+  server: 162.19.204.71
+  port: 1234
+  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: ''
+- name: 🇫🇷 法国 (France) 14 - xiaohe
   type: trojan
-  server: 104.19.229.21
+  server: 104.17.147.22
   port: 443
   password: humanity
   udp: true
@@ -279,33 +183,18 @@ proxies:
     path: /assignment
     headers:
       Host: www.calmlunch.com
-- name: 🇫🇷 法国 (France) 22 - xiaohe
-  type: trojan
-  server: 212.183.88.136
-  port: 443
-  password: humanity
+- name: 🇫🇷 法国 (France) 15 - xiaohe
+  type: vmess
+  server: 141.95.65.9
+  port: 1234
+  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
+  alterId: 0
+  cipher: auto
   udp: true
-  sni: www.calmlunch.com
+  tls: true
   skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /%2Fassignment
-    headers:
-      Host: www.calmlunch.com
-- name: 🇫🇷 法国 (France) 23 - xiaohe
-  type: trojan
-  server: 185.18.250.252
-  port: 443
-  password: humanity
-  udp: true
-  sni: www.calmlunch.com
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
-- name: 🇫🇷 法国 (France) 24 - xiaohe
+  servername: ''
+- name: 🇫🇷 法国 (France) 16 - xiaohe
   type: vless
   server: 137.74.16.237
   port: 443
@@ -319,9 +208,9 @@ proxies:
   servername: www.icloud.com
   client-fingerprint: firefox
   flow: xtls-rprx-vision
-- name: 🇫🇷 法国 (France) 25 - xiaohe
+- name: 🇫🇷 法国 (France) 17 - xiaohe
   type: trojan
-  server: 104.17.147.22
+  server: 185.18.250.252
   port: 443
   password: humanity
   udp: true
@@ -332,7 +221,33 @@ proxies:
     path: /assignment
     headers:
       Host: www.calmlunch.com
-- name: 🇫🇷 法国 (France) 26 - xiaohe
+- name: 🇫🇷 法国 (France) 18 - xiaohe
+  type: vless
+  server: 161.97.66.16
+  port: 443
+  uuid: 086bf957-9cd0-4e55-8280-bbef10435b41
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  reality-opts:
+    public-key: R-w7BpNgtryZRBMyRoHx81OnjzAwrKhVtV1EUKLFJzc
+    short-id: 086bf957
+  servername: www.cloudflare.com
+  client-fingerprint: firefox
+- name: 🇫🇷 法国 (France) 19 - xiaohe
+  type: vless
+  server: 54.37.136.194
+  port: 2053
+  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  reality-opts:
+    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
+    short-id: 50ba05992b05c1c3
+  servername: www.cloudflare.com
+  client-fingerprint: firefox
+- name: 🇫🇷 法国 (France) 20 - xiaohe
   type: vless
   server: 54.37.136.194
   port: 2053
@@ -345,20 +260,7 @@ proxies:
     short-id: 50ba05992b05c1c3
   servername: www.cloudflare.com
   client-fingerprint: chrome
-- name: 🇫🇷 法国 (France) 27 - xiaohe
-  type: trojan
-  server: 185.18.250.245
-  port: 443
-  password: humanity
-  udp: true
-  sni: www.calmlunch.com
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
-- name: 🇫🇷 法国 (France) 28 - xiaohe
+- name: 🇫🇷 法国 (France) 21 - xiaohe
   type: vless
   server: 54.37.136.194
   port: 2053
@@ -371,49 +273,46 @@ proxies:
     short-id: 50ba05992b05c1c3
   servername: www.cloudflare.com
   client-fingerprint: random
-- name: 🇫🇷 法国 (France) 29 - xiaohe
-  type: vmess
-  server: 145.239.55.210
-  port: 80
-  uuid: 067fcd63-b215-4abd-8529-ae929a9971a9
-  alterId: 0
-  cipher: auto
+- name: 🇫🇷 法国 (France) 22 - xiaohe
+  type: trojan
+  server: 185.18.250.245
+  port: 443
+  password: humanity
   udp: true
-  tls: false
+  sni: www.calmlunch.com
   skip-cert-verify: true
   network: ws
   ws-opts:
-    path: /
+    path: /assignment
     headers:
-      Host: google.whatsapp.snapp.torob.basalam.fortresshost.ir.
-- name: 🇫🇷 法国 (France) 30 - xiaohe
-  type: vless
-  server: 54.37.136.194
-  port: 2053
-  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  reality-opts:
-    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
-    short-id: 50ba05992b05c1c3
-  servername: www.cloudflare.com
-  client-fingerprint: firefox
-- name: 🇫🇷 法国 (France) 31 - xiaohe
-  type: vless
-  server: 193.160.140.154
+      Host: www.calmlunch.com
+- name: 🇫🇷 法国 (France) 23 - xiaohe
+  type: trojan
+  server: 172.67.231.254
   port: 443
-  uuid: 54d1afe5-f5aa-47e6-a02f-6c41a6f886b3
+  password: humanity
   udp: true
-  tls: true
+  sni: www.calmlunch.com
   skip-cert-verify: true
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: ''
-  servername: gb.ozon.ru
-  client-fingerprint: firefox
-  flow: xtls-rprx-vision
-- name: 🇫🇷 法国 (France) 32 - xiaohe
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+- name: 🇫🇷 法国 (France) 24 - xiaohe
+  type: trojan
+  server: 104.18.9.83
+  port: 443
+  password: humanity
+  udp: true
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+- name: 🇫🇷 法国 (France) 25 - xiaohe
   type: vless
   server: ai.smrtai.top
   port: 443
@@ -426,10 +325,10 @@ proxies:
     short-id: 086bf957
   servername: www.cloudflare.com
   client-fingerprint: chrome
-- name: 🇫🇷 法国 (France) 33 - xiaohe
+- name: 🇫🇷 法国 (France) 26 - xiaohe
   type: trojan
-  server: 185.114.72.31
-  port: 2053
+  server: 45.130.125.160
+  port: 443
   password: humanity
   udp: true
   sni: www.calmlunch.com
@@ -439,7 +338,112 @@ proxies:
     path: /assignment
     headers:
       Host: www.calmlunch.com
+- name: 🇫🇷 法国 (France) 27 - xiaohe
+  type: trojan
+  server: 165.215.250.14
+  port: 443
+  password: humanity
+  udp: true
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+- name: 🇫🇷 法国 (France) 28 - xiaohe
+  type: trojan
+  server: 212.183.88.136
+  port: 443
+  password: humanity
+  udp: true
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+- name: 🇫🇷 法国 (France) 29 - xiaohe
+  type: trojan
+  server: 188.114.97.6
+  port: 443
+  password: humanity
+  udp: true
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
+    headers:
+      Host: www.calmlunch.com
+- name: 🇫🇷 法国 (France) 30 - xiaohe
+  type: trojan
+  server: www.calmlunch.com
+  port: 443
+  password: humanity
+  udp: true
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+- name: 🇫🇷 法国 (France) 31 - xiaohe
+  type: trojan
+  server: 104.17.148.22
+  port: 443
+  password: humanity
+  udp: true
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+- name: 🇫🇷 法国 (France) 32 - xiaohe
+  type: trojan
+  server: 212.183.88.136
+  port: 443
+  password: humanity
+  udp: true
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /%2Fassignment
+    headers:
+      Host: www.calmlunch.com
+- name: 🇫🇷 法国 (France) 33 - xiaohe
+  type: vless
+  server: 199.232.78.160
+  port: 443
+  uuid: XpnTeam-53
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: cdn.akamai.steamstatic.com
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: Appxdn.global.ssl.fastly.net
 - name: 🇫🇷 法国 (France) 34 - xiaohe
+  type: trojan
+  server: 45.87.41.18
+  port: 443
+  password: humanity
+  udp: true
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+- name: 🇫🇷 法国 (France) 35 - xiaohe
   type: vless
   server: 213.152.165.204
   port: 2092
@@ -453,19 +457,6 @@ proxies:
   servername: www.apple.com
   client-fingerprint: chrome
   flow: xtls-rprx-vision
-- name: 🇫🇷 法国 (France) 35 - xiaohe
-  type: trojan
-  server: 45.87.41.18
-  port: 443
-  password: humanity
-  udp: true
-  sni: www.calmlunch.com
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
 - name: 🇫🇷 法国 (France) 36 - xiaohe
   type: vless
   server: 213.152.165.201
@@ -495,6 +486,22 @@ proxies:
   client-fingerprint: chrome
   flow: xtls-rprx-vision
 - name: 🇫🇷 法国 (France) 38 - xiaohe
+  type: vmess
+  server: www.ubuntuupdates.com
+  port: 443
+  uuid: 83b09a64-1eaf-4c4d-89ed-866d4b6b8115
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: www.ubuntuupdates.com
+  network: ws
+  ws-opts:
+    path: /truth
+    headers:
+      Host: www.ubuntuupdates.com
+- name: 🇫🇷 法国 (France) 39 - xiaohe
   type: vless
   server: 213.152.165.200
   port: 2092
@@ -508,19 +515,6 @@ proxies:
   servername: www.apple.com
   client-fingerprint: chrome
   flow: xtls-rprx-vision
-- name: 🇫🇷 法国 (France) 39 - xiaohe
-  type: vless
-  server: ov-france1.09vpn.com
-  port: 80
-  uuid: f5c47e9c-914a-4a91-a81e-a5a77bc10fc1
-  udp: true
-  tls: false
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /vless/
-    headers:
-      Host: ov-france1.09vpn.com
 - name: 🇫🇷 法国 (France) 40 - xiaohe
   type: trojan
   server: 185.220.100.168
@@ -548,6 +542,19 @@ proxies:
     headers:
       Host: www.calmlunch.com
 - name: 🇫🇷 法国 (France) 42 - xiaohe
+  type: trojan
+  server: 185.114.72.31
+  port: 2053
+  password: humanity
+  udp: true
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+- name: 🇫🇷 法国 (France) 43 - xiaohe
   type: vmess
   server: 54.37.131.126
   port: 80
@@ -562,26 +569,49 @@ proxies:
     path: /
     headers:
       Host: google.whatsapp.snapp.torob.basalam.hesanid8.ir.
-- name: 🇫🇷 法国 (France) 43 - xiaohe
-  type: vless
-  server: 161.97.66.16
-  port: 443
-  uuid: 086bf957-9cd0-4e55-8280-bbef10435b41
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  reality-opts:
-    public-key: R-w7BpNgtryZRBMyRoHx81OnjzAwrKhVtV1EUKLFJzc
-    short-id: 086bf957
-  servername: www.cloudflare.com
-  client-fingerprint: firefox
 - name: 🇫🇷 法国 (France) 44 - xiaohe
-  type: ss
-  server: mojif.fusetea.ir
-  port: 2089
-  cipher: chacha20-ietf-poly1305
-  password: OCYghwX3MNcK2myvperXNaInKT-gmknf
+  type: vmess
+  server: 145.239.55.210
+  port: 80
+  uuid: 067fcd63-b215-4abd-8529-ae929a9971a9
+  alterId: 0
+  cipher: auto
   udp: true
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: google.whatsapp.snapp.torob.basalam.fortresshost.ir.
+- name: 🇫🇷 法国 (France) 45 - xiaohe
+  type: vless
+  server: ov-france1.09vpn.com
+  port: 80
+  uuid: f5c47e9c-914a-4a91-a81e-a5a77bc10fc1
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /vless/
+    headers:
+      Host: ov-france1.09vpn.com
+- name: 🇫🇷 法国 (France) 46 - xiaohe
+  type: vmess
+  server: 57.128.164.21
+  port: 80
+  uuid: bda82bcd-f6e2-46ae-9552-673f0b87ac30
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /d3d3LmlyYW5ob3N0LmNvbQ==?ed=2560
+    headers:
+      Host: https.http.www.net.com.ramseyv2.ir.
 proxy-groups:
 - name: PROXIES
   type: select
@@ -632,6 +662,8 @@ proxy-groups:
   - 🇫🇷 法国 (France) 42 - xiaohe
   - 🇫🇷 法国 (France) 43 - xiaohe
   - 🇫🇷 法国 (France) 44 - xiaohe
+  - 🇫🇷 法国 (France) 45 - xiaohe
+  - 🇫🇷 法国 (France) 46 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -685,6 +717,8 @@ proxy-groups:
   - 🇫🇷 法国 (France) 42 - xiaohe
   - 🇫🇷 法国 (France) 43 - xiaohe
   - 🇫🇷 法国 (France) 44 - xiaohe
+  - 🇫🇷 法国 (France) 45 - xiaohe
+  - 🇫🇷 法国 (France) 46 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204
