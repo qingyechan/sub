@@ -20,7 +20,8 @@
         "🇹🇭 TH 05 - xiaohe",
         "🇹🇭 TH 06 - xiaohe",
         "🇹🇭 TH 07 - xiaohe",
-        "🇹🇭 TH 08 - xiaohe"
+        "🇹🇭 TH 08 - xiaohe",
+        "🇹🇭 TH 09 - xiaohe"
       ]
     },
     {
@@ -34,7 +35,8 @@
         "🇹🇭 TH 05 - xiaohe",
         "🇹🇭 TH 06 - xiaohe",
         "🇹🇭 TH 07 - xiaohe",
-        "🇹🇭 TH 08 - xiaohe"
+        "🇹🇭 TH 08 - xiaohe",
+        "🇹🇭 TH 09 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -59,22 +61,14 @@
     {
       "type": "vless",
       "tag": "🇹🇭 TH 02 - xiaohe",
-      "server": "45.154.26.63",
-      "server_port": 443,
-      "uuid": "ff85e702-b605-4109-884d-2c1f065d0954",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.cloudflare.com",
-        "insecure": true,
-        "reality": {
-          "enabled": true,
-          "public_key": "MiQ5B4j6In71lWvCi0vO_DkVSDb7sii34bh5efBMswk",
-          "short_id": "3c032a7e"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
+      "server": "103.86.49.57",
+      "server_port": 80,
+      "uuid": "3c52e091-6714-4915-949f-2149fe69951b",
+      "transport": {
+        "type": "ws",
+        "path": "/ws",
+        "headers": {
+          "Host": "ais.speedtest.net"
         }
       }
     },
@@ -88,7 +82,7 @@
         "type": "ws",
         "path": "/ws",
         "headers": {
-          "Host": "ais.speedtest.net"
+          "Host": "v2ray.simspeedup.com"
         }
       }
     },
@@ -102,7 +96,7 @@
         "type": "ws",
         "path": "/ws",
         "headers": {
-          "Host": "v2ray.simspeedup.com"
+          "Host": "ais.speedtest.net"
         }
       }
     },
@@ -140,25 +134,40 @@
     {
       "type": "vless",
       "tag": "🇹🇭 TH 07 - xiaohe",
-      "server": "104.18.26.90",
+      "server": "45.154.26.63",
       "server_port": 443,
-      "uuid": "3c52e091-6714-4915-949f-2149fe69951b",
+      "uuid": "ff85e702-b605-4109-884d-2c1f065d0954",
+      "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
-        "server_name": "v2ray.simspeedup.com",
-        "insecure": true
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/ws",
-        "headers": {
-          "Host": "v2ray.simspeedup.com"
+        "server_name": "www.cloudflare.com",
+        "insecure": true,
+        "reality": {
+          "enabled": true,
+          "public_key": "MiQ5B4j6In71lWvCi0vO_DkVSDb7sii34bh5efBMswk",
+          "short_id": "3c032a7e"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
     {
       "type": "vless",
       "tag": "🇹🇭 TH 08 - xiaohe",
+      "server": "th001.zestapp778.com",
+      "server_port": 22222,
+      "uuid": "e9a8144e-5237-488a-afb1-9ca3d8d54c80",
+      "tls": {
+        "enabled": true,
+        "server_name": "th001.zestapp778.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇹🇭 TH 09 - xiaohe",
       "server": "104.16.10.185",
       "server_port": 443,
       "uuid": "3c52e091-6714-4915-949f-2149fe69951b",
