@@ -6,15 +6,22 @@ log-level: info
 proxies:
 - name: 🇰🇷 韩国 (South Korea) 01 (家宽) - xiaohe
   type: ss
-  server: 218.237.185.234
-  port: 4652
+  server: 49.254.204.133
+  port: 1774
   cipher: aes-256-cfb
-  password: qwerREWQ@@
+  password: 1234!@#$
   udp: true
 - name: 🇰🇷 韩国 (South Korea) 02 (家宽) - xiaohe
   type: ss
   server: 211.178.105.134
   port: 6123
+  cipher: aes-256-cfb
+  password: qwerREWQ@@
+  udp: true
+- name: 🇰🇷 韩国 (South Korea) 03 (家宽) - xiaohe
+  type: ss
+  server: p141.panda001.net
+  port: 4652
   cipher: aes-256-cfb
   password: qwerREWQ@@
   udp: true
@@ -26,6 +33,7 @@ proxy-groups:
   - FALLBACK
   - 🇰🇷 韩国 (South Korea) 01 (家宽) - xiaohe
   - 🇰🇷 韩国 (South Korea) 02 (家宽) - xiaohe
+  - 🇰🇷 韩国 (South Korea) 03 (家宽) - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -37,6 +45,7 @@ proxy-groups:
   proxies: &id001
   - 🇰🇷 韩国 (South Korea) 01 (家宽) - xiaohe
   - 🇰🇷 韩国 (South Korea) 02 (家宽) - xiaohe
+  - 🇰🇷 韩国 (South Korea) 03 (家宽) - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

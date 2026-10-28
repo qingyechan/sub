@@ -12,6 +12,15 @@ proxies:
   udp: true
   sni: findtemporaryworkandfreelancerprojectsonlineplatform.com
   skip-cert-verify: true
+- name: 🇧🇷 BR 02 - xiaohe
+  type: vless
+  server: br001.zestapp778.com
+  port: 15040
+  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: br.zestapp778.com
 proxy-groups:
 - name: PROXIES
   type: select
@@ -19,6 +28,7 @@ proxy-groups:
   - AUTO
   - FALLBACK
   - 🇧🇷 BR 01 - xiaohe
+  - 🇧🇷 BR 02 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -29,6 +39,7 @@ proxy-groups:
   lazy: true
   proxies: &id001
   - 🇧🇷 BR 01 - xiaohe
+  - 🇧🇷 BR 02 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

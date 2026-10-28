@@ -15,7 +15,8 @@
         "auto",
         "🇨🇾 CY 01 - xiaohe",
         "🇨🇾 CY 02 - xiaohe",
-        "🇨🇾 CY 03 - xiaohe"
+        "🇨🇾 CY 03 - xiaohe",
+        "🇨🇾 CY 04 - xiaohe"
       ]
     },
     {
@@ -24,7 +25,8 @@
       "outbounds": [
         "🇨🇾 CY 01 - xiaohe",
         "🇨🇾 CY 02 - xiaohe",
-        "🇨🇾 CY 03 - xiaohe"
+        "🇨🇾 CY 03 - xiaohe",
+        "🇨🇾 CY 04 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -35,13 +37,50 @@
     {
       "type": "vless",
       "tag": "🇨🇾 CY 01 - xiaohe",
-      "server": "171.22.119.74",
-      "server_port": 8447,
-      "uuid": "6aed42ba-cd2d-4671-87d9-c949b6876888"
+      "server": "5.253.28.224",
+      "server_port": 40443,
+      "uuid": "af5eac96-e478-488a-bc8c-45269d7e8847",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "deepl.com",
+        "insecure": true,
+        "reality": {
+          "enabled": true,
+          "public_key": "g77ZJbm18JEotapmVRjaXi133MzkbhkU2lxhVeXx8zw",
+          "short_id": "68a8"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "qq"
+        }
+      }
     },
     {
       "type": "vless",
       "tag": "🇨🇾 CY 02 - xiaohe",
+      "server": "5.253.28.224",
+      "server_port": 40443,
+      "uuid": "af5eac96-e478-488a-bc8c-45269d7e8847",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "deepl.com",
+        "insecure": true,
+        "reality": {
+          "enabled": true,
+          "public_key": "g77ZJbm18JEotapmVRjaXi133MzkbhkU2lxhVeXx8zw",
+          "short_id": "68a8"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇨🇾 CY 03 - xiaohe",
       "server": "5.253.42.164",
       "server_port": 40443,
       "uuid": "e99ba96d-dec8-42eb-be53-19e71eef7cab",
@@ -57,16 +96,16 @@
         },
         "utls": {
           "enabled": true,
-          "fingerprint": "chrome"
+          "fingerprint": "random"
         }
       }
     },
     {
       "type": "vless",
-      "tag": "🇨🇾 CY 03 - xiaohe",
-      "server": "hydra.yokkastars.com",
+      "tag": "🇨🇾 CY 04 - xiaohe",
+      "server": "5.253.42.164",
       "server_port": 40443,
-      "uuid": "405b964e-a2d2-454f-aaaa-711cc218897c",
+      "uuid": "e99ba96d-dec8-42eb-be53-19e71eef7cab",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
@@ -74,8 +113,8 @@
         "insecure": true,
         "reality": {
           "enabled": true,
-          "public_key": "cwmcqsfS7klQlkcoUNuATEk0NiPY-NnRb9z8rCJDQw0",
-          "short_id": "88b6"
+          "public_key": "g77ZJbm18JEotapmVRjaXi133MzkbhkU2lxhVeXx8zw",
+          "short_id": "68a8"
         },
         "utls": {
           "enabled": true,

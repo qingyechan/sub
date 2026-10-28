@@ -6,36 +6,6 @@ log-level: info
 proxies:
 - name: 🇮🇪 IE 01 - xiaohe
   type: vless
-  server: 50.7.5.166
-  port: 443
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  servername: ekb.eg
-  flow: xtls-rprx-vision
-- name: 🇮🇪 IE 02 - xiaohe
-  type: vless
-  server: 50.7.5.165
-  port: 443
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  servername: ir-new1.failspace.top
-  flow: xtls-rprx-vision
-- name: 🇮🇪 IE 03 - xiaohe
-  type: vless
-  server: ir-new.failspace.top
-  port: 443
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  servername: ir-new.failspace.top
-  flow: xtls-rprx-vision
-- name: 🇮🇪 IE 04 - xiaohe
-  type: vless
   server: ir-new-ded.failspace.top
   port: 443
   uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
@@ -51,9 +21,6 @@ proxy-groups:
   - AUTO
   - FALLBACK
   - 🇮🇪 IE 01 - xiaohe
-  - 🇮🇪 IE 02 - xiaohe
-  - 🇮🇪 IE 03 - xiaohe
-  - 🇮🇪 IE 04 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -64,9 +31,6 @@ proxy-groups:
   lazy: true
   proxies: &id001
   - 🇮🇪 IE 01 - xiaohe
-  - 🇮🇪 IE 02 - xiaohe
-  - 🇮🇪 IE 03 - xiaohe
-  - 🇮🇪 IE 04 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

@@ -16,6 +16,20 @@ proxies:
     public-key: akVbcyv-ypq-YT4-bsi_ts85pkDwhAIapn5bCb_hj28
     short-id: 85f609aa0f0bead8
   servername: www.asus.com
+  client-fingerprint: firefox
+  flow: xtls-rprx-vision
+- name: 🇲🇾 MY 02 - xiaohe
+  type: vless
+  server: my.wawojk.dpdns.org
+  port: 8443
+  uuid: 264bee07-e004-41c7-812f-aaf2daaad2c9
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  reality-opts:
+    public-key: akVbcyv-ypq-YT4-bsi_ts85pkDwhAIapn5bCb_hj28
+    short-id: 85f609aa0f0bead8
+  servername: www.asus.com
   client-fingerprint: chrome
   flow: xtls-rprx-vision
 proxy-groups:
@@ -25,6 +39,7 @@ proxy-groups:
   - AUTO
   - FALLBACK
   - 🇲🇾 MY 01 - xiaohe
+  - 🇲🇾 MY 02 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -35,6 +50,7 @@ proxy-groups:
   lazy: true
   proxies: &id001
   - 🇲🇾 MY 01 - xiaohe
+  - 🇲🇾 MY 02 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

@@ -15,7 +15,8 @@
         "auto",
         "🇮🇱 IL 01 - xiaohe",
         "🇮🇱 IL 02 - xiaohe",
-        "🇮🇱 IL 03 - xiaohe"
+        "🇮🇱 IL 03 - xiaohe",
+        "🇮🇱 IL 04 - xiaohe"
       ]
     },
     {
@@ -24,7 +25,8 @@
       "outbounds": [
         "🇮🇱 IL 01 - xiaohe",
         "🇮🇱 IL 02 - xiaohe",
-        "🇮🇱 IL 03 - xiaohe"
+        "🇮🇱 IL 03 - xiaohe",
+        "🇮🇱 IL 04 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -50,7 +52,7 @@
         },
         "utls": {
           "enabled": true,
-          "fingerprint": "firefox"
+          "fingerprint": "chrome"
         }
       }
     },
@@ -72,7 +74,7 @@
         },
         "utls": {
           "enabled": true,
-          "fingerprint": "random"
+          "fingerprint": "firefox"
         }
       }
     },
@@ -94,8 +96,20 @@
         },
         "utls": {
           "enabled": true,
-          "fingerprint": "chrome"
+          "fingerprint": "random"
         }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇮🇱 IL 04 - xiaohe",
+      "server": "64.176.163.182",
+      "server_port": 443,
+      "password": "0ab6c98dae3b48e8b9c4a776b6c9c19a",
+      "tls": {
+        "enabled": true,
+        "server_name": "exploreeducationsectoropportunitiestodayandadvancecareers.com",
+        "insecure": true
       }
     }
   ],
