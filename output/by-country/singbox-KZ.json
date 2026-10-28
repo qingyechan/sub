@@ -14,7 +14,8 @@
       "outbounds": [
         "auto",
         "🇰🇿 KZ 01 - xiaohe",
-        "🇰🇿 KZ 02 - xiaohe"
+        "🇰🇿 KZ 02 - xiaohe",
+        "🇰🇿 KZ 03 - xiaohe"
       ]
     },
     {
@@ -22,7 +23,8 @@
       "tag": "auto",
       "outbounds": [
         "🇰🇿 KZ 01 - xiaohe",
-        "🇰🇿 KZ 02 - xiaohe"
+        "🇰🇿 KZ 02 - xiaohe",
+        "🇰🇿 KZ 03 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -33,6 +35,28 @@
     {
       "type": "vless",
       "tag": "🇰🇿 KZ 01 - xiaohe",
+      "server": "45.136.59.28",
+      "server_port": 43000,
+      "uuid": "a8b8b21e-1f31-4e4d-a639-efb2de0d577e",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "45.136.59.28",
+        "insecure": true,
+        "reality": {
+          "enabled": true,
+          "public_key": "osqok9aA_NR7WyAxZptD36-_U8BF_9gL8AH84MMzbFs",
+          "short_id": "ced96d59"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇰🇿 KZ 02 - xiaohe",
       "server": "46.8.43.125",
       "server_port": 443,
       "uuid": "846cedee-2a52-4a62-a0b9-11850ead6a8b",
@@ -53,7 +77,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇰🇿 KZ 02 - xiaohe",
+      "tag": "🇰🇿 KZ 03 - xiaohe",
       "server": "kz-central.v8x2b.lol",
       "server_port": 443,
       "uuid": "846cedee-2a52-4a62-a0b9-11850ead6a8b",

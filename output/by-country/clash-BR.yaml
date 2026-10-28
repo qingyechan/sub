@@ -5,14 +5,6 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇧🇷 BR 01 - xiaohe
-  type: trojan
-  server: 216.238.104.154
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  sni: findtemporaryworkandfreelancerprojectsonlineplatform.com
-  skip-cert-verify: true
-- name: 🇧🇷 BR 02 - xiaohe
   type: vless
   server: 177.7.51.29
   port: 8443
@@ -26,7 +18,7 @@ proxies:
   servername: www.apple.com
   client-fingerprint: firefox
   flow: xtls-rprx-vision
-- name: 🇧🇷 BR 03 - xiaohe
+- name: 🇧🇷 BR 02 - xiaohe
   type: vless
   server: 177.7.51.29
   port: 8443
@@ -48,7 +40,6 @@ proxy-groups:
   - FALLBACK
   - 🇧🇷 BR 01 - xiaohe
   - 🇧🇷 BR 02 - xiaohe
-  - 🇧🇷 BR 03 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -60,7 +51,6 @@ proxy-groups:
   proxies: &id001
   - 🇧🇷 BR 01 - xiaohe
   - 🇧🇷 BR 02 - xiaohe
-  - 🇧🇷 BR 03 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

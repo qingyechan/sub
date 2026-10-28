@@ -35,16 +35,8 @@
       "tag": "direct"
     },
     {
-      "type": "shadowsocks",
-      "tag": "🇫🇮 FI 01 - xiaohe",
-      "server": "helsinki03.npvnot.com",
-      "server_port": 995,
-      "method": "aes-256-gcm",
-      "password": "MjNhN2QwNmFlYTRlZGMxNWVlOTI0MGI0MTU4MDY1"
-    },
-    {
       "type": "vless",
-      "tag": "🇫🇮 FI 02 - xiaohe",
+      "tag": "🇫🇮 FI 01 - xiaohe",
       "server": "199.232.239.239",
       "server_port": 443,
       "uuid": "36805edb-1e85-4199-a59f-117010b70017",
@@ -58,6 +50,20 @@
         "path": "/@CloudVPNchannel/@CloudVPNchannel/@CloudVPNchannel/@CloudVPNchannel/@CloudVPNchannel/@CloudVPNchannel?ed=2056",
         "headers": {
           "Host": "mpkoe7ypcibr80p102020123.global.ssl.fastly.net"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇫🇮 FI 02 - xiaohe",
+      "server": "45.144.234.157",
+      "server_port": 14430,
+      "uuid": "59b0d30e-9b29-4fda-a35c-b2901ec32db7",
+      "transport": {
+        "type": "ws",
+        "path": "/vless",
+        "headers": {
+          "Host": "45.144.234.157"
         }
       }
     },

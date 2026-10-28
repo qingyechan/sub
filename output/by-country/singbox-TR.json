@@ -55,7 +55,7 @@
         },
         "utls": {
           "enabled": true,
-          "fingerprint": "firefox"
+          "fingerprint": "random"
         }
       }
     },
@@ -97,7 +97,7 @@
         },
         "utls": {
           "enabled": true,
-          "fingerprint": "random"
+          "fingerprint": "firefox"
         }
       }
     },
@@ -119,29 +119,26 @@
         },
         "utls": {
           "enabled": true,
-          "fingerprint": "chrome"
+          "fingerprint": "firefox"
         }
       }
     },
     {
       "type": "vless",
       "tag": "🇹🇷 土耳其 (Turkey) 05 - xiaohe",
-      "server": "78.135.73.47",
+      "server": "177.3.208.65",
       "server_port": 443,
-      "uuid": "25e16692-d097-4e69-9e2d-8415609c1968",
-      "flow": "xtls-rprx-vision",
+      "uuid": "4f34bc04-479c-49ba-91a8-6bb9ed15031c",
       "tls": {
         "enabled": true,
-        "server_name": "www.datadoghq.com",
-        "insecure": true,
-        "reality": {
-          "enabled": true,
-          "public_key": "sZAJkAu23wp1WKY-qeaeiwR38izP5OyfhumoE9xhbB8",
-          "short_id": "f46cd3ea3d1eb72d"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
+        "server_name": "tgmansion.site",
+        "insecure": true
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/vless-tr",
+        "headers": {
+          "Host": "177.3.208.65"
         }
       }
     },
