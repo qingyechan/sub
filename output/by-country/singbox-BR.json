@@ -14,7 +14,8 @@
       "outbounds": [
         "auto",
         "🇧🇷 BR 01 - xiaohe",
-        "🇧🇷 BR 02 - xiaohe"
+        "🇧🇷 BR 02 - xiaohe",
+        "🇧🇷 BR 03 - xiaohe"
       ]
     },
     {
@@ -22,7 +23,8 @@
       "tag": "auto",
       "outbounds": [
         "🇧🇷 BR 01 - xiaohe",
-        "🇧🇷 BR 02 - xiaohe"
+        "🇧🇷 BR 02 - xiaohe",
+        "🇧🇷 BR 03 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -45,13 +47,45 @@
     {
       "type": "vless",
       "tag": "🇧🇷 BR 02 - xiaohe",
-      "server": "br001.zestapp778.com",
-      "server_port": 15040,
-      "uuid": "e9a8144e-5237-488a-afb1-9ca3d8d54c80",
+      "server": "177.7.51.29",
+      "server_port": 8443,
+      "uuid": "c6b1b2d0-ed5e-48ce-99e6-112ff330030d",
+      "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
-        "server_name": "br.zestapp778.com",
-        "insecure": true
+        "server_name": "www.apple.com",
+        "insecure": true,
+        "reality": {
+          "enabled": true,
+          "public_key": "laG5BxoSbdRozpauATNFBPPTwhuDuu0JFl_SCP2ZQlU",
+          "short_id": "14fbf992"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇧🇷 BR 03 - xiaohe",
+      "server": "177.7.51.29",
+      "server_port": 8443,
+      "uuid": "c6b1b2d0-ed5e-48ce-99e6-112ff330030d",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.apple.com",
+        "insecure": true,
+        "reality": {
+          "enabled": true,
+          "public_key": "laG5BxoSbdRozpauATNFBPPTwhuDuu0JFl_SCP2ZQlU",
+          "short_id": "14fbf992"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
       }
     }
   ],

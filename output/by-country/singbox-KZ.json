@@ -13,16 +13,16 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇲🇾 MY 01 - xiaohe",
-        "🇲🇾 MY 02 - xiaohe"
+        "🇰🇿 KZ 01 - xiaohe",
+        "🇰🇿 KZ 02 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇲🇾 MY 01 - xiaohe",
-        "🇲🇾 MY 02 - xiaohe"
+        "🇰🇿 KZ 01 - xiaohe",
+        "🇰🇿 KZ 02 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -32,41 +32,39 @@
     },
     {
       "type": "vless",
-      "tag": "🇲🇾 MY 01 - xiaohe",
-      "server": "my.wawojk.dpdns.org",
-      "server_port": 8443,
-      "uuid": "264bee07-e004-41c7-812f-aaf2daaad2c9",
-      "flow": "xtls-rprx-vision",
+      "tag": "🇰🇿 KZ 01 - xiaohe",
+      "server": "46.8.43.125",
+      "server_port": 443,
+      "uuid": "846cedee-2a52-4a62-a0b9-11850ead6a8b",
       "tls": {
         "enabled": true,
-        "server_name": "www.asus.com",
+        "server_name": "kz-central.v8x2b.lol",
         "insecure": true,
         "reality": {
           "enabled": true,
-          "public_key": "akVbcyv-ypq-YT4-bsi_ts85pkDwhAIapn5bCb_hj28",
-          "short_id": "85f609aa0f0bead8"
+          "public_key": "ER-T5En54-sn6IXy7jU8vQVcBbOiWvznnezf3qZ273w",
+          "short_id": ""
         },
         "utls": {
           "enabled": true,
-          "fingerprint": "chrome"
+          "fingerprint": "firefox"
         }
       }
     },
     {
       "type": "vless",
-      "tag": "🇲🇾 MY 02 - xiaohe",
-      "server": "my.wawojk.dpdns.org",
-      "server_port": 8443,
-      "uuid": "264bee07-e004-41c7-812f-aaf2daaad2c9",
-      "flow": "xtls-rprx-vision",
+      "tag": "🇰🇿 KZ 02 - xiaohe",
+      "server": "kz-central.v8x2b.lol",
+      "server_port": 443,
+      "uuid": "846cedee-2a52-4a62-a0b9-11850ead6a8b",
       "tls": {
         "enabled": true,
-        "server_name": "www.asus.com",
+        "server_name": "kz-central.v8x2b.lol",
         "insecure": true,
         "reality": {
           "enabled": true,
-          "public_key": "akVbcyv-ypq-YT4-bsi_ts85pkDwhAIapn5bCb_hj28",
-          "short_id": "85f609aa0f0bead8"
+          "public_key": "ER-T5En54-sn6IXy7jU8vQVcBbOiWvznnezf3qZ273w",
+          "short_id": ""
         },
         "utls": {
           "enabled": true,
