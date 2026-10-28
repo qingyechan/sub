@@ -13,14 +13,16 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇬🇷 GR 01 - xiaohe"
+        "🇬🇷 GR 01 - xiaohe",
+        "🇬🇷 GR 02 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇬🇷 GR 01 - xiaohe"
+        "🇬🇷 GR 01 - xiaohe",
+        "🇬🇷 GR 02 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -29,8 +31,30 @@
       "tag": "direct"
     },
     {
-      "type": "shadowsocks",
+      "type": "vless",
       "tag": "🇬🇷 GR 01 - xiaohe",
+      "server": "85.90.197.220",
+      "server_port": 443,
+      "uuid": "8f704ed6-9a1a-4d04-94dd-1bff501716de",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.cloudflare.com",
+        "insecure": true,
+        "reality": {
+          "enabled": true,
+          "public_key": "biNcdU5mywtNw-KyPpLHindBxdEyAolT1WJ26N0b7y4",
+          "short_id": "94acb54627612d43"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇬🇷 GR 02 - xiaohe",
       "server": "ams1.rvpn.app",
       "server_port": 8388,
       "method": "chacha20-ietf-poly1305",

@@ -17,7 +17,9 @@
         "🇫🇮 FI 02 - xiaohe",
         "🇫🇮 FI 03 - xiaohe",
         "🇫🇮 FI 04 - xiaohe",
-        "🇫🇮 FI 05 - xiaohe"
+        "🇫🇮 FI 05 - xiaohe",
+        "🇫🇮 FI 06 - xiaohe",
+        "🇫🇮 FI 07 - xiaohe"
       ]
     },
     {
@@ -28,7 +30,9 @@
         "🇫🇮 FI 02 - xiaohe",
         "🇫🇮 FI 03 - xiaohe",
         "🇫🇮 FI 04 - xiaohe",
-        "🇫🇮 FI 05 - xiaohe"
+        "🇫🇮 FI 05 - xiaohe",
+        "🇫🇮 FI 06 - xiaohe",
+        "🇫🇮 FI 07 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -39,27 +43,39 @@
     {
       "type": "vless",
       "tag": "🇫🇮 FI 01 - xiaohe",
-      "server": "95.216.27.15",
-      "server_port": 2053,
-      "uuid": "1c81f6d3-5771-4c5d-9fdd-1655eff50634",
+      "server": "199.232.239.239",
+      "server_port": 443,
+      "uuid": "36805edb-1e85-4199-a59f-117010b70017",
       "tls": {
         "enabled": true,
-        "server_name": "www.google.com",
-        "insecure": true,
-        "reality": {
-          "enabled": true,
-          "public_key": "4nfogj5mHqNowtSn_2sXS3xTX8vcH75rFEU2BWvyekM",
-          "short_id": "d368b94e275ab080"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
+        "server_name": "firefox.com",
+        "insecure": true
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@CloudVPNchannel/@CloudVPNchannel/@CloudVPNchannel/@CloudVPNchannel/@CloudVPNchannel/@CloudVPNchannel?ed=2056",
+        "headers": {
+          "Host": "mpkoe7ypcibr80p102020123.global.ssl.fastly.net"
         }
       }
     },
     {
       "type": "vless",
       "tag": "🇫🇮 FI 02 - xiaohe",
+      "server": "45.144.234.157",
+      "server_port": 14430,
+      "uuid": "59b0d30e-9b29-4fda-a35c-b2901ec32db7",
+      "transport": {
+        "type": "ws",
+        "path": "/vless",
+        "headers": {
+          "Host": "45.144.234.157"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇫🇮 FI 03 - xiaohe",
       "server": "95.216.27.15",
       "server_port": 2053,
       "uuid": "1c81f6d3-5771-4c5d-9fdd-1655eff50634",
@@ -80,7 +96,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇫🇮 FI 03 - xiaohe",
+      "tag": "🇫🇮 FI 04 - xiaohe",
       "server": "65.109.212.193",
       "server_port": 465,
       "uuid": "924e20da-fcad-4e7e-8113-c62d27a0d01e",
@@ -99,7 +115,50 @@
     },
     {
       "type": "vless",
-      "tag": "🇫🇮 FI 04 - xiaohe",
+      "tag": "🇫🇮 FI 05 - xiaohe",
+      "server": "95.216.27.15",
+      "server_port": 2053,
+      "uuid": "1c81f6d3-5771-4c5d-9fdd-1655eff50634",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.google.com",
+        "insecure": true,
+        "reality": {
+          "enabled": true,
+          "public_key": "4nfogj5mHqNowtSn_2sXS3xTX8vcH75rFEU2BWvyekM",
+          "short_id": "d368b94e275ab080"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇫🇮 FI 06 - xiaohe",
+      "server": "2.27.13.152",
+      "server_port": 8443,
+      "uuid": "d1641bc6-3757-43db-815a-9b3f4d9b0d7e",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.nokia.com",
+        "insecure": true,
+        "reality": {
+          "enabled": true,
+          "public_key": "14YyFG_j2yPEUu-gO_G9GqCqRiZ0DIUgzReV9CZvOAk",
+          "short_id": "0f47ff9aa15e3e30"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇫🇮 FI 07 - xiaohe",
       "server": "hw3.divarkhaghazi.com",
       "server_port": 465,
       "uuid": "924e20da-fcad-4e7e-8113-c62d27a0d01e",
@@ -113,25 +172,6 @@
         "path": "/",
         "headers": {
           "Host": "hw3.divarkhaghazi.com."
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇫🇮 FI 05 - xiaohe",
-      "server": "199.232.239.239",
-      "server_port": 443,
-      "uuid": "36805edb-1e85-4199-a59f-117010b70017",
-      "tls": {
-        "enabled": true,
-        "server_name": "firefox.com",
-        "insecure": true
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/@CloudVPNchannel/@CloudVPNchannel/@CloudVPNchannel/@CloudVPNchannel/@CloudVPNchannel/@CloudVPNchannel?ed=2056",
-        "headers": {
-          "Host": "mpkoe7ypcibr80p102020123.global.ssl.fastly.net"
         }
       }
     }

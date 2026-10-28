@@ -5,6 +5,20 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇬🇷 GR 01 - xiaohe
+  type: vless
+  server: 85.90.197.220
+  port: 443
+  uuid: 8f704ed6-9a1a-4d04-94dd-1bff501716de
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  reality-opts:
+    public-key: biNcdU5mywtNw-KyPpLHindBxdEyAolT1WJ26N0b7y4
+    short-id: 94acb54627612d43
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision
+- name: 🇬🇷 GR 02 - xiaohe
   type: ss
   server: ams1.rvpn.app
   port: 8388
@@ -18,6 +32,7 @@ proxy-groups:
   - AUTO
   - FALLBACK
   - 🇬🇷 GR 01 - xiaohe
+  - 🇬🇷 GR 02 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -28,6 +43,7 @@ proxy-groups:
   lazy: true
   proxies: &id001
   - 🇬🇷 GR 01 - xiaohe
+  - 🇬🇷 GR 02 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

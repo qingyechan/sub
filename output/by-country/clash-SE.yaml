@@ -6,32 +6,32 @@ log-level: info
 proxies:
 - name: 🇸🇪 SE 01 - xiaohe
   type: vless
-  server: 191.44.114.179
+  server: 191.44.114.154
   port: 8443
   uuid: d1641bc6-3757-43db-815a-9b3f4d9b0d7e
   udp: true
   tls: true
   skip-cert-verify: true
   reality-opts:
-    public-key: WEHGKyXsOD5i2kNCJ3GrjeNZQBsrzH76OrPDJ7x2YwY
-    short-id: 9d48935b2c2b8011
+    public-key: ndQzAcG4g-2OhvFb8EjFnZyxJ2lhawiulTLJOZrK8lY
+    short-id: c4359f3827231250
   servername: www.wikipedia.org
   client-fingerprint: firefox
   flow: xtls-rprx-vision
 - name: 🇸🇪 SE 02 - xiaohe
   type: vless
-  server: 191.44.114.179
+  server: 191.44.114.154
   port: 2096
   uuid: d1641bc6-3757-43db-815a-9b3f4d9b0d7e
   udp: true
   tls: true
   skip-cert-verify: true
-  servername: st33614.rumedia-cdn.com
+  servername: st5ff8a.rumedia-cdn.com
   network: ws
   ws-opts:
     path: /cdn/v3/live
     headers:
-      Host: st33614.rumedia-cdn.com
+      Host: st5ff8a.rumedia-cdn.com
 - name: 🇸🇪 SE 03 - xiaohe
   type: vless
   server: 5.178.109.174
