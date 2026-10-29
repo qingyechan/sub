@@ -4,32 +4,27 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: 🇮🇩 ID 01 - xiaohe
+- name: 🇹🇼 中国台湾 (Taiwan) 01 - xiaohe
   type: vless
-  server: in001.zestapp778.com
-  port: 57353
-  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
+  server: 60.248.219.78
+  port: 443
+  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
   udp: true
   tls: true
   skip-cert-verify: true
-  servername: in001.zestapp778.com
-- name: 🇮🇩 ID 02 - xiaohe
-  type: vless
-  server: 130.94.95.198
-  port: 57353
-  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  servername: in001.zestapp778.com
+  servername: 60.248.219.78
+  network: ws
+  ws-opts:
+    path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
+    headers:
+      Host: 60.248.219.78
 proxy-groups:
 - name: PROXIES
   type: select
   proxies:
   - AUTO
   - FALLBACK
-  - 🇮🇩 ID 01 - xiaohe
-  - 🇮🇩 ID 02 - xiaohe
+  - 🇹🇼 中国台湾 (Taiwan) 01 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -39,8 +34,7 @@ proxy-groups:
   tolerance: 100
   lazy: true
   proxies: &id001
-  - 🇮🇩 ID 01 - xiaohe
-  - 🇮🇩 ID 02 - xiaohe
+  - 🇹🇼 中国台湾 (Taiwan) 01 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

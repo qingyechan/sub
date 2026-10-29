@@ -13,14 +13,14 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇭🇰 中国香港 (Hong Kong) 01 (家宽) - xiaohe"
+        "🇲🇾 MY 01 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇭🇰 中国香港 (Hong Kong) 01 (家宽) - xiaohe"
+        "🇲🇾 MY 01 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -29,22 +29,15 @@
       "tag": "direct"
     },
     {
-      "type": "vless",
-      "tag": "🇭🇰 中国香港 (Hong Kong) 01 (家宽) - xiaohe",
-      "server": "103.247.28.203",
+      "type": "trojan",
+      "tag": "🇲🇾 MY 01 - xiaohe",
+      "server": "47.250.84.25",
       "server_port": 443,
-      "uuid": "64726966-0000-4000-8000-740000000000",
+      "password": "5931134d1cde66bf83a54acdfebe7ab2",
       "tls": {
         "enabled": true,
-        "server_name": "parsa-panel-dy55x.railway1385-2a46.workers.dev",
+        "server_name": "47.250.84.25",
         "insecure": true
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "parsa-panel-dy55x.railway1385-2a46.workers.dev"
-        }
       }
     }
   ],

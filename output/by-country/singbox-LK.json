@@ -44,27 +44,13 @@
         "type": "ws",
         "path": "/",
         "headers": {
-          "Host": "free.nadun.store"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇱🇰 LK 02 - xiaohe",
-      "server": "support.zoom.us",
-      "server_port": 8080,
-      "uuid": "990bf436-f1b9-4e7f-857d-14378acc4ae5",
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
           "Host": "Free.nadun.store"
         }
       }
     },
     {
       "type": "vless",
-      "tag": "🇱🇰 LK 03 - xiaohe",
+      "tag": "🇱🇰 LK 02 - xiaohe",
       "server": "170.114.46.6",
       "server_port": 8080,
       "uuid": "990bf436-f1b9-4e7f-857d-14378acc4ae5",
@@ -78,8 +64,22 @@
     },
     {
       "type": "vless",
-      "tag": "🇱🇰 LK 04 - xiaohe",
+      "tag": "🇱🇰 LK 03 - xiaohe",
       "server": "170.114.45.6",
+      "server_port": 8080,
+      "uuid": "990bf436-f1b9-4e7f-857d-14378acc4ae5",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "free.nadun.store"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇱🇰 LK 04 - xiaohe",
+      "server": "support.zoom.us",
       "server_port": 8080,
       "uuid": "990bf436-f1b9-4e7f-857d-14378acc4ae5",
       "transport": {

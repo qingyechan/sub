@@ -13,16 +13,18 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇮🇩 ID 01 - xiaohe",
-        "🇮🇩 ID 02 - xiaohe"
+        "🇵🇭 PH 01 - xiaohe",
+        "🇵🇭 PH 02 - xiaohe",
+        "🇵🇭 PH 03 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇮🇩 ID 01 - xiaohe",
-        "🇮🇩 ID 02 - xiaohe"
+        "🇵🇭 PH 01 - xiaohe",
+        "🇵🇭 PH 02 - xiaohe",
+        "🇵🇭 PH 03 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -32,25 +34,37 @@
     },
     {
       "type": "vless",
-      "tag": "🇮🇩 ID 01 - xiaohe",
-      "server": "in001.zestapp778.com",
-      "server_port": 57353,
+      "tag": "🇵🇭 PH 01 - xiaohe",
+      "server": "130.94.53.13",
+      "server_port": 15656,
       "uuid": "e9a8144e-5237-488a-afb1-9ca3d8d54c80",
       "tls": {
         "enabled": true,
-        "server_name": "in001.zestapp778.com",
+        "server_name": "ph001.zestapp778.com",
         "insecure": true
       }
     },
     {
       "type": "vless",
-      "tag": "🇮🇩 ID 02 - xiaohe",
-      "server": "130.94.95.198",
-      "server_port": 57353,
+      "tag": "🇵🇭 PH 02 - xiaohe",
+      "server": "ph001.zestapp778.com",
+      "server_port": 15656,
       "uuid": "e9a8144e-5237-488a-afb1-9ca3d8d54c80",
       "tls": {
         "enabled": true,
-        "server_name": "in001.zestapp778.com",
+        "server_name": "ph001.zestapp778.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇵🇭 PH 03 - xiaohe",
+      "server": "ph001.zestapp778.com",
+      "server_port": 46293,
+      "password": "5t6i121em5lkmsmk",
+      "tls": {
+        "enabled": true,
+        "server_name": "ph001.zestapp778.com",
         "insecure": true
       }
     }

@@ -33,8 +33,20 @@
       "tag": "direct"
     },
     {
-      "type": "vless",
+      "type": "trojan",
       "tag": "🇧🇷 BR 01 - xiaohe",
+      "server": "216.238.104.154",
+      "server_port": 443,
+      "password": "0ab6c98dae3b48e8b9c4a776b6c9c19a",
+      "tls": {
+        "enabled": true,
+        "server_name": "findtemporaryworkandfreelancerprojectsonlineplatform.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇧🇷 BR 02 - xiaohe",
       "server": "177.7.51.29",
       "server_port": 8443,
       "uuid": "c6b1b2d0-ed5e-48ce-99e6-112ff330030d",
@@ -50,20 +62,8 @@
         },
         "utls": {
           "enabled": true,
-          "fingerprint": "chrome"
+          "fingerprint": "firefox"
         }
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "🇧🇷 BR 02 - xiaohe",
-      "server": "216.238.104.154",
-      "server_port": 443,
-      "password": "0ab6c98dae3b48e8b9c4a776b6c9c19a",
-      "tls": {
-        "enabled": true,
-        "server_name": "findtemporaryworkandfreelancerprojectsonlineplatform.com",
-        "insecure": true
       }
     },
     {
@@ -84,7 +84,7 @@
         },
         "utls": {
           "enabled": true,
-          "fingerprint": "firefox"
+          "fingerprint": "chrome"
         }
       }
     }

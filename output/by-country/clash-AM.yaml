@@ -4,42 +4,26 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: 🇻🇳 VN 01 - xiaohe
+- name: 🇦🇲 AM 01 - xiaohe
   type: vless
-  server: 154.21.203.106
-  port: 51279
-  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  server: 77.91.68.70
+  port: 55983
+  uuid: f667a096-5231-4cfb-8759-92bb32473139
   udp: true
   tls: true
   skip-cert-verify: true
   reality-opts:
-    public-key: f6Tj8-uvWsLv3V-lGLuPciArp5oKqUImBg-U7-WJ-0A
-    short-id: bb82c8
-  servername: www.tesla.com
+    public-key: nWQ7b9l9X6N3PrXLgIzOvMM8iSYrqjVHEb9ikWxqYSg
+    short-id: 0e
+  servername: yahoo.com
   client-fingerprint: chrome
-  flow: xtls-rprx-vision
-- name: 🇻🇳 VN 02 - xiaohe
-  type: vless
-  server: 154.21.203.106
-  port: 51279
-  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  reality-opts:
-    public-key: f6Tj8-uvWsLv3V-lGLuPciArp5oKqUImBg-U7-WJ-0A
-    short-id: bb82c8
-  servername: www.tesla.com
-  client-fingerprint: random
-  flow: xtls-rprx-vision
 proxy-groups:
 - name: PROXIES
   type: select
   proxies:
   - AUTO
   - FALLBACK
-  - 🇻🇳 VN 01 - xiaohe
-  - 🇻🇳 VN 02 - xiaohe
+  - 🇦🇲 AM 01 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -49,8 +33,7 @@ proxy-groups:
   tolerance: 100
   lazy: true
   proxies: &id001
-  - 🇻🇳 VN 01 - xiaohe
-  - 🇻🇳 VN 02 - xiaohe
+  - 🇦🇲 AM 01 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

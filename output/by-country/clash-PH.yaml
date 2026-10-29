@@ -4,27 +4,41 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: 🇭🇰 中国香港 (Hong Kong) 01 (家宽) - xiaohe
+- name: 🇵🇭 PH 01 - xiaohe
   type: vless
-  server: 103.247.28.203
-  port: 443
-  uuid: 64726966-0000-4000-8000-740000000000
+  server: 130.94.53.13
+  port: 15656
+  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
   udp: true
   tls: true
   skip-cert-verify: true
-  servername: parsa-panel-dy55x.railway1385-2a46.workers.dev
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: parsa-panel-dy55x.railway1385-2a46.workers.dev
+  servername: ph001.zestapp778.com
+- name: 🇵🇭 PH 02 - xiaohe
+  type: vless
+  server: ph001.zestapp778.com
+  port: 15656
+  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: ph001.zestapp778.com
+- name: 🇵🇭 PH 03 - xiaohe
+  type: trojan
+  server: ph001.zestapp778.com
+  port: 46293
+  password: 5t6i121em5lkmsmk
+  udp: true
+  sni: ph001.zestapp778.com
+  skip-cert-verify: true
 proxy-groups:
 - name: PROXIES
   type: select
   proxies:
   - AUTO
   - FALLBACK
-  - 🇭🇰 中国香港 (Hong Kong) 01 (家宽) - xiaohe
+  - 🇵🇭 PH 01 - xiaohe
+  - 🇵🇭 PH 02 - xiaohe
+  - 🇵🇭 PH 03 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -34,7 +48,9 @@ proxy-groups:
   tolerance: 100
   lazy: true
   proxies: &id001
-  - 🇭🇰 中国香港 (Hong Kong) 01 (家宽) - xiaohe
+  - 🇵🇭 PH 01 - xiaohe
+  - 🇵🇭 PH 02 - xiaohe
+  - 🇵🇭 PH 03 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

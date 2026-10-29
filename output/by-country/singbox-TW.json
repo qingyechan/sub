@@ -13,14 +13,14 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇮🇶 IQ 01 - xiaohe"
+        "🇹🇼 中国台湾 (Taiwan) 01 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇮🇶 IQ 01 - xiaohe"
+        "🇹🇼 中国台湾 (Taiwan) 01 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -30,20 +30,20 @@
     },
     {
       "type": "vless",
-      "tag": "🇮🇶 IQ 01 - xiaohe",
-      "server": "104.18.35.86",
+      "tag": "🇹🇼 中国台湾 (Taiwan) 01 - xiaohe",
+      "server": "60.248.219.78",
       "server_port": 443,
-      "uuid": "1c7f675f-5923-463f-83fb-af4c898cecea",
+      "uuid": "c1c04450-bf71-4049-ad0c-9cf6d94d9f1f",
       "tls": {
         "enabled": true,
-        "server_name": "0Ee6wOQz4W8W0cDqiTgq6XZ-q0o9r6o9.merTEssWAgGEr08.WoRKErs.dEv",
+        "server_name": "60.248.219.78",
         "insecure": true
       },
       "transport": {
         "type": "ws",
-        "path": "/eyJqdW5rIjoiZWhuWFFGNWRISXBjSmRGWSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=",
+        "path": "/81574b6b-c9d7-44a0-b83d-dad56e8cb530",
         "headers": {
-          "Host": "0Ee6wOQz4W8W0cDqiTgq6XZ-q0o9r6o9.merTEssWAgGEr08.WoRKErs.dEv"
+          "Host": "60.248.219.78"
         }
       }
     }

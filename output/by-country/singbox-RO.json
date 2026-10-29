@@ -16,8 +16,7 @@
         "🇷🇴 RO 01 - xiaohe",
         "🇷🇴 RO 02 - xiaohe",
         "🇷🇴 RO 03 - xiaohe",
-        "🇷🇴 RO 04 - xiaohe",
-        "🇷🇴 RO 05 - xiaohe"
+        "🇷🇴 RO 04 - xiaohe"
       ]
     },
     {
@@ -27,8 +26,7 @@
         "🇷🇴 RO 01 - xiaohe",
         "🇷🇴 RO 02 - xiaohe",
         "🇷🇴 RO 03 - xiaohe",
-        "🇷🇴 RO 04 - xiaohe",
-        "🇷🇴 RO 05 - xiaohe"
+        "🇷🇴 RO 04 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -37,19 +35,33 @@
       "tag": "direct"
     },
     {
-      "type": "shadowsocks",
+      "type": "vless",
       "tag": "🇷🇴 RO 01 - xiaohe",
-      "server": "154.46.31.106",
-      "server_port": 443,
-      "method": "chacha20-ietf-poly1305",
-      "password": "QFWzCw2uX9B9i6qAYeFBIE"
+      "server": "155.117.5.208",
+      "server_port": 2052,
+      "uuid": "1a8ecc41-6e62-431b-8eca-87c2fa4dc286"
     },
     {
       "type": "vless",
       "tag": "🇷🇴 RO 02 - xiaohe",
-      "server": "155.117.5.208",
-      "server_port": 2052,
-      "uuid": "1a8ecc41-6e62-431b-8eca-87c2fa4dc286"
+      "server": "46.28.67.55",
+      "server_port": 443,
+      "uuid": "d1a6a033-fdbd-46a6-a177-3370ba042b9f",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.cloudflare.com",
+        "insecure": true,
+        "reality": {
+          "enabled": true,
+          "public_key": "i2dJ1_XGDpp50qpEclh6SWSWkxt4B0t2hi2qOVQbeSU",
+          "short_id": "d06d78e974491b6e"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      }
     },
     {
       "type": "vless",
@@ -76,29 +88,7 @@
     {
       "type": "vless",
       "tag": "🇷🇴 RO 04 - xiaohe",
-      "server": "46.28.67.55",
-      "server_port": 443,
-      "uuid": "d1a6a033-fdbd-46a6-a177-3370ba042b9f",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.cloudflare.com",
-        "insecure": true,
-        "reality": {
-          "enabled": true,
-          "public_key": "i2dJ1_XGDpp50qpEclh6SWSWkxt4B0t2hi2qOVQbeSU",
-          "short_id": "d06d78e974491b6e"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇷🇴 RO 05 - xiaohe",
-      "server": "edge10.cyrionflare.com",
+      "server": "178.83.45.226",
       "server_port": 2052,
       "uuid": "1a8ecc41-6e62-431b-8eca-87c2fa4dc286"
     }
