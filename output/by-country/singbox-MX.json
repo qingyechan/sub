@@ -13,14 +13,16 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇲🇽 MX 01 - xiaohe"
+        "🇲🇽 MX 01 - xiaohe",
+        "🇲🇽 MX 02 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇲🇽 MX 01 - xiaohe"
+        "🇲🇽 MX 01 - xiaohe",
+        "🇲🇽 MX 02 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -37,6 +39,18 @@
       "tls": {
         "enabled": true,
         "server_name": "connectwithtopemployersandfindidealjobs.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇲🇽 MX 02 - xiaohe",
+      "server": "mx001.zestapp778.com",
+      "server_port": 15083,
+      "password": "5t6i121em5lkmsmk",
+      "tls": {
+        "enabled": true,
+        "server_name": "mx001.zestapp778.com",
         "insecure": true
       }
     }

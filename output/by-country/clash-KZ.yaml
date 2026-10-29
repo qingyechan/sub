@@ -6,32 +6,6 @@ log-level: info
 proxies:
 - name: 🇰🇿 KZ 01 - xiaohe
   type: vless
-  server: 46.8.43.125
-  port: 443
-  uuid: 846cedee-2a52-4a62-a0b9-11850ead6a8b
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  reality-opts:
-    public-key: ER-T5En54-sn6IXy7jU8vQVcBbOiWvznnezf3qZ273w
-    short-id: ''
-  servername: kz-central.v8x2b.lol
-  client-fingerprint: firefox
-- name: 🇰🇿 KZ 02 - xiaohe
-  type: vless
-  server: kz-central.v8x2b.lol
-  port: 443
-  uuid: 846cedee-2a52-4a62-a0b9-11850ead6a8b
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  reality-opts:
-    public-key: ER-T5En54-sn6IXy7jU8vQVcBbOiWvznnezf3qZ273w
-    short-id: ''
-  servername: kz-central.v8x2b.lol
-  client-fingerprint: firefox
-- name: 🇰🇿 KZ 03 - xiaohe
-  type: vless
   server: 45.136.59.28
   port: 43000
   uuid: a8b8b21e-1f31-4e4d-a639-efb2de0d577e
@@ -51,8 +25,6 @@ proxy-groups:
   - AUTO
   - FALLBACK
   - 🇰🇿 KZ 01 - xiaohe
-  - 🇰🇿 KZ 02 - xiaohe
-  - 🇰🇿 KZ 03 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -63,8 +35,6 @@ proxy-groups:
   lazy: true
   proxies: &id001
   - 🇰🇿 KZ 01 - xiaohe
-  - 🇰🇿 KZ 02 - xiaohe
-  - 🇰🇿 KZ 03 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

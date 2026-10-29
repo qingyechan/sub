@@ -12,6 +12,14 @@ proxies:
   udp: true
   sni: connectwithtopemployersandfindidealjobs.com
   skip-cert-verify: true
+- name: 🇲🇽 MX 02 - xiaohe
+  type: trojan
+  server: mx001.zestapp778.com
+  port: 15083
+  password: 5t6i121em5lkmsmk
+  udp: true
+  sni: mx001.zestapp778.com
+  skip-cert-verify: true
 proxy-groups:
 - name: PROXIES
   type: select
@@ -19,6 +27,7 @@ proxy-groups:
   - AUTO
   - FALLBACK
   - 🇲🇽 MX 01 - xiaohe
+  - 🇲🇽 MX 02 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -29,6 +38,7 @@ proxy-groups:
   lazy: true
   proxies: &id001
   - 🇲🇽 MX 01 - xiaohe
+  - 🇲🇽 MX 02 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204
