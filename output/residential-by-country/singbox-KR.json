@@ -33,16 +33,16 @@
     {
       "type": "shadowsocks",
       "tag": "🇰🇷 韩国 (South Korea) 01 (家宽) - xiaohe",
-      "server": "211.178.105.134",
-      "server_port": 6123,
+      "server": "218.237.185.234",
+      "server_port": 4652,
       "method": "aes-256-cfb",
       "password": "qwerREWQ@@"
     },
     {
       "type": "shadowsocks",
       "tag": "🇰🇷 韩国 (South Korea) 02 (家宽) - xiaohe",
-      "server": "218.237.185.234",
-      "server_port": 4652,
+      "server": "211.178.105.134",
+      "server_port": 6123,
       "method": "aes-256-cfb",
       "password": "qwerREWQ@@"
     }

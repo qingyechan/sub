@@ -57,7 +57,7 @@
     {
       "type": "vless",
       "tag": "🇰🇿 KZ 02 - xiaohe",
-      "server": "46.8.43.125",
+      "server": "kz-central.v8x2b.lol",
       "server_port": 443,
       "uuid": "846cedee-2a52-4a62-a0b9-11850ead6a8b",
       "tls": {
@@ -78,7 +78,7 @@
     {
       "type": "vless",
       "tag": "🇰🇿 KZ 03 - xiaohe",
-      "server": "kz-central.v8x2b.lol",
+      "server": "46.8.43.125",
       "server_port": 443,
       "uuid": "846cedee-2a52-4a62-a0b9-11850ead6a8b",
       "tls": {

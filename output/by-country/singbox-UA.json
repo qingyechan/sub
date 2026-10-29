@@ -13,16 +13,14 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇺🇦 UA 01 - xiaohe",
-        "🇺🇦 UA 02 - xiaohe"
+        "🇺🇦 UA 01 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇺🇦 UA 01 - xiaohe",
-        "🇺🇦 UA 02 - xiaohe"
+        "🇺🇦 UA 01 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -31,16 +29,8 @@
       "tag": "direct"
     },
     {
-      "type": "shadowsocks",
-      "tag": "🇺🇦 UA 01 - xiaohe",
-      "server": "104.253.216.227",
-      "server_port": 49917,
-      "method": "chacha20-ietf-poly1305",
-      "password": "G9ZuLN5DE9qqouTZwYUcvYsDJx8gyL1nCu3N7yRZFjPmYKhzSi8GkpVuexmTHAz2uvcErKkex1K2ceR2GH3L444HRNnN1YpP"
-    },
-    {
       "type": "vless",
-      "tag": "🇺🇦 UA 02 - xiaohe",
+      "tag": "🇺🇦 UA 01 - xiaohe",
       "server": "216.24.57.225",
       "server_port": 2083,
       "uuid": "3bcbd7ef-e05b-4745-a1de-5ecf98dd2fb6",

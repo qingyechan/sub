@@ -6,15 +6,15 @@ log-level: info
 proxies:
 - name: 🇰🇷 韩国 (South Korea) 01 (家宽) - xiaohe
   type: ss
-  server: 211.178.105.134
-  port: 6123
+  server: 218.237.185.234
+  port: 4652
   cipher: aes-256-cfb
   password: qwerREWQ@@
   udp: true
 - name: 🇰🇷 韩国 (South Korea) 02 (家宽) - xiaohe
   type: ss
-  server: 218.237.185.234
-  port: 4652
+  server: 211.178.105.134
+  port: 6123
   cipher: aes-256-cfb
   password: qwerREWQ@@
   udp: true

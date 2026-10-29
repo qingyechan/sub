@@ -13,16 +13,16 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇬🇷 GR 01 - xiaohe",
-        "🇬🇷 GR 02 - xiaohe"
+        "🇧🇬 BG 01 - xiaohe",
+        "🇧🇬 BG 02 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇬🇷 GR 01 - xiaohe",
-        "🇬🇷 GR 02 - xiaohe"
+        "🇧🇬 BG 01 - xiaohe",
+        "🇧🇬 BG 02 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -32,31 +32,31 @@
     },
     {
       "type": "shadowsocks",
-      "tag": "🇬🇷 GR 01 - xiaohe",
-      "server": "ams1.rvpn.app",
-      "server_port": 8388,
-      "method": "chacha20-ietf-poly1305",
-      "password": "x2A6AsyZ-rAllz0wbKHzWA"
+      "tag": "🇧🇬 BG 01 - xiaohe",
+      "server": "213.183.63.60",
+      "server_port": 9098,
+      "method": "aes-256-cfb",
+      "password": "aLpQtfEZe445QyHk"
     },
     {
       "type": "vless",
-      "tag": "🇬🇷 GR 02 - xiaohe",
-      "server": "85.90.197.220",
+      "tag": "🇧🇬 BG 02 - xiaohe",
+      "server": "93.152.223.244",
       "server_port": 443,
-      "uuid": "8f704ed6-9a1a-4d04-94dd-1bff501716de",
+      "uuid": "706bce83-91db-4260-b175-cba29145cd56",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
-        "server_name": "www.cloudflare.com",
+        "server_name": "ddk5-ger.newagetechnologies.live",
         "insecure": true,
         "reality": {
           "enabled": true,
-          "public_key": "biNcdU5mywtNw-KyPpLHindBxdEyAolT1WJ26N0b7y4",
-          "short_id": "94acb54627612d43"
+          "public_key": "yKwDGqOdkC_nEPOQHMvAQLPcPK8YHskv_opYoY66Yk8",
+          "short_id": ""
         },
         "utls": {
           "enabled": true,
-          "fingerprint": "chrome"
+          "fingerprint": "qq"
         }
       }
     }

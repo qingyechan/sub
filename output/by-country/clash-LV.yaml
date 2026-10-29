@@ -6,20 +6,6 @@ log-level: info
 proxies:
 - name: 🇱🇻 LV 01 - xiaohe
   type: vless
-  server: 45.43.79.92
-  port: 443
-  uuid: 042b12d8-bac4-4b3a-b661-79e333f08e4e
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  reality-opts:
-    public-key: M4Y9h339sntl5wEpiCa7f4IKhJ_8JLzPnAz2IzKlngM
-    short-id: af4ca5d16438c938
-  servername: vikt659.isgood.host
-  client-fingerprint: chrome
-  flow: xtls-rprx-vision
-- name: 🇱🇻 LV 02 - xiaohe
-  type: vless
   server: 138.124.180.137
   port: 443
   uuid: 5234b2b7-5e07-422c-8159-d62a676c00c6
@@ -32,21 +18,7 @@ proxies:
   servername: www.apple.com
   client-fingerprint: random
   flow: xtls-rprx-vision
-- name: 🇱🇻 LV 03 - xiaohe
-  type: vless
-  server: 138.124.180.137
-  port: 443
-  uuid: 5234b2b7-5e07-422c-8159-d62a676c00c6
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  reality-opts:
-    public-key: GBdkyDLfr0LIZo_94Xv8ycAKOmkjArYzwJAEMhuXX2c
-    short-id: 33acba1b
-  servername: www.apple.com
-  client-fingerprint: firefox
-  flow: xtls-rprx-vision
-- name: 🇱🇻 LV 04 - xiaohe
+- name: 🇱🇻 LV 02 - xiaohe
   type: vless
   server: 138.124.180.137
   port: 443
@@ -68,8 +40,6 @@ proxy-groups:
   - FALLBACK
   - 🇱🇻 LV 01 - xiaohe
   - 🇱🇻 LV 02 - xiaohe
-  - 🇱🇻 LV 03 - xiaohe
-  - 🇱🇻 LV 04 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -81,8 +51,6 @@ proxy-groups:
   proxies: &id001
   - 🇱🇻 LV 01 - xiaohe
   - 🇱🇻 LV 02 - xiaohe
-  - 🇱🇻 LV 03 - xiaohe
-  - 🇱🇻 LV 04 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204
