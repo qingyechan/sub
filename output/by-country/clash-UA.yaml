@@ -4,27 +4,35 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: 🇰🇿 KZ 01 - xiaohe
+- name: 🇺🇦 UA 01 - xiaohe
+  type: ss
+  server: staging.lastilhame.monster
+  port: 49917
+  cipher: chacha20-ietf-poly1305
+  password: G9ZuLN5DE9qqouTZwYUcvYsDJx8gyL1nCu3N7yRZFjPmYKhzSi8GkpVuexmTHAz2uvcErKkex1K2ceR2GH3L444HRNnN1YpP
+  udp: true
+- name: 🇺🇦 UA 02 - xiaohe
   type: vless
-  server: 45.136.59.28
-  port: 43000
-  uuid: a8b8b21e-1f31-4e4d-a639-efb2de0d577e
+  server: 216.24.57.225
+  port: 2083
+  uuid: 3bcbd7ef-e05b-4745-a1de-5ecf98dd2fb6
   udp: true
   tls: true
   skip-cert-verify: true
-  reality-opts:
-    public-key: osqok9aA_NR7WyAxZptD36-_U8BF_9gL8AH84MMzbFs
-    short-id: ced96d59
-  servername: 45.136.59.28
-  client-fingerprint: chrome
-  flow: xtls-rprx-vision
+  servername: pol.netvia.ir
+  network: ws
+  ws-opts:
+    path: /wss
+    headers:
+      Host: pol.netvia.ir
 proxy-groups:
 - name: PROXIES
   type: select
   proxies:
   - AUTO
   - FALLBACK
-  - 🇰🇿 KZ 01 - xiaohe
+  - 🇺🇦 UA 01 - xiaohe
+  - 🇺🇦 UA 02 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -34,7 +42,8 @@ proxy-groups:
   tolerance: 100
   lazy: true
   proxies: &id001
-  - 🇰🇿 KZ 01 - xiaohe
+  - 🇺🇦 UA 01 - xiaohe
+  - 🇺🇦 UA 02 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

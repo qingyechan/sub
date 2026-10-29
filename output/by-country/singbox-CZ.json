@@ -14,8 +14,7 @@
       "outbounds": [
         "auto",
         "🇨🇿 CZ 01 - xiaohe",
-        "🇨🇿 CZ 02 - xiaohe",
-        "🇨🇿 CZ 03 - xiaohe"
+        "🇨🇿 CZ 02 - xiaohe"
       ]
     },
     {
@@ -23,8 +22,7 @@
       "tag": "auto",
       "outbounds": [
         "🇨🇿 CZ 01 - xiaohe",
-        "🇨🇿 CZ 02 - xiaohe",
-        "🇨🇿 CZ 03 - xiaohe"
+        "🇨🇿 CZ 02 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -57,28 +55,6 @@
     {
       "type": "vless",
       "tag": "🇨🇿 CZ 02 - xiaohe",
-      "server": "31.77.13.22",
-      "server_port": 2063,
-      "uuid": "b18d5990-96eb-4587-a386-7f8ef7591e6a",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "rusbid.de",
-        "insecure": true,
-        "reality": {
-          "enabled": true,
-          "public_key": "MMpt_jWc4J3oySBdf5sPDVRkiWlZmOObth6A1scM9BM",
-          "short_id": ""
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇨🇿 CZ 03 - xiaohe",
       "server": "155.212.240.10",
       "server_port": 443,
       "uuid": "f27b6f65-6e59-4f89-b929-afa397ca587f",

@@ -4,26 +4,41 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: 🇱🇺 LU 01 - xiaohe
+- name: 🇧🇬 BG 01 - xiaohe
   type: vless
-  server: 107.189.7.176
-  port: 32752
-  uuid: 4970c1cd-13e1-498a-920a-61d07be2fa65
+  server: 93.152.223.244
+  port: 443
+  uuid: 706bce83-91db-4260-b175-cba29145cd56
   udp: true
   tls: true
   skip-cert-verify: true
   reality-opts:
-    public-key: pfFcQxKv4EPhCDUoZMCmTjj4FK7HHQg_me-In3bOejA
-    short-id: d758a643034ad90e
-  servername: www.apple.com
-  client-fingerprint: chrome
+    public-key: yKwDGqOdkC_nEPOQHMvAQLPcPK8YHskv_opYoY66Yk8
+    short-id: ''
+  servername: ddk5-ger.newagetechnologies.live
+  client-fingerprint: qq
+  flow: xtls-rprx-vision
+- name: 🇧🇬 BG 02 - xiaohe
+  type: vless
+  server: p1real4.greewebservices.ir
+  port: 1260
+  uuid: f234330e-f9df-46e3-8f60-b2af5173c147
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  reality-opts:
+    public-key: xQnXh5EfPDhcEBB7rRiLca33GYrMEeUa35domLL_yA8
+    short-id: 9b60d3
+  servername: play.googleapis.com
+  client-fingerprint: ios
 proxy-groups:
 - name: PROXIES
   type: select
   proxies:
   - AUTO
   - FALLBACK
-  - 🇱🇺 LU 01 - xiaohe
+  - 🇧🇬 BG 01 - xiaohe
+  - 🇧🇬 BG 02 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -33,7 +48,8 @@ proxy-groups:
   tolerance: 100
   lazy: true
   proxies: &id001
-  - 🇱🇺 LU 01 - xiaohe
+  - 🇧🇬 BG 01 - xiaohe
+  - 🇧🇬 BG 02 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

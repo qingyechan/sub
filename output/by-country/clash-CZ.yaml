@@ -20,20 +20,6 @@ proxies:
   flow: xtls-rprx-vision
 - name: 🇨🇿 CZ 02 - xiaohe
   type: vless
-  server: 31.77.13.22
-  port: 2063
-  uuid: b18d5990-96eb-4587-a386-7f8ef7591e6a
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  reality-opts:
-    public-key: MMpt_jWc4J3oySBdf5sPDVRkiWlZmOObth6A1scM9BM
-    short-id: ''
-  servername: rusbid.de
-  client-fingerprint: firefox
-  flow: xtls-rprx-vision
-- name: 🇨🇿 CZ 03 - xiaohe
-  type: vless
   server: 155.212.240.10
   port: 443
   uuid: f27b6f65-6e59-4f89-b929-afa397ca587f
@@ -54,7 +40,6 @@ proxy-groups:
   - FALLBACK
   - 🇨🇿 CZ 01 - xiaohe
   - 🇨🇿 CZ 02 - xiaohe
-  - 🇨🇿 CZ 03 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -66,7 +51,6 @@ proxy-groups:
   proxies: &id001
   - 🇨🇿 CZ 01 - xiaohe
   - 🇨🇿 CZ 02 - xiaohe
-  - 🇨🇿 CZ 03 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

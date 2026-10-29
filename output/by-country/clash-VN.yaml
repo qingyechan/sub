@@ -6,6 +6,14 @@ log-level: info
 proxies:
 - name: 🇻🇳 VN 01 - xiaohe
   type: vless
+  server: 150.95.109.109
+  port: 2086
+  uuid: b83faafc-cbb7-4655-99d4-2c4c39a49d1b
+  udp: true
+  tls: false
+  skip-cert-verify: true
+- name: 🇻🇳 VN 02 - xiaohe
+  type: vless
   server: 154.21.203.106
   port: 51279
   uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
@@ -18,7 +26,7 @@ proxies:
   servername: www.tesla.com
   client-fingerprint: safari
   flow: xtls-rprx-vision
-- name: 🇻🇳 VN 02 - xiaohe
+- name: 🇻🇳 VN 03 - xiaohe
   type: vless
   server: 154.21.203.106
   port: 51279
@@ -32,6 +40,34 @@ proxies:
   servername: www.tesla.com
   client-fingerprint: random
   flow: xtls-rprx-vision
+- name: 🇻🇳 VN 04 - xiaohe
+  type: vless
+  server: 154.21.203.106
+  port: 51279
+  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  reality-opts:
+    public-key: f6Tj8-uvWsLv3V-lGLuPciArp5oKqUImBg-U7-WJ-0A
+    short-id: bb82c8
+  servername: www.tesla.com
+  client-fingerprint: firefox
+  flow: xtls-rprx-vision
+- name: 🇻🇳 VN 05 - xiaohe
+  type: vless
+  server: 154.21.203.106
+  port: 51279
+  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  reality-opts:
+    public-key: f6Tj8-uvWsLv3V-lGLuPciArp5oKqUImBg-U7-WJ-0A
+    short-id: bb82c8
+  servername: www.tesla.com
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision
 proxy-groups:
 - name: PROXIES
   type: select
@@ -40,6 +76,9 @@ proxy-groups:
   - FALLBACK
   - 🇻🇳 VN 01 - xiaohe
   - 🇻🇳 VN 02 - xiaohe
+  - 🇻🇳 VN 03 - xiaohe
+  - 🇻🇳 VN 04 - xiaohe
+  - 🇻🇳 VN 05 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -51,6 +90,9 @@ proxy-groups:
   proxies: &id001
   - 🇻🇳 VN 01 - xiaohe
   - 🇻🇳 VN 02 - xiaohe
+  - 🇻🇳 VN 03 - xiaohe
+  - 🇻🇳 VN 04 - xiaohe
+  - 🇻🇳 VN 05 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

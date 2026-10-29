@@ -44,31 +44,26 @@
     {
       "type": "vless",
       "tag": "🇵🇱 PL 02 - xiaohe",
-      "server": "site.teslamotor.site",
+      "server": "155.117.5.208",
       "server_port": 20001,
       "uuid": "8e8210b7-71a4-4799-8b9b-2e69698b1eaf"
     },
     {
       "type": "vless",
       "tag": "🇵🇱 PL 03 - xiaohe",
+      "server": "site.teslamotor.site",
+      "server_port": 20001,
+      "uuid": "8e8210b7-71a4-4799-8b9b-2e69698b1eaf"
+    },
+    {
+      "type": "vless",
+      "tag": "🇵🇱 PL 04 - xiaohe",
       "server": "2.26.6.1",
       "server_port": 2087,
       "uuid": "b9fdc03f-389b-4cda-9be4-155b623bee15",
       "tls": {
         "enabled": true,
         "server_name": "2.26.6.1",
-        "insecure": true
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "🇵🇱 PL 04 - xiaohe",
-      "server": "92.118.150.146",
-      "server_port": 443,
-      "password": "Trojan@82164024",
-      "tls": {
-        "enabled": true,
-        "server_name": "pl.tronsg.com",
         "insecure": true
       }
     }
