@@ -5,21 +5,6 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇦🇪 阿联酋 (UAE) 01 - xiaohe
-  type: vmess
-  server: octpus1.gsmonline.ir
-  port: 8080
-  uuid: ea183122-9b4a-4dc3-afe2-adb114e2019d
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: false
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: snapp.ir
-- name: 🇦🇪 阿联酋 (UAE) 02 - xiaohe
   type: vless
   server: 95.174.68.188
   port: 14430
@@ -32,32 +17,6 @@ proxies:
     path: /vless
     headers:
       Host: 95.174.68.188
-- name: 🇦🇪 阿联酋 (UAE) 03 - xiaohe
-  type: vless
-  server: 84.235.244.108
-  port: 22573
-  uuid: 39947382-3212-41c9-bc3a-589574ac8b23
-  udp: true
-  tls: false
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: uae.unixzone.us
-- name: 🇦🇪 阿联酋 (UAE) 04 - xiaohe
-  type: vless
-  server: uae.unixzone.us
-  port: 22573
-  uuid: 39947382-3212-41c9-bc3a-589574ac8b23
-  udp: true
-  tls: false
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: uae.unixzone.us
 proxy-groups:
 - name: PROXIES
   type: select
@@ -65,9 +24,6 @@ proxy-groups:
   - AUTO
   - FALLBACK
   - 🇦🇪 阿联酋 (UAE) 01 - xiaohe
-  - 🇦🇪 阿联酋 (UAE) 02 - xiaohe
-  - 🇦🇪 阿联酋 (UAE) 03 - xiaohe
-  - 🇦🇪 阿联酋 (UAE) 04 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -78,9 +34,6 @@ proxy-groups:
   lazy: true
   proxies: &id001
   - 🇦🇪 阿联酋 (UAE) 01 - xiaohe
-  - 🇦🇪 阿联酋 (UAE) 02 - xiaohe
-  - 🇦🇪 阿联酋 (UAE) 03 - xiaohe
-  - 🇦🇪 阿联酋 (UAE) 04 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

@@ -6,13 +6,21 @@ log-level: info
 proxies:
 - name: 🇵🇱 PL 01 - xiaohe
   type: vless
+  server: 155.117.5.208
+  port: 20001
+  uuid: 8e8210b7-71a4-4799-8b9b-2e69698b1eaf
+  udp: true
+  tls: false
+  skip-cert-verify: true
+- name: 🇵🇱 PL 02 - xiaohe
+  type: vless
   server: 168.222.43.53
   port: 2052
   uuid: 1a8ecc41-6e62-431b-8eca-87c2fa4dc286
   udp: true
   tls: false
   skip-cert-verify: true
-- name: 🇵🇱 PL 02 - xiaohe
+- name: 🇵🇱 PL 03 - xiaohe
   type: trojan
   server: 70.34.252.255
   port: 443
@@ -20,30 +28,7 @@ proxies:
   udp: true
   sni: browseexecutivejobopeningsandenhanceleadershipcareer.com
   skip-cert-verify: true
-- name: 🇵🇱 PL 03 - xiaohe
-  type: vless
-  server: 155.117.5.208
-  port: 20001
-  uuid: 8e8210b7-71a4-4799-8b9b-2e69698b1eaf
-  udp: true
-  tls: false
-  skip-cert-verify: true
 - name: 🇵🇱 PL 04 - xiaohe
-  type: ss
-  server: pol.rvpn.app
-  port: 8388
-  cipher: chacha20-ietf-poly1305
-  password: 8z2OB_gvFvpKgjFi8s9Cvw
-  udp: true
-- name: 🇵🇱 PL 05 - xiaohe
-  type: vless
-  server: edge10.cyrionflare.com
-  port: 2052
-  uuid: 1a8ecc41-6e62-431b-8eca-87c2fa4dc286
-  udp: true
-  tls: false
-  skip-cert-verify: true
-- name: 🇵🇱 PL 06 - xiaohe
   type: vless
   server: site.teslamotor.site
   port: 20001
@@ -51,7 +36,7 @@ proxies:
   udp: true
   tls: false
   skip-cert-verify: true
-- name: 🇵🇱 PL 07 - xiaohe
+- name: 🇵🇱 PL 05 - xiaohe
   type: vless
   server: 2.26.6.1
   port: 2087
@@ -60,6 +45,36 @@ proxies:
   tls: true
   skip-cert-verify: true
   servername: 2.26.6.1
+- name: 🇵🇱 PL 06 - xiaohe
+  type: trojan
+  server: 92.118.150.146
+  port: 443
+  password: Trojan@82164024
+  udp: true
+  sni: pl.tronsg.com
+  skip-cert-verify: true
+- name: 🇵🇱 PL 07 - xiaohe
+  type: trojan
+  server: pl.tronsg.com
+  port: 443
+  password: Trojan@82164024
+  udp: true
+  sni: pl.tronsg.com
+  skip-cert-verify: true
+- name: 🇵🇱 PL 08 - xiaohe
+  type: vless
+  server: 201.58.181.231
+  port: 4443
+  uuid: fafc7c16-f890-45ee-a856-02df225172dd
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  reality-opts:
+    public-key: kn7Lh0yi6CYrHW5KpiQrfrs9FED-mbbEEKgOoiDkx2M
+    short-id: 858affa9443ebac6
+  servername: www.kinopoisk.ru
+  client-fingerprint: firefox
+  flow: xtls-rprx-vision
 proxy-groups:
 - name: PROXIES
   type: select
@@ -73,6 +88,7 @@ proxy-groups:
   - 🇵🇱 PL 05 - xiaohe
   - 🇵🇱 PL 06 - xiaohe
   - 🇵🇱 PL 07 - xiaohe
+  - 🇵🇱 PL 08 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -89,6 +105,7 @@ proxy-groups:
   - 🇵🇱 PL 05 - xiaohe
   - 🇵🇱 PL 06 - xiaohe
   - 🇵🇱 PL 07 - xiaohe
+  - 🇵🇱 PL 08 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

@@ -6,17 +6,17 @@ log-level: info
 proxies:
 - name: 🇱🇻 LV 01 - xiaohe
   type: vless
-  server: 138.124.180.137
+  server: 31.58.171.53
   port: 443
-  uuid: 5234b2b7-5e07-422c-8159-d62a676c00c6
+  uuid: 4d259556-57f7-4e5a-9a4a-48868787fb38
   udp: true
   tls: true
   skip-cert-verify: true
   reality-opts:
-    public-key: GBdkyDLfr0LIZo_94Xv8ycAKOmkjArYzwJAEMhuXX2c
-    short-id: 33acba1b
-  servername: www.apple.com
-  client-fingerprint: random
+    public-key: iCy_Y2B58KB39rw94EycaBO-aldt2PaMmWz62arreSo
+    short-id: f77f3068
+  servername: dl.google.com
+  client-fingerprint: chrome
   flow: xtls-rprx-vision
 proxy-groups:
 - name: PROXIES

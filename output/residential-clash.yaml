@@ -4,28 +4,14 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: 🇹🇼 中国台湾 (Taiwan) 01 (家宽) - xiaohe
-  type: vless
-  server: 59.125.69.22
-  port: 443
-  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  servername: tse1.mm.bing.net
-  network: ws
-  ws-opts:
-    path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
-    headers:
-      Host: tse1.mm.bing.net
-- name: 🇰🇷 韩国 (South Korea) 02 (家宽) - xiaohe
+- name: 🇰🇷 韩国 (South Korea) 01 (家宽) - xiaohe
   type: ss
   server: 218.237.185.234
   port: 4652
   cipher: aes-256-cfb
   password: qwerREWQ@@
   udp: true
-- name: 🇰🇷 韩国 (South Korea) 03 (家宽) - xiaohe
+- name: 🇰🇷 韩国 (South Korea) 02 (家宽) - xiaohe
   type: ss
   server: 211.178.105.134
   port: 6123
@@ -38,9 +24,8 @@ proxy-groups:
   proxies:
   - AUTO
   - FALLBACK
-  - 🇹🇼 中国台湾 (Taiwan) 01 (家宽) - xiaohe
+  - 🇰🇷 韩国 (South Korea) 01 (家宽) - xiaohe
   - 🇰🇷 韩国 (South Korea) 02 (家宽) - xiaohe
-  - 🇰🇷 韩国 (South Korea) 03 (家宽) - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -50,9 +35,8 @@ proxy-groups:
   tolerance: 100
   lazy: true
   proxies: &id001
-  - 🇹🇼 中国台湾 (Taiwan) 01 (家宽) - xiaohe
+  - 🇰🇷 韩国 (South Korea) 01 (家宽) - xiaohe
   - 🇰🇷 韩国 (South Korea) 02 (家宽) - xiaohe
-  - 🇰🇷 韩国 (South Korea) 03 (家宽) - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204
