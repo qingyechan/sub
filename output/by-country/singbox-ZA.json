@@ -13,16 +13,14 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇿🇦 ZA 01 - xiaohe",
-        "🇿🇦 ZA 02 - xiaohe"
+        "🇿🇦 ZA 01 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇿🇦 ZA 01 - xiaohe",
-        "🇿🇦 ZA 02 - xiaohe"
+        "🇿🇦 ZA 01 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -37,14 +35,6 @@
       "server_port": 443,
       "method": "chacha20-ietf-poly1305",
       "password": "aduB9HGxQHjA2SBMRjkHX6"
-    },
-    {
-      "type": "shadowsocks",
-      "tag": "🇿🇦 ZA 02 - xiaohe",
-      "server": "102.133.165.160",
-      "server_port": 16233,
-      "method": "chacha20-ietf-poly1305",
-      "password": "Xsy8Ox4yOV3xLlpxtjzs3X"
     }
   ],
   "route": {

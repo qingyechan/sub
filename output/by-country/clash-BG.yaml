@@ -18,19 +18,6 @@ proxies:
   servername: ddk5-ger.newagetechnologies.live
   client-fingerprint: qq
   flow: xtls-rprx-vision
-- name: 🇧🇬 BG 02 - xiaohe
-  type: vless
-  server: p1real4.greewebservices.ir
-  port: 1260
-  uuid: f234330e-f9df-46e3-8f60-b2af5173c147
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  reality-opts:
-    public-key: xQnXh5EfPDhcEBB7rRiLca33GYrMEeUa35domLL_yA8
-    short-id: 9b60d3
-  servername: play.googleapis.com
-  client-fingerprint: ios
 proxy-groups:
 - name: PROXIES
   type: select
@@ -38,7 +25,6 @@ proxy-groups:
   - AUTO
   - FALLBACK
   - 🇧🇬 BG 01 - xiaohe
-  - 🇧🇬 BG 02 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -49,7 +35,6 @@ proxy-groups:
   lazy: true
   proxies: &id001
   - 🇧🇬 BG 01 - xiaohe
-  - 🇧🇬 BG 02 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

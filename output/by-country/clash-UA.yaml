@@ -6,12 +6,19 @@ log-level: info
 proxies:
 - name: 🇺🇦 UA 01 - xiaohe
   type: ss
-  server: staging.lastilhame.monster
+  server: 104.253.216.227
   port: 49917
   cipher: chacha20-ietf-poly1305
   password: G9ZuLN5DE9qqouTZwYUcvYsDJx8gyL1nCu3N7yRZFjPmYKhzSi8GkpVuexmTHAz2uvcErKkex1K2ceR2GH3L444HRNnN1YpP
   udp: true
 - name: 🇺🇦 UA 02 - xiaohe
+  type: ss
+  server: staging.lastilhame.monster
+  port: 49917
+  cipher: chacha20-ietf-poly1305
+  password: G9ZuLN5DE9qqouTZwYUcvYsDJx8gyL1nCu3N7yRZFjPmYKhzSi8GkpVuexmTHAz2uvcErKkex1K2ceR2GH3L444HRNnN1YpP
+  udp: true
+- name: 🇺🇦 UA 03 - xiaohe
   type: vless
   server: 216.24.57.225
   port: 2083
@@ -33,6 +40,7 @@ proxy-groups:
   - FALLBACK
   - 🇺🇦 UA 01 - xiaohe
   - 🇺🇦 UA 02 - xiaohe
+  - 🇺🇦 UA 03 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -44,6 +52,7 @@ proxy-groups:
   proxies: &id001
   - 🇺🇦 UA 01 - xiaohe
   - 🇺🇦 UA 02 - xiaohe
+  - 🇺🇦 UA 03 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

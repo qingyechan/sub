@@ -13,14 +13,16 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇸🇪 SE 01 - xiaohe"
+        "🇸🇪 SE 01 - xiaohe",
+        "🇸🇪 SE 02 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇸🇪 SE 01 - xiaohe"
+        "🇸🇪 SE 01 - xiaohe",
+        "🇸🇪 SE 02 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -39,6 +41,28 @@
         "path": "/vless",
         "headers": {
           "Host": "5.178.109.174"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇸🇪 SE 02 - xiaohe",
+      "server": "31.172.65.4",
+      "server_port": 8443,
+      "uuid": "9c6e83fc-b755-4ad4-9b0a-14b610153d8f",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.bing.com",
+        "insecure": true,
+        "reality": {
+          "enabled": true,
+          "public_key": "wRvUAKwcHc4pBNVouIcVjQkVD9aCRR-AmtcFyBV36lU",
+          "short_id": "0e7741edc378622f"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "qq"
         }
       }
     }

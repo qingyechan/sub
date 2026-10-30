@@ -13,16 +13,14 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇧🇬 BG 01 - xiaohe",
-        "🇧🇬 BG 02 - xiaohe"
+        "🇧🇬 BG 01 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇧🇬 BG 01 - xiaohe",
-        "🇧🇬 BG 02 - xiaohe"
+        "🇧🇬 BG 01 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -49,27 +47,6 @@
         "utls": {
           "enabled": true,
           "fingerprint": "qq"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇧🇬 BG 02 - xiaohe",
-      "server": "p1real4.greewebservices.ir",
-      "server_port": 1260,
-      "uuid": "f234330e-f9df-46e3-8f60-b2af5173c147",
-      "tls": {
-        "enabled": true,
-        "server_name": "play.googleapis.com",
-        "insecure": true,
-        "reality": {
-          "enabled": true,
-          "public_key": "xQnXh5EfPDhcEBB7rRiLca33GYrMEeUa35domLL_yA8",
-          "short_id": "9b60d3"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "ios"
         }
       }
     }
