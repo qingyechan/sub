@@ -13,14 +13,14 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇲🇾 MY 01 - xiaohe"
+        "🇳🇴 NO 01 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇲🇾 MY 01 - xiaohe"
+        "🇳🇴 NO 01 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -29,16 +29,12 @@
       "tag": "direct"
     },
     {
-      "type": "trojan",
-      "tag": "🇲🇾 MY 01 - xiaohe",
-      "server": "47.250.84.25",
-      "server_port": 443,
-      "password": "5931134d1cde66bf83a54acdfebe7ab2",
-      "tls": {
-        "enabled": true,
-        "server_name": "moltbot.doctoroyy.net",
-        "insecure": true
-      }
+      "type": "shadowsocks",
+      "tag": "🇳🇴 NO 01 - xiaohe",
+      "server": "185.213.23.63",
+      "server_port": 990,
+      "method": "chacha20-ietf-poly1305",
+      "password": "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
     }
   ],
   "route": {

@@ -16,11 +16,7 @@
         "🇵🇱 PL 01 - xiaohe",
         "🇵🇱 PL 02 - xiaohe",
         "🇵🇱 PL 03 - xiaohe",
-        "🇵🇱 PL 04 - xiaohe",
-        "🇵🇱 PL 05 - xiaohe",
-        "🇵🇱 PL 06 - xiaohe",
-        "🇵🇱 PL 07 - xiaohe",
-        "🇵🇱 PL 08 - xiaohe"
+        "🇵🇱 PL 04 - xiaohe"
       ]
     },
     {
@@ -30,11 +26,7 @@
         "🇵🇱 PL 01 - xiaohe",
         "🇵🇱 PL 02 - xiaohe",
         "🇵🇱 PL 03 - xiaohe",
-        "🇵🇱 PL 04 - xiaohe",
-        "🇵🇱 PL 05 - xiaohe",
-        "🇵🇱 PL 06 - xiaohe",
-        "🇵🇱 PL 07 - xiaohe",
-        "🇵🇱 PL 08 - xiaohe"
+        "🇵🇱 PL 04 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -50,15 +42,8 @@
       "uuid": "8e8210b7-71a4-4799-8b9b-2e69698b1eaf"
     },
     {
-      "type": "vless",
-      "tag": "🇵🇱 PL 02 - xiaohe",
-      "server": "168.222.43.53",
-      "server_port": 2052,
-      "uuid": "1a8ecc41-6e62-431b-8eca-87c2fa4dc286"
-    },
-    {
       "type": "trojan",
-      "tag": "🇵🇱 PL 03 - xiaohe",
+      "tag": "🇵🇱 PL 02 - xiaohe",
       "server": "70.34.252.255",
       "server_port": 443,
       "password": "0ab6c98dae3b48e8b9c4a776b6c9c19a",
@@ -70,68 +55,17 @@
     },
     {
       "type": "vless",
+      "tag": "🇵🇱 PL 03 - xiaohe",
+      "server": "168.222.43.53",
+      "server_port": 2052,
+      "uuid": "1a8ecc41-6e62-431b-8eca-87c2fa4dc286"
+    },
+    {
+      "type": "vless",
       "tag": "🇵🇱 PL 04 - xiaohe",
       "server": "site.teslamotor.site",
       "server_port": 20001,
       "uuid": "8e8210b7-71a4-4799-8b9b-2e69698b1eaf"
-    },
-    {
-      "type": "vless",
-      "tag": "🇵🇱 PL 05 - xiaohe",
-      "server": "2.26.6.1",
-      "server_port": 2087,
-      "uuid": "b9fdc03f-389b-4cda-9be4-155b623bee15",
-      "tls": {
-        "enabled": true,
-        "server_name": "2.26.6.1",
-        "insecure": true
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "🇵🇱 PL 06 - xiaohe",
-      "server": "92.118.150.146",
-      "server_port": 443,
-      "password": "Trojan@82164024",
-      "tls": {
-        "enabled": true,
-        "server_name": "pl.tronsg.com",
-        "insecure": true
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "🇵🇱 PL 07 - xiaohe",
-      "server": "pl.tronsg.com",
-      "server_port": 443,
-      "password": "Trojan@82164024",
-      "tls": {
-        "enabled": true,
-        "server_name": "pl.tronsg.com",
-        "insecure": true
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇵🇱 PL 08 - xiaohe",
-      "server": "201.58.181.231",
-      "server_port": 4443,
-      "uuid": "fafc7c16-f890-45ee-a856-02df225172dd",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.kinopoisk.ru",
-        "insecure": true,
-        "reality": {
-          "enabled": true,
-          "public_key": "kn7Lh0yi6CYrHW5KpiQrfrs9FED-mbbEEKgOoiDkx2M",
-          "short_id": "858affa9443ebac6"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      }
     }
   ],
   "route": {

@@ -31,20 +31,8 @@
       "tag": "direct"
     },
     {
-      "type": "trojan",
-      "tag": "🇹🇭 TH 01 - xiaohe",
-      "server": "th001.zestapp778.com",
-      "server_port": 33079,
-      "password": "5t6i121em5lkmsmk",
-      "tls": {
-        "enabled": true,
-        "server_name": "th001.zestapp778.com",
-        "insecure": true
-      }
-    },
-    {
       "type": "vless",
-      "tag": "🇹🇭 TH 02 - xiaohe",
+      "tag": "🇹🇭 TH 01 - xiaohe",
       "server": "45.154.26.63",
       "server_port": 443,
       "uuid": "ff85e702-b605-4109-884d-2c1f065d0954",
@@ -62,6 +50,18 @@
           "enabled": true,
           "fingerprint": "chrome"
         }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇹🇭 TH 02 - xiaohe",
+      "server": "th001.zestapp778.com",
+      "server_port": 33079,
+      "password": "5t6i121em5lkmsmk",
+      "tls": {
+        "enabled": true,
+        "server_name": "th001.zestapp778.com",
+        "insecure": true
       }
     }
   ],
