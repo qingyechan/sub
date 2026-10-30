@@ -16,7 +16,7 @@ proxies:
     public-key: yKwDGqOdkC_nEPOQHMvAQLPcPK8YHskv_opYoY66Yk8
     short-id: ''
   servername: ddk5-ger.newagetechnologies.live
-  client-fingerprint: qq
+  client-fingerprint: chrome
   flow: xtls-rprx-vision
 - name: 🇧🇬 BG 02 - xiaohe
   type: vless
@@ -30,7 +30,7 @@ proxies:
     public-key: yKwDGqOdkC_nEPOQHMvAQLPcPK8YHskv_opYoY66Yk8
     short-id: ''
   servername: ddk5-ger.newagetechnologies.live
-  client-fingerprint: chrome
+  client-fingerprint: firefox
   flow: xtls-rprx-vision
 - name: 🇧🇬 BG 03 - xiaohe
   type: vless
@@ -44,7 +44,7 @@ proxies:
     public-key: yKwDGqOdkC_nEPOQHMvAQLPcPK8YHskv_opYoY66Yk8
     short-id: ''
   servername: ddk5-ger.newagetechnologies.live
-  client-fingerprint: firefox
+  client-fingerprint: qq
   flow: xtls-rprx-vision
 proxy-groups:
 - name: PROXIES

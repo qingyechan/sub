@@ -29,6 +29,28 @@ proxies:
   tls: false
   skip-cert-verify: true
 - name: 🇵🇱 PL 04 - xiaohe
+  type: trojan
+  server: 92.118.150.146
+  port: 443
+  password: Trojan@82164024
+  udp: true
+  sni: pl.tronsg.com
+  skip-cert-verify: true
+- name: 🇵🇱 PL 05 - xiaohe
+  type: vless
+  server: 146.75.57.238
+  port: 443
+  uuid: c1a3a6ee-34d3-4fcd-8763-c2231adabed6
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: firefox.com
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: polandboijji.global.ssl.fastly.net
+- name: 🇵🇱 PL 06 - xiaohe
   type: vless
   server: site.teslamotor.site
   port: 20001
@@ -46,6 +68,8 @@ proxy-groups:
   - 🇵🇱 PL 02 - xiaohe
   - 🇵🇱 PL 03 - xiaohe
   - 🇵🇱 PL 04 - xiaohe
+  - 🇵🇱 PL 05 - xiaohe
+  - 🇵🇱 PL 06 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -59,6 +83,8 @@ proxy-groups:
   - 🇵🇱 PL 02 - xiaohe
   - 🇵🇱 PL 03 - xiaohe
   - 🇵🇱 PL 04 - xiaohe
+  - 🇵🇱 PL 05 - xiaohe
+  - 🇵🇱 PL 06 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

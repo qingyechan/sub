@@ -19,6 +19,20 @@ proxies:
   client-fingerprint: random
 - name: 🇹🇷 土耳其 (Turkey) 02 - xiaohe
   type: vless
+  server: 146.75.59.186
+  port: 443
+  uuid: c1a3a6ee-34d3-4fcd-8763-c2231adabed6
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: firefox.com
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: looabturkeyeoijji.global.ssl.fastly.net.
+- name: 🇹🇷 土耳其 (Turkey) 03 - xiaohe
+  type: vless
   server: 177.3.208.65
   port: 443
   uuid: 4f34bc04-479c-49ba-91a8-6bb9ed15031c
@@ -39,6 +53,7 @@ proxy-groups:
   - FALLBACK
   - 🇹🇷 土耳其 (Turkey) 01 - xiaohe
   - 🇹🇷 土耳其 (Turkey) 02 - xiaohe
+  - 🇹🇷 土耳其 (Turkey) 03 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -50,6 +65,7 @@ proxy-groups:
   proxies: &id001
   - 🇹🇷 土耳其 (Turkey) 01 - xiaohe
   - 🇹🇷 土耳其 (Turkey) 02 - xiaohe
+  - 🇹🇷 土耳其 (Turkey) 03 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

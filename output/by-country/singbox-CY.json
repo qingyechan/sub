@@ -14,7 +14,9 @@
       "outbounds": [
         "auto",
         "🇨🇾 CY 01 - xiaohe",
-        "🇨🇾 CY 02 - xiaohe"
+        "🇨🇾 CY 02 - xiaohe",
+        "🇨🇾 CY 03 - xiaohe",
+        "🇨🇾 CY 04 - xiaohe"
       ]
     },
     {
@@ -22,7 +24,9 @@
       "tag": "auto",
       "outbounds": [
         "🇨🇾 CY 01 - xiaohe",
-        "🇨🇾 CY 02 - xiaohe"
+        "🇨🇾 CY 02 - xiaohe",
+        "🇨🇾 CY 03 - xiaohe",
+        "🇨🇾 CY 04 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -33,9 +37,9 @@
     {
       "type": "vless",
       "tag": "🇨🇾 CY 01 - xiaohe",
-      "server": "5.253.42.164",
+      "server": "5.253.28.240",
       "server_port": 40443,
-      "uuid": "e99ba96d-dec8-42eb-be53-19e71eef7cab",
+      "uuid": "405b964e-a2d2-454f-aaaa-711cc218897c",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
@@ -43,21 +47,21 @@
         "insecure": true,
         "reality": {
           "enabled": true,
-          "public_key": "g77ZJbm18JEotapmVRjaXi133MzkbhkU2lxhVeXx8zw",
-          "short_id": "68a8"
+          "public_key": "cwmcqsfS7klQlkcoUNuATEk0NiPY-NnRb9z8rCJDQw0",
+          "short_id": "88b6"
         },
         "utls": {
           "enabled": true,
-          "fingerprint": "firefox"
+          "fingerprint": "random"
         }
       }
     },
     {
       "type": "vless",
       "tag": "🇨🇾 CY 02 - xiaohe",
-      "server": "5.253.42.164",
+      "server": "hydra.yokkastars.com",
       "server_port": 40443,
-      "uuid": "e99ba96d-dec8-42eb-be53-19e71eef7cab",
+      "uuid": "405b964e-a2d2-454f-aaaa-711cc218897c",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
@@ -65,12 +69,56 @@
         "insecure": true,
         "reality": {
           "enabled": true,
-          "public_key": "g77ZJbm18JEotapmVRjaXi133MzkbhkU2lxhVeXx8zw",
-          "short_id": "68a8"
+          "public_key": "cwmcqsfS7klQlkcoUNuATEk0NiPY-NnRb9z8rCJDQw0",
+          "short_id": "88b6"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "qq"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇨🇾 CY 03 - xiaohe",
+      "server": "hydra.yokkastars.com",
+      "server_port": 40443,
+      "uuid": "405b964e-a2d2-454f-aaaa-711cc218897c",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "deepl.com",
+        "insecure": true,
+        "reality": {
+          "enabled": true,
+          "public_key": "cwmcqsfS7klQlkcoUNuATEk0NiPY-NnRb9z8rCJDQw0",
+          "short_id": "88b6"
         },
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇨🇾 CY 04 - xiaohe",
+      "server": "5.253.30.99",
+      "server_port": 40443,
+      "uuid": "511c1563-2cb6-4064-abc6-a59ee49818a8",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "deepl.com",
+        "insecure": true,
+        "reality": {
+          "enabled": true,
+          "public_key": "cwmcqsfS7klQlkcoUNuATEk0NiPY-NnRb9z8rCJDQw0",
+          "short_id": "88b6"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
         }
       }
     }

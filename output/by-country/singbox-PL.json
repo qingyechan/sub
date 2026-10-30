@@ -16,7 +16,9 @@
         "🇵🇱 PL 01 - xiaohe",
         "🇵🇱 PL 02 - xiaohe",
         "🇵🇱 PL 03 - xiaohe",
-        "🇵🇱 PL 04 - xiaohe"
+        "🇵🇱 PL 04 - xiaohe",
+        "🇵🇱 PL 05 - xiaohe",
+        "🇵🇱 PL 06 - xiaohe"
       ]
     },
     {
@@ -26,7 +28,9 @@
         "🇵🇱 PL 01 - xiaohe",
         "🇵🇱 PL 02 - xiaohe",
         "🇵🇱 PL 03 - xiaohe",
-        "🇵🇱 PL 04 - xiaohe"
+        "🇵🇱 PL 04 - xiaohe",
+        "🇵🇱 PL 05 - xiaohe",
+        "🇵🇱 PL 06 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -61,8 +65,39 @@
       "uuid": "1a8ecc41-6e62-431b-8eca-87c2fa4dc286"
     },
     {
-      "type": "vless",
+      "type": "trojan",
       "tag": "🇵🇱 PL 04 - xiaohe",
+      "server": "92.118.150.146",
+      "server_port": 443,
+      "password": "Trojan@82164024",
+      "tls": {
+        "enabled": true,
+        "server_name": "pl.tronsg.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇵🇱 PL 05 - xiaohe",
+      "server": "146.75.57.238",
+      "server_port": 443,
+      "uuid": "c1a3a6ee-34d3-4fcd-8763-c2231adabed6",
+      "tls": {
+        "enabled": true,
+        "server_name": "firefox.com",
+        "insecure": true
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "polandboijji.global.ssl.fastly.net"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇵🇱 PL 06 - xiaohe",
       "server": "site.teslamotor.site",
       "server_port": 20001,
       "uuid": "8e8210b7-71a4-4799-8b9b-2e69698b1eaf"
