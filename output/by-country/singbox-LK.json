@@ -37,7 +37,7 @@
     {
       "type": "vless",
       "tag": "🇱🇰 LK 01 - xiaohe",
-      "server": "170.114.45.6",
+      "server": "170.114.46.6",
       "server_port": 8080,
       "uuid": "990bf436-f1b9-4e7f-857d-14378acc4ae5",
       "transport": {
@@ -51,7 +51,7 @@
     {
       "type": "vless",
       "tag": "🇱🇰 LK 02 - xiaohe",
-      "server": "170.114.46.6",
+      "server": "170.114.45.6",
       "server_port": 8080,
       "uuid": "990bf436-f1b9-4e7f-857d-14378acc4ae5",
       "transport": {
@@ -72,7 +72,7 @@
         "type": "ws",
         "path": "/",
         "headers": {
-          "Host": "Free.nadun.store"
+          "Host": "free.nadun.store"
         }
       }
     },
@@ -86,7 +86,7 @@
         "type": "ws",
         "path": "/",
         "headers": {
-          "Host": "free.nadun.store"
+          "Host": "Free.nadun.store"
         }
       }
     }

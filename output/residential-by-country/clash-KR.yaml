@@ -6,17 +6,17 @@ log-level: info
 proxies:
 - name: 🇰🇷 韩国 (South Korea) 01 (家宽) - xiaohe
   type: ss
-  server: 211.178.105.134
-  port: 6123
-  cipher: aes-256-cfb
-  password: qwerREWQ@@
-  udp: true
-- name: 🇰🇷 韩国 (South Korea) 02 (家宽) - xiaohe
-  type: ss
   server: 49.254.204.133
   port: 1774
   cipher: aes-256-cfb
   password: 1234!@#$
+  udp: true
+- name: 🇰🇷 韩国 (South Korea) 02 (家宽) - xiaohe
+  type: ss
+  server: 211.178.105.134
+  port: 6123
+  cipher: aes-256-cfb
+  password: qwerREWQ@@
   udp: true
 proxy-groups:
 - name: PROXIES

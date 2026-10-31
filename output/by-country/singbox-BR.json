@@ -15,7 +15,9 @@
         "auto",
         "🇧🇷 BR 01 - xiaohe",
         "🇧🇷 BR 02 - xiaohe",
-        "🇧🇷 BR 03 - xiaohe"
+        "🇧🇷 BR 03 - xiaohe",
+        "🇧🇷 BR 04 - xiaohe",
+        "🇧🇷 BR 05 - xiaohe"
       ]
     },
     {
@@ -24,7 +26,9 @@
       "outbounds": [
         "🇧🇷 BR 01 - xiaohe",
         "🇧🇷 BR 02 - xiaohe",
-        "🇧🇷 BR 03 - xiaohe"
+        "🇧🇷 BR 03 - xiaohe",
+        "🇧🇷 BR 04 - xiaohe",
+        "🇧🇷 BR 05 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -86,6 +90,44 @@
         "enabled": true,
         "server_name": "findtemporaryworkandfreelancerprojectsonlineplatform.com",
         "insecure": true
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇧🇷 BR 04 - xiaohe",
+      "server": "www.buydomains.com",
+      "server_port": 443,
+      "uuid": "4d945644-69ab-47e0-98b3-d43a6313135d",
+      "tls": {
+        "enabled": true,
+        "server_name": "mhoX6Xz96zGe3qv5HISuFj9B.paGeS.DEV",
+        "insecure": true
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/vl/SaXqikbSPA3ImtmZKAFin?ed=2560",
+        "headers": {
+          "Host": "mhoX6Xz96zGe3qv5HISuFj9B.paGeS.DEV"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇧🇷 BR 05 - xiaohe",
+      "server": "43.174.195.1",
+      "server_port": 443,
+      "uuid": "24916ad0-847d-4522-9e17-f4347dee57fd",
+      "tls": {
+        "enabled": true,
+        "server_name": "kv.074167.xyz",
+        "insecure": true
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "kv.074167.xyz"
+        }
       }
     }
   ],

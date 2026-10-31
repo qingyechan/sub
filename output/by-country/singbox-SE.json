@@ -33,6 +33,20 @@
     {
       "type": "vless",
       "tag": "🇸🇪 SE 01 - xiaohe",
+      "server": "5.178.109.174",
+      "server_port": 14430,
+      "uuid": "80de563a-cac8-40ea-8cb0-4cb082dd92f9",
+      "transport": {
+        "type": "ws",
+        "path": "/vless",
+        "headers": {
+          "Host": "5.178.109.174"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇸🇪 SE 02 - xiaohe",
       "server": "31.172.65.4",
       "server_port": 8443,
       "uuid": "9c6e83fc-b755-4ad4-9b0a-14b610153d8f",
@@ -49,20 +63,6 @@
         "utls": {
           "enabled": true,
           "fingerprint": "qq"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇸🇪 SE 02 - xiaohe",
-      "server": "5.178.109.174",
-      "server_port": 14430,
-      "uuid": "80de563a-cac8-40ea-8cb0-4cb082dd92f9",
-      "transport": {
-        "type": "ws",
-        "path": "/vless",
-        "headers": {
-          "Host": "5.178.109.174"
         }
       }
     }
