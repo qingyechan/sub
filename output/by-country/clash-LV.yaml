@@ -4,20 +4,27 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: 🇳🇴 NO 01 - xiaohe
-  type: ss
-  server: 185.213.23.63
-  port: 990
-  cipher: chacha20-ietf-poly1305
-  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+- name: 🇱🇻 LV 01 - xiaohe
+  type: vless
+  server: 31.58.171.53
+  port: 443
+  uuid: 4d259556-57f7-4e5a-9a4a-48868787fb38
   udp: true
+  tls: true
+  skip-cert-verify: true
+  reality-opts:
+    public-key: iCy_Y2B58KB39rw94EycaBO-aldt2PaMmWz62arreSo
+    short-id: f77f3068
+  servername: dl.google.com
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision
 proxy-groups:
 - name: PROXIES
   type: select
   proxies:
   - AUTO
   - FALLBACK
-  - 🇳🇴 NO 01 - xiaohe
+  - 🇱🇻 LV 01 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -27,7 +34,7 @@ proxy-groups:
   tolerance: 100
   lazy: true
   proxies: &id001
-  - 🇳🇴 NO 01 - xiaohe
+  - 🇱🇻 LV 01 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

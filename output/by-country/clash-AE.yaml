@@ -19,18 +19,17 @@ proxies:
       Host: 95.174.68.188
 - name: 🇦🇪 阿联酋 (UAE) 02 - xiaohe
   type: vless
-  server: app-mi-26.spbstudentlife.com
-  port: 443
-  uuid: 07680ffb-0666-4836-b6ad-ec0de62bc38f
+  server: uae.unixzone.us
+  port: 22573
+  uuid: 39947382-3212-41c9-bc3a-589574ac8b23
   udp: true
-  tls: true
+  tls: false
   skip-cert-verify: true
-  reality-opts:
-    public-key: cYtAkO6yUCuRTxHvF8EH76bybk1yfS005KLls-at2yc
-    short-id: a7856800c2deb7b2
-  servername: assets-mi-26.spbstudentlife.com
-  client-fingerprint: randomized
-  flow: xtls-rprx-vision
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: uae.unixzone.us
 proxy-groups:
 - name: PROXIES
   type: select

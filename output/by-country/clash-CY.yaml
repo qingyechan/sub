@@ -6,43 +6,43 @@ log-level: info
 proxies:
 - name: 🇨🇾 CY 01 - xiaohe
   type: vless
-  server: 5.253.28.240
+  server: 5.253.42.164
   port: 40443
-  uuid: 405b964e-a2d2-454f-aaaa-711cc218897c
+  uuid: e99ba96d-dec8-42eb-be53-19e71eef7cab
   udp: true
   tls: true
   skip-cert-verify: true
   reality-opts:
-    public-key: cwmcqsfS7klQlkcoUNuATEk0NiPY-NnRb9z8rCJDQw0
-    short-id: 88b6
+    public-key: g77ZJbm18JEotapmVRjaXi133MzkbhkU2lxhVeXx8zw
+    short-id: 68a8
   servername: deepl.com
-  client-fingerprint: random
+  client-fingerprint: firefox
   flow: xtls-rprx-vision
 - name: 🇨🇾 CY 02 - xiaohe
   type: vless
-  server: 5.253.30.99
+  server: 5.253.42.164
   port: 40443
-  uuid: 511c1563-2cb6-4064-abc6-a59ee49818a8
+  uuid: e99ba96d-dec8-42eb-be53-19e71eef7cab
   udp: true
   tls: true
   skip-cert-verify: true
   reality-opts:
-    public-key: cwmcqsfS7klQlkcoUNuATEk0NiPY-NnRb9z8rCJDQw0
-    short-id: 88b6
+    public-key: g77ZJbm18JEotapmVRjaXi133MzkbhkU2lxhVeXx8zw
+    short-id: 68a8
   servername: deepl.com
-  client-fingerprint: random
+  client-fingerprint: chrome
   flow: xtls-rprx-vision
 - name: 🇨🇾 CY 03 - xiaohe
   type: vless
-  server: hydra.yokkastars.com
+  server: 5.253.28.224
   port: 40443
-  uuid: 405b964e-a2d2-454f-aaaa-711cc218897c
+  uuid: af5eac96-e478-488a-bc8c-45269d7e8847
   udp: true
   tls: true
   skip-cert-verify: true
   reality-opts:
-    public-key: cwmcqsfS7klQlkcoUNuATEk0NiPY-NnRb9z8rCJDQw0
-    short-id: 88b6
+    public-key: g77ZJbm18JEotapmVRjaXi133MzkbhkU2lxhVeXx8zw
+    short-id: 68a8
   servername: deepl.com
   client-fingerprint: chrome
   flow: xtls-rprx-vision
@@ -62,19 +62,33 @@ proxies:
   flow: xtls-rprx-vision
 - name: 🇨🇾 CY 05 - xiaohe
   type: vless
-  server: 5.253.28.224
+  server: hydra.yokkastars.com
   port: 40443
-  uuid: af5eac96-e478-488a-bc8c-45269d7e8847
+  uuid: 405b964e-a2d2-454f-aaaa-711cc218897c
   udp: true
   tls: true
   skip-cert-verify: true
   reality-opts:
-    public-key: g77ZJbm18JEotapmVRjaXi133MzkbhkU2lxhVeXx8zw
-    short-id: 68a8
+    public-key: cwmcqsfS7klQlkcoUNuATEk0NiPY-NnRb9z8rCJDQw0
+    short-id: 88b6
   servername: deepl.com
   client-fingerprint: chrome
   flow: xtls-rprx-vision
 - name: 🇨🇾 CY 06 - xiaohe
+  type: vless
+  server: 5.253.28.240
+  port: 40443
+  uuid: 405b964e-a2d2-454f-aaaa-711cc218897c
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  reality-opts:
+    public-key: cwmcqsfS7klQlkcoUNuATEk0NiPY-NnRb9z8rCJDQw0
+    short-id: 88b6
+  servername: deepl.com
+  client-fingerprint: random
+  flow: xtls-rprx-vision
+- name: 🇨🇾 CY 07 - xiaohe
   type: vless
   server: hydra.yokkastars.com
   port: 40443
@@ -88,33 +102,19 @@ proxies:
   servername: deepl.com
   client-fingerprint: qq
   flow: xtls-rprx-vision
-- name: 🇨🇾 CY 07 - xiaohe
-  type: vless
-  server: 5.253.42.164
-  port: 40443
-  uuid: e99ba96d-dec8-42eb-be53-19e71eef7cab
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  reality-opts:
-    public-key: g77ZJbm18JEotapmVRjaXi133MzkbhkU2lxhVeXx8zw
-    short-id: 68a8
-  servername: deepl.com
-  client-fingerprint: firefox
-  flow: xtls-rprx-vision
 - name: 🇨🇾 CY 08 - xiaohe
   type: vless
-  server: 5.253.42.164
+  server: 5.253.30.99
   port: 40443
-  uuid: e99ba96d-dec8-42eb-be53-19e71eef7cab
+  uuid: 511c1563-2cb6-4064-abc6-a59ee49818a8
   udp: true
   tls: true
   skip-cert-verify: true
   reality-opts:
-    public-key: g77ZJbm18JEotapmVRjaXi133MzkbhkU2lxhVeXx8zw
-    short-id: 68a8
+    public-key: cwmcqsfS7klQlkcoUNuATEk0NiPY-NnRb9z8rCJDQw0
+    short-id: 88b6
   servername: deepl.com
-  client-fingerprint: chrome
+  client-fingerprint: random
   flow: xtls-rprx-vision
 proxy-groups:
 - name: PROXIES

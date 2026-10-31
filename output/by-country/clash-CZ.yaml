@@ -6,61 +6,19 @@ log-level: info
 proxies:
 - name: 🇨🇿 CZ 01 - xiaohe
   type: vless
-  server: 31.77.13.22
-  port: 2063
-  uuid: b18d5990-96eb-4587-a386-7f8ef7591e6a
+  server: 188.114.98.0
+  port: 443
+  uuid: f27b6f65-6e59-4f89-b929-afa397ca587f
   udp: true
   tls: true
   skip-cert-verify: true
-  reality-opts:
-    public-key: MMpt_jWc4J3oySBdf5sPDVRkiWlZmOObth6A1scM9BM
-    short-id: ''
-  servername: rusbid.de
-  client-fingerprint: firefox
-  flow: xtls-rprx-vision
+  servername: n.bitpulse.me
+  network: ws
+  ws-opts:
+    path: /019bcbad-3813-7cce-8786-3ac0e418f128?ed=2560
+    headers:
+      Host: n.bitpulse.me
 - name: 🇨🇿 CZ 02 - xiaohe
-  type: vless
-  server: 188.114.98.0
-  port: 443
-  uuid: f27b6f65-6e59-4f89-b929-afa397ca587f
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  servername: n.bitpulse.me
-  network: ws
-  ws-opts:
-    path: /019bcbad-3813-7cce-8786-3ac0e418f128?ed=2560
-    headers:
-      Host: n.bitpulse.me
-- name: 🇨🇿 CZ 03 - xiaohe
-  type: vless
-  server: 155.212.240.10
-  port: 443
-  uuid: f27b6f65-6e59-4f89-b929-afa397ca587f
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  servername: n.bitpulse.me
-  network: ws
-  ws-opts:
-    path: /019bcbad-3813-7cce-8786-3ac0e418f128?ed=2560
-    headers:
-      Host: n.bitpulse.me
-- name: 🇨🇿 CZ 04 - xiaohe
-  type: vless
-  server: 188.114.98.0
-  port: 443
-  uuid: f27b6f65-6e59-4f89-b929-afa397ca587f
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  servername: n.bitpulse.me
-  network: ws
-  ws-opts:
-    path: /019bcbad-3813-7cce-8786-3ac0e418f128?ed=2560fp=unsafe
-    headers:
-      Host: n.bitpulse.me
-- name: 🇨🇿 CZ 05 - xiaohe
   type: vless
   server: 172.66.128.146
   port: 443
@@ -74,34 +32,34 @@ proxies:
     path: /019bcbad-3813-7cce-8786-3ac0e418f128?ed
     headers:
       Host: n.bitpulse.me
-- name: 🇨🇿 CZ 06 - xiaohe
+- name: 🇨🇿 CZ 03 - xiaohe
   type: vless
-  server: cz-prg.dontblockmepls.com
-  port: 2063
-  uuid: b18d5990-96eb-4587-a386-7f8ef7591e6a
+  server: 188.114.98.0
+  port: 443
+  uuid: f27b6f65-6e59-4f89-b929-afa397ca587f
   udp: true
   tls: true
   skip-cert-verify: true
-  reality-opts:
-    public-key: MMpt_jWc4J3oySBdf5sPDVRkiWlZmOObth6A1scM9BM
-    short-id: ''
-  servername: rusbid.de
-  client-fingerprint: chrome
-  flow: xtls-rprx-vision
-- name: 🇨🇿 CZ 07 - xiaohe
+  servername: n.bitpulse.me
+  network: ws
+  ws-opts:
+    path: /019bcbad-3813-7cce-8786-3ac0e418f128?ed=2560fp=unsafe
+    headers:
+      Host: n.bitpulse.me
+- name: 🇨🇿 CZ 04 - xiaohe
   type: vless
-  server: in-nl2.bystriynet.online
-  port: 8469
-  uuid: 1c8f7130-8c1a-4949-831d-1d45b39c795b
+  server: 155.212.240.10
+  port: 443
+  uuid: f27b6f65-6e59-4f89-b929-afa397ca587f
   udp: true
   tls: true
   skip-cert-verify: true
-  reality-opts:
-    public-key: jXnHLdfNcX2fwTFY-d2boAYcfC9EnnhqYS0hfR6WwFo
-    short-id: 55d42bdd79605658
-  servername: svoboda12.bystriynet.online
-  client-fingerprint: firefox
-  flow: xtls-rprx-vision
+  servername: n.bitpulse.me
+  network: ws
+  ws-opts:
+    path: /019bcbad-3813-7cce-8786-3ac0e418f128?ed=2560
+    headers:
+      Host: n.bitpulse.me
 proxy-groups:
 - name: PROXIES
   type: select
@@ -112,9 +70,6 @@ proxy-groups:
   - 🇨🇿 CZ 02 - xiaohe
   - 🇨🇿 CZ 03 - xiaohe
   - 🇨🇿 CZ 04 - xiaohe
-  - 🇨🇿 CZ 05 - xiaohe
-  - 🇨🇿 CZ 06 - xiaohe
-  - 🇨🇿 CZ 07 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -128,9 +83,6 @@ proxy-groups:
   - 🇨🇿 CZ 02 - xiaohe
   - 🇨🇿 CZ 03 - xiaohe
   - 🇨🇿 CZ 04 - xiaohe
-  - 🇨🇿 CZ 05 - xiaohe
-  - 🇨🇿 CZ 06 - xiaohe
-  - 🇨🇿 CZ 07 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

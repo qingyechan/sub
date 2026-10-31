@@ -14,13 +14,7 @@
       "outbounds": [
         "auto",
         "🇵🇱 PL 01 - xiaohe",
-        "🇵🇱 PL 02 - xiaohe",
-        "🇵🇱 PL 03 - xiaohe",
-        "🇵🇱 PL 04 - xiaohe",
-        "🇵🇱 PL 05 - xiaohe",
-        "🇵🇱 PL 06 - xiaohe",
-        "🇵🇱 PL 07 - xiaohe",
-        "🇵🇱 PL 08 - xiaohe"
+        "🇵🇱 PL 02 - xiaohe"
       ]
     },
     {
@@ -28,13 +22,7 @@
       "tag": "auto",
       "outbounds": [
         "🇵🇱 PL 01 - xiaohe",
-        "🇵🇱 PL 02 - xiaohe",
-        "🇵🇱 PL 03 - xiaohe",
-        "🇵🇱 PL 04 - xiaohe",
-        "🇵🇱 PL 05 - xiaohe",
-        "🇵🇱 PL 06 - xiaohe",
-        "🇵🇱 PL 07 - xiaohe",
-        "🇵🇱 PL 08 - xiaohe"
+        "🇵🇱 PL 02 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -43,15 +31,8 @@
       "tag": "direct"
     },
     {
-      "type": "vless",
-      "tag": "🇵🇱 PL 01 - xiaohe",
-      "server": "168.222.43.53",
-      "server_port": 2052,
-      "uuid": "1a8ecc41-6e62-431b-8eca-87c2fa4dc286"
-    },
-    {
       "type": "trojan",
-      "tag": "🇵🇱 PL 02 - xiaohe",
+      "tag": "🇵🇱 PL 01 - xiaohe",
       "server": "70.34.252.255",
       "server_port": 443,
       "password": "0ab6c98dae3b48e8b9c4a776b6c9c19a",
@@ -63,75 +44,14 @@
     },
     {
       "type": "vless",
-      "tag": "🇵🇱 PL 03 - xiaohe",
-      "server": "177.1.192.117",
-      "server_port": 443,
-      "uuid": "706bce83-91db-4260-b175-cba29145cd56",
-      "flow": "xtls-rprx-vision",
+      "tag": "🇵🇱 PL 02 - xiaohe",
+      "server": "2.26.6.1",
+      "server_port": 2087,
+      "uuid": "b9fdc03f-389b-4cda-9be4-155b623bee15",
       "tls": {
         "enabled": true,
-        "server_name": "up7.uni-plan.com",
-        "insecure": true,
-        "reality": {
-          "enabled": true,
-          "public_key": "Lt3gSdGmfQMx50yH-OOJaNBSg80vzIveaNVwUUWJwzQ",
-          "short_id": "3952a220c86628a8"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇵🇱 PL 04 - xiaohe",
-      "server": "155.117.5.208",
-      "server_port": 20001,
-      "uuid": "8e8210b7-71a4-4799-8b9b-2e69698b1eaf"
-    },
-    {
-      "type": "vless",
-      "tag": "🇵🇱 PL 05 - xiaohe",
-      "server": "edge10.cyrionflare.com",
-      "server_port": 2052,
-      "uuid": "1a8ecc41-6e62-431b-8eca-87c2fa4dc286"
-    },
-    {
-      "type": "vless",
-      "tag": "🇵🇱 PL 06 - xiaohe",
-      "server": "site.teslamotor.site",
-      "server_port": 20001,
-      "uuid": "8e8210b7-71a4-4799-8b9b-2e69698b1eaf"
-    },
-    {
-      "type": "shadowsocks",
-      "tag": "🇵🇱 PL 07 - xiaohe",
-      "server": "pol.rvpn.app",
-      "server_port": 8388,
-      "method": "chacha20-ietf-poly1305",
-      "password": "8z2OB_gvFvpKgjFi8s9Cvw"
-    },
-    {
-      "type": "vless",
-      "tag": "🇵🇱 PL 08 - xiaohe",
-      "server": "31.59.143.147",
-      "server_port": 443,
-      "uuid": "1fe01c8a-ab37-4e95-bbfc-95d4a608931e",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "pl2.waspnest.space",
-        "insecure": true,
-        "reality": {
-          "enabled": true,
-          "public_key": "Liu35gmIQJtbul5AeCrceJTjsmln4RaqxX6joKlaBjk",
-          "short_id": "ae97223a8f799889"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
+        "server_name": "2.26.6.1",
+        "insecure": true
       }
     }
   ],

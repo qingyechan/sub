@@ -5,26 +5,33 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇨🇭 CH 01 - xiaohe
-  type: trojan
-  server: 208.69.78.208
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  sni: resources.yourultimateprofessionalcareerhub.com
-  skip-cert-verify: true
-- name: 🇨🇭 CH 02 - xiaohe
   type: vless
-  server: 208.69.78.217
-  port: 2053
-  uuid: c0dd6d59-1573-43af-8b70-1470b2632a6d
+  server: 45.90.57.119
+  port: 8443
+  uuid: f5e70ce3-cfb4-4df1-b25c-d19bfae627c0
   udp: true
   tls: true
   skip-cert-verify: true
   reality-opts:
-    public-key: A49ue7zXSusJZdErPAewg3jqGdUFIO1a9xOunEKJfC0
-    short-id: ad86e2d52ff40ebd
-  servername: www.apple.com
+    public-key: L6DeK_a25_ZjPKFOrQLoCPWuXi5KCIH_EcRpARmCwkI
+    short-id: 16036bbef04d0509
+  servername: twitch.tv
+  client-fingerprint: firefox
+  flow: xtls-rprx-vision
+- name: 🇨🇭 CH 02 - xiaohe
+  type: vless
+  server: 45.90.57.119
+  port: 8443
+  uuid: f5e70ce3-cfb4-4df1-b25c-d19bfae627c0
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  reality-opts:
+    public-key: L6DeK_a25_ZjPKFOrQLoCPWuXi5KCIH_EcRpARmCwkI
+    short-id: 16036bbef04d0509
+  servername: twitch.tv
   client-fingerprint: chrome
+  flow: xtls-rprx-vision
 - name: 🇨🇭 CH 03 - xiaohe
   type: vless
   server: 208.69.78.217
@@ -37,79 +44,8 @@ proxies:
     public-key: A49ue7zXSusJZdErPAewg3jqGdUFIO1a9xOunEKJfC0
     short-id: ad86e2d52ff40ebd
   servername: www.apple.com
-  client-fingerprint: firefox
+  client-fingerprint: chrome
 - name: 🇨🇭 CH 04 - xiaohe
-  type: vless
-  server: 208.69.78.217
-  port: 2053
-  uuid: c0dd6d59-1573-43af-8b70-1470b2632a6d
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  reality-opts:
-    public-key: A49ue7zXSusJZdErPAewg3jqGdUFIO1a9xOunEKJfC0
-    short-id: ad86e2d52ff40ebd
-  servername: www.apple.com
-  client-fingerprint: random
-- name: 🇨🇭 CH 05 - xiaohe
-  type: trojan
-  server: 208.69.78.29
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  sni: learn.yourultimateprofessionalcareerhub.com
-  skip-cert-verify: true
-- name: 🇨🇭 CH 06 - xiaohe
-  type: vless
-  server: 45.90.57.119
-  port: 8443
-  uuid: f5e70ce3-cfb4-4df1-b25c-d19bfae627c0
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  reality-opts:
-    public-key: L6DeK_a25_ZjPKFOrQLoCPWuXi5KCIH_EcRpARmCwkI
-    short-id: 16036bbef04d0509
-  servername: twitch.tv
-  client-fingerprint: chrome
-  flow: xtls-rprx-vision
-- name: 🇨🇭 CH 07 - xiaohe
-  type: vless
-  server: 45.90.59.15
-  port: 443
-  uuid: 3950b45e-740d-4dca-ac95-505ec8534592
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  reality-opts:
-    public-key: P7S4UPFlQbmiBr4txyy8NZIMTrmO3UdxyH16WBU-YzY
-    short-id: 19253fae84102271
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  flow: xtls-rprx-vision
-- name: 🇨🇭 CH 08 - xiaohe
-  type: vless
-  server: 45.90.57.119
-  port: 8443
-  uuid: f5e70ce3-cfb4-4df1-b25c-d19bfae627c0
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  reality-opts:
-    public-key: L6DeK_a25_ZjPKFOrQLoCPWuXi5KCIH_EcRpARmCwkI
-    short-id: 16036bbef04d0509
-  servername: twitch.tv
-  client-fingerprint: firefox
-  flow: xtls-rprx-vision
-- name: 🇨🇭 CH 09 - xiaohe
-  type: trojan
-  server: 208.69.78.60
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  sni: cdn.yourultimateprofessionalcareerhub.com
-  skip-cert-verify: true
-- name: 🇨🇭 CH 10 - xiaohe
   type: vless
   server: 45.90.57.119
   port: 8443
@@ -123,7 +59,33 @@ proxies:
   servername: twitch.tv
   client-fingerprint: safari
   flow: xtls-rprx-vision
-- name: 🇨🇭 CH 11 - xiaohe
+- name: 🇨🇭 CH 05 - xiaohe
+  type: vless
+  server: 208.69.78.217
+  port: 2053
+  uuid: c0dd6d59-1573-43af-8b70-1470b2632a6d
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  reality-opts:
+    public-key: A49ue7zXSusJZdErPAewg3jqGdUFIO1a9xOunEKJfC0
+    short-id: ad86e2d52ff40ebd
+  servername: www.apple.com
+  client-fingerprint: firefox
+- name: 🇨🇭 CH 06 - xiaohe
+  type: vless
+  server: 208.69.78.217
+  port: 2053
+  uuid: c0dd6d59-1573-43af-8b70-1470b2632a6d
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  reality-opts:
+    public-key: A49ue7zXSusJZdErPAewg3jqGdUFIO1a9xOunEKJfC0
+    short-id: ad86e2d52ff40ebd
+  servername: www.apple.com
+  client-fingerprint: random
+- name: 🇨🇭 CH 07 - xiaohe
   type: trojan
   server: 208.69.78.19
   port: 443
@@ -131,6 +93,53 @@ proxies:
   udp: true
   sni: www.yourultimateprofessionalcareerhub.com
   skip-cert-verify: true
+- name: 🇨🇭 CH 08 - xiaohe
+  type: trojan
+  server: 208.69.78.60
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  udp: true
+  sni: cdn.yourultimateprofessionalcareerhub.com
+  skip-cert-verify: true
+- name: 🇨🇭 CH 09 - xiaohe
+  type: trojan
+  server: 208.69.78.29
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  udp: true
+  sni: learn.yourultimateprofessionalcareerhub.com
+  skip-cert-verify: true
+- name: 🇨🇭 CH 10 - xiaohe
+  type: trojan
+  server: 208.69.78.208
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  udp: true
+  sni: resources.yourultimateprofessionalcareerhub.com
+  skip-cert-verify: true
+- name: 🇨🇭 CH 11 - xiaohe
+  type: vless
+  server: 45.90.59.15
+  port: 443
+  uuid: 3950b45e-740d-4dca-ac95-505ec8534592
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  reality-opts:
+    public-key: P7S4UPFlQbmiBr4txyy8NZIMTrmO3UdxyH16WBU-YzY
+    short-id: 19253fae84102271
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision
+- name: 🇨🇭 CH 12 - xiaohe
+  type: vless
+  server: 149.33.15.213
+  port: 443
+  uuid: 054362fb-e485-4a3f-9568-4c5b0f60e074
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: swz.proxyplankton.ru
 proxy-groups:
 - name: PROXIES
   type: select
@@ -148,6 +157,7 @@ proxy-groups:
   - 🇨🇭 CH 09 - xiaohe
   - 🇨🇭 CH 10 - xiaohe
   - 🇨🇭 CH 11 - xiaohe
+  - 🇨🇭 CH 12 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -168,6 +178,7 @@ proxy-groups:
   - 🇨🇭 CH 09 - xiaohe
   - 🇨🇭 CH 10 - xiaohe
   - 🇨🇭 CH 11 - xiaohe
+  - 🇨🇭 CH 12 - xiaohe
 - name: FALLBACK
   type: fallback
   url: https://cp.cloudflare.com/generate_204

@@ -23,7 +23,8 @@
         "🇨🇭 CH 08 - xiaohe",
         "🇨🇭 CH 09 - xiaohe",
         "🇨🇭 CH 10 - xiaohe",
-        "🇨🇭 CH 11 - xiaohe"
+        "🇨🇭 CH 11 - xiaohe",
+        "🇨🇭 CH 12 - xiaohe"
       ]
     },
     {
@@ -40,7 +41,8 @@
         "🇨🇭 CH 08 - xiaohe",
         "🇨🇭 CH 09 - xiaohe",
         "🇨🇭 CH 10 - xiaohe",
-        "🇨🇭 CH 11 - xiaohe"
+        "🇨🇭 CH 11 - xiaohe",
+        "🇨🇭 CH 12 - xiaohe"
       ],
       "url": "https://www.google.com/generate_204"
     },
@@ -49,31 +51,42 @@
       "tag": "direct"
     },
     {
-      "type": "trojan",
+      "type": "vless",
       "tag": "🇨🇭 CH 01 - xiaohe",
-      "server": "208.69.78.208",
-      "server_port": 443,
-      "password": "0ab6c98dae3b48e8b9c4a776b6c9c19a",
+      "server": "45.90.57.119",
+      "server_port": 8443,
+      "uuid": "f5e70ce3-cfb4-4df1-b25c-d19bfae627c0",
+      "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
-        "server_name": "resources.yourultimateprofessionalcareerhub.com",
-        "insecure": true
+        "server_name": "twitch.tv",
+        "insecure": true,
+        "reality": {
+          "enabled": true,
+          "public_key": "L6DeK_a25_ZjPKFOrQLoCPWuXi5KCIH_EcRpARmCwkI",
+          "short_id": "16036bbef04d0509"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
       }
     },
     {
       "type": "vless",
       "tag": "🇨🇭 CH 02 - xiaohe",
-      "server": "208.69.78.217",
-      "server_port": 2053,
-      "uuid": "c0dd6d59-1573-43af-8b70-1470b2632a6d",
+      "server": "45.90.57.119",
+      "server_port": 8443,
+      "uuid": "f5e70ce3-cfb4-4df1-b25c-d19bfae627c0",
+      "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
-        "server_name": "www.apple.com",
+        "server_name": "twitch.tv",
         "insecure": true,
         "reality": {
           "enabled": true,
-          "public_key": "A49ue7zXSusJZdErPAewg3jqGdUFIO1a9xOunEKJfC0",
-          "short_id": "ad86e2d52ff40ebd"
+          "public_key": "L6DeK_a25_ZjPKFOrQLoCPWuXi5KCIH_EcRpARmCwkI",
+          "short_id": "16036bbef04d0509"
         },
         "utls": {
           "enabled": true,
@@ -98,13 +111,56 @@
         },
         "utls": {
           "enabled": true,
-          "fingerprint": "firefox"
+          "fingerprint": "chrome"
         }
       }
     },
     {
       "type": "vless",
       "tag": "🇨🇭 CH 04 - xiaohe",
+      "server": "45.90.57.119",
+      "server_port": 8443,
+      "uuid": "f5e70ce3-cfb4-4df1-b25c-d19bfae627c0",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "twitch.tv",
+        "insecure": true,
+        "reality": {
+          "enabled": true,
+          "public_key": "L6DeK_a25_ZjPKFOrQLoCPWuXi5KCIH_EcRpARmCwkI",
+          "short_id": "16036bbef04d0509"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇨🇭 CH 05 - xiaohe",
+      "server": "208.69.78.217",
+      "server_port": 2053,
+      "uuid": "c0dd6d59-1573-43af-8b70-1470b2632a6d",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.apple.com",
+        "insecure": true,
+        "reality": {
+          "enabled": true,
+          "public_key": "A49ue7zXSusJZdErPAewg3jqGdUFIO1a9xOunEKJfC0",
+          "short_id": "ad86e2d52ff40ebd"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇨🇭 CH 06 - xiaohe",
       "server": "208.69.78.217",
       "server_port": 2053,
       "uuid": "c0dd6d59-1573-43af-8b70-1470b2632a6d",
@@ -125,7 +181,31 @@
     },
     {
       "type": "trojan",
-      "tag": "🇨🇭 CH 05 - xiaohe",
+      "tag": "🇨🇭 CH 07 - xiaohe",
+      "server": "208.69.78.19",
+      "server_port": 443,
+      "password": "0ab6c98dae3b48e8b9c4a776b6c9c19a",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.yourultimateprofessionalcareerhub.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇨🇭 CH 08 - xiaohe",
+      "server": "208.69.78.60",
+      "server_port": 443,
+      "password": "0ab6c98dae3b48e8b9c4a776b6c9c19a",
+      "tls": {
+        "enabled": true,
+        "server_name": "cdn.yourultimateprofessionalcareerhub.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇨🇭 CH 09 - xiaohe",
       "server": "208.69.78.29",
       "server_port": 443,
       "password": "0ab6c98dae3b48e8b9c4a776b6c9c19a",
@@ -136,30 +216,20 @@
       }
     },
     {
-      "type": "vless",
-      "tag": "🇨🇭 CH 06 - xiaohe",
-      "server": "45.90.57.119",
-      "server_port": 8443,
-      "uuid": "f5e70ce3-cfb4-4df1-b25c-d19bfae627c0",
-      "flow": "xtls-rprx-vision",
+      "type": "trojan",
+      "tag": "🇨🇭 CH 10 - xiaohe",
+      "server": "208.69.78.208",
+      "server_port": 443,
+      "password": "0ab6c98dae3b48e8b9c4a776b6c9c19a",
       "tls": {
         "enabled": true,
-        "server_name": "twitch.tv",
-        "insecure": true,
-        "reality": {
-          "enabled": true,
-          "public_key": "L6DeK_a25_ZjPKFOrQLoCPWuXi5KCIH_EcRpARmCwkI",
-          "short_id": "16036bbef04d0509"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
+        "server_name": "resources.yourultimateprofessionalcareerhub.com",
+        "insecure": true
       }
     },
     {
       "type": "vless",
-      "tag": "🇨🇭 CH 07 - xiaohe",
+      "tag": "🇨🇭 CH 11 - xiaohe",
       "server": "45.90.59.15",
       "server_port": 443,
       "uuid": "3950b45e-740d-4dca-ac95-505ec8534592",
@@ -181,69 +251,13 @@
     },
     {
       "type": "vless",
-      "tag": "🇨🇭 CH 08 - xiaohe",
-      "server": "45.90.57.119",
-      "server_port": 8443,
-      "uuid": "f5e70ce3-cfb4-4df1-b25c-d19bfae627c0",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "twitch.tv",
-        "insecure": true,
-        "reality": {
-          "enabled": true,
-          "public_key": "L6DeK_a25_ZjPKFOrQLoCPWuXi5KCIH_EcRpARmCwkI",
-          "short_id": "16036bbef04d0509"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "🇨🇭 CH 09 - xiaohe",
-      "server": "208.69.78.60",
+      "tag": "🇨🇭 CH 12 - xiaohe",
+      "server": "149.33.15.213",
       "server_port": 443,
-      "password": "0ab6c98dae3b48e8b9c4a776b6c9c19a",
+      "uuid": "054362fb-e485-4a3f-9568-4c5b0f60e074",
       "tls": {
         "enabled": true,
-        "server_name": "cdn.yourultimateprofessionalcareerhub.com",
-        "insecure": true
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇨🇭 CH 10 - xiaohe",
-      "server": "45.90.57.119",
-      "server_port": 8443,
-      "uuid": "f5e70ce3-cfb4-4df1-b25c-d19bfae627c0",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "twitch.tv",
-        "insecure": true,
-        "reality": {
-          "enabled": true,
-          "public_key": "L6DeK_a25_ZjPKFOrQLoCPWuXi5KCIH_EcRpARmCwkI",
-          "short_id": "16036bbef04d0509"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "safari"
-        }
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "🇨🇭 CH 11 - xiaohe",
-      "server": "208.69.78.19",
-      "server_port": 443,
-      "password": "0ab6c98dae3b48e8b9c4a776b6c9c19a",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.yourultimateprofessionalcareerhub.com",
+        "server_name": "swz.proxyplankton.ru",
         "insecure": true
       }
     }
